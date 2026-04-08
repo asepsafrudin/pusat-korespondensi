@@ -10,6 +10,9 @@
     --border: #e2e8f0;
     --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.8);
+    --glass-blur: blur(14px);
 }
 
 * {
@@ -172,6 +175,77 @@ body {
     margin-bottom: 2rem;
 }
 
+/* Hybrid Cards (Mobile) */
+.card-grid {
+    display: none; /* Default hidden, enabled via JS/Media Query */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.25rem;
+    padding: 1rem 0;
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    animation: slideUp 0.5s ease forwards;
+}
+
+.glass-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
+}
+
+.card-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.card-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-main);
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-footer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Sticky Header Table */
+.table-container {
+    overflow-x: auto;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.table-container thead th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #f1f5f9;
+    box-shadow: 0 1px 0 var(--border);
+}
+
 .card-header {
     padding: 1.5rem 2rem;
     border-bottom: 1px solid var(--border);
@@ -327,6 +401,18 @@ tr:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .fade-in {
     animation: fadeIn 0.4s ease-out forwards;
 }
+
+/* View Mode Toggles */
+.view-mode-active #table-view { display: block; }
+.view-mode-active #card-view { display: none; }
+
+.view-mode-card #table-view { display: none; }
+.view-mode-card #card-view { display: grid; }

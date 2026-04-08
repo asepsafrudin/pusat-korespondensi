@@ -4,64 +4,119 @@
 {% block page_subtitle %}Arsip surat masuk internal di lingkungan PUU Bangda.{% endblock %}
 
 {% block content %}
-<div class="data-card">
+{% block head %}
+<style>
+    .view-toggle {
+        display: flex;
+        background: #f1f5f9;
+        padding: 4px;
+        border-radius: 10px;
+        gap: 4px;
+    }
+    .toggle-btn {
+        padding: 6px 12px;
+        border-radius: 8px;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        transition: all 0.2s;
+    }
+    .toggle-btn.active {
+        background: white;
+        color: var(--accent);
+        box-shadow: var(--shadow);
+    }
+    .loading-spinner {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #e2e8f0;
+        border-top: 2px solid var(--accent);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        display: inline-block;
+        margin-right: 8px;
+        vertical-align: middle;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="data-card view-mode-active" id="main-view-container">
     <div class="card-header">
-        <div style="display:flex; align-items:center; gap:16px;">
-            <div class="search-container" style="width: 300px;">
-                <input type="text" class="search-input" value="{{ query }}" placeholder="Filter Nomor / Hal / PIC..." onkeyup="if(event.key === 'Enter') location.href='?q=' + encodeURIComponent(this.value)">
+        <div style="display:flex; align-items:center; gap:20px; flex-wrap: wrap;">
+            <div class="search-container" style="width: 320px;">
+                <span class="search-icon">🔎</span>
+                <input type="text" id="internal-search" class="search-input" value="{{ query }}" placeholder="Filter Nomor / Hal / PIC..." onkeyup="handleSearch(event)">
             </div>
+            
+            <div class="view-toggle">
+                <button class="toggle-btn active" onclick="setViewMode('table')" id="btn-table">📊 Table</button>
+                <button class="toggle-btn" onclick="setViewMode('card')" id="btn-card">🗂️ Cards</button>
+            </div>
+
             <button onclick="syncInternalNow()" id="btn-sync" class="btn btn-primary">
-                📥 Tarik Data Baru dari Pusat
+                📥 Sync Data
             </button>
         </div>
     </div>
     
-    <div style="overflow-x: auto;">
+    <!-- Table View -->
+    <div id="table-view" class="table-container">
         <table>
             <thead>
                 <tr>
                     <th style="width: 140px;">Tgl Surat</th>
-                    <th style="width: 200px;">Nomor Agenda / ND</th>
-                    <th>Hal</th>
-                    <th style="width: 180px;">Asal / PIC</th>
-                    <th style="width: 150px;">Status</th>
+                    <th style="width: 220px;">Agenda / ND</th>
+                    <th>Perihal & Substansi</th>
+                    <th style="width: 200px;">Pengirim / PIC</th>
+                    <th style="width: 160px;">Aksi</th>
                 </tr>
             </thead>
             <tbody>
                 {% for r in rows %}
-                <tr>
-                    <td style="color: var(--text-muted);">{{ r.tanggal_surat }}</td>
-                    <td>
-                        <div style="font-weight: 700; color: var(--accent);">{{ r.nomor_nd }}</div>
-                        <div style="display:flex; justify-content: space-between; align-items: center; margin-top: 4px;">
-                            <span style="font-size: 0.75rem; color: var(--text-muted);">Reg: {{ r.no_agenda_dispo or '-' }}</span>
-                            <span style="font-size: 0.7rem; background: var(--secondary); color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold; border: 1px solid var(--accent);" title="Auto-Sequence PUU Permanen">{{ r.agenda_puu or 'N/A' }}</span>
-                        </div>
-                    </td>
-                    <td style="font-size: 0.85rem; max-width: 400px;">{{ r.hal }}</td>
-                    <td>
-                        <div style="font-weight: 600;">{{ r.dari[:30] }}...</div>
-                        <div style="font-size: 0.75rem; color: var(--text-muted); display:flex; align-items:center; gap:8px; margin-top:4px;">
-                            <span>PIC: <strong>{{ r.pic_name or 'Belum Diset' }}</strong></span>
-                            <button onclick="openPicModal('{{ r.unique_id }}')" style="padding:2px 6px; font-size:10px; border-radius:4px; border:1px solid #ddd; background:#fff; cursor:pointer;">✏️ Ubah</button>
-                        </div>
+                <tr class="fade-in" style="animation-delay: {{ loop.index0 * 0.05 }}s">
+                    <td style="color: var(--text-muted); font-size: 0.8rem;">
+                        <div style="font-weight:700; color:var(--text-main)">{{ r.tanggal_surat }}</div>
+                        <div style="margin-top:4px;">Dispo: {{ r.tanggal_disposisi_it or '-' }}</div>
                     </td>
                     <td>
-                        <span class="badge {% if r.status_pengiriman == 'Selesai' %}badge-success{% elif r.status_pengiriman == 'Belum Diproses' %}badge-warning{% else %}badge-info{% endif %}">
-                            {{ r.status_pengiriman }}
-                        </span>
-                        <div style="margin-top: 8px;">
+                        <div style="font-weight: 800; color: var(--accent); font-size: 0.95rem;">{{ r.nomor_nd }}</div>
+                        <div style="display:flex; align-items: center; gap: 8px; margin-top: 6px;">
+                            <span style="font-size: 0.65rem; color: var(--text-muted); background:#f1f5f9; padding:2px 6px; border-radius:4px;">#{{ r.no_agenda_dispo or '-' }}</span>
+                            <span class="badge" style="background: #eff6ff; color: #3b82f6; border: 1px solid #dbeafe; font-size: 0.65rem;" title="Auto-Sequence PUU">{{ r.agenda_puu or 'N/A' }}</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 0.875rem;">
+                        <div style="font-weight: 600; line-height: 1.4; margin-bottom: 6px;">{{ r.hal }}</div>
+                        {% if r.keterangan %}
+                        <div style="font-size: 0.75rem; color: var(--text-muted); font-style: italic;">"{{ r.keterangan[:100] }}..."</div>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <div style="font-weight: 700; font-size: 0.85rem; color: #334155;">{{ r.dari[:40] }}</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); display:flex; align-items:center; gap:6px; margin-top:8px;">
+                            <div style="width:24px; height:24px; border-radius:50%; background:#e2e8f0; display:flex; align-items:center; justify-content:center; font-size:0.6rem;">👤</div>
+                            <span style="font-weight: 600;">{{ r.pic_name or 'Belum Ditugaskan' }}</span>
+                            <button class="btn-ghost" onclick="openPicModal('{{ r.unique_id }}')" style="padding:2px 4px; border-radius:4px;">✏️</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: flex; flex-direction: column; gap: 6px;">
                             {% if r.drive_file_url %}
-                            <a href="{{ r.drive_file_url }}" target="_blank" class="btn" style="padding: 4px 8px; font-size: 0.75rem; text-decoration: none; background: #4285f4; color: white; border: none; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px;">
-                                <img src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_document_x16.png" style="width:14px;"> Buka di Google Docs
+                            <a href="{{ r.drive_file_url }}" target="_blank" class="btn" style="padding: 6px 10px; font-size: 0.7rem; background: #059669; color: white;">
+                                📂 Drive Docs
                             </a>
                             {% else %}
-                            <a href="/api/disposisi/download/{{ r.unique_id }}" target="_blank" class="btn btn-primary" style="padding: 4px 8px; font-size: 0.75rem; text-decoration: none;">
-                                📄 Cetak Disposisi (.docx)
+                            <a href="/api/disposisi/download/{{ r.unique_id }}" target="_blank" class="btn btn-primary" style="padding: 6px 10px; font-size: 0.7rem;">
+                                📄 Cetak .docx
                             </a>
                             {% endif %}
-                            <button onclick="openTimelineModal('{{ r.unique_id }}', '{{ r.nomor_nd }}')" class="btn" style="padding: 4px 8px; font-size: 0.75rem; background: #6b7280; color: white; border: none; border-radius: 4px; border: 1px solid #4b5563; cursor: pointer;">
-                                📍 Lacak Posisi
+                            <button onclick="openTimelineModal('{{ r.unique_id }}', '{{ r.nomor_nd }}')" class="btn-ghost" style="padding: 6px 10px; font-size: 0.7rem; border: 1px solid var(--border);">
+                                📍 Timeline
                             </button>
                         </div>
                     </td>
@@ -69,6 +124,45 @@
                 {% endfor %}
             </tbody>
         </table>
+    </div>
+
+    <!-- Card View (Mobile Optimized) -->
+    <div id="card-view" class="card-grid" style="padding: 2rem;">
+        {% for r in rows %}
+        <div class="glass-card fade-in" style="animation-delay: {{ loop.index0 * 0.1 }}s">
+            <div style="position: absolute; top: 12px; right: 12px;">
+                <span class="badge" style="background: white; border: 1px solid var(--accent); color: var(--accent);">{{ r.agenda_puu or 'PUU' }}</span>
+            </div>
+            
+            <div class="card-label">{{ r.tanggal_surat }} • {{ r.no_agenda_dispo or 'No Reg' }}</div>
+            <div class="card-title">{{ r.hal }}</div>
+            
+            <div style="margin-bottom: 15px;">
+                <div style="font-size: 0.85rem; font-weight: 800; color: var(--accent);">{{ r.nomor_nd }}</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Asal: {{ r.dari[:50] }}</div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.4); padding: 10px; border-radius: 12px; margin-bottom: 15px;">
+                <div class="card-label" style="margin-bottom: 8px;">Penanggung Jawab (PIC)</div>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem;">
+                        {{ r.pic_name[0] if r.pic_name else '?' }}
+                    </div>
+                    <div style="font-size: 0.85rem; font-weight: 600;">{{ r.pic_name or 'Belum Ditugaskan' }}</div>
+                    <button class="btn-ghost" onclick="openPicModal('{{ r.unique_id }}')" style="margin-left: auto;">✏️</button>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <button onclick="openTimelineModal('{{ r.unique_id }}', '{{ r.nomor_nd }}')" class="btn-ghost" style="font-size: 0.75rem;">📍 Lacak</button>
+                {% if r.drive_file_url %}
+                <a href="{{ r.drive_file_url }}" target="_blank" class="btn btn-primary" style="padding: 8px 14px; font-size: 0.75rem;">Buka Docs</a>
+                {% else %}
+                <a href="/api/disposisi/download/{{ r.unique_id }}" class="btn btn-primary" style="padding: 8px 14px; font-size: 0.75rem;">Cetak Dispo</a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
     </div>
 </div>
 
@@ -109,20 +203,52 @@
 </div>
 
 <script>
+    // View Mode Switcher
+    function setViewMode(mode) {
+        const container = document.getElementById('main-view-container');
+        const btnTable = document.getElementById('btn-table');
+        const btnCard = document.getElementById('btn-card');
+        
+        if (mode === 'table') {
+            container.classList.remove('view-mode-card');
+            container.classList.add('view-mode-active');
+            btnTable.classList.add('active');
+            btnCard.classList.remove('active');
+        } else {
+            container.classList.remove('view-mode-active');
+            container.classList.add('view-mode-card');
+            btnCard.classList.add('active');
+            btnTable.classList.remove('active');
+        }
+        localStorage.setItem('internal_view_mode', mode);
+    }
+
+    // Initialize View Mode
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedMode = localStorage.getItem('internal_view_mode') || 'table';
+        setViewMode(savedMode);
+    });
+
+    function handleSearch(event) {
+        if(event.key === 'Enter') {
+            location.href='?q=' + encodeURIComponent(event.target.value);
+        }
+    }
+
     async function syncInternalNow() {
         const btn = document.getElementById('btn-sync');
         btn.disabled = true;
-        btn.textContent = '🔄 Memproses...';
+        btn.innerHTML = '🔄 Syncing...';
         
         try {
             const res = await fetch("/api/sync/internal", { method: "POST" });
             const data = await res.json();
-            alert(`Berhasil menarik ${data.count} surat baru ke internal.`);
+            alert(`Berhasil menarik ${data.count} surat baru.`);
             location.reload();
         } catch (e) {
-            alert("Terjadi kesalahan saat sinkronisasi.");
+            alert("Gagal sinkronisasi.");
             btn.disabled = false;
-            btn.textContent = '📥 Tarik Data Baru';
+            btn.innerHTML = '📥 Sync Data';
         }
     }
 
@@ -130,48 +256,63 @@
         document.getElementById('modal-uid').value = uid;
         document.getElementById('pic-modal').style.display = 'flex';
         document.getElementById('pic-search').value = '';
-        document.getElementById('pic-results').innerHTML = '<p style="padding: 10px; text-align: center; color: #888;">Silakan ketik nama staf...</p>';
+        document.getElementById('pic-results').innerHTML = '<p style="padding: 15px; text-align: center; color: #94a3b8; font-size: 0.85rem;">Mulai ketik nama untuk mencari...</p>';
         document.getElementById('pic-search').focus();
     }
 
     let searchTimer;
-    function searchPicNames() {
+    async function searchPicNames() {
         clearTimeout(searchTimer);
         const q = document.getElementById('pic-search').value;
-        if (q.length < 3) return;
-        
         const resultsDiv = document.getElementById('pic-results');
-        resultsDiv.innerHTML = '<p style="padding: 10px; text-align: center;">Mencari...</p>';
+        
+        if (q.length < 2) {
+            resultsDiv.innerHTML = '<p style="padding: 15px; text-align: center; color: #94a3b8; font-size: 0.85rem;">Ketik minimal 2 karakter...</p>';
+            return;
+        }
         
         searchTimer = setTimeout(async () => {
-            const res = await fetch(`/api/personnel/search?q=${encodeURIComponent(q)}`);
-            const staffs = await res.json();
+            resultsDiv.innerHTML = '<div style="padding: 20px; text-align: center;"><div class="loading-spinner"></div> Mencari data...</div>';
             
-            if (staffs.length === 0) {
-                resultsDiv.innerHTML = '<p style="padding: 10px; text-align: center; color: red;">Pegawai tidak ditemukan.</p>';
-            } else {
-                resultsDiv.innerHTML = staffs.map(s => `
-                    <div style="padding: 10px; border-bottom: 1px solid #eee; cursor: pointer;" onclick="assignPic('${s.nama}')" onmouseover="this.style.background='#f4f7fa'" onmouseout="this.style.background='white'">
-                        <strong>${s.nama}</strong><br>
-                        <span style="font-size: 0.75rem; color: #666;">${s.jabatan}</span>
-                    </div>
-                `).join('');
+            try {
+                const res = await fetch(`/api/personnel/search?q=${encodeURIComponent(q)}`);
+                const staffs = await res.json();
+                
+                if (staffs.length === 0) {
+                    resultsDiv.innerHTML = '<p style="padding: 15px; text-align: center; color: #ef4444;">Pegawai tidak ditemukan.</p>';
+                } else {
+                    resultsDiv.innerHTML = staffs.map(s => `
+                        <div style="padding: 12px 16px; border-bottom: 1px solid #f1f5f9; cursor: pointer; transition: background 0.2s;" 
+                             onclick="assignPic('${s.nama}')" 
+                             onmouseover="this.style.background='#f8fafc'" 
+                             onmouseout="this.style.background='white'">
+                            <div style="font-weight: 700; font-size: 0.9rem; color: var(--text-main);">${s.nama}</div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top:2px;">${s.jabatan}</div>
+                        </div>
+                    `).join('');
+                }
+            } catch (e) {
+                resultsDiv.innerHTML = '<p style="padding: 15px; text-align: center; color: #ef4444;">Gagal menghubungi server.</p>';
             }
-        }, 500);
+        }, 400);
     }
 
     async function assignPic(nama) {
         const uid = document.getElementById('modal-uid').value;
-        const res = await fetch(`/api/internal/${uid}/pic`, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({nama: nama})
-        });
-        const data = await res.json();
-        if(data.status === 'success') {
-            location.reload();
-        } else {
-            alert("Gagal menugaskan PIC!");
+        try {
+            const res = await fetch(`/api/internal/${uid}/pic`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({nama: nama})
+            });
+            const data = await res.json();
+            if(data.status === 'success') {
+                location.reload();
+            } else {
+                alert("Gagal menugaskan PIC!");
+            }
+        } catch (e) {
+            alert("Error: " + e.message);
         }
     }
 
@@ -192,7 +333,7 @@
                 content.innerHTML = `
                     <div style="text-align:center; padding:30px; color:#888;">
                         <div style="font-size:2rem; margin-bottom:10px;">📭</div>
-                        <p>Belum ada riwayat perubahan posisi terdeteksi.<br><small>Riwayat mulai dicatat sejak fitur ini diaktifkan.</small></p>
+                        <p>Belum ada riwayat posisi terdeteksi.<br><small>Riwayat mulai dicatat sejak fitur ini aktif.</small></p>
                     </div>
                 `;
                 return;
@@ -216,9 +357,8 @@
                 </div>
                 `;
             }).join('');
-            
         } catch (e) {
-            content.innerHTML = '<p style="text-align:center; color:red; padding:20px;">Gagal memuat data timeline.</p>';
+            content.innerHTML = '<p style="text-align:center; color:red; padding:20px;">Gagal memuat timeline.</p>';
         }
     }
 </script>
