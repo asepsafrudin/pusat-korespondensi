@@ -6,6 +6,12 @@
 {% block content %}
 {% block head %}
 <style>
+    /* Virtual Rendering Optimization */
+    .fade-in {
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 80px;
+    }
+    
     .view-toggle {
         display: flex;
         background: #f1f5f9;
@@ -202,8 +208,14 @@
         <h3 style="margin-bottom: 15px; color: var(--accent);">Pilih Nama PIC</h3>
         <input type="hidden" id="modal-uid">
         
-        <div class="search-container" style="margin-bottom: 15px;">
-            <input type="text" id="pic-search" class="search-input" placeholder="Ketik nama staf bangda/sekretariat..." onkeyup="searchPicNames()">
+        <div style="display:flex; gap:8px; margin-bottom: 15px;">
+            <button onclick="setPicFilter('all')" id="filter-all" class="btn-ghost" style="flex:1; font-size: 0.75rem; background: #f1f5f9; color: var(--accent); padding: 8px;">Semua</button>
+            <button onclick="setPicFilter('bangda')" id="filter-bangda" class="btn-ghost" style="flex:1; font-size: 0.75rem; padding: 8px;">Bangda</button>
+            <button onclick="setPicFilter('sekretariat')" id="filter-sekret" class="btn-ghost" style="flex:1; font-size: 0.75rem; padding: 8px;">Sekretariat</button>
+        </div>
+
+        <div class="search-container" style="margin-bottom: 15px; width: 100%;">
+            <input type="text" id="pic-search" class="search-input" placeholder="Cari nama staf..." onkeyup="searchPicNames()">
         </div>
         
         <div id="pic-results" style="max-height: 250px; overflow-y: auto; border: 1px solid #eee; border-radius: 8px;">
@@ -290,8 +302,25 @@
         document.getElementById('modal-uid').value = uid;
         document.getElementById('pic-modal').style.display = 'flex';
         document.getElementById('pic-search').value = '';
-        document.getElementById('pic-results').innerHTML = '<p style="padding: 15px; text-align: center; color: #94a3b8; font-size: 0.85rem;">Mulai ketik nama untuk mencari...</p>';
+        setPicFilter('all');
         document.getElementById('pic-search').focus();
+    }
+
+    let currentFilter = 'all';
+    function setPicFilter(mode) {
+        currentFilter = mode;
+        const buttons = ['all', 'bangda', 'sekretariat'];
+        buttons.forEach(b => {
+            const btn = document.getElementById(`filter-${b === 'sekretariat' ? 'sekret' : b}`);
+            if(b === mode) {
+                btn.style.background = '#f1f5f9';
+                btn.style.color = 'var(--accent)';
+            } else {
+                btn.style.background = 'transparent';
+                btn.style.color = 'var(--text-muted)';
+            }
+        });
+        searchPicNames();
     }
 
     let searchTimer;
@@ -300,13 +329,12 @@
         const q = document.getElementById('pic-search').value;
         const resultsDiv = document.getElementById('pic-results');
         
-        if (q.length < 2) {
+        if (q.length < 2 && currentFilter === 'all') {
             resultsDiv.innerHTML = '<p style="padding: 15px; text-align: center; color: #94a3b8; font-size: 0.85rem;">Ketik minimal 2 karakter...</p>';
             return;
         }
         
         searchTimer = setTimeout(async () => {
-            // Skeleton Loading
             resultsDiv.innerHTML = Array(3).fill(0).map(() => `
                 <div style="padding: 15px; border-bottom: 1px solid #f1f5f9;">
                     <div class="skeleton" style="height: 16px; width: 70%; margin-bottom: 8px;"></div>
@@ -315,7 +343,10 @@
             `).join('');
             
             try {
-                const res = await fetch(`/api/personnel/search?q=${encodeURIComponent(q)}`);
+                let url = `/api/personnel/search?q=${encodeURIComponent(q)}`;
+                if(currentFilter !== 'all') url += `&source=${currentFilter}`;
+                
+                const res = await fetch(url);
                 const staffs = await res.json();
                 
                 if (staffs.length === 0) {
