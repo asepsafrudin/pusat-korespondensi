@@ -100,6 +100,51 @@ async def api_trigger_etl(bt: BackgroundTasks):
     success = trigger_etl_korespondensi()
     return {"success": success}
 
+# --- New Phase 2 API Endpoints ---
+
+@app.get("/api/dashboard/summary")
+async def api_dashboard_summary():
+    """Get summarized data for the dashboard."""
+    stats = get_stats()
+    personnel_stats = get_personnel_stats()
+    recent = execute_query("SELECT * FROM surat_masuk_puu_internal ORDER BY tanggal_surat DESC LIMIT 10")
+    pics = get_hukum_pics()
+    return {
+        "status": "success",
+        "stats": stats,
+        "recent_letters": recent,
+        "personnel_stats": personnel_stats,
+        "pics": pics[:5]
+    }
+
+@app.get("/api/internal/search")
+async def api_internal_search(q: str = ""):
+    """Search internal mail and return JSON."""
+    sql = "SELECT * FROM surat_masuk_puu_internal WHERE 1=1"
+    params = []
+    if q:
+        robust_q = q.replace(".", "%").replace(" ", "%")
+        sql += " AND (nomor_nd ILIKE %s OR hal ILIKE %s OR pic_name ILIKE %s OR no_agenda_dispo ILIKE %s)"
+        params = [f"%{robust_q}%", f"%{robust_q}%", f"%{robust_q}%", f"%{robust_q}%"]
+    sql += " ORDER BY tanggal_surat DESC LIMIT 100"
+    
+    rows = execute_query(sql, params)
+    return {
+        "status": "success",
+        "count": len(rows),
+        "data": rows,
+        "query": q
+    }
+
+@app.get("/api/sync/logs")
+async def api_get_sync_logs(limit: int = 10):
+    """Get recent sync run logs."""
+    history = execute_query("SELECT * FROM correspondence_sync_runs ORDER BY started_at DESC LIMIT %s", [limit])
+    return {
+        "status": "success",
+        "history": history
+    }
+
 @app.get("/api/disposisi/download/{unique_id}")
 async def download_disposisi(unique_id: str, background_tasks: BackgroundTasks):
     try:
