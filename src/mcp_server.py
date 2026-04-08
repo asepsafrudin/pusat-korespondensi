@@ -1,6 +1,5 @@
 import os
 import sys
-import logging
 import asyncio
 import re
 from typing import Dict, List, Any, Optional
@@ -8,8 +7,9 @@ from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import Tool, TextContent
 from .database import execute_query
+from .logging_config import setup_logging
 
-logger = logging.getLogger("mcp_server")
+logger = setup_logging("mcp_server")
 
 class KorespondensiMCP:
     def __init__(self):
@@ -22,23 +22,23 @@ class KorespondensiMCP:
             return [
                 Tool(
                     name="cari_surat",
-                    description="Mencari data surat masuk/keluar berdasarkan nomor atau perihal secara global di seluruh unit.",
+                    description="Cari data surat masuk/keluar di database pusat (pool global). Gunakan untuk menemukan nomor surat, pengirim, atau perihal. Sangat berguna jika user hanya memberikan potongan informasi.",
                     inputSchema={
                         "type": "object",
                         "properties": {
-                            "query": {"type": "string", "description": "Nomor surat, judul, atau perihal yang dicari."},
-                            "limit": {"type": "integer", "description": "Jumlah maksimal hasil.", "default": 5}
+                            "query": {"type": "string", "description": "Kata kunci (nomor surat, nama instansi, atau perihal)."},
+                            "limit": {"type": "integer", "description": "Maksimal hasil (default 5).", "default": 5}
                         },
                         "required": ["query"]
                     }
                 ),
                 Tool(
                     name="status_disposisi",
-                    description="Mengecek status dan posisi terakhir surat (timeline) dari database pusat korespondensi.",
+                    description="Cek status terkini dan riwayat posisi (timeline) surat. Gunakan untuk menjawab pertanyaan seperti 'Di mana surat nomor X sekarang?' atau 'Apakah surat Y sudah sampai di PUU?'.",
                     inputSchema={
                         "type": "object",
                         "properties": {
-                            "no_surat": {"type": "string", "description": "Nomor surat atau nomor agenda surat."},
+                            "no_surat": {"type": "string", "description": "Nomor surat lengkap atau nomor agenda."},
                         },
                         "required": ["no_surat"]
                     }

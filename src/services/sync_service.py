@@ -2,12 +2,15 @@ import os
 import subprocess
 import logging
 from ..database import get_db_connection, execute_query
+from ..logging_config import setup_logging
 
-# Constants for centralized logic
-SCRIPTS_DIR = "/home/aseps/MCP/scripts"
-PYTHON_BIN = "/home/aseps/MCP/.venv/bin/python3"
+logger = setup_logging("sync_service")
 
-logger = logging.getLogger("sync_service")
+# Constants from environment
+SCRIPTS_DIR = os.getenv("PROJECT_SCRIPTS_DIR", "/home/aseps/MCP/scripts")
+PYTHON_BIN = os.getenv("PYTHON_EXECUTABLE", "python3")
+GDRIVE_FOLDER_ID = os.getenv("GDRIVE_FOLDER_ID")
+GDRIVE_TOKEN_PATH = os.getenv("GDRIVE_TOKEN_PATH")
 
 def sync_internal_from_pool() -> int:
     """
@@ -102,18 +105,18 @@ def upload_to_gdrive(file_path: str, unique_id: str):
 
     try:
         # Load local token explicitly to avoid MCP App Universal scopes requirement
-        token_path = "/home/aseps/MCP/config/credentials/google/puubangda/token.json"
+        token_path = GDRIVE_TOKEN_PATH
         
-        if not os.path.exists(token_path):
-            logging.getLogger("sync_service").error(f"[Google Drive Auto-Sync] Token tidak ditemukan di {token_path}")
+        if not token_path or not os.path.exists(token_path):
+            logger.error(f"[Google Drive Auto-Sync] Token tidak ditemukan atau belum dikonfigurasi.")
             return
             
         creds = Credentials.from_authorized_user_file(token_path)
         svc = build("drive", "v3", credentials=creds)
         
         filename = os.path.basename(file_path)
-        # Folder ID yang ditugaskan pengguna
-        folder_id = "1s1WyweDstV0vYgP1SIfQk4rWwDGO0OYw"
+        # Folder ID dari environment
+        folder_id = GDRIVE_FOLDER_ID
         
         file_metadata = {
             'name': filename,

@@ -11,11 +11,9 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.web_app import app as web_app
 from src.mcp_server import KorespondensiMCP
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    stream=sys.stderr
-)
+from src.logging_config import setup_logging
+
+logger = setup_logging("main")
 
 def run_web():
     """Run the FastAPI Web Application."""

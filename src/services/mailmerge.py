@@ -3,6 +3,9 @@ from datetime import datetime
 from docxtpl import DocxTemplate
 from fastapi.responses import FileResponse
 from ..database import execute_query
+from ..logging_config import setup_logging
+
+logger = setup_logging("mailmerge")
 
 TEMPLATE_PATH = os.path.join(
     os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 

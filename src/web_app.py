@@ -4,6 +4,9 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import os
 from .database import execute_query
+from .logging_config import setup_logging
+
+logger = setup_logging("web_app")
 from .services.personnel import search_staff_pppk, get_hukum_pics
 from .services.sync_service import (
     sync_internal_from_pool, 
