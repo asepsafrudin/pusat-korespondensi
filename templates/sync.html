@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block page_title %}Sync Center & ETL Hub{% endblock %}
+{% block page_subtitle %}Konfigurasi dan riwayat sinkronisasi data dari Google Sheets dan pool database korespondensi.{% endblock %}
+
+{% block content %}
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+    <!-- ETL Card -->
+    <div class="data-card" style="padding: 2.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; background: linear-gradient(135deg, white, #f8f9fc);">
+        <div style="font-size: 3rem;">📦</div>
+        <div>
+            <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Database Korespondensi Pusat</h2>
+            <p style="color: var(--text-muted); font-size: 0.875rem;">Total baris saat ini: <strong>{{ stats.pool }}</strong></p>
+        </div>
+        <button onclick="startETL()" id="btn-etl" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 16px;">
+            🔄 Jalankan Sinkronisasi dari GSheets Pusat
+        </button>
+        <p style="font-size: 0.75rem; color: var(--text-muted);">Sync harian otomatis dijadwalkan oleh CRON (03:00 WIB).</p>
+    </div>
+
+    <!-- Internal Sync Card -->
+    <div class="data-card" style="padding: 2.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem;">
+        <div style="font-size: 3rem;">📥</div>
+        <div>
+            <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem;">Meja Internal PUU</h2>
+            <p style="color: var(--text-muted); font-size: 0.875rem;">Data diarsip: <strong>{{ stats.internal }}</strong></p>
+        </div>
+        <button onclick="startInternalSync()" id="btn-sync-internal" class="btn btn-primary" style="background: var(--primary); width: 100%; justify-content: center; padding: 16px;">
+            🚜 Tarik Data Baru (Filter PUU)
+        </button>
+        <p style="font-size: 0.75rem; color: var(--text-muted);">Data ditarik otomatis dari Pool Pusat berdasarkan keyword PUU & Hukum.</p>
+    </div>
+</div>
+
+<div class="data-card">
+    <div class="card-header">
+        <h2 style="font-size: 1.1rem; font-weight: 700;">Riwayat Sinkronisasi Terkini</h2>
+    </div>
+    <div style="overflow-x: auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Namespace Source</th>
+                    <th>Total Baris</th>
+                    <th>Ditambahkan</th>
+                    <th>Waktu Mulai</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for h in history %}
+                <tr>
+                    <td style="font-weight: 600;">{{ h.source_namespace }}</td>
+                    <td style="font-weight: 700;">{{ h.total_rows }}</td>
+                    <td><span style="color: #16a34a; font-weight: 700;">+{{ h.inserted_rows }}</span></td>
+                    <td style="color: var(--text-muted);">{{ h.started_at.strftime('%d/%m/%Y %H:%M:%S') if h.started_at else '-' }}</td>
+                    <td><span class="badge badge-success">Success</span></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    async function startETL() {
+        if (!confirm("Ini akan memicu script Python ETL di background. Lanjutkan?")) return;
+        const btn = document.getElementById('btn-etl');
+        btn.disabled = true;
+        btn.textContent = '⏱️ Menjalankan di Background...';
+        
+        await fetch("/api/sync/etl", { method: "POST" });
+        alert("Sinkronisasi dimulai. Hasil akan muncul di riwayat setelah selesai (± 1-2 menit).");
+        setTimeout(() => { btn.disabled = false; btn.textContent = '🔄 Jalankan Sinkronisasi dari GSheets Pusat'; }, 5000);
+    }
+
+    async function startInternalSync() {
+        const btn = document.getElementById('btn-sync-internal');
+        btn.disabled = true;
+        btn.textContent = '🚜 Memfilter data...';
+        
+        const res = await fetch("/api/sync/internal", { method: "POST" });
+        const data = await res.json();
+        alert(`Berhasil menarik ${data.count} baris data baru ke internal PUU.`);
+        location.reload();
+    }
+</script>
+{% endblock %}

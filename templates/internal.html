@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+
+{% block page_title %}Masuk Internal PUU{% endblock %}
+{% block page_subtitle %}Arsip surat masuk internal di lingkungan PUU Bangda.{% endblock %}
+
+{% block content %}
+<div class="data-card">
+    <div class="card-header">
+        <div style="display:flex; align-items:center; gap:16px;">
+            <div class="search-container" style="width: 300px;">
+                <input type="text" class="search-input" value="{{ query }}" placeholder="Filter Nomor / Hal / PIC..." onkeyup="if(event.key === 'Enter') location.href='?q=' + encodeURIComponent(this.value)">
+            </div>
+            <button onclick="syncInternalNow()" id="btn-sync" class="btn btn-primary">
+                📥 Tarik Data Baru dari Pusat
+            </button>
+        </div>
+    </div>
+    
+    <div style="overflow-x: auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 140px;">Tgl Surat</th>
+                    <th style="width: 200px;">Nomor Agenda / ND</th>
+                    <th>Hal</th>
+                    <th style="width: 180px;">Asal / PIC</th>
+                    <th style="width: 150px;">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in rows %}
+                <tr>
+                    <td style="color: var(--text-muted);">{{ r.tanggal_surat }}</td>
+                    <td>
+                        <div style="font-weight: 700; color: var(--accent);">{{ r.nomor_nd }}</div>
+                        <div style="display:flex; justify-content: space-between; align-items: center; margin-top: 4px;">
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Reg: {{ r.no_agenda_dispo or '-' }}</span>
+                            <span style="font-size: 0.7rem; background: var(--secondary); color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold; border: 1px solid var(--accent);" title="Auto-Sequence PUU Permanen">{{ r.agenda_puu or 'N/A' }}</span>
+                        </div>
+                    </td>
+                    <td style="font-size: 0.85rem; max-width: 400px;">{{ r.hal }}</td>
+                    <td>
+                        <div style="font-weight: 600;">{{ r.dari[:30] }}...</div>
+                        <div style="font-size: 0.75rem; color: var(--text-muted); display:flex; align-items:center; gap:8px; margin-top:4px;">
+                            <span>PIC: <strong>{{ r.pic_name or 'Belum Diset' }}</strong></span>
+                            <button onclick="openPicModal('{{ r.unique_id }}')" style="padding:2px 6px; font-size:10px; border-radius:4px; border:1px solid #ddd; background:#fff; cursor:pointer;">✏️ Ubah</button>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="badge {% if r.status_pengiriman == 'Selesai' %}badge-success{% elif r.status_pengiriman == 'Belum Diproses' %}badge-warning{% else %}badge-info{% endif %}">
+                            {{ r.status_pengiriman }}
+                        </span>
+                        <div style="margin-top: 8px;">
+                            {% if r.drive_file_url %}
+                            <a href="{{ r.drive_file_url }}" target="_blank" class="btn" style="padding: 4px 8px; font-size: 0.75rem; text-decoration: none; background: #4285f4; color: white; border: none; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px;">
+                                <img src="https://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_document_x16.png" style="width:14px;"> Buka di Google Docs
+                            </a>
+                            {% else %}
+                            <a href="/api/disposisi/download/{{ r.unique_id }}" target="_blank" class="btn btn-primary" style="padding: 4px 8px; font-size: 0.75rem; text-decoration: none;">
+                                📄 Cetak Disposisi (.docx)
+                            </a>
+                            {% endif %}
+                            <button onclick="openTimelineModal('{{ r.unique_id }}', '{{ r.nomor_nd }}')" class="btn" style="padding: 4px 8px; font-size: 0.75rem; background: #6b7280; color: white; border: none; border-radius: 4px; border: 1px solid #4b5563; cursor: pointer;">
+                                📍 Lacak Posisi
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal Timeline Posisi -->
+<div id="timeline-modal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:white; padding:25px; border-radius:12px; width:500px; max-width:90%; position:relative;">
+        <h3 id="timeline-title" style="margin-bottom: 5px; color: var(--accent);">Timeline Posisi Surat</h3>
+        <p id="timeline-subtitle" style="font-size: 0.75rem; color: #666; margin-bottom: 20px;"></p>
+        
+        <div id="timeline-content" style="max-height: 400px; overflow-y: auto; padding: 10px 0;">
+            <!-- Timeline items will be injected here -->
+        </div>
+        
+        <div style="margin-top: 15px; text-align: right;">
+            <button onclick="document.getElementById('timeline-modal').style.display='none'" class="btn" style="background:#eee; color:#333;">Tutup</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Pencarian PIC -->
+<div id="pic-modal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:white; padding:25px; border-radius:12px; width:400px; max-width:90%; position:relative;">
+        <h3 style="margin-bottom: 15px; color: var(--accent);">Pilih Nama PIC</h3>
+        <input type="hidden" id="modal-uid">
+        
+        <div class="search-container" style="margin-bottom: 15px;">
+            <input type="text" id="pic-search" class="search-input" placeholder="Ketik nama staf bangda/sekretariat..." onkeyup="searchPicNames()">
+        </div>
+        
+        <div id="pic-results" style="max-height: 250px; overflow-y: auto; border: 1px solid #eee; border-radius: 8px;">
+            <p style="padding: 10px; text-align: center; color: #888;">Silakan ketik nama terlebih dahulu...</p>
+        </div>
+        
+        <div style="margin-top: 15px; text-align: right;">
+            <button onclick="document.getElementById('pic-modal').style.display='none'" class="btn" style="background:#eee; color:#333;">Tutup</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function syncInternalNow() {
+        const btn = document.getElementById('btn-sync');
+        btn.disabled = true;
+        btn.textContent = '🔄 Memproses...';
+        
+        try {
+            const res = await fetch("/api/sync/internal", { method: "POST" });
+            const data = await res.json();
+            alert(`Berhasil menarik ${data.count} surat baru ke internal.`);
+            location.reload();
+        } catch (e) {
+            alert("Terjadi kesalahan saat sinkronisasi.");
+            btn.disabled = false;
+            btn.textContent = '📥 Tarik Data Baru';
+        }
+    }
+
+    function openPicModal(uid) {
+        document.getElementById('modal-uid').value = uid;
+        document.getElementById('pic-modal').style.display = 'flex';
+        document.getElementById('pic-search').value = '';
+        document.getElementById('pic-results').innerHTML = '<p style="padding: 10px; text-align: center; color: #888;">Silakan ketik nama staf...</p>';
+        document.getElementById('pic-search').focus();
+    }
+
+    let searchTimer;
+    function searchPicNames() {
+        clearTimeout(searchTimer);
+        const q = document.getElementById('pic-search').value;
+        if (q.length < 3) return;
+        
+        const resultsDiv = document.getElementById('pic-results');
+        resultsDiv.innerHTML = '<p style="padding: 10px; text-align: center;">Mencari...</p>';
+        
+        searchTimer = setTimeout(async () => {
+            const res = await fetch(`/api/personnel/search?q=${encodeURIComponent(q)}`);
+            const staffs = await res.json();
+            
+            if (staffs.length === 0) {
+                resultsDiv.innerHTML = '<p style="padding: 10px; text-align: center; color: red;">Pegawai tidak ditemukan.</p>';
+            } else {
+                resultsDiv.innerHTML = staffs.map(s => `
+                    <div style="padding: 10px; border-bottom: 1px solid #eee; cursor: pointer;" onclick="assignPic('${s.nama}')" onmouseover="this.style.background='#f4f7fa'" onmouseout="this.style.background='white'">
+                        <strong>${s.nama}</strong><br>
+                        <span style="font-size: 0.75rem; color: #666;">${s.jabatan}</span>
+                    </div>
+                `).join('');
+            }
+        }, 500);
+    }
+
+    async function assignPic(nama) {
+        const uid = document.getElementById('modal-uid').value;
+        const res = await fetch(`/api/internal/${uid}/pic`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({nama: nama})
+        });
+        const data = await res.json();
+        if(data.status === 'success') {
+            location.reload();
+        } else {
+            alert("Gagal menugaskan PIC!");
+        }
+    }
+
+    async function openTimelineModal(uid, letterNum) {
+        const modal = document.getElementById('timeline-modal');
+        const content = document.getElementById('timeline-content');
+        const title = document.getElementById('timeline-subtitle');
+        
+        title.textContent = `Nomor ND: ${letterNum}`;
+        content.innerHTML = '<p style="text-align:center; padding:20px;">Memuat data timeline...</p>';
+        modal.style.display = 'flex';
+        
+        try {
+            const res = await fetch(`/api/internal/${uid}/timeline`);
+            const events = await res.json();
+            
+            if (!events || events.length === 0) {
+                content.innerHTML = `
+                    <div style="text-align:center; padding:30px; color:#888;">
+                        <div style="font-size:2rem; margin-bottom:10px;">📭</div>
+                        <p>Belum ada riwayat perubahan posisi terdeteksi.<br><small>Riwayat mulai dicatat sejak fitur ini diaktifkan.</small></p>
+                    </div>
+                `;
+                return;
+            }
+            
+            content.innerHTML = events.map((ev, index) => {
+                const dateObj = new Date(ev.event_at);
+                const formatTime = dateObj.toLocaleString('id-ID', {day:'numeric', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit'});
+                const isLast = index === events.length - 1;
+                
+                return `
+                <div style="display:flex; gap:15px; position:relative; padding-bottom: 20px;">
+                    <div style="display:flex; flex-direction:column; align-items:center;">
+                        <div style="width:12px; height:12px; border-radius:50%; background:${isLast ? '#10b981' : '#3b82f6'}; border: 2px solid white; box-shadow: 0 0 0 2px ${isLast ? '#10b981' : '#3b82f6'}; z-index:1;"></div>
+                        ${!isLast ? '<div style="width:2px; flex:1; background:#e5e7eb; margin: 4px 0;"></div>' : ''}
+                    </div>
+                    <div style="flex:1;">
+                        <div style="font-weight:700; color:${isLast ? '#065f46' : '#1e3a8a'}; font-size:0.85rem;">${ev.posisi}</div>
+                        <div style="font-size:0.7rem; color:#6b7280; margin-top:2px;">Terdeteksi: ${formatTime}</div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+            
+        } catch (e) {
+            content.innerHTML = '<p style="text-align:center; color:red; padding:20px;">Gagal memuat data timeline.</p>';
+        }
+    }
+</script>
+{% endblock %}

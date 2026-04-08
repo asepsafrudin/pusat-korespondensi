@@ -1,0 +1,1 @@
+{\n  \"command\": \"python\",\n  \"args\": [\"/home/aseps/MCP/korespondensi-server/src/server.py\"],\n  \"env\": {\n    \"PYTHONPATH\": \"/home/aseps/MCP/korespondensi-server/src\"\n  }\n}

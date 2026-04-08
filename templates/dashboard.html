@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block page_title %}Pusat Kendali PUU{% endblock %}
+{% block page_subtitle %}Ikhtisar data korespondensi dan substansi hukum terpadu.{% endblock %}
+
+{% block content %}
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="icon-box">📦</div>
+        <div class="stat-info">
+            <h3>Gudang Data Pusat</h3>
+            <div class="value">{{ stats.pool }}</div>
+            <p style="font-size: 0.7rem; color: var(--text-muted);">Tersistem (Pool)</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="icon-box" style="background:#f0fdf4; color:#16a34a;">📥</div>
+        <div class="stat-info">
+            <h3>Masuk PUU</h3>
+            <div class="value">{{ stats.internal }}</div>
+            <p style="font-size: 0.7rem; color: var(--text-muted);">Meja Internal</p>
+        </div>
+    </div>
+    <div class="stat-card">
+        <div class="icon-box" style="background:#fefce8; color:#ca8a04;">📋</div>
+        <div class="stat-info">
+            <h3>Substansi</h3>
+            <div class="value">{{ stats.substansi }}</div>
+            <p style="font-size: 0.7rem; color: var(--text-muted);">Proses Penyusunan</p>
+        </div>
+    </div>
+</div>
+
+<div class="grid-content" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+    <!-- Recent Data Table -->
+    <div class="data-card">
+        <div class="card-header">
+            <h2 style="font-size: 1.1rem; font-weight: 700;">Masuk Internal Terkini</h2>
+            <a href="/internal" class="btn btn-ghost">Lihat Semua ➔</a>
+        </div>
+        <div style="overflow-x: auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tgl Surat</th>
+                        <th>Nomor ND</th>
+                        <th>Hal</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in recent %}
+                    <tr>
+                        <td style="white-space: nowrap;">{{ r.tanggal_surat }}</td>
+                        <td style="font-weight: 600;">{{ r.nomor_nd }}</td>
+                        <td style="max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ r.hal }}</td>
+                        <td><span class="badge badge-warning">{{ r.status_pengiriman }}</span></td>
+                    </tr>
+                    {% endfor %}
+                    {% if not recent %}
+                    <tr>
+                        <td colspan="4" style="text-align: center; padding: 2rem; color: var(--text-muted);">Belum ada data masuk internal.</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Right Column (Shortcuts/Actions) -->
+    <div class="action-column">
+        <div class="data-card" style="padding: 1.5rem; background: var(--primary); color: white;">
+            <h2 style="font-size: 1rem; font-weight: 700; margin-bottom: 1.5rem;">Cepat 🚀</h2>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <button onclick="triggerSync()" class="btn btn-primary" style="width: 100%; justify-content: center; background: white; color: var(--primary);">
+                    🔄 Jalankan Sync Pusat
+                </button>
+                <button onclick="location.href='/sync'" class="btn btn-ghost" style="width: 100%; justify-content: center; color: #94a3b8; border: 1px solid #475569;">
+                    ⚙️ Konfigurasi Sistem
+                </button>
+            </div>
+        </div>
+        
+        <div class="data-card" style="margin-top: 1.5rem; padding: 1.5rem;">
+            <h2 style="font-size: 1rem; font-weight: 700; margin-bottom: 1rem;">Beban Kerja Terbanyak ⚖️</h2>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                {% for ps in personnel_stats %}
+                <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.75rem; margin-bottom: 4px;">
+                        <span style="font-weight: 600;">{{ ps.pic_name }}</span>
+                        <span class="badge badge-info">{{ ps.count }} Surat</span>
+                    </div>
+                    <div style="width: 100%; height: 6px; background: #f1f5f9; border-radius: 3px; overflow: hidden;">
+                        <div style="width: {{ (ps.count / stats.internal * 100)|round|int if stats.internal > 0 else 0 }}%; height: 100%; background: var(--primary);"></div>
+                    </div>
+                </div>
+                {% endfor %}
+                {% if not personnel_stats %}
+                <p style="font-size: 0.7rem; color: var(--text-muted); text-align: center;">Belum ada penugasan PIC.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="data-card" style="margin-top: 1.5rem; padding: 1.5rem;">
+            <h2 style="font-size: 1rem; font-weight: 700; margin-bottom: 1rem;">PIC Utama PUU</h2>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                {% for p in pics %}
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 32px; height: 32px; background: #f1f5f9; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">👤</div>
+                    <div>
+                        <div style="font-size: 0.8rem; font-weight: 600;">{{ p.nama }}</div>
+                        <div style="font-size: 0.7rem; color: var(--text-muted);">{{ p.jabatan }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    async function triggerSync() {
+        if (!confirm("Jalankan sinkronisasi dari GSheets pusat saat ini?")) return;
+        const res = await fetch("/api/sync/etl", { method: "POST" });
+        if (res.ok) alert("Proses ETL dimulai di background. Pantau di Sync Center.");
+    }
+</script>
+{% endblock %}
