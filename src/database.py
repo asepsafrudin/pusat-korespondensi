@@ -18,11 +18,16 @@ DB_CONFIG = {
 
 # Initialize global connection pool
 # We use min_size=1, max_size=10 to handle concurrent requests from Web and MCP
+# We strip row_factory from DB_CONFIG as it's not a valid connection parameter string
+conn_params = {k: v for k, v in DB_CONFIG.items() if k != "row_factory"}
+conn_str = " ".join([f"{k}={v}" for k, v in conn_params.items()])
+
 pool = ConnectionPool(
-    psycopg.utils.conninfo_to_string(**DB_CONFIG),
+    conn_str,
     min_size=1,
     max_size=10,
-    open=True
+    open=True,
+    kwargs={"row_factory": dict_row}
 )
 
 def get_db_connection():
@@ -35,6 +40,17 @@ def execute_query(query, params=None, fetch=True):
         with conn.cursor() as cur:
             cur.execute(query, params or [])
             if fetch:
-                return cur.fetchall()
+                rows = cur.fetchall()
+                if not rows:
+                    return []
+                # Manual conversion to ensure dicts regardless of driver behavior
+                colnames = [desc[0] for desc in cur.description]
+                results = []
+                for row in rows:
+                    if isinstance(row, dict):
+                        results.append(row)
+                    else:
+                        results.append(dict(zip(colnames, row)))
+                return results
             conn.commit()
             return None

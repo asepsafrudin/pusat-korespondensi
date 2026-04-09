@@ -145,22 +145,44 @@ async def api_get_sync_logs(limit: int = 10):
         "history": history
     }
 
+@app.post("/api/disposisi/generate/{unique_id}")
+async def api_generate_and_link(unique_id: str):
+    """Generate DOCX, upload to GDrive synchronously, and return the link."""
+    try:
+        # 1. Generate local file
+        from .services.mailmerge import generate_disposisi_docx
+        from .services.sync_service import upload_to_gdrive
+        
+        file_path = generate_disposisi_docx(unique_id)
+        
+        # 2. Upload synchronously (we need the link now)
+        # Modified upload_to_gdrive should return the link
+        drive_url = upload_to_gdrive(file_path, unique_id)
+        
+        if not drive_url:
+            # Fallback if upload fails but file exists
+            return {"status": "partial", "message": "File generated but failed to upload.", "local_path": file_path}
+            
+        return {
+            "status": "success", 
+            "drive_url": drive_url,
+            "filename": os.path.basename(file_path)
+        }
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
 @app.get("/api/disposisi/download/{unique_id}")
 async def download_disposisi(unique_id: str, background_tasks: BackgroundTasks):
+    """Legacy download endpoint (still works for direct links)."""
     try:
-        # Cek ketersediaan di database terlebih dahulu (Single Source of Truth)
         res = execute_query("SELECT drive_file_url FROM surat_masuk_puu_internal WHERE unique_id = %s", [unique_id])
         if res and res[0].get('drive_file_url'):
             return RedirectResponse(url=res[0]['drive_file_url'])
             
+        from .services.mailmerge import generate_disposisi_docx
         file_path = generate_disposisi_docx(unique_id)
-        # Tambahkan tugas belakang layar agar unggahan ke Google Drive tak hambat klien
         background_tasks.add_task(upload_to_gdrive, file_path, unique_id)
-        return FileResponse(
-            path=file_path, 
-            filename=os.path.basename(file_path),
-            media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-        )
+        return FileResponse(path=file_path, filename=os.path.basename(file_path))
     except Exception as e:
         raise HTTPException(status_code=404, detail=str(e))
 

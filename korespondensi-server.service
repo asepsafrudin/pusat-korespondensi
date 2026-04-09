@@ -1,0 +1,29 @@
+[Unit]
+Description=PUU Korespondensi Server — Web Dashboard & API
+Documentation=file:///home/aseps/MCP/korespondensi-server/README.md
+After=network.target mcp-unified.service
+Wants=mcp-unified.service
+
+[Service]
+Type=simple
+User=aseps
+WorkingDirectory=/home/aseps/MCP/korespondensi-server
+Environment="PYTHONPATH=/home/aseps/MCP/korespondensi-server"
+EnvironmentFile=/home/aseps/MCP/.env
+
+ExecStartPre=/bin/bash -c 'fuser -k 8082/tcp 2>/dev/null || true'
+ExecStart=/home/aseps/MCP/.venv/bin/python3 /home/aseps/MCP/korespondensi-server/src/main.py --mode web
+
+Restart=always
+RestartSec=10
+
+StandardOutput=append:/home/aseps/MCP/korespondensi-server/server.log
+StandardError=append:/home/aseps/MCP/korespondensi-server/server.log
+SyslogIdentifier=korespondensi-server
+
+TimeoutStartSec=30
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
+

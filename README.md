@@ -3,20 +3,27 @@
 Aplikasi ini merupakan transformasi terpusat (Universal Server) untuk manajemen korespondensi PUU di lingkungan Kemendagri. Berawal dari server MCP sederhana, sistem ini kini telah ditingkatkan menjadi **Web App Full-Stack Premium** sekaligus **Server MCP** yang membagi basis pengetahuan dan fungsi database yang sama.
 
 ## 🌟 Fitur Utama
-1. **Web Dashboard Premium**: Dibangun dengan FastAPI dan Jinja2, memiliki antarmuka responsif (*glassmorphism*, dark-accents) untuk melacak *"Pool Data Pusat"*, *"Masuk PUU"*, dan *"Substansi"*.
-2. **Pencarian Pegawai Real-time**: Menggunakan akses berbasis Ajax ke sistem `user_p3k.json` tanpa perlu *reload* halaman Web.
-3. **Smart Ingestion (Sinkronisasi ETL)**: Terintegrasi dengan script ETL pusat. Dilengkapi dengan lapisan filter ketat (**Strict Regex Filter**) untuk pencegahan *false positive*:
-   - **Validasi Registrasi (Kolom Disposisi)**: Menolak baris secara absolut pada berkas mentah *Google Sheets* jika tidak mengandung struktur agenda sah lewat kunci tangkapan `(?i)\d{3,4}/.+/\d{4}` (mendukung format panjang mis: `0252/Set/BU/2026`).
-   - **Validasi Posisi (Kolom Posisi)**: Mengekstrak otomatis status fisik berbasis kalender khusus melalui susunan `(?i)PUU.*?\d{1,2}/\d{1,2}`. Memiliki perlindungan *wildcard* sehingga jika ada sisipan teks acak apapun sebelum info tanggal akhir, ia tetap sah masuk antrean masuk tanpa terblokir.
-   - **Sinkronisasi Visual**: Antarmuka Web Dashboard secara dinamis mengekstrak tampilan Registrasi *Disposisi* dengan *Substring Regex Regex* sehingga Nomor Agenda yang tampil adalah identitas otentiknya (`0055/Set...`), membuang nomor acak gubahan staf administratif.
-4. **Interactive GUI: Assign PIC**: Terdapat tombol pengubah Person in Charge (PIC) di setiap baris antrean dokumen. Saat diklik, sebuah modal pencarian (Live Search via Ajax API) muncul dan mendeteksi ribuan data nama di `user_p3k.json` secara dinamis dari database tanpa memerlukan perombakan halaman.
-5. **Auto-Sequence Agenda Persisten (Terkalibrasi Bersih 47 Data Mentah)**: Mengikat nomor sequence permanen (`001-I`, `013-I`, dst). Pengurutan tidak didasari oleh waktu pembuatan surat, melainkan mengekstrak tanggal masuk nyata menggunakan *Regex SQL* dari teks di kolom **"POSISI"** (mis. `PUU 28/1` => 28 Januari). Nomor ini terabadikan (tidak akan bergeser) pada kolom database `agenda_puu` sebagai rekam jejak legal.
-6. **Universal MCP Server**: Memberikan sarana untuk AI dan agen eksternal mengakses kemampuan:
-   - `cari_surat(query)`: Eksplorasi data di seluruh *pool* database.
-   - `status_disposisi(no_surat)`: Ringkasan naratif mengenai rekam historis disposisi dan posisi fisik surat terkini.
-7. **Google Drive Auto-Backup & Dynamic Linking**: Seluruh arsip cetak (Mail Merge `.docx`) yang dirender dari Web akan secara otonom diunggah ke Google Drive. Sistem secara cerdas menyalin tautan pratinjau (*Native Preview*) ke database, sehingga tombol cetak di GUI akan berubah menjadi tautan langsung ke Google Docs setelah file tersedia, memastikan *Single Source of Truth* di cloud.
-8. **Statistik Beban Kerja PIC (Dashboard Insights)**: Visualisasi real-time berbasis progress bar yang menunjukkan distribusi dokumen per personil (Top 5 PIC). Memungkinkan pimpinan melihat beban kerja tim secara instan tanpa perlu query manual.
-9. **Monitor Posisi Surat (Timeline)**: Melacak riwayat pergerakan fisik surat berdasarkan kolom POSISI di Google Sheets. Tiap perubahan posisi dicatat secara otomatis menjadi rangkaian timeline historis di dashboard.
+
+1.  **Premium Hybrid GUI (Card & Table View)**: Antarmuka modern yang mendukung perpindahan mode tampilan secara instan.
+    *   **Mode Tabel**: Untuk manajemen data massal yang padat dan efisien.
+    *   **Mode Kartu (Glassmorphism)**: Visualisasi premium dengan efek transparansi, bayangan dinamis, dan animasi *fade-in* yang memberikan kesan mewah.
+2.  **Pencarian Pegawai Real-time (Smart Search)**: Integrasi AJAX pada modal PIC yang memungkinkan pencarian identitas pegawai dari ribuan data `user_p3k.json` secara instan tanpa membebani browser.
+3.  **Smart Ingestion (Strict Regex ETL)**: Pipa data otomatis yang melakukan pembersihan mendalam:
+    *   **Regex Validasi Agenda**: Memastikan hanya surat dengan format registrasi resmi yang masuk ke sistem utama.
+    *   **Extract Posisi Otomatis**: Mendeteksi lokasi fisik surat dan tanggal disposisi langsung dari teks acak di kolom posisi.
+4.  **Auto-Sequence Agenda Persisten**: Sistem penomoran internal (`001-I`, `002-I`, dst.) yang bersifat permanen dan terkalibrasi secara kronologis berdasarkan tanggal masuk nyata, bukan waktu sinkronisasi.
+5.  **Google Drive Auto-Backup & Dynamic Linking**: Integrasi cloud tanpa celah. Setiap dokumen `.docx` yang dihasilkan langsung dicadangkan ke Drive. GUI secara dinamis mengubah tombol "Cetak" menjadi "Buka di Google Docs" jika file sudah tersedia di cloud.
+6.  **Timeline Monitoring**: Pelacakan riwayat pergerakan surat secara vertikal di UI, memungkinkan admin melihat perjalanan dokumen dari satu meja ke meja lainnya secara kronologis.
+7.  **Dashboard Analytics**: Visualisasi beban kerja Top 5 PIC secara real-time untuk pemantauan distribusi tugas yang lebih adil dan transparan.
+8.  **Universal MCP Server**: Backend yang siap melayani Agen AI (seperti Antigravity atau OpenHands) dengan tools khusus untuk pencarian dan analisis surat secara otonom.
+
+## 🎨 Design System & Aesthetics
+
+Aplikasi ini mengadopsi prinsip desain **Modern Glassmorphism 2026**:
+*   **Typography**: Menggunakan font *Inter* dan *Outfit* untuk keterbacaan tinggi dan kesan profesional.
+*   **Glassmorphism**: Lapisan antarmuka menggunakan `backdrop-filter: blur(14px)` dengan saturasi warna yang dikurasi (Navy-Blue & Slate accents).
+*   **Micro-Animations**: Transisi antar halaman dan mode tampilan menggunakan kurva *cubic-bezier* untuk interaksi yang terasa "hidup".
+*   **Color Palette**: Skema warna Slate-Primary dengan aksen Accent-Blue yang harmonis dan ramah mata untuk penggunaan durasi lama.
 
 ## 🏗️ Struktur Arsitektur
 

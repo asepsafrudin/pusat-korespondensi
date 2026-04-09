@@ -1,0 +1,10 @@
+{
+  "venvPath": "/home/aseps/MCP",
+  "venv": ".venv",
+  "pythonVersion": "3.12",
+  "pythonPlatform": "Linux",
+  "typeCheckingMode": "basic",
+  "extraPaths": [
+    "/home/aseps/MCP/services/serena/src"
+  ]
+}
