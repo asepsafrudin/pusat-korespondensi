@@ -26,6 +26,15 @@ def format_tgl(d):
     }
     return f"{d.day:02d} {bulan_indo.get(d.month, '')} {d.year}"
 
+def _safe_value(data: dict, key: str, default: str = "-") -> str:
+    """Return a printable value from DB row, replacing None/blank with default."""
+    val = data.get(key)
+    if val is None:
+        return default
+    if isinstance(val, str) and not val.strip():
+        return default
+    return str(val)
+
 def generate_disposisi_docx(unique_id: str) -> str:
     """Read DB, fill template, and save to /tmp."""
     rows = execute_query(
@@ -40,16 +49,16 @@ def generate_disposisi_docx(unique_id: str) -> str:
     # Render template
     doc = DocxTemplate(TEMPLATE_PATH)
     
-    agenda_dispo = data.get('no_agenda_dispo') or '-'
+    agenda_dispo = _safe_value(data, 'no_agenda_dispo', '-')
     
     context = {
-        "direktorat": data.get('dari', '-'),
-        "nomor_nd": data.get('nomor_nd', '-'),
+        "direktorat": _safe_value(data, 'dari', '-'),
+        "nomor_nd": _safe_value(data, 'nomor_nd', '-'),
         "tanggal_surat": format_tgl(data.get('tanggal_surat')),
-        "hal": data.get('hal', '-'),
+        "hal": _safe_value(data, 'hal', '-'),
         "tgl_diterima": format_tgl(data.get('tanggal_diterima_puu')) if data.get('tanggal_diterima_puu') else "                     /               / 2026",
         "no_agenda_ses": agenda_dispo,
-        "agenda_puu": data.get('agenda_puu', agenda_dispo)
+        "agenda_puu": _safe_value(data, 'agenda_puu', agenda_dispo)
     }
     
     doc.render(context)

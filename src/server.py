@@ -8,6 +8,7 @@ import logging
 import re
 from typing import Dict, List, Any, Optional
 from datetime import datetime
+from pathlib import Path
 from dotenv import load_dotenv
 
 from mcp.server import Server
@@ -19,8 +20,15 @@ from mcp.types import (
     EmbeddedResource,
 )
 
-# Load env from local directory
-load_dotenv()
+# Load env from the shared project locations first so runtime matches the
+# same credential surface used by the web server, OpenHands, and Cursor config.
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+for env_path in [PROJECT_ROOT / ".env", PROJECT_ROOT / "mcp-unified" / ".env"]:
+    if env_path.exists():
+        load_dotenv(env_path, override=False)
+
+# Preserve local overrides as the last fallback.
+load_dotenv(override=False)
 
 # Configure logging to stderr for MCP to keep stdout for protocol
 logging.basicConfig(

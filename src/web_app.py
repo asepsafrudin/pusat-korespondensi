@@ -16,6 +16,8 @@ from .services.sync_service import (
     get_personnel_stats,
     get_letter_timeline
 )
+from .services.posisi_bridge import get_unique_posisi_mappings, get_unique_posisi_by_sheet, get_unique_posisi_terms
+from .services.anomaly_report_service import create_draft_report, create_and_send_report, list_reports, load_history, list_internal_anomalies, send_report_by_id
 from .services.mailmerge import generate_disposisi_docx
 
 app = FastAPI(title="PUU Universal Web Hub")
@@ -31,6 +33,9 @@ async def dashboard(request: Request):
     personnel_stats = get_personnel_stats()
     recent = execute_query("SELECT * FROM surat_masuk_puu_internal ORDER BY tanggal_surat DESC LIMIT 10")
     pics = get_hukum_pics()
+    anomaly_reports = list_internal_anomalies(limit=10)
+    anomaly_sent = list_reports(limit=5, status="sent")
+    anomaly_total = len(load_history(limit=10000))
     return templates.TemplateResponse("dashboard.html", {
         "request": request,
         "title": "Dashboard PUU",
@@ -38,13 +43,18 @@ async def dashboard(request: Request):
         "stats": stats,
         "recent": recent,
         "personnel_stats": personnel_stats,
-        "pics": pics[:5]
+        "pics": pics[:5],
+        "anomaly_reports": anomaly_reports,
+        "anomaly_sent": anomaly_sent,
+        "anomaly_total": anomaly_total
     })
 
 @app.get("/internal", response_class=HTMLResponse)
-async def internal_page(request: Request, q: str = ""):
+async def internal_page(request: Request, q: str = "", valid_only: bool = False):
     sql = "SELECT * FROM surat_masuk_puu_internal WHERE 1=1"
     params = []
+    if valid_only:
+        sql += " AND no_agenda_dispo IS NOT NULL AND TRIM(no_agenda_dispo) <> ''"
     if q:
         robust_q = q.replace(".", "%").replace(" ", "%")
         sql += " AND (nomor_nd ILIKE %s OR hal ILIKE %s OR pic_name ILIKE %s OR no_agenda_dispo ILIKE %s)"
@@ -52,12 +62,18 @@ async def internal_page(request: Request, q: str = ""):
     sql += " ORDER BY tanggal_surat DESC LIMIT 100"
     
     rows = execute_query(sql, params)
+    anomaly_count = sum(
+        1 for row in rows
+        if not row.get("no_agenda_dispo") or not str(row.get("no_agenda_dispo")).strip()
+    )
     return templates.TemplateResponse("internal.html", {
         "request": request,
         "title": "Masuk Internal PUU",
         "active_page": "internal",
         "rows": rows,
-        "query": q
+        "query": q,
+        "valid_only": valid_only,
+        "anomaly_count": anomaly_count
     })
 
 @app.get("/sync", response_class=HTMLResponse)
@@ -94,6 +110,52 @@ async def api_sync_internal():
 async def api_get_timeline(unique_id: str):
     events = get_letter_timeline(unique_id)
     return events
+
+@app.get("/api/knowledge/posisi/unique")
+async def api_unique_posisi(limit: int = 200, q: str = ""):
+    """
+    Read-only bridge for distinct POSISI values and their parsed timeline.
+    This is intended for sandboxed agents and IDEs that cannot reach PostgreSQL directly.
+    """
+    safe_limit = max(1, min(limit, 1000))
+    data = get_unique_posisi_mappings(limit=safe_limit, q=q)
+    return {
+        "status": "success",
+        "count": len(data),
+        "limit": safe_limit,
+        "query": q,
+        "data": data,
+    }
+
+@app.get("/api/knowledge/posisi/by-sheet")
+async def api_unique_posisi_by_sheet(limit_per_sheet: int = 100, q: str = ""):
+    """
+    Read-only bridge for distinct POSISI values grouped by source sheet.
+    """
+    safe_limit = max(1, min(limit_per_sheet, 1000))
+    data = get_unique_posisi_by_sheet(limit_per_sheet=safe_limit, q=q)
+    return {
+        "status": "success",
+        "count": len(data),
+        "limit_per_sheet": safe_limit,
+        "query": q,
+        "data": data,
+    }
+
+@app.get("/api/knowledge/posisi/terms")
+async def api_unique_posisi_terms(limit: int = 500, q: str = ""):
+    """
+    Read-only bridge for unique POSISI tokens that can be turned into a dictionary.
+    """
+    safe_limit = max(1, min(limit, 2000))
+    data = get_unique_posisi_terms(limit=safe_limit, q=q)
+    return {
+        "status": "success",
+        "count": len(data),
+        "limit": safe_limit,
+        "query": q,
+        "data": data,
+    }
 
 @app.post("/api/sync/etl")
 async def api_trigger_etl(bt: BackgroundTasks):
@@ -143,6 +205,39 @@ async def api_get_sync_logs(limit: int = 10):
     return {
         "status": "success",
         "history": history
+    }
+
+@app.get("/api/anomaly-reports")
+async def api_get_anomaly_reports(limit: int = 50):
+    safe_limit = max(1, min(limit, 500))
+    data = load_history(limit=safe_limit)
+    return {
+        "status": "success",
+        "count": len(data),
+        "data": data
+    }
+
+@app.post("/api/anomaly-reports/draft")
+async def api_create_anomaly_draft(request: Request):
+    payload = await request.json()
+    record = create_draft_report(payload)
+    return {"status": "success", "data": record}
+
+@app.post("/api/anomaly-reports/{report_id}/send")
+async def api_send_anomaly_draft(report_id: str):
+    result = await send_report_by_id(report_id)
+    return {
+        "status": "success" if result.get("success") else "error",
+        "data": result
+    }
+
+@app.post("/api/anomaly-reports/send")
+async def api_send_anomaly_report(request: Request):
+    payload = await request.json()
+    result = await create_and_send_report(payload)
+    return {
+        "status": "success" if result.get("success") else "error",
+        "data": result
     }
 
 @app.post("/api/disposisi/generate/{unique_id}")

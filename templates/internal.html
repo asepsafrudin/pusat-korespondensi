@@ -65,6 +65,12 @@
                 <button class="toggle-btn" onclick="setViewMode('card')" id="btn-card">🗂️ Cards</button>
             </div>
 
+            <div class="view-toggle" style="padding: 0;">
+                <a class="toggle-btn {% if valid_only %}active{% endif %}" href="/internal?q={{ query|urlencode }}{% if valid_only %}&valid_only=0{% else %}&valid_only=1{% endif %}" style="text-decoration:none; display:inline-flex; align-items:center;">
+                    {% if valid_only %}✅ Valid PUU Only{% else %}🧪 Tampilkan Semua{% endif %}
+                </a>
+            </div>
+
             <div class="stat-pill-group">
                 <div class="stat-pill" title="Total surat di halaman ini">
                     📋 Total: <b>{{ rows|length }}</b>
@@ -73,6 +79,16 @@
                 <div class="stat-pill" title="Surat belum ditugaskan PIC">
                     ⚠️ Unassigned: <b style="color: #ef4444">{{ unassigned }}</b>
                 </div>
+                {% if valid_only %}
+                <div class="stat-pill" title="Filter aktif">
+                    🔒 Filter valid PUU aktif
+                </div>
+                {% endif %}
+                {% if anomaly_count and anomaly_count > 0 %}
+                <div class="stat-pill" title="Baris yang no_agenda_dispo kosong">
+                    🧪 Anomali: <b style="color:#b91c1c">{{ anomaly_count }}</b>
+                </div>
+                {% endif %}
             </div>
 
             <button onclick="syncInternalNow()" id="btn-sync" class="btn btn-primary">
@@ -103,7 +119,11 @@
                     <td>
                         <div style="font-weight: 800; color: var(--accent); font-size: 0.95rem;">{{ r.nomor_nd }}</div>
                         <div style="display:flex; align-items: center; gap: 8px; margin-top: 6px;">
-                            <span style="font-size: 0.65rem; color: var(--text-muted); background:#f1f5f9; padding:2px 6px; border-radius:4px;">#{{ r.no_agenda_dispo or '-' }}</span>
+                            {% if r.no_agenda_dispo %}
+                            <span style="font-size: 0.65rem; color: var(--text-muted); background:#f1f5f9; padding:2px 6px; border-radius:4px;">No. Agenda Dispo: {{ r.no_agenda_dispo }}</span>
+                            {% else %}
+                            <span style="font-size: 0.65rem; color:#b91c1c; background:#fef2f2; padding:2px 6px; border-radius:4px; border:1px solid #fecaca;">Anomali: No. Agenda Dispo kosong</span>
+                            {% endif %}
                             <span class="badge" style="background: #eff6ff; color: #3b82f6; border: 1px solid #dbeafe; font-size: 0.65rem;" title="Auto-Sequence PUU">{{ r.agenda_puu or 'N/A' }}</span>
                         </div>
                     </td>
@@ -151,7 +171,14 @@
                 <span class="badge" style="background: white; border: 1px solid var(--accent); color: var(--accent);">{{ r.agenda_puu or 'PUU' }}</span>
             </div>
             
-            <div class="card-label">{{ r.tanggal_surat }} • {{ r.no_agenda_dispo or 'No Reg' }}</div>
+            <div class="card-label">
+                {{ r.tanggal_surat }} •
+                {% if r.no_agenda_dispo %}
+                No. Agenda Dispo: {{ r.no_agenda_dispo }}
+                {% else %}
+                <span style="color:#b91c1c;">Anomali: No. Agenda Dispo kosong</span>
+                {% endif %}
+            </div>
             <div class="card-title">{{ r.hal }}</div>
             
             <div style="margin-bottom: 15px;">
@@ -461,7 +488,8 @@
                         ${!isLast ? '<div style="width:2px; flex:1; background:#e5e7eb; margin: 4px 0;"></div>' : ''}
                     </div>
                     <div style="flex:1;">
-                        <div style="font-weight:700; color:${isLast ? '#065f46' : '#1e3a8a'}; font-size:0.85rem;">${ev.posisi}</div>
+                        <div style="font-weight:700; color:${isLast ? '#065f46' : '#1e3a8a'}; font-size:0.85rem;">${ev.label || ev.posisi}${ev.unit_info?.meaning ? ` <span style="font-weight:600; color:#64748b;">(${ev.unit_info.meaning})</span>` : ''}</div>
+                        ${ev.posisi_raw && ev.posisi_raw !== ev.label ? `<div style="font-size:0.72rem; color:#6b7280; margin-top:2px;">Asli: ${ev.posisi_raw}</div>` : ''}
                         <div style="font-size:0.7rem; color:#6b7280; margin-top:2px;">Terdeteksi: ${formatTime}</div>
                     </div>
                 </div>

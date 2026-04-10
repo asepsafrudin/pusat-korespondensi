@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block page_title %}Pusat Kendali PUU{% endblock %}
-{% block page_subtitle %}Ikhtisar data korespondensi dan substansi hukum terpadu.{% endblock %}
+{% block page_subtitle %}Ikhtisar data korespondensi dan substansi hukum terpadu. {% if anomaly_total is defined %}<span class="badge badge-warning" style="margin-left:8px;">🧪 Anomali: {{ anomaly_total }}</span>{% endif %}{% endblock %}
 
 {% block content %}
 <div class="stats-grid">
@@ -75,6 +75,9 @@
                 <button onclick="triggerSync()" class="btn btn-primary" style="width: 100%; justify-content: center; background: white; color: var(--primary);">
                     🔄 Jalankan Sync Pusat
                 </button>
+                <button onclick="openAnomalyModal()" class="btn btn-primary" style="width: 100%; justify-content: center; background: #0f172a; color: white; border: 1px solid rgba(255,255,255,0.12);">
+                    📨 Buat Laporan Anomali
+                </button>
                 <button onclick="location.href='/sync'" class="btn btn-ghost" style="width: 100%; justify-content: center; color: #94a3b8; border: 1px solid #475569;">
                     ⚙️ Konfigurasi Sistem
                 </button>
@@ -115,6 +118,131 @@
                 {% endfor %}
             </div>
         </div>
+
+        <div class="data-card" style="margin-top: 1.5rem; padding: 1.5rem;">
+            <div class="card-header" style="margin-bottom: 1rem;">
+                <h2 style="font-size: 1rem; font-weight: 700;">Anomali dari Data</h2>
+                <div style="display:flex; gap:0.5rem; align-items:center;">
+                    <select id="anomaly-status-filter" class="search-input" style="width:auto; min-width:120px; padding:0.55rem 0.75rem;" onchange="filterAnomalies(this.value)">
+                        <option value="all">Semua</option>
+                        <option value="draft" selected>Draft</option>
+                        <option value="sent">Sent</option>
+                        <option value="failed">Failed</option>
+                    </select>
+                    <a href="/api/anomaly-reports" class="btn btn-ghost" style="font-size: 0.75rem;">JSON</a>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.9rem;" id="anomaly-list">
+                {% for rep in anomaly_reports %}
+                <div class="anomaly-item" data-status="draft" style="padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc;">
+                    <div style="display: flex; justify-content: space-between; gap: 8px; align-items: center; margin-bottom: 0.35rem;">
+                        <div style="font-weight: 700; font-size: 0.8rem;">{{ rep.finding_title }}</div>
+                        <span class="badge badge-warning">draft</span>
+                    </div>
+                    <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 0.35rem;">
+                        {{ rep.row.nomor_nd }} • {{ rep.row.dari or 'Sumber tidak tercatat' }}
+                    </div>
+                    <div style="font-size: 0.72rem; color: #475569; line-height: 1.45;">
+                        {{ rep.finding_summary }}
+                    </div>
+                    <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:0.7rem;">
+                        <button class="btn btn-ghost" style="font-size:0.75rem; padding:0.55rem 0.8rem; border:1px solid #cbd5e1;" onclick='openAnomalyDetail({{ rep | tojson }})'>Detail</button>
+                        <button class="btn btn-primary" style="font-size:0.75rem; padding:0.55rem 0.8rem;" onclick='saveAndSend({{ rep | tojson }})'>Send</button>
+                    </div>
+                </div>
+                {% endfor %}
+                {% if not anomaly_reports %}
+                <p style="font-size: 0.72rem; color: var(--text-muted); text-align: center;">Belum ada anomali yang siap kirim.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="data-card" style="margin-top: 1.5rem; padding: 1.5rem;">
+            <h2 style="font-size: 1rem; font-weight: 700; margin-bottom: 1rem;">Riwayat Terkirim</h2>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                {% for rep in anomaly_sent %}
+                <div class="anomaly-item" data-status="sent" style="font-size: 0.76rem; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 12px; background: #fff;">
+                    <div style="font-weight:700;">{{ rep.report.finding_title if rep.report else rep.message[:42] }}</div>
+                    <div style="color: var(--text-muted); margin-top: 0.25rem;">{{ rep.recipient_name or rep.recipient_phone }}</div>
+                </div>
+                {% endfor %}
+                {% if not anomaly_sent %}
+                <p style="font-size: 0.72rem; color: var(--text-muted); text-align: center;">Belum ada pesan terkirim.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="anomaly-detail-modal" style="display:none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.72); backdrop-filter: blur(10px); z-index: 65; align-items: center; justify-content: center; padding: 1rem;">
+    <div style="width: min(840px, 100%); background: white; border-radius: 20px; box-shadow: 0 30px 80px rgba(15,23,42,0.35); overflow: hidden;">
+        <div style="padding: 1.25rem 1.5rem; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h3 id="anomaly-detail-title" style="margin: 0; font-size: 1.05rem; font-weight: 800; color: #0f172a;">Detail Anomali</h3>
+                <p id="anomaly-detail-subtitle" style="margin: 0.35rem 0 0; color: #64748b; font-size: 0.82rem;">Pratinjau lengkap sebelum dikirim.</p>
+            </div>
+            <button onclick="closeAnomalyDetail()" class="btn btn-ghost" style="border: 1px solid #e2e8f0;">✕</button>
+        </div>
+        <div style="padding: 1.25rem 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;" id="anomaly-detail-body">
+        </div>
+        <div style="padding: 0 1.5rem 1.5rem; display:flex; justify-content:flex-end; gap: 0.75rem;">
+            <button type="button" onclick="closeAnomalyDetail()" class="btn btn-ghost" style="border: 1px solid #e2e8f0;">Tutup</button>
+            <button type="button" id="anomaly-detail-send" class="btn btn-primary" style="background: var(--primary); color: white;">Send</button>
+        </div>
+    </div>
+</div>
+
+<div id="anomaly-modal" style="display:none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.68); backdrop-filter: blur(10px); z-index: 60; align-items: center; justify-content: center; padding: 1rem;">
+    <div style="width: min(760px, 100%); background: white; border-radius: 20px; box-shadow: 0 30px 80px rgba(15,23,42,0.3); overflow: hidden;">
+        <div style="padding: 1.25rem 1.5rem; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h3 style="margin: 0; font-size: 1.05rem; font-weight: 800; color: #0f172a;">Buat Laporan Anomali</h3>
+        <p style="margin: 0.35rem 0 0; color: #64748b; font-size: 0.82rem;">Satu temuan masuk antrian dahulu, lalu tombol Send akan mengirim ke penerima fixed.</p>
+            </div>
+            <button onclick="closeAnomalyModal()" class="btn btn-ghost" style="border: 1px solid #e2e8f0;">✕</button>
+        </div>
+        <form id="anomaly-form" style="padding: 1.25rem 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <label style="display:flex; flex-direction:column; gap:6px;">
+                <span style="font-size:0.78rem; font-weight:700; color:#334155;">Nama Penerima</span>
+                <input name="recipient_name" required value="Pak Ahmad Haidir" class="search-input" style="width:100%;" />
+            </label>
+            <label style="display:flex; flex-direction:column; gap:6px;">
+                <span style="font-size:0.78rem; font-weight:700; color:#334155;">Nomor WhatsApp</span>
+                <input name="recipient_phone" required value="087871393744" class="search-input" style="width:100%;" />
+            </label>
+            <label style="display:flex; flex-direction:column; gap:6px; grid-column: 1 / -1;">
+                <span style="font-size:0.78rem; font-weight:700; color:#334155;">Judul Temuan</span>
+                <input name="finding_title" required placeholder="No. Agenda Dispo kosong pada surat 500.5/40/SD/SUPD II" class="search-input" style="width:100%;" />
+            </label>
+            <label style="display:flex; flex-direction:column; gap:6px; grid-column: 1 / -1;">
+                <span style="font-size:0.78rem; font-weight:700; color:#334155;">Ringkasan Temuan</span>
+                <textarea name="finding_summary" rows="4" required placeholder="Satu record internal tidak membawa No. Agenda Dispo..." class="search-input" style="width:100%; resize:vertical; padding-top: 0.8rem;"></textarea>
+            </label>
+            <label style="display:flex; flex-direction:column; gap:6px;">
+                <span style="font-size:0.78rem; font-weight:700; color:#334155;">Kunci Data</span>
+                <input name="record_key" placeholder="500.5/40/SD/SUPD II" class="search-input" style="width:100%;" />
+            </label>
+            <label style="display:flex; flex-direction:column; gap:6px;">
+                <span style="font-size:0.78rem; font-weight:700; color:#334155;">Sumber</span>
+                <input name="source_label" placeholder="SUPD II" class="search-input" style="width:100%;" />
+            </label>
+            <label style="display:flex; flex-direction:column; gap:6px; grid-column: 1 / -1;">
+                <span style="font-size:0.78rem; font-weight:700; color:#334155;">Referensi</span>
+                <input name="source_ref" placeholder="source_sheet=SUPD II / nomor_nd=500.5/40/SD/SUPD II" class="search-input" style="width:100%;" />
+            </label>
+            <label style="display:flex; flex-direction:column; gap:6px; grid-column: 1 / -1;">
+                <span style="font-size:0.78rem; font-weight:700; color:#334155;">Dampak</span>
+                <input name="impact" placeholder="Record tidak lolos validasi surat masuk PUU" class="search-input" style="width:100%;" />
+            </label>
+            <label style="display:flex; flex-direction:column; gap:6px; grid-column: 1 / -1;">
+                <span style="font-size:0.78rem; font-weight:700; color:#334155;">Rekomendasi</span>
+                <input name="recommendation" placeholder="Koreksi data sumber atau bersihkan duplikat" class="search-input" style="width:100%;" />
+            </label>
+            <div style="grid-column: 1 / -1; display:flex; justify-content:flex-end; gap: 0.75rem; padding-top: 0.25rem;">
+                <button type="button" onclick="closeAnomalyModal()" class="btn btn-ghost" style="border: 1px solid #e2e8f0;">Batal</button>
+                <button type="submit" class="btn btn-primary" style="background: var(--primary); color: white;">Simpan ke Antrian</button>
+            </div>
+        </form>
     </div>
 </div>
 
@@ -123,6 +251,126 @@
         if (!confirm("Jalankan sinkronisasi dari GSheets pusat saat ini?")) return;
         const res = await fetch("/api/sync/etl", { method: "POST" });
         if (res.ok) alert("Proses ETL dimulai di background. Pantau di Sync Center.");
+    }
+
+    function openAnomalyModal() {
+        document.getElementById('anomaly-modal').style.display = 'flex';
+    }
+
+    function closeAnomalyModal() {
+        document.getElementById('anomaly-modal').style.display = 'none';
+    }
+
+    let selectedAnomaly = null;
+
+    function openAnomalyDetail(anomaly) {
+        selectedAnomaly = anomaly;
+        const body = document.getElementById('anomaly-detail-body');
+        document.getElementById('anomaly-detail-title').textContent = anomaly.finding_title || 'Detail Anomali';
+        document.getElementById('anomaly-detail-subtitle').textContent = anomaly.source_ref || anomaly.record_key || 'Pratinjau lengkap sebelum dikirim.';
+        body.innerHTML = `
+            ${detailCell('Nomor ND', anomaly.row?.nomor_nd || '-')}
+            ${detailCell('Dari', anomaly.row?.dari || '-')}
+            ${detailCell('No. Agenda Dispo', anomaly.row?.no_agenda_dispo || '-')}
+            ${detailCell('Posisi', anomaly.row?.posisi || '-')}
+            ${detailCell('PIC', anomaly.row?.pic_name || '-')}
+            ${detailCell('Status', anomaly.row?.status_pengiriman || '-')}
+            ${detailCell('Kunci Data', anomaly.record_key || '-')}
+            ${detailCell('Sumber', anomaly.source_label || '-')}
+            <div style="grid-column: 1 / -1; display:flex; flex-direction:column; gap:6px;">
+                <div style="font-size:0.78rem; font-weight:700; color:#334155;">Ringkasan</div>
+                <div style="padding:0.85rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; color:#475569; line-height:1.5;">${anomaly.finding_summary || '-'}</div>
+            </div>
+            <div style="grid-column: 1 / -1; display:flex; flex-direction:column; gap:6px;">
+                <div style="font-size:0.78rem; font-weight:700; color:#334155;">Referensi</div>
+                <div style="padding:0.85rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; color:#475569; line-height:1.5;">${anomaly.source_ref || '-'}</div>
+            </div>
+            <div style="grid-column: 1 / -1; display:flex; flex-direction:column; gap:6px;">
+                <div style="font-size:0.78rem; font-weight:700; color:#334155;">Dampak</div>
+                <div style="padding:0.85rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; color:#475569; line-height:1.5;">${anomaly.impact || '-'}</div>
+            </div>
+            <div style="grid-column: 1 / -1; display:flex; flex-direction:column; gap:6px;">
+                <div style="font-size:0.78rem; font-weight:700; color:#334155;">Rekomendasi</div>
+                <div style="padding:0.85rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; color:#475569; line-height:1.5;">${anomaly.recommendation || '-'}</div>
+            </div>
+        `;
+        document.getElementById('anomaly-detail-send').onclick = () => saveAndSend(anomaly);
+        document.getElementById('anomaly-detail-modal').style.display = 'flex';
+    }
+
+    function closeAnomalyDetail() {
+        document.getElementById('anomaly-detail-modal').style.display = 'none';
+        selectedAnomaly = null;
+    }
+
+    function detailCell(label, value) {
+        return `
+            <div style="display:flex; flex-direction:column; gap:6px;">
+                <div style="font-size:0.78rem; font-weight:700; color:#334155;">${label}</div>
+                <div style="padding:0.85rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; color:#475569; line-height:1.5;">${value || '-'}</div>
+            </div>
+        `;
+    }
+
+    document.getElementById('anomaly-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const payload = Object.fromEntries(new FormData(form).entries());
+        const res = await fetch('/api/anomaly-reports/draft', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+        });
+        const data = await res.json();
+        if (data.status === 'success') {
+            alert('Laporan anomali disimpan ke antrian.');
+            form.reset();
+            closeAnomalyModal();
+            window.location.reload();
+        } else {
+            alert('Gagal mengirim laporan: ' + JSON.stringify(data.data?.result || data.data || data));
+        }
+    });
+
+    async function saveAndSend(anomaly) {
+        if (!confirm("Simpan anomali sebagai draft lalu kirim ke WhatsApp?")) return;
+        const draftRes = await fetch('/api/anomaly-reports/draft', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(anomaly),
+        });
+        const draftData = await draftRes.json();
+        if (draftData.status !== 'success') {
+            alert('Gagal membuat draft: ' + JSON.stringify(draftData.data || draftData));
+            return;
+        }
+        const reportId = draftData.data.report_id;
+        const res = await fetch(`/api/anomaly-reports/${reportId}/send`, { method: 'POST' });
+        const data = await res.json();
+        if (data.status === 'success') {
+            alert('Laporan terkirim.');
+            window.location.reload();
+        } else {
+            alert('Gagal mengirim laporan: ' + JSON.stringify(data.data || data));
+        }
+    }
+
+    document.getElementById('anomaly-modal').addEventListener('click', (e) => {
+        if (e.target.id === 'anomaly-modal') closeAnomalyModal();
+    });
+
+    document.getElementById('anomaly-detail-modal').addEventListener('click', (e) => {
+        if (e.target.id === 'anomaly-detail-modal') closeAnomalyDetail();
+    });
+
+    function filterAnomalies(status) {
+        document.querySelectorAll('.anomaly-item').forEach((item) => {
+            if (status === 'all' || item.dataset.status === status) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
     }
 </script>
 {% endblock %}

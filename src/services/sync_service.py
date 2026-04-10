@@ -3,6 +3,7 @@ import subprocess
 import logging
 from ..database import get_db_connection, execute_query
 from ..logging_config import setup_logging
+from .posisi_mapping import build_posisi_timeline_view
 
 import re
 from datetime import datetime, date
@@ -240,7 +241,39 @@ def get_letter_timeline(unique_id: str):
             WHERE s.unique_id = %s
             ORDER BY ce.event_at ASC
         """
-        return execute_query(sql, [unique_id])
+        rows = execute_query(sql, [unique_id])
+        events = []
+        for row in rows:
+            posisi = row.get("posisi") or ""
+            timeline_view = build_posisi_timeline_view(posisi)
+            if timeline_view:
+                for idx, item in enumerate(timeline_view):
+                    events.append({
+                        "posisi": item.get("label") or posisi,
+                        "posisi_raw": posisi,
+                        "label": item.get("label") or posisi,
+                        "event_at": row.get("event_at"),
+                        "created_at": row.get("created_at"),
+                        "timeline_unit": item.get("unit"),
+                        "timeline_date": item.get("date"),
+                        "timeline_action": item.get("action"),
+                        "timeline_notes": item.get("notes"),
+                        "timeline_index": idx,
+                    })
+            else:
+                events.append({
+                    "posisi": posisi,
+                    "posisi_raw": posisi,
+                    "label": posisi,
+                    "event_at": row.get("event_at"),
+                    "created_at": row.get("created_at"),
+                    "timeline_unit": None,
+                    "timeline_date": None,
+                    "timeline_action": None,
+                    "timeline_notes": None,
+                    "timeline_index": 0,
+                })
+        return events
     except Exception as e:
         logger.error(f"Failed to get timeline for {unique_id}: {e}")
         return []

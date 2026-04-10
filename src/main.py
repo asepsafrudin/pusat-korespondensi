@@ -17,8 +17,10 @@ logger = setup_logging("main")
 
 def run_web():
     """Run the FastAPI Web Application."""
-    print("🚀 Starting PUU Universal Web Hub on http://0.0.0.0:8082")
-    uvicorn.run(web_app, host="0.0.0.0", port=8082)
+    host = os.getenv("WEB_HOST", "0.0.0.0")
+    port = int(os.getenv("WEB_PORT", "8082"))
+    print(f"🚀 Starting PUU Universal Web Hub on http://{host}:{port}")
+    uvicorn.run(web_app, host=host, port=port)
 
 def run_mcp():
     """Run the MCP Server (stdio)."""

@@ -16,6 +16,25 @@ Aplikasi ini merupakan transformasi terpusat (Universal Server) untuk manajemen 
 6.  **Timeline Monitoring**: Pelacakan riwayat pergerakan surat secara vertikal di UI, memungkinkan admin melihat perjalanan dokumen dari satu meja ke meja lainnya secara kronologis.
 7.  **Dashboard Analytics**: Visualisasi beban kerja Top 5 PIC secara real-time untuk pemantauan distribusi tugas yang lebih adil dan transparan.
 8.  **Universal MCP Server**: Backend yang siap melayani Agen AI (seperti Antigravity atau OpenHands) dengan tools khusus untuk pencarian dan analisis surat secara otonom.
+9.  **Anomaly Report Service**: Laporan anomali per temuan yang bisa dikirim ke WhatsApp dan dipantau dari dashboard, lengkap dengan history JSONL.
+
+## 🧩 Anomaly Report Service
+
+Layanan ini dipakai untuk:
+
+- membentuk satu chat WhatsApp per satu temuan
+- menyimpan riwayat pengiriman ke log JSONL
+- menampilkan ringkasan history di dashboard
+
+Endpoint utama:
+
+- `GET /api/anomaly-reports`
+- `POST /api/anomaly-reports/send`
+
+Dokumentasi detail:
+
+- `docs/anomaly-report-service.md`
+- `src/services/anomaly_report_service.py`
 
 ## 🎨 Design System & Aesthetics
 
@@ -121,16 +140,50 @@ Sistem berbasis *Python Virtual Environment* dan menggunakan *PostgreSQL* lokal 
    ```
 3. Konfigurasikan kredensial di `.env` merujuk pada profil `.env.example`.
 
+## 🧭 Knowledge Bridge
+
+Untuk runtime sandbox atau agent IDE yang tidak bisa menyentuh PostgreSQL secara langsung, tersedia bridge read-only untuk inspeksi nilai unik pada kolom `POSISI`.
+
+- Endpoint: `GET /api/knowledge/posisi/unique`
+- Endpoint grup per sheet: `GET /api/knowledge/posisi/by-sheet`
+- Endpoint token kamus: `GET /api/knowledge/posisi/terms`
+- Dokumentasi: [docs/posisi-knowledge-bridge.md](docs/posisi-knowledge-bridge.md)
+- Dokumentasi per sheet: [docs/posisi-knowledge-by-sheet.md](docs/posisi-knowledge-by-sheet.md)
+- Dokumentasi kamus token: [docs/posisi-knowledge-terms.md](docs/posisi-knowledge-terms.md)
+
+Bridge ini mengembalikan:
+- `posisi_raw`
+- `count`
+- `timeline` hasil parsing helper lokal
+
+Gunakan ini sebagai jalur aman untuk audit dan pencarian pola `POSISI` tanpa koneksi DB langsung.
+
 ## ⚙️ Petunjuk Penggunaan
 Gunakan script `run.sh` untuk meluncurkan sistem.
 
 **Mode Web App (Dashboard GUI)**
-Rute default yang akan berjalan pada host `0.0.0.0` port `8081`. 
-- Repositori Utama / Dashboard PUU: `http://localhost:8081`
-- Pusat Antrean & Penetapan Dokumen (Internal): `http://localhost:8081/internal`
-- Modul Tarik Data Baru Pusat (Sync Center): `http://localhost:8081/sync`
+Rute default yang akan berjalan pada host `0.0.0.0` port `8082` (dapat diubah via `.env`: `WEB_HOST` dan `WEB_PORT`).
+- Repositori Utama / Dashboard PUU: `http://localhost:8082`
+- Pusat Antrean & Penetapan Dokumen (Internal): `http://localhost:8082/internal`
+- Modul Tarik Data Baru Pusat (Sync Center): `http://localhost:8082/sync`
+- Akses dari perangkat lain di LAN: `http://<IP-LAN-SERVER>:8082`
 ```bash
 ./run.sh web
+```
+
+**Mode Doctor (Cek Konektivitas Otomatis)**
+Untuk skenario IP sering berubah (release/renew), gunakan mode ini untuk menampilkan:
+- IP aktif Linux/WSL
+- status endpoint lokal `127.0.0.1:8082`
+- kandidat URL akses dari perangkat lain
+
+```bash
+./run.sh doctor
+```
+
+Atau jalankan saat start web:
+```bash
+./run.sh web --doctor
 ```
 
 **Mode MCP Server (Agen AI)**
