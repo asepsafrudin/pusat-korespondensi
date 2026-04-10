@@ -1,0 +1,148 @@
+[
+  {
+    "nomor_nd_asli": "900.1.3/025/Keu",
+    "kode_ekstrak": "900.1.3",
+    "nomor_urut": "025",
+    "uraian_lain": "Keu",
+    "status_valid": true,
+    "deskripsi": "Pelaksanaan Anggaran",
+    "level": 3,
+    "hierarki": [
+      "KEUANGAN",
+      "KEUANGAN DAERAH",
+      "Pelaksanaan Anggaran"
+    ],
+    "pesan_error": null,
+    "kode_tervalidasi": "900.1.3"
+  },
+  {
+    "nomor_nd_asli": "900.1.1/152/BU/SET",
+    "kode_ekstrak": "900.1.1",
+    "nomor_urut": "152",
+    "uraian_lain": "BU/SET",
+    "status_valid": true,
+    "deskripsi": "Rencana Anggaran Pendapatan dan Belanja Daerah (RAPBD) dan Anggaran Pendapatan dan Belanja Daerah Perubahan(APBD-P)",
+    "level": 3,
+    "hierarki": [
+      "KEUANGAN",
+      "KEUANGAN DAERAH",
+      "Rencana Anggaran Pendapatan dan Belanja Daerah (RAPBD) dan Anggaran Pendapatan dan Belanja Daerah Perubahan(APBD-P)"
+    ],
+    "pesan_error": null,
+    "kode_tervalidasi": "900.1.1"
+  },
+  {
+    "nomor_nd_asli": "100.4.4.1/008/PUU",
+    "kode_ekstrak": "100.4.4.1",
+    "nomor_urut": "008",
+    "uraian_lain": "PUU",
+    "status_valid": true,
+    "deskripsi": "Intruksi/Surat Edaran Menteri",
+    "level": 4,
+    "hierarki": [
+      "PEMERINTAHAN",
+      "HUKUM",
+      "Instruksi/Surat Edaran",
+      "Intruksi/Surat Edaran Menteri"
+    ],
+    "pesan_error": null,
+    "kode_tervalidasi": "100.4.4.1"
+  },
+  {
+    "nomor_nd_asli": "800.1.11.4/021/Prc",
+    "kode_ekstrak": "800.1.11.4",
+    "nomor_urut": "021",
+    "uraian_lain": "Prc",
+    "status_valid": true,
+    "deskripsi": "Cuti Tahunan",
+    "level": 4,
+    "hierarki": [
+      "KEPEGAWAIAN",
+      "SUMBER DAYA MANUSIA",
+      "Administrasi Pegawai",
+      "Cuti Tahunan"
+    ],
+    "pesan_error": null,
+    "kode_tervalidasi": "800.1.11.4"
+  },
+  {
+    "nomor_nd_asli": "900.1.4/027/Prc",
+    "kode_ekstrak": "900.1.4",
+    "nomor_urut": "027",
+    "uraian_lain": "Prc",
+    "status_valid": true,
+    "deskripsi": "Pinjaman/Hibah Luar Negeri",
+    "level": 3,
+    "hierarki": [
+      "KEUANGAN",
+      "KEUANGAN DAERAH",
+      "Pinjaman/Hibah Luar Negeri"
+    ],
+    "pesan_error": null,
+    "kode_tervalidasi": "900.1.4"
+  },
+  {
+    "nomor_nd_asli": "600.4/0074/Set/Bangda",
+    "kode_ekstrak": "600.4",
+    "nomor_urut": "0074",
+    "uraian_lain": "Set/Bangda",
+    "status_valid": true,
+    "deskripsi": "PELAKSANAAN KOORDINASI DAN FASILITASI PENYUSUNAN NORMA, STANDAR, PROSEDUR, DAN KRITERIA SERTA STANDAR PELAYANAN MINIMAL PENYELENGGARAAN URUSAN PEMERINTAHAN",
+    "level": 2,
+    "hierarki": [
+      "PEMBANGUNAN DAERAH",
+      "PELAKSANAAN KOORDINASI DAN FASILITASI PENYUSUNAN NORMA, STANDAR, PROSEDUR, DAN KRITERIA SERTA STANDAR PELAYANAN MINIMAL PENYELENGGARAAN URUSAN PEMERINTAHAN"
+    ],
+    "pesan_error": null,
+    "kode_tervalidasi": "600.4"
+  },
+  {
+    "nomor_nd_asli": "100.4.2.3/0075/Set/Bangda",
+    "kode_ekstrak": "100.4.2.3",
+    "nomor_urut": "0075",
+    "uraian_lain": "Set/Bangda",
+    "status_valid": true,
+    "deskripsi": "Rancangan Peraturan/Keputusan/Instruksi Presiden, termasuk naskah akademik, rancangan awal sampai dengan rancangan akhir dan telaah hukum rancangan awal sampai dengan rancangan akhir dan telaah hukum.",
+    "level": 4,
+    "hierarki": [
+      "PEMERINTAHAN",
+      "HUKUM",
+      "Rancangan Peraturan Perundang-undangan",
+      "Rancangan Peraturan/Keputusan/Instruksi Presiden, termasuk naskah akademik, rancangan awal sampai dengan rancangan akhir dan telaah hukum rancangan awal sampai dengan rancangan akhir dan telaah hukum."
+    ],
+    "pesan_error": null,
+    "kode_tervalidasi": "100.4.2.3"
+  },
+  {
+    "nomor_nd_asli": "100.4.7/0076/Set/Bangda",
+    "kode_ekstrak": "100.4.7",
+    "nomor_urut": "0076",
+    "uraian_lain": "Set/Bangda",
+    "status_valid": true,
+    "deskripsi": "Nota kesepahaman /memorandum of Understanding (Mou)/ Kontrak/Perjanjian Kerjasama:",
+    "level": 3,
+    "hierarki": [
+      "PEMERINTAHAN",
+      "HUKUM",
+      "Nota kesepahaman /memorandum of Understanding (Mou)/ Kontrak/Perjanjian Kerjasama:"
+    ],
+    "pesan_error": null,
+    "kode_tervalidasi": "100.4.7"
+  },
+  {
+    "nomor_nd_asli": "900.1.3.35/Keu",
+    "kode_ekstrak": "900.1.3.35",
+    "nomor_urut": "Keu",
+    "uraian_lain": null,
+    "status_valid": true,
+    "deskripsi": "Pelaksanaan Anggaran",
+    "level": 3,
+    "hierarki": [
+      "KEUANGAN",
+      "KEUANGAN DAERAH",
+      "Pelaksanaan Anggaran"
+    ],
+    "pesan_error": null,
+    "kode_tervalidasi": "900.1.3"
+  }
+]

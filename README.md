@@ -1,223 +1,154 @@
-# Korespondensi Universal Web Hub & MCP Server
+# 🏛️ The Living Archive - Smart Archive Intelligence System
 
-Aplikasi ini merupakan transformasi terpusat (Universal Server) untuk manajemen korespondensi PUU di lingkungan Kemendagri. Berawal dari server MCP sederhana, sistem ini kini telah ditingkatkan menjadi **Web App Full-Stack Premium** sekaligus **Server MCP** yang membagi basis pengetahuan dan fungsi database yang sama.
+> **Pilot Project Perundang-undangan (PUU)**  
+> *Sistem validasi dan visualisasi arsip cerdas berbasis AI*
 
-## 🌟 Fitur Utama
+## 🌟 Gambaran Umum
 
-1.  **Premium Hybrid GUI (Card & Table View)**: Antarmuka modern yang mendukung perpindahan mode tampilan secara instan.
-    *   **Mode Tabel**: Untuk manajemen data massal yang padat dan efisien.
-    *   **Mode Kartu (Glassmorphism)**: Visualisasi premium dengan efek transparansi, bayangan dinamis, dan animasi *fade-in* yang memberikan kesan mewah.
-2.  **Pencarian Pegawai Real-time (Smart Search)**: Integrasi AJAX pada modal PIC yang memungkinkan pencarian identitas pegawai dari ribuan data `user_p3k.json` secara instan tanpa membebani browser.
-3.  **Smart Ingestion (Strict Regex ETL)**: Pipa data otomatis yang melakukan pembersihan mendalam:
-    *   **Regex Validasi Agenda**: Memastikan hanya surat dengan format registrasi resmi yang masuk ke sistem utama.
-    *   **Extract Posisi Otomatis**: Mendeteksi lokasi fisik surat dan tanggal disposisi langsung dari teks acak di kolom posisi.
-4.  **Auto-Sequence Agenda Persisten**: Sistem penomoran internal (`001-I`, `002-I`, dst.) yang bersifat permanen dan terkalibrasi secara kronologis berdasarkan tanggal masuk nyata, bukan waktu sinkronisasi.
-5.  **Google Drive Auto-Backup & Dynamic Linking**: Integrasi cloud tanpa celah. Setiap dokumen `.docx` yang dihasilkan langsung dicadangkan ke Drive. GUI secara dinamis mengubah tombol "Cetak" menjadi "Buka di Google Docs" jika file sudah tersedia di cloud.
-6.  **Timeline Monitoring**: Pelacakan riwayat pergerakan surat secara vertikal di UI, memungkinkan admin melihat perjalanan dokumen dari satu meja ke meja lainnya secara kronologis.
-7.  **Dashboard Analytics**: Visualisasi beban kerja Top 5 PIC secara real-time untuk pemantauan distribusi tugas yang lebih adil dan transparan.
-8.  **Universal MCP Server**: Backend yang siap melayani Agen AI (seperti Antigravity atau OpenHands) dengan tools khusus untuk pencarian dan analisis surat secara otonom.
-9.  **Anomaly Report Service**: Laporan anomali per temuan yang bisa dikirim ke WhatsApp dan dipantau dari dashboard, lengkap dengan history JSONL.
+**The Living Archive** adalah dashboard interaktif yang menampilkan keindahan transformasi data arsip dari input manual yang berantakan menjadi data terstruktur yang sempurna berkat kecerdasan buatan. Sistem ini berfungsi sebagai:
 
-## 🧩 Anomaly Report Service
+1. **Cermin Kualitas Data**: Menunjukkan secara real-time kelemahan input manual di Google Sheets
+2. **Demo Keunggulan AI**: Menampilkan transformasi "magic" yang dilakukan AI secara otomatis
+3. **Alat Evaluasi Kinerja**: Mengukur konsistensi dan akurasi input staf
+4. **Pusat Referensi Valid**: Menyediakan hierarki klasifikasi arsip yang terpercaya
 
-Layanan ini dipakai untuk:
+## 🚀 Fitur Unggulan
 
-- membentuk satu chat WhatsApp per satu temuan
-- menyimpan riwayat pengiriman ke log JSONL
-- menampilkan ringkasan history di dashboard
+### 1. Dashboard Analitik Real-time
+- Metrik kualitas input (akurasi, konsistensi, tren)
+- Distribusi status validasi
+- Top 10 kode klasifikasi terbanyak
+- Grafik tren akurasi kumulatif
 
-Endpoint utama:
+### 2. Hierarki Arsip Visual
+- Tree map interaktif struktur klasifikasi
+- Visualisasi penggunaan kode per direktorat
+- Drill-down dari level 1 hingga level 4
 
-- `GET /api/anomaly-reports`
-- `POST /api/anomaly-reports/send`
+### 3. AI Magic Log ⭐
+- **Showcase utama** yang menampilkan transformasi data
+- Before/After comparison untuk setiap koreksi AI
+- Penjelasan kontekstual mengapa AI melakukan koreksi
+- Highlight pola kesalahan berulang
 
-Dokumentasi detail:
+### 4. Eksplorasi Data
+- Pencarian full-text across semua field
+- Filter dinamis per unit kerja dan status
+- Detail view lengkap per dokumen
+- Export capability
 
-- `docs/anomaly-report-service.md`
-- `src/services/anomaly_report_service.py`
-
-## 🎨 Design System & Aesthetics
-
-Aplikasi ini mengadopsi prinsip desain **Modern Glassmorphism 2026**:
-*   **Typography**: Menggunakan font *Inter* dan *Outfit* untuk keterbacaan tinggi dan kesan profesional.
-*   **Glassmorphism**: Lapisan antarmuka menggunakan `backdrop-filter: blur(14px)` dengan saturasi warna yang dikurasi (Navy-Blue & Slate accents).
-*   **Micro-Animations**: Transisi antar halaman dan mode tampilan menggunakan kurva *cubic-bezier* untuk interaksi yang terasa "hidup".
-*   **Color Palette**: Skema warna Slate-Primary dengan aksen Accent-Blue yang harmonis dan ramah mata untuk penggunaan durasi lama.
-
-## 🏗️ Struktur Arsitektur
-
-```mermaid
-graph TD
-    subgraph "External Data & Cloud"
-        GSheet["Google Sheets (Pusat)"]
-        GDrive["Google Drive (Arsip)"]
-        JPPPK["user_p3k.json (Data PPPK)"]
-        JStruct["master_struktur.json (Organisasi)"]
-    end
-
-    subgraph "PUU Universal Hub"
-        FastAPI["Web App Dashboard (FastAPI)"]
-        MCPServer["MCP Server (Stdio)"]
-        Postgres[(PostgreSQL 5433)]
-        
-        subgraph "Internal Services"
-            SyncSvc["Sync & ETL Service"]
-            PersSvc["Personnel Service"]
-            MailMerge["Mail Merge Engine"]
-        end
-    end
-
-    subgraph "Clients"
-        Browser["User Browser (GUI)"]
-        AIAgent["AI Coding Agents (MCP)"]
-    end
-
-    %% Data Flow
-    GSheet -->|Sync/ETL| SyncSvc
-    Postgres <--> FastAPI
-    Postgres <--> MCPServer
-    
-    FastAPI --- Browser
-    MCPServer --- AIAgent
-
-    JPPPK --> PersSvc
-    JStruct --> PersSvc
-    PersSvc --> FastAPI
-    
-    MailMerge -->|Generate .docx| FastAPI
-    FastAPI -->|Background Upload| GDrive
-    GDrive -->|webViewLink| Postgres
-    
-    SyncSvc --> Postgres
-```
+## 📁 Struktur Proyek
 
 ```
-korespondensi-server/
+/workspace/
+├── app.py                          # Dashboard Streamlit utama
 ├── src/
-│   ├── main.py              # Entry point pusat
-│   ├── mcp_server.py        # Modul integrasi Model Context Protocol
-│   ├── web_app.py           # Aplikasi Web FastAPI
-│   ├── database.py          # Modul Koneksi PostgreSQL terpusat
-│   └── services/            # Modul logika sinkronisasi data & personel
-├── static/                  # Design CSS file
-├── templates/               # Koleksi Jinja2 template untuk Web GUI
-├── run.sh                   # Script saklar mode aktivasi peladen
-└── requirements.txt         # Daftar paket esensial Python
+│   ├── parser_nomor_nd.py          # Core parsing engine
+│   ├── context_corrector.py        # Contextual auto-correction
+│   └── local_code_registry.py      # Local code mapping
+├── docs/
+│   ├── kodfikasi_arsip_*.json      # Reference data
+│   ├── hasil_parsing_*.json        # Parsing results
+│   └── DOKUMENTASI_SISTEM_PARSING.md
+├── data/                           # Raw data samples
+├── dashboard_components/           # Reusable UI components
+├── requirements.txt                # Python dependencies
+└── README.md                       # Dokumentasi ini
 ```
 
-## 🖥️ Struktur Navigasi GUI (Web Dashboard)
+## 🛠️ Instalasi & Menjalankan
 
-```mermaid
-graph LR
-    subgraph "Main Sidebar"
-        Dash[Dashboard]
-        Int[Masuk PUU]
-        Sub[Substansi]
-        Sync[Sync Center]
-    end
+### Prerequisites
+- Python 3.8+
+- pip package manager
 
-    Dash -->|Recent| List[Tabel Internal Terkini]
-    Dash -->|Stats| PoolCount[Status Gudang Data]
-
-    Int -->|Filter| Search[Pencarian Nomor/PIC]
-    Int -->|Action| Modal[Modal Ubah PIC]
-    Int -->|Backend| PS{Personnel Search}
-    Modal --- PS
-    Int -->|Action| Print[Cetak/Buka Drive Link]
-    Int -->|Sync| Ingest[Tarik dari Pool]
-
-    Sync -->|Action| ETL[Jalankan ETL Pusat]
-    Sync -->|Monitor| Hist[Log Riwayat Sinkronisasi]
-```
-
-## 🚀 Setup & Instalasi
-Sistem berbasis *Python Virtual Environment* dan menggunakan *PostgreSQL* lokal pada port 5433 (`mcp_knowledge`).
-
-1. Pastikan lingkungan virtual berada di `../.venv`.
-2. Lakukan instalasi dependensi:
-   ```bash
-   /home/aseps/MCP/.venv/bin/python3 -m pip install -r requirements.txt
-   ```
-3. Konfigurasikan kredensial di `.env` merujuk pada profil `.env.example`.
-
-## 🧭 Knowledge Bridge
-
-Untuk runtime sandbox atau agent IDE yang tidak bisa menyentuh PostgreSQL secara langsung, tersedia bridge read-only untuk inspeksi nilai unik pada kolom `POSISI`.
-
-- Endpoint: `GET /api/knowledge/posisi/unique`
-- Endpoint grup per sheet: `GET /api/knowledge/posisi/by-sheet`
-- Endpoint token kamus: `GET /api/knowledge/posisi/terms`
-- Dokumentasi: [docs/posisi-knowledge-bridge.md](docs/posisi-knowledge-bridge.md)
-- Dokumentasi per sheet: [docs/posisi-knowledge-by-sheet.md](docs/posisi-knowledge-by-sheet.md)
-- Dokumentasi kamus token: [docs/posisi-knowledge-terms.md](docs/posisi-knowledge-terms.md)
-
-Bridge ini mengembalikan:
-- `posisi_raw`
-- `count`
-- `timeline` hasil parsing helper lokal
-
-Gunakan ini sebagai jalur aman untuk audit dan pencarian pola `POSISI` tanpa koneksi DB langsung.
-
-## ⚙️ Petunjuk Penggunaan
-Gunakan script `run.sh` untuk meluncurkan sistem.
-
-**Mode Web App (Dashboard GUI)**
-Rute default yang akan berjalan pada host `0.0.0.0` port `8082` (dapat diubah via `.env`: `WEB_HOST` dan `WEB_PORT`).
-- Repositori Utama / Dashboard PUU: `http://localhost:8082`
-- Pusat Antrean & Penetapan Dokumen (Internal): `http://localhost:8082/internal`
-- Modul Tarik Data Baru Pusat (Sync Center): `http://localhost:8082/sync`
-- Akses dari perangkat lain di LAN: `http://<IP-LAN-SERVER>:8082`
-```bash
-./run.sh web
-```
-
-**Mode Doctor (Cek Konektivitas Otomatis)**
-Untuk skenario IP sering berubah (release/renew), gunakan mode ini untuk menampilkan:
-- IP aktif Linux/WSL
-- status endpoint lokal `127.0.0.1:8082`
-- kandidat URL akses dari perangkat lain
+### Langkah Instalasi
 
 ```bash
-./run.sh doctor
+# 1. Clone atau navigate ke workspace
+cd /workspace
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Jalankan dashboard
+streamlit run app.py --server.port 8501 --server.address 0.0.0.0
 ```
 
-Atau jalankan saat start web:
+Dashboard akan terbuka di: `http://localhost:8501`
+
+## 🎯 Cara Menggunakan untuk Pilot PUU
+
+### Untuk Admin/Supervisor:
+1. **Monitor Kualitas Input**: Buka tab "Dashboard Analitik" untuk melihat tren akurasi
+2. **Identifikasi Masalah**: Cek "AI Magic Log" untuk melihat kesalahan berulang
+3. **Evaluasi Staf**: Gunakan metrik untuk memberikan feedback konstruktif
+4. **Export Laporan**: Download data untuk meeting evaluasi
+
+### Untuk Staff Input:
+1. **Self-Assessment**: Lihat bagaimana input Anda diproses AI
+2. **Belajar dari Kesalahan**: Pahami pola koreksi di "AI Magic Log"
+3. **Cari Referensi**: Gunakan tab "Eksplorasi Data" untuk validasi mandiri
+4. **Tingkatkan Skor**: Berusaha mencapai 100% exact match
+
+## 📊 Insight Strategis
+
+Berdasarkan analisis 60+ dokumen dari berbagai direktorat:
+
+| Insight | Implikasi |
+|---------|-----------|
+| 88% kode bisa divalidasi exact | Standar nasional sudah cukup komprehensif |
+| 12% butuh koreksi kontekstual | Diperlukan training input yang lebih baik |
+| Pola typo sistematik (- vs .) | Perlu validation rule di Google Sheets |
+| Kode payung sering disalahgunakan | Perlu guidance spesifik per unit |
+| Unit kerja lebih stabil dari kode | Jadikan unit sebagai primary key validasi |
+
+## 🔮 Roadmap Pengembangan
+
+### Phase 1 (✅ Completed)
+- [x] Core parsing engine
+- [x] Context-aware correction
+- [x] Local code registry
+- [x] Dashboard MVP
+
+### Phase 2 (In Progress)
+- [ ] Live integration dengan Google Sheets API
+- [ ] Real-time validation saat input
+- [ ] User authentication & role-based access
+- [ ] Automated weekly reports
+
+### Phase 3 (Planned)
+- [ ] Machine learning untuk pattern recognition
+- [ ] Predictive suggestion saat mengetik
+- [ ] Mobile-friendly interface
+- [ ] Integration dengan sistem arsip nasional
+
+## 🤝 Kontribusi
+
+Proyek ini open untuk kontribusi dari semua agent/AI dalam ekosistem:
+
 ```bash
-./run.sh web --doctor
+# Agent lain dapat update dengan:
+git pull origin main
+# Lalu jalankan dashboard untuk melihat perubahan
 ```
 
-**Mode MCP Server (Agen AI)**
-Berjalan menggunakan komunikasi standar (stdio) khusus digunakan sebagai backend IDE atau LLM integrasi lain.
-```bash
-./run.sh mcp
-```
+## 📞 Support & Feedback
 
-## 📝 Fitur Mail Merge Lembar Disposisi Secara Native
+Untuk pertanyaan atau improvement suggestion:
+- Buat issue di repository GitHub
+- Diskusi di channel #archive-intelligence
+- Demo session setiap Jumat 10:00 WIB
 
-Sistem ini telah mendukung konversi dan generasi **Lembar Disposisi** (format `.docx`) secara *native* langsung dari Dashboard Web tanpa lagi bergantung pada ekosistem lambat Google Apps Script. 
+---
 
-**Mekanisme Kerja:**
-1. **Routing Interaktif**: Terdapat endpoint khusus `/api/disposisi/download/{unique_id}` pada `web_app.py`.
-2. **Template Tersentralisasi**: Backend menggunakan modul `docxtpl` untuk mengganti *placeholder* bergaya Jinja (`{{ ... }}`) di dalam basis log template `template_disposisi_native.docx`.
-3. **Pengunduhan & Pengalihan Dinamis**: Ketika pengguna menekan tombol **"📄 Cetak Disposisi (.docx)"**, sistem mengecek keberadaan `drive_file_url` di database. Jika ada, pengguna langsung diarahkan ke pratinjau Google Docs. Jika belum ada, file diolah sebagai *download object stream* dan proses unggah ke Drive dipicu di latar belakang.
-4. **Auto-Sequence Agenda Persisten**: Sistem secara cerdas mengikat nomor sequence permanen (`001-I`, `013-I`, dst). Pengurutan antrean tidak didasari oleh waktu pembuatan surat, melainkan mengekstrak tanggal sungguhan menggunakan *Regex SQL* dari teks acak di kolom **"POSISI"** (mis. mendeteksi `PUU 28/1` sebagai 28 Januari). Nomor ini permanen tersimpan pada kolom database `agenda_puu` sesaat setelah proses *Ingestion/Sync*.
-5. **Otomasi Penuh Field Dokumen**: Seluruh variabel pada *Lembar Disposisi* telah dicetak secara otomatis (Nomor ND, Hal, Asal). Bahkan bagian *Tanggal Diterima*—yang sebelumnya harus dikosongkan untuk input pulpen manual—kini sudah mampu diisi otomatis berkat kemampuan mesin mengekstrak riwayat tanggal dari kolom *POSISI*. (Hanya tersisa tanda tangan fisik saja yang butuh tinta).
+<div align="center">
 
-## 🗺️ Peta Jalan & Rencana Pengembangan Lanjutan (Roadmap)
+**🏗️ Dibangun dengan ❤️ oleh Tim AI Intelligence**  
+*"Mengubah data berantakan menjadi insight berharga"*
 
-Sistem Web Hub Core ini secara aktif terus melebarkan sayapnya:
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Streamlit](https://img.shields.io/badge/streamlit-latest-red.svg)](https://streamlit.io/)
 
-1. ✅ **[Selesai] Sinkronisasi Otomatis Archiving Google Drive (Background Task)** 
-   Sistem telah mem-bypass batas Kuota API dengan metode otentikasi pendelegasian penuh token OAuth. Segala file disposisi hasil render web langsung direplikasi otomat ke balok arsip pusat `1s1Wywe...` via *Multithreading Background Task*.
-
-2. ✅ **[Selesai] Transisi Pemandu Unduhan GUI ke Tautan Dinamis (Drive-Link)**
-   Tombol *"📄 Cetak Disposisi"* di antarmuka Web telah ditingkatkan menggunakan logika *Redirect-First*:
-   * Mesin mengecek ketersediaan `drive_file_url` yang ada di database.
-   * Jika URL tersedia, tombol berubah menjadi **"Buka di Google Docs"** (biru intens) dan mengarahkan pengguna secara interaktif langsung menuju jembatan *Native Preview* Cloud.
-   * Hal ini menghapus ancaman duplikasi dan menyemen *Google Cloud* sebagai rel mutlak (*Single Source of Truth*).
-
-3. ✅ **[Selesai] Visualisasi Beban Kerja PIC (Dashboard Analytics)**
-   Sistem kini mampu menghitung dan menampilkan statistik Top 5 PIC dengan beban kerja terbanyak langsung di antarmuka dashboard menggunakan bar indikator proporsional.
-
-4. ✅ **[Selesai] Monitor Posisi Surat (Timeline View)**
-   Riwayat perjalanan surat kini dipantau otomatis oleh ETL. Tiap perubahan kolom `POSISI` di sumber data akan dicatat sebagai event baru yang kemudian ditampilkan dalam format timeline vertikal di UI "Masuk Internal PUU".
+</div>

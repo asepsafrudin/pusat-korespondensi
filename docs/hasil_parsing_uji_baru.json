@@ -1,0 +1,302 @@
+[
+  {
+    "input": "900.1.3/33/KEU",
+    "kode_terekstrak": "900.1.3",
+    "kode_valid": "900.1.3",
+    "status": "VALID",
+    "deskripsi": "Pelaksanaan Anggaran",
+    "level": 3,
+    "nomor_urut": "33",
+    "unit_kerja": "KEU"
+  },
+  {
+    "input": "000.9.5/0079/Set/Bangda",
+    "kode_terekstrak": "000.9.5",
+    "kode_valid": "000.9.5",
+    "status": "VALID",
+    "deskripsi": "Evaluasi Kelembagaan",
+    "level": 3,
+    "nomor_urut": "0079",
+    "unit_kerja": "Set/Bangda"
+  },
+  {
+    "input": "900.1.3/031/PRC",
+    "kode_terekstrak": "900.1.3",
+    "kode_valid": "900.1.3",
+    "status": "VALID",
+    "deskripsi": "Pelaksanaan Anggaran",
+    "level": 3,
+    "nomor_urut": "031",
+    "unit_kerja": "PRC"
+  },
+  {
+    "input": "900.1.3/032/PRC",
+    "kode_terekstrak": "900.1.3",
+    "kode_valid": "900.1.3",
+    "status": "VALID",
+    "deskripsi": "Pelaksanaan Anggaran",
+    "level": 3,
+    "nomor_urut": "032",
+    "unit_kerja": "PRC"
+  },
+  {
+    "input": "100.4.3/012/PUU",
+    "kode_terekstrak": "100.4.3",
+    "kode_valid": "100.4.3",
+    "status": "VALID",
+    "deskripsi": "Peraturan/Keputusan Menteri, termasuk rancangan awal sampai dengan rancangan akhir dan telaah hukum.",
+    "level": 3,
+    "nomor_urut": "012",
+    "unit_kerja": "PUU"
+  },
+  {
+    "input": "900.1.3/0083/Set/Bangda",
+    "kode_terekstrak": "900.1.3",
+    "kode_valid": "900.1.3",
+    "status": "VALID",
+    "deskripsi": "Pelaksanaan Anggaran",
+    "level": 3,
+    "nomor_urut": "0083",
+    "unit_kerja": "Set/Bangda"
+  },
+  {
+    "input": "800.1.11.4/173/BU/Set",
+    "kode_terekstrak": "800.1.11.4",
+    "kode_valid": "800.1.11.4",
+    "status": "VALID",
+    "deskripsi": "Cuti Tahunan",
+    "level": 4,
+    "nomor_urut": "173",
+    "unit_kerja": "BU/Set"
+  },
+  {
+    "input": "900.1.3/38/KEU",
+    "kode_terekstrak": "900.1.3",
+    "kode_valid": "900.1.3",
+    "status": "VALID",
+    "deskripsi": "Pelaksanaan Anggaran",
+    "level": 3,
+    "nomor_urut": "38",
+    "unit_kerja": "KEU"
+  },
+  {
+    "input": "900.1.3/0086/Set/Bangda",
+    "kode_terekstrak": "900.1.3",
+    "kode_valid": "900.1.3",
+    "status": "VALID",
+    "deskripsi": "Pelaksanaan Anggaran",
+    "level": 3,
+    "nomor_urut": "0086",
+    "unit_kerja": "Set/Bangda"
+  },
+  {
+    "input": "800.1.3.3/0087/SET/BANGDA",
+    "kode_terekstrak": "800.1.3.3",
+    "kode_valid": "800.1.3.3",
+    "status": "VALID",
+    "deskripsi": "Pengangkatan dan Pemberhentian Jabatan Struktural/Fungsional",
+    "level": 4,
+    "nomor_urut": "0087",
+    "unit_kerja": "SET/BANGDA"
+  },
+  {
+    "input": "900.1.3/0088/Set/Bangda",
+    "kode_terekstrak": "900.1.3",
+    "kode_valid": "900.1.3",
+    "status": "VALID",
+    "deskripsi": "Pelaksanaan Anggaran",
+    "level": 3,
+    "nomor_urut": "0088",
+    "unit_kerja": "Set/Bangda"
+  },
+  {
+    "input": "600.4/499/PRC",
+    "kode_terekstrak": "600.4",
+    "kode_valid": "600.4",
+    "status": "VALID",
+    "deskripsi": "PELAKSANAAN KOORDINASI DAN FASILITASI PENYUSUNAN NORMA, STANDAR, PROSEDUR, DAN KRITERIA SERTA STANDAR PELAYANAN MINIMAL PENYELENGGARAAN URUSAN PEMERINTAHAN",
+    "level": 2,
+    "nomor_urut": "499",
+    "unit_kerja": "PRC"
+  },
+  {
+    "input": "900.1.3/0090/Set/Bangda",
+    "kode_terekstrak": "900.1.3",
+    "kode_valid": "900.1.3",
+    "status": "VALID",
+    "deskripsi": "Pelaksanaan Anggaran",
+    "level": 3,
+    "nomor_urut": "0090",
+    "unit_kerja": "Set/Bangda"
+  },
+  {
+    "input": "600.4/0091/Set/Bangda",
+    "kode_terekstrak": "600.4",
+    "kode_valid": "600.4",
+    "status": "VALID",
+    "deskripsi": "PELAKSANAAN KOORDINASI DAN FASILITASI PENYUSUNAN NORMA, STANDAR, PROSEDUR, DAN KRITERIA SERTA STANDAR PELAYANAN MINIMAL PENYELENGGARAAN URUSAN PEMERINTAHAN",
+    "level": 2,
+    "nomor_urut": "0091",
+    "unit_kerja": "Set/Bangda"
+  },
+  {
+    "input": "900.1.5/036/PRC",
+    "kode_terekstrak": "900.1.5",
+    "kode_valid": "900.1.5",
+    "status": "VALID",
+    "deskripsi": "Pengelolaan APBD/Dana Pinjaman/Hibah Luar Negeri (PHLN)",
+    "level": 3,
+    "nomor_urut": "036",
+    "unit_kerja": "PRC"
+  },
+  {
+    "input": "900.1.5/035/PRC",
+    "kode_terekstrak": "900.1.5",
+    "kode_valid": "900.1.5",
+    "status": "VALID",
+    "deskripsi": "Pengelolaan APBD/Dana Pinjaman/Hibah Luar Negeri (PHLN)",
+    "level": 3,
+    "nomor_urut": "035",
+    "unit_kerja": "PRC"
+  },
+  {
+    "input": "800.1.11.1/195/BU/SET",
+    "kode_terekstrak": "800.1.11.1",
+    "kode_valid": "800.1.11.1",
+    "status": "VALID",
+    "deskripsi": "Surat Perintah Dinas/Surat Tugas",
+    "level": 4,
+    "nomor_urut": "195",
+    "unit_kerja": "BU/SET"
+  },
+  {
+    "input": "900.1.3/043/Keu",
+    "kode_terekstrak": "900.1.3",
+    "kode_valid": "900.1.3",
+    "status": "VALID",
+    "deskripsi": "Pelaksanaan Anggaran",
+    "level": 3,
+    "nomor_urut": "043",
+    "unit_kerja": "Keu"
+  },
+  {
+    "input": "900.1.3/197/BU/Set",
+    "kode_terekstrak": "900.1.3",
+    "kode_valid": "900.1.3",
+    "status": "VALID",
+    "deskripsi": "Pelaksanaan Anggaran",
+    "level": 3,
+    "nomor_urut": "197",
+    "unit_kerja": "BU/Set"
+  },
+  {
+    "input": "000.3.3.2/199/BU/SET",
+    "kode_terekstrak": "000.3.3.2",
+    "kode_valid": "000.3.3.2",
+    "status": "VALID",
+    "deskripsi": "Barang milik daerah",
+    "level": 4,
+    "nomor_urut": "199",
+    "unit_kerja": "BU/SET"
+  },
+  {
+    "input": "100.4.4.1/013/PUU",
+    "kode_terekstrak": "100.4.4.1",
+    "kode_valid": "100.4.4.1",
+    "status": "VALID",
+    "deskripsi": "Intruksi/Surat Edaran Menteri",
+    "level": 4,
+    "nomor_urut": "013",
+    "unit_kerja": "PUU"
+  },
+  {
+    "input": "100.4.3/015/Puu",
+    "kode_terekstrak": "100.4.3",
+    "kode_valid": "100.4.3",
+    "status": "VALID",
+    "deskripsi": "Peraturan/Keputusan Menteri, termasuk rancangan awal sampai dengan rancangan akhir dan telaah hukum.",
+    "level": 3,
+    "nomor_urut": "015",
+    "unit_kerja": "Puu"
+  },
+  {
+    "input": "000.2.2.4/0530/Bangda",
+    "kode_terekstrak": "000.2.2.4",
+    "kode_valid": "000.2.2.4",
+    "status": "VALID",
+    "deskripsi": "Perjalanan Dinas Pegawai",
+    "level": 4,
+    "nomor_urut": "0530",
+    "unit_kerja": "Bangda"
+  },
+  {
+    "input": "000.2.2.4/014/PUU",
+    "kode_terekstrak": "000.2.2.4",
+    "kode_valid": "000.2.2.4",
+    "status": "VALID",
+    "deskripsi": "Perjalanan Dinas Pegawai",
+    "level": 4,
+    "nomor_urut": "014",
+    "unit_kerja": "PUU"
+  },
+  {
+    "input": "900/1.3/48/Keu",
+    "kode_terekstrak": "900.1.3",
+    "kode_valid": "900.1.3",
+    "status": "VALID",
+    "deskripsi": "Pelaksanaan Anggaran",
+    "level": 3,
+    "nomor_urut": "48",
+    "unit_kerja": "Keu"
+  },
+  {
+    "input": "900.1.3/043/Prc",
+    "kode_terekstrak": "900.1.3",
+    "kode_valid": "900.1.3",
+    "status": "VALID",
+    "deskripsi": "Pelaksanaan Anggaran",
+    "level": 3,
+    "nomor_urut": "043",
+    "unit_kerja": "Prc"
+  },
+  {
+    "input": "100.4.3/0104/Set/Bangda",
+    "kode_terekstrak": "100.4.3",
+    "kode_valid": "100.4.3",
+    "status": "VALID",
+    "deskripsi": "Peraturan/Keputusan Menteri, termasuk rancangan awal sampai dengan rancangan akhir dan telaah hukum.",
+    "level": 3,
+    "nomor_urut": "0104",
+    "unit_kerja": "Set/Bangda"
+  },
+  {
+    "input": "800.1.14/224/BU/SET",
+    "kode_terekstrak": "800.1.14",
+    "kode_valid": "800.1.14",
+    "status": "VALID",
+    "deskripsi": "Penilaian Kompetensi",
+    "level": 3,
+    "nomor_urut": "224",
+    "unit_kerja": "BU/SET"
+  },
+  {
+    "input": "000.2.2/205/BU/Set",
+    "kode_terekstrak": "000.2.2",
+    "kode_valid": "000.2.2",
+    "status": "VALID",
+    "deskripsi": "Perjalanan Dinas Dalam Negeri",
+    "level": 3,
+    "nomor_urut": "205",
+    "unit_kerja": "BU/Set"
+  },
+  {
+    "input": "100.4.1/059/Prc",
+    "kode_terekstrak": "100.4.1",
+    "kode_valid": "100.4.1",
+    "status": "VALID",
+    "deskripsi": "Program Legislasi",
+    "level": 3,
+    "nomor_urut": "059",
+    "unit_kerja": "Prc"
+  }
+]

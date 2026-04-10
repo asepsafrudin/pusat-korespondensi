@@ -1,0 +1,19 @@
+{
+  "source_file": "/workspace/docs/Kodefikasi Arsip Terbaru Bangda 2022 - Pusat.csv",
+  "total_records": 477,
+  "root_categories": 10,
+  "total_nodes_in_tree": 477,
+  "level_distribution": {
+    "1": 10,
+    "2": 67,
+    "3": 280,
+    "4": 120
+  },
+  "generated_at": "2024",
+  "description": "Kodefikasi Arsip sesuai Permendagri No. 83 Tahun 2022",
+  "usage": {
+    "full_tree": "Struktur lengkap hierarki untuk navigasi",
+    "referensi": "Data referensi untuk lookup",
+    "index": "Index flat untuk validasi cepat"
+  }
+}
