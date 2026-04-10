@@ -1,0 +1,748 @@
+[
+  {
+    "input_asli": "500-8/261-03/SD.V/2025",
+    "input_normalisasi": "500.8/261-03/SD.V/2025",
+    "kode_klasifikasi": "500.8",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "KOMUNIKASI DAN INFORMATIKA",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.V",
+      "nama_bidang": "Komunikasi dan Informatika",
+      "kode_mapping": "500.8"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.8 konsisten dengan unit SD.V (Komunikasi dan Informatika)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.7/260-08/SD.IV/2025",
+    "input_normalisasi": "500.7/260-08/SD.IV/2025",
+    "kode_klasifikasi": "500.7",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PERHUBUNGAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.IV",
+      "nama_bidang": "Perhubungan",
+      "kode_mapping": "500.7"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.7 konsisten dengan unit SD.IV (Perhubungan)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.7/640/SD.IV",
+    "input_normalisasi": "500.7/640/SD.IV",
+    "kode_klasifikasi": "500.7",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PERHUBUNGAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.IV",
+      "nama_bidang": "Perhubungan",
+      "kode_mapping": "500.7"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.7 konsisten dengan unit SD.IV (Perhubungan)."
+      ]
+    }
+  },
+  {
+    "input_asli": "600.10/002.11/SD II/2026",
+    "input_normalisasi": "600.10/002.11/SD II/2026",
+    "kode_klasifikasi": "600.10",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PERUMAHAN DAN KAWASAN PEMUKIMAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.II",
+      "nama_bidang": "Perumahan dan Kawasan Pemukiman",
+      "kode_mapping": "600.10"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 600.10 konsisten dengan unit SD.II (Perumahan dan Kawasan Pemukiman)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.8/003.01/SD.V/2026",
+    "input_normalisasi": "500.8/003.01/SD.V/2026",
+    "kode_klasifikasi": "500.8",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "KOMUNIKASI DAN INFORMATIKA",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.V",
+      "nama_bidang": "Komunikasi dan Informatika",
+      "kode_mapping": "500.8"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.8 konsisten dengan unit SD.V (Komunikasi dan Informatika)."
+      ]
+    }
+  },
+  {
+    "input_asli": "003.05/UN/TU.SUPD. II/2026",
+    "input_normalisasi": "003.05/UN/TU.SUPD. II/2026",
+    "kode_klasifikasi": "003.05",
+    "validasi_referensi": {
+      "status": "UNKNOWN",
+      "deskripsi": "Tidak ditemukan dalam referensi Permendagri 83/2022",
+      "level": 0,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "TU",
+      "nama_bidang": "Bagian Umum",
+      "kode_mapping": "000.2.2"
+    },
+    "analisis_konsistensi": {
+      "status": "WARNING",
+      "catatan": [
+        "Potensi ketidaksesuaian: Unit TU (Bagian Umum) biasanya menggunakan kode 000.2.2, namun surat menggunakan kode 003.05."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.7/261.04/SD IV/2025",
+    "input_normalisasi": "500.7/261.04/SD IV/2025",
+    "kode_klasifikasi": "500.7",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PERHUBUNGAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.IV",
+      "nama_bidang": "Perhubungan",
+      "kode_mapping": "500.7"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.7 konsisten dengan unit SD.IV (Perhubungan)."
+      ]
+    }
+  },
+  {
+    "input_asli": "004-06/SD.II/TU.SUPD.II/I/2026",
+    "input_normalisasi": "004.06/SD.II/TU.SUPD.II/I/2026",
+    "kode_klasifikasi": "004.06",
+    "validasi_referensi": {
+      "status": "UNKNOWN",
+      "deskripsi": "Tidak ditemukan dalam referensi Permendagri 83/2022",
+      "level": 0,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.II",
+      "nama_bidang": "Perumahan dan Kawasan Pemukiman",
+      "kode_mapping": "600.10"
+    },
+    "analisis_konsistensi": {
+      "status": "WARNING",
+      "catatan": [
+        "Potensi ketidaksesuaian: Unit SD.II (Perumahan dan Kawasan Pemukiman) biasanya menggunakan kode 600.10, namun surat menggunakan kode 004.06."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.7/004-05/SD.IV/2026",
+    "input_normalisasi": "500.7/004-05/SD.IV/2026",
+    "kode_klasifikasi": "500.7",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PERHUBUNGAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.IV",
+      "nama_bidang": "Perhubungan",
+      "kode_mapping": "500.7"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.7 konsisten dengan unit SD.IV (Perhubungan)."
+      ]
+    }
+  },
+  {
+    "input_asli": "600.9/005.01/SD I/2026",
+    "input_normalisasi": "600.9/005.01/SD I/2026",
+    "kode_klasifikasi": "600.9",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PEKERJAAN UMUM",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.I",
+      "nama_bidang": "Pekerjaan Umum",
+      "kode_mapping": "600.9"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 600.9 konsisten dengan unit SD.I (Pekerjaan Umum)."
+      ]
+    }
+  },
+  {
+    "input_asli": "600.9/005-05",
+    "input_normalisasi": "600.9/005-05",
+    "kode_klasifikasi": "600.9",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PEKERJAAN UMUM",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": null,
+      "nama_bidang": null,
+      "kode_mapping": null
+    },
+    "analisis_konsistensi": {
+      "status": "OK",
+      "catatan": []
+    }
+  },
+  {
+    "input_asli": "600.9/006.02/SD.I/2026",
+    "input_normalisasi": "600.9/006.02/SD.I/2026",
+    "kode_klasifikasi": "600.9",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PEKERJAAN UMUM",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.I",
+      "nama_bidang": "Pekerjaan Umum",
+      "kode_mapping": "600.9"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 600.9 konsisten dengan unit SD.I (Pekerjaan Umum)."
+      ]
+    }
+  },
+  {
+    "input_asli": "600.10/006.01/SD.II/2026",
+    "input_normalisasi": "600.10/006.01/SD.II/2026",
+    "kode_klasifikasi": "600.10",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PERUMAHAN DAN KAWASAN PEMUKIMAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.II",
+      "nama_bidang": "Perumahan dan Kawasan Pemukiman",
+      "kode_mapping": "600.10"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 600.10 konsisten dengan unit SD.II (Perumahan dan Kawasan Pemukiman)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.8/007.05/SD V/2026",
+    "input_normalisasi": "500.8/007.05/SD V/2026",
+    "kode_klasifikasi": "500.8",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "KOMUNIKASI DAN INFORMATIKA",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.V",
+      "nama_bidang": "Komunikasi dan Informatika",
+      "kode_mapping": "500.8"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.8 konsisten dengan unit SD.V (Komunikasi dan Informatika)."
+      ]
+    }
+  },
+  {
+    "input_asli": "600.10 /009-04 / SD. II / 2026",
+    "input_normalisasi": "600.10/009-04 / SD. II / 2026",
+    "kode_klasifikasi": "600.10",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PERUMAHAN DAN KAWASAN PEMUKIMAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.II",
+      "nama_bidang": "Perumahan dan Kawasan Pemukiman",
+      "kode_mapping": "600.10"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 600.10 konsisten dengan unit SD.II (Perumahan dan Kawasan Pemukiman)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.7/010.01/SD.IV/2026",
+    "input_normalisasi": "500.7/010.01/SD.IV/2026",
+    "kode_klasifikasi": "500.7",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PERHUBUNGAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.IV",
+      "nama_bidang": "Perhubungan",
+      "kode_mapping": "500.7"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.7 konsisten dengan unit SD.IV (Perhubungan)."
+      ]
+    }
+  },
+  {
+    "input_asli": "600.10/010-05/SD.II/2026",
+    "input_normalisasi": "600.10/010-05/SD.II/2026",
+    "kode_klasifikasi": "600.10",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PERUMAHAN DAN KAWASAN PEMUKIMAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.II",
+      "nama_bidang": "Perumahan dan Kawasan Pemukiman",
+      "kode_mapping": "600.10"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 600.10 konsisten dengan unit SD.II (Perumahan dan Kawasan Pemukiman)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.5/010-08/SD.III/2026",
+    "input_normalisasi": "500.5/010-08/SD.III/2026",
+    "kode_klasifikasi": "500.5",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "KELAUTAN DAN PERIKANAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.III",
+      "nama_bidang": "Kelautan dan Perikanan",
+      "kode_mapping": "500.5"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.5 konsisten dengan unit SD.III (Kelautan dan Perikanan)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.8/010-09/SD.V/2026",
+    "input_normalisasi": "500.8/010-09/SD.V/2026",
+    "kode_klasifikasi": "500.8",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "KOMUNIKASI DAN INFORMATIKA",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.V",
+      "nama_bidang": "Komunikasi dan Informatika",
+      "kode_mapping": "500.8"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.8 konsisten dengan unit SD.V (Komunikasi dan Informatika)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.8/010-04/SD.V/2026",
+    "input_normalisasi": "500.8/010-04/SD.V/2026",
+    "kode_klasifikasi": "500.8",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "KOMUNIKASI DAN INFORMATIKA",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.V",
+      "nama_bidang": "Komunikasi dan Informatika",
+      "kode_mapping": "500.8"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.8 konsisten dengan unit SD.V (Komunikasi dan Informatika)."
+      ]
+    }
+  },
+  {
+    "input_asli": "010-07/UM/TU-SUPD.II/2026",
+    "input_normalisasi": "010.07/UM/TU-SUPD.II/2026",
+    "kode_klasifikasi": "010.07",
+    "validasi_referensi": {
+      "status": "UNKNOWN",
+      "deskripsi": "Tidak ditemukan dalam referensi Permendagri 83/2022",
+      "level": 0,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "TU",
+      "nama_bidang": "Bagian Umum",
+      "kode_mapping": "000.2.2"
+    },
+    "analisis_konsistensi": {
+      "status": "WARNING",
+      "catatan": [
+        "Potensi ketidaksesuaian: Unit TU (Bagian Umum) biasanya menggunakan kode 000.2.2, namun surat menggunakan kode 010.07."
+      ]
+    }
+  },
+  {
+    "input_asli": "600.10/011.02/SD.II/2026",
+    "input_normalisasi": "600.10/011.02/SD.II/2026",
+    "kode_klasifikasi": "600.10",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PERUMAHAN DAN KAWASAN PEMUKIMAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.II",
+      "nama_bidang": "Perumahan dan Kawasan Pemukiman",
+      "kode_mapping": "600.10"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 600.10 konsisten dengan unit SD.II (Perumahan dan Kawasan Pemukiman)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.8/011-04/SD V/2026",
+    "input_normalisasi": "500.8/011-04/SD V/2026",
+    "kode_klasifikasi": "500.8",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "KOMUNIKASI DAN INFORMATIKA",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.V",
+      "nama_bidang": "Komunikasi dan Informatika",
+      "kode_mapping": "500.8"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.8 konsisten dengan unit SD.V (Komunikasi dan Informatika)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.7/011-03/SD.IV/2026",
+    "input_normalisasi": "500.7/011-03/SD.IV/2026",
+    "kode_klasifikasi": "500.7",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PERHUBUNGAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.IV",
+      "nama_bidang": "Perhubungan",
+      "kode_mapping": "500.7"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.7 konsisten dengan unit SD.IV (Perhubungan)."
+      ]
+    }
+  },
+  {
+    "input_asli": "600.9/013-05/SD.I/2026",
+    "input_normalisasi": "600.9/013-05/SD.I/2026",
+    "kode_klasifikasi": "600.9",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PEKERJAAN UMUM",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.I",
+      "nama_bidang": "Pekerjaan Umum",
+      "kode_mapping": "600.9"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 600.9 konsisten dengan unit SD.I (Pekerjaan Umum)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.7/015.01/SD.IV/2026",
+    "input_normalisasi": "500.7/015.01/SD.IV/2026",
+    "kode_klasifikasi": "500.7",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PERHUBUNGAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.IV",
+      "nama_bidang": "Perhubungan",
+      "kode_mapping": "500.7"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.7 konsisten dengan unit SD.IV (Perhubungan)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.7/015.02/SD.IV/2026",
+    "input_normalisasi": "500.7/015.02/SD.IV/2026",
+    "kode_klasifikasi": "500.7",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PERHUBUNGAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.IV",
+      "nama_bidang": "Perhubungan",
+      "kode_mapping": "500.7"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.7 konsisten dengan unit SD.IV (Perhubungan)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.8/016.2/SD.V/2026",
+    "input_normalisasi": "500.8/016.2/SD.V/2026",
+    "kode_klasifikasi": "500.8",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "KOMUNIKASI DAN INFORMATIKA",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.V",
+      "nama_bidang": "Komunikasi dan Informatika",
+      "kode_mapping": "500.8"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.8 konsisten dengan unit SD.V (Komunikasi dan Informatika)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.7/016.05/SD.IV/2026",
+    "input_normalisasi": "500.7/016.05/SD.IV/2026",
+    "kode_klasifikasi": "500.7",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PERHUBUNGAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.IV",
+      "nama_bidang": "Perhubungan",
+      "kode_mapping": "500.7"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.7 konsisten dengan unit SD.IV (Perhubungan)."
+      ]
+    }
+  },
+  {
+    "input_asli": "016.04/UM/TU.SUPD II/2026",
+    "input_normalisasi": "016.04/UM/TU.SUPD II/2026",
+    "kode_klasifikasi": "016.04",
+    "validasi_referensi": {
+      "status": "UNKNOWN",
+      "deskripsi": "Tidak ditemukan dalam referensi Permendagri 83/2022",
+      "level": 0,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "TU",
+      "nama_bidang": "Bagian Umum",
+      "kode_mapping": "000.2.2"
+    },
+    "analisis_konsistensi": {
+      "status": "WARNING",
+      "catatan": [
+        "Potensi ketidaksesuaian: Unit TU (Bagian Umum) biasanya menggunakan kode 000.2.2, namun surat menggunakan kode 016.04."
+      ]
+    }
+  },
+  {
+    "input_asli": "600.10/017.07/SD.II/2026",
+    "input_normalisasi": "600.10/017.07/SD.II/2026",
+    "kode_klasifikasi": "600.10",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "PERUMAHAN DAN KAWASAN PEMUKIMAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.II",
+      "nama_bidang": "Perumahan dan Kawasan Pemukiman",
+      "kode_mapping": "600.10"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 600.10 konsisten dengan unit SD.II (Perumahan dan Kawasan Pemukiman)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.8/018.03/SD.V/2026",
+    "input_normalisasi": "500.8/018.03/SD.V/2026",
+    "kode_klasifikasi": "500.8",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "KOMUNIKASI DAN INFORMATIKA",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.V",
+      "nama_bidang": "Komunikasi dan Informatika",
+      "kode_mapping": "500.8"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.8 konsisten dengan unit SD.V (Komunikasi dan Informatika)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.5/018.02/SD.III/2026",
+    "input_normalisasi": "500.5/018.02/SD.III/2026",
+    "kode_klasifikasi": "500.5",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "KELAUTAN DAN PERIKANAN",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.III",
+      "nama_bidang": "Kelautan dan Perikanan",
+      "kode_mapping": "500.5"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.5 konsisten dengan unit SD.III (Kelautan dan Perikanan)."
+      ]
+    }
+  },
+  {
+    "input_asli": "500.8/019-05/SD.V/2026",
+    "input_normalisasi": "500.8/019-05/SD.V/2026",
+    "kode_klasifikasi": "500.8",
+    "validasi_referensi": {
+      "status": "EXACT_MATCH",
+      "deskripsi": "KOMUNIKASI DAN INFORMATIKA",
+      "level": 2,
+      "hierarki": []
+    },
+    "deteksi_unit": {
+      "unit_kerja": "SD.V",
+      "nama_bidang": "Komunikasi dan Informatika",
+      "kode_mapping": "500.8"
+    },
+    "analisis_konsistensi": {
+      "status": "CONSISTENT",
+      "catatan": [
+        "Kode 500.8 konsisten dengan unit SD.V (Komunikasi dan Informatika)."
+      ]
+    }
+  }
+]

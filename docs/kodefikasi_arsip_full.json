@@ -1,0 +1,3902 @@
+[
+  {
+    "code": "000",
+    "description": "UMUM",
+    "level": 1,
+    "parent_code": null,
+    "full_code": "000",
+    "children": [
+      {
+        "code": "000.1",
+        "description": "LAMBANG",
+        "level": 2,
+        "parent_code": "000",
+        "full_code": "000.1",
+        "children": []
+      },
+      {
+        "code": "000.2",
+        "description": "KETATAUSAHAAN DAN KERUMAHTANGGAAN",
+        "level": 2,
+        "parent_code": "000",
+        "full_code": "000.2",
+        "children": [
+          {
+            "code": "000.2.1",
+            "description": "Telekomunikasi",
+            "level": 3,
+            "parent_code": "000.2",
+            "full_code": "000.2.1",
+            "children": []
+          },
+          {
+            "code": "000.2.2",
+            "description": "Perjalanan Dinas Dalam Negeri",
+            "level": 3,
+            "parent_code": "000.2",
+            "full_code": "000.2.2",
+            "children": [
+              {
+                "code": "000.2.2.3",
+                "description": "Perjalanan Dinas Pejabat Eselon 1",
+                "level": 4,
+                "parent_code": "000.2.2",
+                "full_code": "000.2.2.3",
+                "children": []
+              },
+              {
+                "code": "000.2.2.4",
+                "description": "Perjalanan Dinas Pegawai",
+                "level": 4,
+                "parent_code": "000.2.2",
+                "full_code": "000.2.2.4",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "000.2.3",
+            "description": "Perjalanan Dinas Luar Negeri",
+            "level": 3,
+            "parent_code": "000.2",
+            "full_code": "000.2.3",
+            "children": [
+              {
+                "code": "000.2.3.3",
+                "description": "Perjalanan Dinas Pejabat Eselon 1",
+                "level": 4,
+                "parent_code": "000.2.3",
+                "full_code": "000.2.3.3",
+                "children": []
+              },
+              {
+                "code": "000.2.3.6",
+                "description": "Perjalanan Dinas Pegawai",
+                "level": 4,
+                "parent_code": "000.2.3",
+                "full_code": "000.2.3.6",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "000.2.4",
+            "description": "Penggunaan Fasilitas Kantor Antara lain: Permintaan dan Penggunaan Ruang Rapat, Gedung, Kendaraan, Wisma, Rumah Dinas dan Fasilitas Kantor Lainnya",
+            "level": 3,
+            "parent_code": "000.2",
+            "full_code": "000.2.4",
+            "children": []
+          },
+          {
+            "code": "000.2.5",
+            "description": "Rapat Pimpinan antara lain: Notula/Risalah Rapat",
+            "level": 3,
+            "parent_code": "000.2",
+            "full_code": "000.2.5",
+            "children": []
+          },
+          {
+            "code": "000.2.7",
+            "description": "Pengurusan kendaraan dinas",
+            "level": 3,
+            "parent_code": "000.2",
+            "full_code": "000.2.7",
+            "children": [
+              {
+                "code": "000.2.7.1",
+                "description": "Pengurusan surat-surat kendaraan dinas",
+                "level": 4,
+                "parent_code": "000.2.7",
+                "full_code": "000.2.7.1",
+                "children": []
+              },
+              {
+                "code": "000.2.7.2",
+                "description": "Pemeliharaan dan perbaikan",
+                "level": 4,
+                "parent_code": "000.2.7",
+                "full_code": "000.2.7.2",
+                "children": []
+              },
+              {
+                "code": "000.2.7.3",
+                "description": "Pengurusan kehilangan dan masalah kendaraan",
+                "level": 4,
+                "parent_code": "000.2.7",
+                "full_code": "000.2.7.3",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "000.2.8",
+            "description": "Pemeliharaan Gedung, Taman dan Peralatan Kantor",
+            "level": 3,
+            "parent_code": "000.2",
+            "full_code": "000.2.8",
+            "children": [
+              {
+                "code": "000.2.8.1",
+                "description": "Pertamanan/ Landscape",
+                "level": 4,
+                "parent_code": "000.2.8",
+                "full_code": "000.2.8.1",
+                "children": []
+              },
+              {
+                "code": "000.2.8.2",
+                "description": "Penghijauan",
+                "level": 4,
+                "parent_code": "000.2.8",
+                "full_code": "000.2.8.2",
+                "children": []
+              },
+              {
+                "code": "000.2.8.3",
+                "description": "Perbaikan Gedung",
+                "level": 4,
+                "parent_code": "000.2.8",
+                "full_code": "000.2.8.3",
+                "children": []
+              },
+              {
+                "code": "000.2.8.4",
+                "description": "Perbaikan Peralatan Kantor",
+                "level": 4,
+                "parent_code": "000.2.8",
+                "full_code": "000.2.8.4",
+                "children": []
+              },
+              {
+                "code": "000.2.8.5",
+                "description": "Perbaikan Rumah Dinas/ Wisma",
+                "level": 4,
+                "parent_code": "000.2.8",
+                "full_code": "000.2.8.5",
+                "children": []
+              },
+              {
+                "code": "000.2.8.6",
+                "description": "Kebersihan Gedung dan Taman",
+                "level": 4,
+                "parent_code": "000.2.8",
+                "full_code": "000.2.8.6",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "000.2.9",
+            "description": "Pengelolaan jaringan listrik, air, telepon, dan komputer:",
+            "level": 3,
+            "parent_code": "000.2",
+            "full_code": "000.2.9",
+            "children": [
+              {
+                "code": "000.2.9.1",
+                "description": "Perbaikan/pemeliharaan",
+                "level": 4,
+                "parent_code": "000.2.9",
+                "full_code": "000.2.9.1",
+                "children": []
+              },
+              {
+                "code": "000.2.9.2",
+                "description": "Pemasangan",
+                "level": 4,
+                "parent_code": "000.2.9",
+                "full_code": "000.2.9.2",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "000.2.10",
+            "description": "Ketertiban dan keamanan",
+            "level": 3,
+            "parent_code": "000.2",
+            "full_code": "000.2.10",
+            "children": [
+              {
+                "code": "000.2.10.1",
+                "description": "Pengamanan, penjagaan, dan pengawalan terhadap pejabat, kantor, dan rumah dinas",
+                "level": 4,
+                "parent_code": "000.2.10",
+                "full_code": "000.2.10.1",
+                "children": []
+              },
+              {
+                "code": "000.2.10.2",
+                "description": "Laporan ketertiban dan keamanan",
+                "level": 4,
+                "parent_code": "000.2.10",
+                "full_code": "000.2.10.2",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "000.2.12",
+            "description": "Administrasi pakaian dinas pegawai, satpam, petugas kebersihan, dan pegawai lainnya",
+            "level": 3,
+            "parent_code": "000.2",
+            "full_code": "000.2.12",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "000.3",
+        "description": "PERLENGKAPAN",
+        "level": 2,
+        "parent_code": "000",
+        "full_code": "000.3",
+        "children": [
+          {
+            "code": "000.3.1",
+            "description": "Inventarisasi dan Penyimpanan",
+            "level": 3,
+            "parent_code": "000.3",
+            "full_code": "000.3.1",
+            "children": [
+              {
+                "code": "000.3.1.1",
+                "description": "Data hasil inventarisasi dan penyimpanan",
+                "level": 4,
+                "parent_code": "000.3.1",
+                "full_code": "000.3.1.1",
+                "children": []
+              },
+              {
+                "code": "000.3.1.2",
+                "description": "Laporan dan evaluasi inventarisasi dan penyimpanan",
+                "level": 4,
+                "parent_code": "000.3.1",
+                "full_code": "000.3.1.2",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "000.3.2",
+            "description": "Pemeliharaan peralatan kantor",
+            "level": 3,
+            "parent_code": "000.3",
+            "full_code": "000.3.2",
+            "children": [
+              {
+                "code": "000.3.2.1",
+                "description": "Data hasil pemeliharaan kantor",
+                "level": 4,
+                "parent_code": "000.3.2",
+                "full_code": "000.3.2.1",
+                "children": []
+              },
+              {
+                "code": "000.3.2.2",
+                "description": "Laporan dan evaluasi pemeliharaan kantor",
+                "level": 4,
+                "parent_code": "000.3.2",
+                "full_code": "000.3.2.2",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "000.3.3",
+            "description": "Distribusi",
+            "level": 3,
+            "parent_code": "000.3",
+            "full_code": "000.3.3",
+            "children": [
+              {
+                "code": "000.3.3.1",
+                "description": "Barang habis pakai",
+                "level": 4,
+                "parent_code": "000.3.3",
+                "full_code": "000.3.3.1",
+                "children": []
+              },
+              {
+                "code": "000.3.3.2",
+                "description": "Barang milik daerah",
+                "level": 4,
+                "parent_code": "000.3.3",
+                "full_code": "000.3.3.2",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "000.3.4",
+            "description": "Penghapusan Barang Milik Daerah Antara lain: Keputusan Pembentukan Tim, Berita Acara Penghapusan Barang Milik Daerah, Daftar Barang yang dihapuskan, Laporan Hasil Pelaksanaan Penghapusan BMD termasuk didalamnya proses lelang penghapusan",
+            "level": 3,
+            "parent_code": "000.3",
+            "full_code": "000.3.4",
+            "children": []
+          },
+          {
+            "code": "000.3.5",
+            "description": "Pengelolaan Database Barang Milik Daerah",
+            "level": 3,
+            "parent_code": "000.3",
+            "full_code": "000.3.5",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "000.4",
+        "description": "PENGADAAN",
+        "level": 2,
+        "parent_code": "000",
+        "full_code": "000.4",
+        "children": [
+          {
+            "code": "000.4.1",
+            "description": "Rencana Pengadaan Barang dan Jasa Antara lain: Identifikasi dan analisis kebutuhan barang/jasa, penyusunan dan penetapan rencana penganggaran pengadaan, penetapan kebijakan umum, penyusunan kerangka Acuan Kerja (KAK), Pengumuman Rencana Umum Pengadaan",
+            "level": 3,
+            "parent_code": "000.4",
+            "full_code": "000.4.1",
+            "children": []
+          },
+          {
+            "code": "000.4.2",
+            "description": "Pengadaan Langsung Antara lain: persiapan pemilihan penyedia, pelaksanaan pemilihan penyedia, penandatanganan kontrak, pelaksanaan kontrak",
+            "level": 3,
+            "parent_code": "000.4",
+            "full_code": "000.4.2",
+            "children": []
+          },
+          {
+            "code": "000.4.3",
+            "description": "Pengadaan Tidak Langsung/Lelang Antara lain: persiapan pemilihan penyedia, pelaksanaan pemilihan penyedia, penandatanganan kontrak, pelaksanaan kontrak",
+            "level": 3,
+            "parent_code": "000.4",
+            "full_code": "000.4.3",
+            "children": []
+          },
+          {
+            "code": "000.4.4",
+            "description": "Swakelola Antara lain: perencanaan, pelaksanaan dan evaluasi",
+            "level": 3,
+            "parent_code": "000.4",
+            "full_code": "000.4.4",
+            "children": []
+          },
+          {
+            "code": "000.4.5",
+            "description": "Pengolahan Sistem Informasi Pengadaan Antara lain: Data base pengguna sistem informasi pengadaan barang/jasa, Data Base kontrak, Data Base Pengadaan Barang/jasa",
+            "level": 3,
+            "parent_code": "000.4",
+            "full_code": "000.4.5",
+            "children": []
+          },
+          {
+            "code": "000.4.6",
+            "description": "Monitoring dan Evaluasi Antara lain: Laporan Hasil Monitoring, Laporan hasil evaluasi",
+            "level": 3,
+            "parent_code": "000.4",
+            "full_code": "000.4.6",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "000.5",
+        "description": "PERPUSTAKAAN",
+        "level": 2,
+        "parent_code": "000",
+        "full_code": "000.5",
+        "children": []
+      },
+      {
+        "code": "000.6",
+        "description": "KEARSIPAN",
+        "level": 2,
+        "parent_code": "000",
+        "full_code": "000.6",
+        "children": []
+      },
+      {
+        "code": "000.7",
+        "description": "PERSANDIAN",
+        "level": 2,
+        "parent_code": "000",
+        "full_code": "000.7",
+        "children": []
+      },
+      {
+        "code": "000.8",
+        "description": "PERENCANAAN PEMBANGUNAN",
+        "level": 2,
+        "parent_code": "000",
+        "full_code": "000.8",
+        "children": [
+          {
+            "code": "000.8.1",
+            "description": "Musyawarah Perencanaan Pembangunan/Musrenbang",
+            "level": 3,
+            "parent_code": "000.8",
+            "full_code": "000.8.1",
+            "children": [
+              {
+                "code": "000.8.1.1",
+                "description": "Musrenbang Provinsi",
+                "level": 4,
+                "parent_code": "000.8.1",
+                "full_code": "000.8.1.1",
+                "children": []
+              },
+              {
+                "code": "000.8.1.2",
+                "description": "Musrenbang Nasional",
+                "level": 4,
+                "parent_code": "000.8.1",
+                "full_code": "000.8.1.2",
+                "children": []
+              },
+              {
+                "code": "000.8.1.3",
+                "description": "Musrenbang Kab/Kota",
+                "level": 4,
+                "parent_code": "000.8.1",
+                "full_code": "000.8.1.3",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "000.8.2",
+            "description": "Perencanaan Pembangungan Daerah",
+            "level": 3,
+            "parent_code": "000.8",
+            "full_code": "000.8.2",
+            "children": [
+              {
+                "code": "000.8.2.1",
+                "description": "Rencana Pembangunan Jangka Panjang",
+                "level": 4,
+                "parent_code": "000.8.2",
+                "full_code": "000.8.2.1",
+                "children": []
+              },
+              {
+                "code": "000.8.2.2",
+                "description": "Rencana Pembangunan Jangka Menengah",
+                "level": 4,
+                "parent_code": "000.8.2",
+                "full_code": "000.8.2.2",
+                "children": []
+              },
+              {
+                "code": "000.8.2.3",
+                "description": "Rencana Anggaran Daerah",
+                "level": 4,
+                "parent_code": "000.8.2",
+                "full_code": "000.8.2.3",
+                "children": []
+              },
+              {
+                "code": "000.8.2.4",
+                "description": "Rencana Pembangunan Tahunan",
+                "level": 4,
+                "parent_code": "000.8.2",
+                "full_code": "000.8.2.4",
+                "children": []
+              },
+              {
+                "code": "000.8.2.5",
+                "description": "Rencana Pembentukan Satuan Kerja Perangkat Daerah",
+                "level": 4,
+                "parent_code": "000.8.2",
+                "full_code": "000.8.2.5",
+                "children": []
+              },
+              {
+                "code": "000.8.2.6",
+                "description": "Program kerja tahunan",
+                "level": 4,
+                "parent_code": "000.8.2",
+                "full_code": "000.8.2.6",
+                "children": []
+              },
+              {
+                "code": "000.8.2.7",
+                "description": "Penetapan / Kontrak Kinerja",
+                "level": 4,
+                "parent_code": "000.8.2",
+                "full_code": "000.8.2.7",
+                "children": []
+              },
+              {
+                "code": "000.8.2.8",
+                "description": "Laporan Berkala",
+                "level": 4,
+                "parent_code": "000.8.2",
+                "full_code": "000.8.2.8",
+                "children": []
+              },
+              {
+                "code": "000.8.2.9",
+                "description": "Laporan Insidential",
+                "level": 4,
+                "parent_code": "000.8.2",
+                "full_code": "000.8.2.9",
+                "children": []
+              },
+              {
+                "code": "000.8.2.10",
+                "description": "Evaluasi Program",
+                "level": 4,
+                "parent_code": "000.8.2",
+                "full_code": "000.8.2.10",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "000.8.3",
+            "description": "Koordinasi dan Sinkronisasi Perencanaan Pembangunan",
+            "level": 3,
+            "parent_code": "000.8",
+            "full_code": "000.8.3",
+            "children": []
+          },
+          {
+            "code": "000.8.4",
+            "description": "Konsultasi Perencanaan Pembangunan",
+            "level": 3,
+            "parent_code": "000.8",
+            "full_code": "000.8.4",
+            "children": []
+          },
+          {
+            "code": "000.8.5",
+            "description": "Pemantauan, Evaluasi, Penilaian, dan Pelaporan Perencanaan Pembangunan",
+            "level": 3,
+            "parent_code": "000.8",
+            "full_code": "000.8.5",
+            "children": []
+          },
+          {
+            "code": "000.8.6",
+            "description": "Aksi Strategis Daerah",
+            "level": 3,
+            "parent_code": "000.8",
+            "full_code": "000.8.6",
+            "children": [
+              {
+                "code": "000.8.6.1",
+                "description": "Rancangan awal perencanaan aksi strategi daerah",
+                "level": 4,
+                "parent_code": "000.8.6",
+                "full_code": "000.8.6.1",
+                "children": []
+              },
+              {
+                "code": "000.8.6.2",
+                "description": "Rapat pembahasan rancangan awal dengan Perangkat Daerah",
+                "level": 4,
+                "parent_code": "000.8.6",
+                "full_code": "000.8.6.2",
+                "children": []
+              },
+              {
+                "code": "000.8.6.3",
+                "description": "Sosisalisasi dengan Perangkat Daerah",
+                "level": 4,
+                "parent_code": "000.8.6",
+                "full_code": "000.8.6.3",
+                "children": []
+              },
+              {
+                "code": "000.8.6.4",
+                "description": "Rancangan akhir perencanaan aksi strategi daerah",
+                "level": 4,
+                "parent_code": "000.8.6",
+                "full_code": "000.8.6.4",
+                "children": []
+              },
+              {
+                "code": "000.8.6.5",
+                "description": "Penerapan perencaan aksi strategi daerah",
+                "level": 4,
+                "parent_code": "000.8.6",
+                "full_code": "000.8.6.5",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "000.8.7",
+            "description": "Perencanaan Pendanaan Pembangunan",
+            "level": 3,
+            "parent_code": "000.8",
+            "full_code": "000.8.7",
+            "children": [
+              {
+                "code": "000.8.7.1",
+                "description": "Pendanaan Nasional dan Hibah",
+                "level": 4,
+                "parent_code": "000.8.7",
+                "full_code": "000.8.7.1",
+                "children": []
+              },
+              {
+                "code": "000.8.7.2",
+                "description": "Pendanaan Daerah",
+                "level": 4,
+                "parent_code": "000.8.7",
+                "full_code": "000.8.7.2",
+                "children": []
+              },
+              {
+                "code": "000.8.7.3",
+                "description": "Kerjasama Pembangunan Nasional",
+                "level": 4,
+                "parent_code": "000.8.7",
+                "full_code": "000.8.7.3",
+                "children": []
+              },
+              {
+                "code": "000.8.7.4",
+                "description": "Surat Berharga Syariah Negara",
+                "level": 4,
+                "parent_code": "000.8.7",
+                "full_code": "000.8.7.4",
+                "children": []
+              },
+              {
+                "code": "000.8.7.5",
+                "description": "Pendanaan On Top atau Inisiatif Baru",
+                "level": 4,
+                "parent_code": "000.8.7",
+                "full_code": "000.8.7.5",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "000.9",
+        "description": "ORGANISASI DAN TATA LAKSANA",
+        "level": 2,
+        "parent_code": "000",
+        "full_code": "000.9",
+        "children": [
+          {
+            "code": "000.9.1",
+            "description": "Struktur Organisasi di lingkungan Kementerain Dalam Negeri",
+            "level": 3,
+            "parent_code": "000.9",
+            "full_code": "000.9.1",
+            "children": [
+              {
+                "code": "000.9.1.2",
+                "description": "Pengubahan",
+                "level": 4,
+                "parent_code": "000.9.1",
+                "full_code": "000.9.1.2",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "000.9.2",
+            "description": "Uraian Jabatan",
+            "level": 3,
+            "parent_code": "000.9",
+            "full_code": "000.9.2",
+            "children": [
+              {
+                "code": "000.9.2.1",
+                "description": "Analisa Jabatan",
+                "level": 4,
+                "parent_code": "000.9.2",
+                "full_code": "000.9.2.1",
+                "children": []
+              },
+              {
+                "code": "000.9.2.2",
+                "description": "Analisa Beban Kerja",
+                "level": 4,
+                "parent_code": "000.9.2",
+                "full_code": "000.9.2.2",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "000.9.3",
+            "description": "Ketatalaksanaan",
+            "level": 3,
+            "parent_code": "000.9",
+            "full_code": "000.9.3",
+            "children": [
+              {
+                "code": "000.9.3.2",
+                "description": "Standar Pelayanan",
+                "level": 4,
+                "parent_code": "000.9.3",
+                "full_code": "000.9.3.2",
+                "children": []
+              },
+              {
+                "code": "000.9.3.3",
+                "description": "Standar Operasional Prosedur",
+                "level": 4,
+                "parent_code": "000.9.3",
+                "full_code": "000.9.3.3",
+                "children": []
+              },
+              {
+                "code": "000.9.3.4",
+                "description": "Pelayanan Publik",
+                "level": 4,
+                "parent_code": "000.9.3",
+                "full_code": "000.9.3.4",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "000.9.4",
+            "description": "Standar Kompetensi jabatan struktural dan fungsional",
+            "level": 3,
+            "parent_code": "000.9",
+            "full_code": "000.9.4",
+            "children": []
+          },
+          {
+            "code": "000.9.5",
+            "description": "Evaluasi Kelembagaan",
+            "level": 3,
+            "parent_code": "000.9",
+            "full_code": "000.9.5",
+            "children": []
+          },
+          {
+            "code": "000.9.6",
+            "description": "Koordinasi Penguatan Reformasi dan Birokrasi",
+            "level": 3,
+            "parent_code": "000.9",
+            "full_code": "000.9.6",
+            "children": [
+              {
+                "code": "000.9.6.1",
+                "description": "Budaya Kerja",
+                "level": 4,
+                "parent_code": "000.9.6",
+                "full_code": "000.9.6.1",
+                "children": []
+              },
+              {
+                "code": "000.9.6.2",
+                "description": "Penilaian Mandiri Reformasi Birokrasi",
+                "level": 4,
+                "parent_code": "000.9.6",
+                "full_code": "000.9.6.2",
+                "children": []
+              },
+              {
+                "code": "000.9.6.3",
+                "description": "Akuntabilitas Kinerja Instansi Pemerintah",
+                "level": 4,
+                "parent_code": "000.9.6",
+                "full_code": "000.9.6.3",
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "000.10",
+        "description": "STRATEGI KEBIJAKAN DALAM NEGERI",
+        "level": 2,
+        "parent_code": "000",
+        "full_code": "000.10",
+        "children": [
+          {
+            "code": "000.10.1",
+            "description": "Penyusunan kebijakan teknis, rencana, dan program analisis dan pemberian rekomendasi strategi kebijakan di bidang pemerintahan dalam negeri",
+            "level": 3,
+            "parent_code": "000.10",
+            "full_code": "000.10.1",
+            "children": []
+          },
+          {
+            "code": "000.10.2",
+            "description": "Pelaksanaan analisis dan pemberian rekomendasi strategi kebijakan di bidang pemerintahan dalam negeri",
+            "level": 3,
+            "parent_code": "000.10",
+            "full_code": "000.10.2",
+            "children": []
+          },
+          {
+            "code": "000.10.3",
+            "description": "Koordinasi dan sinkronisasi strategi kebijakan di bidang pemerintahan dalam negeri",
+            "level": 3,
+            "parent_code": "000.10",
+            "full_code": "000.10.3",
+            "children": []
+          },
+          {
+            "code": "000.10.4",
+            "description": "Pemantaran, evaluasi, dan pelaporan pelaksanaan analisis dan pemberian rekomendasi strategi kebijakan di bidang pemerintahan dalam negeri",
+            "level": 3,
+            "parent_code": "000.10",
+            "full_code": "000.10.4",
+            "children": []
+          },
+          {
+            "code": "000.10.5",
+            "description": "Pelaksanaan administrasi strategi kebijakan dalam negeri",
+            "level": 3,
+            "parent_code": "000.10",
+            "full_code": "000.10.5",
+            "children": []
+          },
+          {
+            "code": "000.10.6",
+            "description": "Pelaksanaan fungsi lain yang diberikan oleh Menteri",
+            "level": 3,
+            "parent_code": "000.10",
+            "full_code": "000.10.6",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "100",
+    "description": "PEMERINTAHAN",
+    "level": 1,
+    "parent_code": null,
+    "full_code": "100",
+    "children": [
+      {
+        "code": "100.1",
+        "description": "PEMERINTAH PUSAT",
+        "level": 2,
+        "parent_code": "100",
+        "full_code": "100.1",
+        "children": []
+      },
+      {
+        "code": "100.2",
+        "description": "OTONOMI DAERAH",
+        "level": 2,
+        "parent_code": "100",
+        "full_code": "100.2",
+        "children": []
+      },
+      {
+        "code": "100.3",
+        "description": "PEMERINTAH DESA",
+        "level": 2,
+        "parent_code": "100",
+        "full_code": "100.3",
+        "children": []
+      },
+      {
+        "code": "100.4",
+        "description": "HUKUM",
+        "level": 2,
+        "parent_code": "100",
+        "full_code": "100.4",
+        "children": [
+          {
+            "code": "100.4.1",
+            "description": "Program Legislasi",
+            "level": 3,
+            "parent_code": "100.4",
+            "full_code": "100.4.1",
+            "children": []
+          },
+          {
+            "code": "100.4.2",
+            "description": "Rancangan Peraturan Perundang-undangan",
+            "level": 3,
+            "parent_code": "100.4",
+            "full_code": "100.4.2",
+            "children": [
+              {
+                "code": "100.4.2.1",
+                "description": "Rancangan Undang-undang atau Peraturan Pemerintah Pengganti Undang-undang, termasuk naskah akademik, rancangan awal sampai dengan rancangan akhir dan telaah hukum sampai diundangkan.",
+                "level": 4,
+                "parent_code": "100.4.2",
+                "full_code": "100.4.2.1",
+                "children": []
+              },
+              {
+                "code": "100.4.2.2",
+                "description": "Rancangan Peraturan Pemerintah, termasuk naskah akademik, rancangan awal sampai dengan rancangan akhir dan telaah hukum sampai dengan rancangan akhir dan telaah hukum sampai diundangkan.",
+                "level": 4,
+                "parent_code": "100.4.2",
+                "full_code": "100.4.2.2",
+                "children": []
+              },
+              {
+                "code": "100.4.2.3",
+                "description": "Rancangan Peraturan/Keputusan/Instruksi Presiden, termasuk naskah akademik, rancangan awal sampai dengan rancangan akhir dan telaah hukum rancangan awal sampai dengan rancangan akhir dan telaah hukum.",
+                "level": 4,
+                "parent_code": "100.4.2",
+                "full_code": "100.4.2.3",
+                "children": []
+              },
+              {
+                "code": "100.4.2.4",
+                "description": "Rancangan Peraturan Daerah, termasuk naskah akademik, rancangan awal sampai dengan rancangan akhir dan telaah hukum sampai diundangkan.",
+                "level": 4,
+                "parent_code": "100.4.2",
+                "full_code": "100.4.2.4",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "100.4.3",
+            "description": "Peraturan/Keputusan Menteri, termasuk rancangan awal sampai dengan rancangan akhir dan telaah hukum.",
+            "level": 3,
+            "parent_code": "100.4",
+            "full_code": "100.4.3",
+            "children": []
+          },
+          {
+            "code": "100.4.4",
+            "description": "Instruksi/Surat Edaran",
+            "level": 3,
+            "parent_code": "100.4",
+            "full_code": "100.4.4",
+            "children": [
+              {
+                "code": "100.4.4.1",
+                "description": "Intruksi/Surat Edaran Menteri",
+                "level": 4,
+                "parent_code": "100.4.4",
+                "full_code": "100.4.4.1",
+                "children": []
+              },
+              {
+                "code": "100.4.4.2",
+                "description": "Instruksi/ Surat Edaran Setingkat Eselon I dan II, termasuk rancangan awal sampai dengan rancangan akhir dan telaah hukum.",
+                "level": 4,
+                "parent_code": "100.4.4",
+                "full_code": "100.4.4.2",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "100.4.5",
+            "description": "Surat Perintah",
+            "level": 3,
+            "parent_code": "100.4",
+            "full_code": "100.4.5",
+            "children": [
+              {
+                "code": "100.4.5.1",
+                "description": "Surat Perintah Menteri",
+                "level": 4,
+                "parent_code": "100.4.5",
+                "full_code": "100.4.5.1",
+                "children": []
+              },
+              {
+                "code": "100.4.5.2",
+                "description": "Surat Perintah Eselon I dan II",
+                "level": 4,
+                "parent_code": "100.4.5",
+                "full_code": "100.4.5.2",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "100.4.6",
+            "description": "Standar/Pedoman/Prosedur Kerja/Petunjuk Pelaksanaan/Petunjuk Teknis yang bersifat Nasional/Regional/Instansional termasuk rancangan awal sampai dengan rancangan akhir.",
+            "level": 3,
+            "parent_code": "100.4",
+            "full_code": "100.4.6",
+            "children": []
+          },
+          {
+            "code": "100.4.7",
+            "description": "Nota kesepahaman /memorandum of Understanding (Mou)/ Kontrak/Perjanjian Kerjasama:",
+            "level": 3,
+            "parent_code": "100.4",
+            "full_code": "100.4.7",
+            "children": [
+              {
+                "code": "100.4.7.1",
+                "description": "Dalam Negeri",
+                "level": 4,
+                "parent_code": "100.4.7",
+                "full_code": "100.4.7.1",
+                "children": []
+              },
+              {
+                "code": "100.4.7.2",
+                "description": "Luar Negeri",
+                "level": 4,
+                "parent_code": "100.4.7",
+                "full_code": "100.4.7.2",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "100.4.8",
+            "description": "Dokumen Hukum Undang-undang, Peraturan Pemerintah, Keputusan Presiden, dan Peraturan-peraturan yang dijadikan referensi.",
+            "level": 3,
+            "parent_code": "100.4",
+            "full_code": "100.4.8",
+            "children": []
+          },
+          {
+            "code": "100.4.9",
+            "description": "Sosialisasi/Penyuluhan/Pembinaan Hukum",
+            "level": 3,
+            "parent_code": "100.4",
+            "full_code": "100.4.9",
+            "children": [
+              {
+                "code": "100.4.9.1",
+                "description": "Berkas yang berhubungan dengan kegiatan sosialisasi atau penyuluhan hukum",
+                "level": 4,
+                "parent_code": "100.4.9",
+                "full_code": "100.4.9.1",
+                "children": []
+              },
+              {
+                "code": "100.4.9.2",
+                "description": "Laporan Hasil Pelaksanaan Sosialisasi Penyuluhan Hukum",
+                "level": 4,
+                "parent_code": "100.4.9",
+                "full_code": "100.4.9.2",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "100.4.10",
+            "description": "Bantuan/Konsultasi Hukum/Advokasi Berkas tentang pemberian bantuan/konsultasi hukum (Pidana ,Perdata, Tata Usaha Negara dan Agama)",
+            "level": 3,
+            "parent_code": "100.4",
+            "full_code": "100.4.10",
+            "children": []
+          },
+          {
+            "code": "100.4.11",
+            "description": "Kasus/ Sengketa Hukum",
+            "level": 3,
+            "parent_code": "100.4",
+            "full_code": "100.4.11",
+            "children": []
+          },
+          {
+            "code": "100.4.12",
+            "description": "Perijinan",
+            "level": 3,
+            "parent_code": "100.4",
+            "full_code": "100.4.12",
+            "children": []
+          },
+          {
+            "code": "100.4.13",
+            "description": "Hak atas Kekayaan Intelektual (HAKI)",
+            "level": 3,
+            "parent_code": "100.4",
+            "full_code": "100.4.13",
+            "children": [
+              {
+                "code": "100.4.13.1",
+                "description": "Hak Cipta",
+                "level": 4,
+                "parent_code": "100.4.13",
+                "full_code": "100.4.13.1",
+                "children": []
+              },
+              {
+                "code": "100.4.13.2",
+                "description": "Hak Paten Biasa",
+                "level": 4,
+                "parent_code": "100.4.13",
+                "full_code": "100.4.13.2",
+                "children": []
+              },
+              {
+                "code": "100.4.13.3",
+                "description": "Hak Paten Sederahana",
+                "level": 4,
+                "parent_code": "100.4.13",
+                "full_code": "100.4.13.3",
+                "children": []
+              },
+              {
+                "code": "100.4.13.4",
+                "description": "Hak Desain Industri",
+                "level": 4,
+                "parent_code": "100.4.13",
+                "full_code": "100.4.13.4",
+                "children": []
+              },
+              {
+                "code": "100.4.13.5",
+                "description": "Hak Rahasia Dagang",
+                "level": 4,
+                "parent_code": "100.4.13",
+                "full_code": "100.4.13.5",
+                "children": []
+              },
+              {
+                "code": "100.4.13.6",
+                "description": "Hak Merk",
+                "level": 4,
+                "parent_code": "100.4.13",
+                "full_code": "100.4.13.6",
+                "children": []
+              },
+              {
+                "code": "100.4.13.7",
+                "description": "DTLS (Desain Tata Letak Sirkuit Terpadu)",
+                "level": 4,
+                "parent_code": "100.4.13",
+                "full_code": "100.4.13.7",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "200",
+    "description": "POLITIK",
+    "level": 1,
+    "parent_code": null,
+    "full_code": "200",
+    "children": [
+      {
+        "code": "200.1",
+        "description": "PERUMUSAN KEBIJAKAN",
+        "level": 2,
+        "parent_code": "200",
+        "full_code": "200.1",
+        "children": []
+      },
+      {
+        "code": "200.2",
+        "description": "PELAKSANAAN KEBIJAKAN",
+        "level": 2,
+        "parent_code": "200",
+        "full_code": "200.2",
+        "children": []
+      },
+      {
+        "code": "200.3",
+        "description": "PELAKSANAAN KEBIJAKAN DI BIDANG FASILITASI ORGANISASI MASYRAKAT DAN FASIITASI PENANGANAN KONFLIK SOSIAL SESUAI DENGAN KETENTUAN PERATURAN PERUNDANG-UNDANGAN",
+        "level": 2,
+        "parent_code": "200",
+        "full_code": "200.3",
+        "children": []
+      },
+      {
+        "code": "200.4",
+        "description": "PELAKSANAAN PEMBINAAN UMUM",
+        "level": 2,
+        "parent_code": "200",
+        "full_code": "200.4",
+        "children": []
+      },
+      {
+        "code": "200.5",
+        "description": "PEMBERIAN BIMBINGAN TEKNIS DAN SUPERVISI",
+        "level": 2,
+        "parent_code": "200",
+        "full_code": "200.5",
+        "children": []
+      },
+      {
+        "code": "200.6",
+        "description": "PELAKSANAAN PEMANTAUAN, EVALUASI, DAN PELAPORAN",
+        "level": 2,
+        "parent_code": "200",
+        "full_code": "200.6",
+        "children": []
+      },
+      {
+        "code": "200.7",
+        "description": "PELAKSANAAN ADMINISTRASI DIREKTORAT JENDERAL",
+        "level": 2,
+        "parent_code": "200",
+        "full_code": "200.7",
+        "children": []
+      },
+      {
+        "code": "200.8",
+        "description": "PELAKSANAAN FUNGSI LAIN YANG DIBERIKAN OLEH MENTERI",
+        "level": 2,
+        "parent_code": "200",
+        "full_code": "200.8",
+        "children": []
+      }
+    ]
+  },
+  {
+    "code": "300",
+    "description": "KEAMANAN DAN KETERTIBAN",
+    "level": 1,
+    "parent_code": null,
+    "full_code": "300",
+    "children": [
+      {
+        "code": "300.1",
+        "description": "PERUMUSAN KEBIJAKAN",
+        "level": 2,
+        "parent_code": "300",
+        "full_code": "300.1",
+        "children": []
+      },
+      {
+        "code": "300.2",
+        "description": "PELAKSANAAN KEBIJAKAN",
+        "level": 2,
+        "parent_code": "300",
+        "full_code": "300.2",
+        "children": []
+      },
+      {
+        "code": "300.3",
+        "description": "PELAKSANAAN KEBIJAKAN DI BIDANG KOORDINASI PENETAPAN KAWASAN KHUSUS DAN PERKOTAAN SESUAI DENGAN KETENTUAN PERATURAN PERUNDANG-UNDANGAN",
+        "level": 2,
+        "parent_code": "300",
+        "full_code": "300.3",
+        "children": []
+      },
+      {
+        "code": "300.4",
+        "description": "PENYUSUNAN NORMA, STANDAR, PROSEDUR, DAN KRITERIA DI BIDANG KETENTRAMAN DAN KETERTIBAN UMUM DAN PERLINDUNGAN MASYARAKAT",
+        "level": 2,
+        "parent_code": "300",
+        "full_code": "300.4",
+        "children": []
+      },
+      {
+        "code": "300.5",
+        "description": "PEMBERIAN BIMBINGAN TEKNIS DAN SUPERVISI",
+        "level": 2,
+        "parent_code": "300",
+        "full_code": "300.5",
+        "children": []
+      },
+      {
+        "code": "300.6",
+        "description": "PELAKSANAAN PEMANTAUAN, EVALUASI, DAN PELAPORAN",
+        "level": 2,
+        "parent_code": "300",
+        "full_code": "300.6",
+        "children": []
+      },
+      {
+        "code": "300.7",
+        "description": "PELAKSANAAN ADMINISTRASI DIREKTORAT JENDERAL",
+        "level": 2,
+        "parent_code": "300",
+        "full_code": "300.7",
+        "children": []
+      },
+      {
+        "code": "300.8",
+        "description": "PELAKSANAAN FUNGSI LAIN YANG DIBERIKAN OLEH MENTERI",
+        "level": 2,
+        "parent_code": "300",
+        "full_code": "300.8",
+        "children": []
+      }
+    ]
+  },
+  {
+    "code": "400",
+    "description": "KESEJAHTERAAN RAKYAT",
+    "level": 1,
+    "parent_code": null,
+    "full_code": "400",
+    "children": [
+      {
+        "code": "400.1",
+        "description": "PENDIDIKAN",
+        "level": 2,
+        "parent_code": "400",
+        "full_code": "400.1",
+        "children": [
+          {
+            "code": "400.1.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "400.1",
+            "full_code": "400.1.1",
+            "children": []
+          },
+          {
+            "code": "400.1.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "400.1",
+            "full_code": "400.1.2",
+            "children": []
+          },
+          {
+            "code": "400.1.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "400.1",
+            "full_code": "400.1.3",
+            "children": []
+          },
+          {
+            "code": "400.1.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "400.1",
+            "full_code": "400.1.4",
+            "children": []
+          },
+          {
+            "code": "400.1.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "400.1",
+            "full_code": "400.1.5",
+            "children": []
+          },
+          {
+            "code": "400.1.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "400.1",
+            "full_code": "400.1.6",
+            "children": []
+          },
+          {
+            "code": "400.1.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Pendidikan",
+            "level": 3,
+            "parent_code": "400.1",
+            "full_code": "400.1.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "400.2",
+        "description": "OLAHRAGA",
+        "level": 2,
+        "parent_code": "400",
+        "full_code": "400.2",
+        "children": [
+          {
+            "code": "400.2.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "400.2",
+            "full_code": "400.2.1",
+            "children": []
+          },
+          {
+            "code": "400.2.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "400.2",
+            "full_code": "400.2.2",
+            "children": []
+          },
+          {
+            "code": "400.2.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "400.2",
+            "full_code": "400.2.3",
+            "children": []
+          },
+          {
+            "code": "400.2.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "400.2",
+            "full_code": "400.2.4",
+            "children": []
+          },
+          {
+            "code": "400.2.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "400.2",
+            "full_code": "400.2.5",
+            "children": []
+          },
+          {
+            "code": "400.2.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "400.2",
+            "full_code": "400.2.6",
+            "children": []
+          },
+          {
+            "code": "400.2.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Olahraga",
+            "level": 3,
+            "parent_code": "400.2",
+            "full_code": "400.2.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "400.3",
+        "description": "KEPEMUDAAN",
+        "level": 2,
+        "parent_code": "400",
+        "full_code": "400.3",
+        "children": [
+          {
+            "code": "400.3.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "400.3",
+            "full_code": "400.3.1",
+            "children": []
+          },
+          {
+            "code": "400.3.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "400.3",
+            "full_code": "400.3.2",
+            "children": []
+          },
+          {
+            "code": "400.3.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "400.3",
+            "full_code": "400.3.3",
+            "children": []
+          },
+          {
+            "code": "400.3.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "400.3",
+            "full_code": "400.3.4",
+            "children": []
+          },
+          {
+            "code": "400.3.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "400.3",
+            "full_code": "400.3.5",
+            "children": []
+          },
+          {
+            "code": "400.3.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "400.3",
+            "full_code": "400.3.6",
+            "children": []
+          },
+          {
+            "code": "400.3.7",
+            "description": "Harmonisasi pembangunan daerah di bidang kepemudaan",
+            "level": 3,
+            "parent_code": "400.3",
+            "full_code": "400.3.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "400.4",
+        "description": "SOSIAL DAN BUDAYA",
+        "level": 2,
+        "parent_code": "400",
+        "full_code": "400.4",
+        "children": [
+          {
+            "code": "400.4.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "400.4",
+            "full_code": "400.4.1",
+            "children": []
+          },
+          {
+            "code": "400.4.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "400.4",
+            "full_code": "400.4.2",
+            "children": []
+          },
+          {
+            "code": "400.4.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "400.4",
+            "full_code": "400.4.3",
+            "children": []
+          },
+          {
+            "code": "400.4.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "400.4",
+            "full_code": "400.4.4",
+            "children": []
+          },
+          {
+            "code": "400.4.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "400.4",
+            "full_code": "400.4.5",
+            "children": []
+          },
+          {
+            "code": "400.4.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "400.4",
+            "full_code": "400.4.6",
+            "children": []
+          },
+          {
+            "code": "400.4.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Sosial dan Budaya",
+            "level": 3,
+            "parent_code": "400.4",
+            "full_code": "400.4.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "400.5",
+        "description": "KESEHATAN",
+        "level": 2,
+        "parent_code": "400",
+        "full_code": "400.5",
+        "children": [
+          {
+            "code": "400.5.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "400.5",
+            "full_code": "400.5.1",
+            "children": []
+          },
+          {
+            "code": "400.5.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "400.5",
+            "full_code": "400.5.2",
+            "children": []
+          },
+          {
+            "code": "400.5.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "400.5",
+            "full_code": "400.5.3",
+            "children": []
+          },
+          {
+            "code": "400.5.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "400.5",
+            "full_code": "400.5.4",
+            "children": []
+          },
+          {
+            "code": "400.5.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "400.5",
+            "full_code": "400.5.5",
+            "children": []
+          },
+          {
+            "code": "400.5.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "400.5",
+            "full_code": "400.5.6",
+            "children": []
+          },
+          {
+            "code": "400.5.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Kesehatan",
+            "level": 3,
+            "parent_code": "400.5",
+            "full_code": "400.5.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "400.6",
+        "description": "AGAMA DAN KEPERCAYAAN",
+        "level": 2,
+        "parent_code": "400",
+        "full_code": "400.6",
+        "children": []
+      },
+      {
+        "code": "400.7",
+        "description": "PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK",
+        "level": 2,
+        "parent_code": "400",
+        "full_code": "400.7",
+        "children": [
+          {
+            "code": "400.7.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "400.7",
+            "full_code": "400.7.1",
+            "children": []
+          },
+          {
+            "code": "400.7.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "400.7",
+            "full_code": "400.7.2",
+            "children": []
+          },
+          {
+            "code": "400.7.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "400.7",
+            "full_code": "400.7.3",
+            "children": []
+          },
+          {
+            "code": "400.7.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "400.7",
+            "full_code": "400.7.4",
+            "children": []
+          },
+          {
+            "code": "400.7.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "400.7",
+            "full_code": "400.7.5",
+            "children": []
+          },
+          {
+            "code": "400.7.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "400.7",
+            "full_code": "400.7.6",
+            "children": []
+          },
+          {
+            "code": "400.7.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Pemberdayaan perempuan dan perlindungan anak",
+            "level": 3,
+            "parent_code": "400.7",
+            "full_code": "400.7.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "400.8",
+        "description": "KEPENDUDUKAN",
+        "level": 2,
+        "parent_code": "400",
+        "full_code": "400.8",
+        "children": [
+          {
+            "code": "400.8.1",
+            "description": "Perencanaan umum dan program kependudukan Pendaftaran penduduk",
+            "level": 3,
+            "parent_code": "400.8",
+            "full_code": "400.8.1",
+            "children": []
+          },
+          {
+            "code": "400.8.2",
+            "description": "Pencatatan Sipil",
+            "level": 3,
+            "parent_code": "400.8",
+            "full_code": "400.8.2",
+            "children": []
+          },
+          {
+            "code": "400.8.3",
+            "description": "Informasi Kependudukan",
+            "level": 3,
+            "parent_code": "400.8",
+            "full_code": "400.8.3",
+            "children": []
+          },
+          {
+            "code": "400.8.4",
+            "description": "Perkembangan Penduduk",
+            "level": 3,
+            "parent_code": "400.8",
+            "full_code": "400.8.4",
+            "children": [
+              {
+                "code": "400.8.4.2",
+                "description": "Fertilitas, kesehatan, dan reproduksi",
+                "level": 4,
+                "parent_code": "400.8.4",
+                "full_code": "400.8.4.2",
+                "children": []
+              },
+              {
+                "code": "400.8.4.5",
+                "description": "Pengembangan Kualitas anak, remaja, penduduk usia produktif dan lanjut usia",
+                "level": 4,
+                "parent_code": "400.8.4",
+                "full_code": "400.8.4.5",
+                "children": []
+              },
+              {
+                "code": "400.8.4.6",
+                "description": "Data informasi pengembangan kualitas penduduk",
+                "level": 4,
+                "parent_code": "400.8.4",
+                "full_code": "400.8.4.6",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "400.8.5",
+            "description": "Proyeksi dan penyesuaian kebijakan kependudukan",
+            "level": 3,
+            "parent_code": "400.8",
+            "full_code": "400.8.5",
+            "children": []
+          },
+          {
+            "code": "400.8.6",
+            "description": "Kewarganegaraan Asing",
+            "level": 3,
+            "parent_code": "400.8",
+            "full_code": "400.8.6",
+            "children": []
+          },
+          {
+            "code": "400.8.7",
+            "description": "Urbanisasi",
+            "level": 3,
+            "parent_code": "400.8",
+            "full_code": "400.8.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "400.9",
+        "description": "KELUARGA BERENCANA",
+        "level": 2,
+        "parent_code": "400",
+        "full_code": "400.9",
+        "children": [
+          {
+            "code": "400.9.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "400.9",
+            "full_code": "400.9.1",
+            "children": []
+          },
+          {
+            "code": "400.9.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum,",
+            "level": 3,
+            "parent_code": "400.9",
+            "full_code": "400.9.2",
+            "children": []
+          },
+          {
+            "code": "400.9.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "400.9",
+            "full_code": "400.9.3",
+            "children": []
+          },
+          {
+            "code": "400.9.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "400.9",
+            "full_code": "400.9.4",
+            "children": []
+          },
+          {
+            "code": "400.9.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "400.9",
+            "full_code": "400.9.5",
+            "children": []
+          },
+          {
+            "code": "400.9.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi serta harmonisasi pembangunan daerah di bidang Pengendalian Penduduk dan Keluarga Berencana",
+            "level": 3,
+            "parent_code": "400.9",
+            "full_code": "400.9.6",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "400.10",
+        "description": "HUBUNGAN MASYARAKAT",
+        "level": 2,
+        "parent_code": "400",
+        "full_code": "400.10",
+        "children": [
+          {
+            "code": "400.10.1",
+            "description": "Keprotokolan",
+            "level": 3,
+            "parent_code": "400.10",
+            "full_code": "400.10.1",
+            "children": [
+              {
+                "code": "400.10.1.1",
+                "description": "Penyelenggaraan acara kedinasan (upacara,pelantikan,peresmian,dan jamuan termasuk acara peringatan hari-hari besar)",
+                "level": 4,
+                "parent_code": "400.10.1",
+                "full_code": "400.10.1.1",
+                "children": []
+              },
+              {
+                "code": "400.10.1.2",
+                "description": "Buku tamu Keprotokolan",
+                "level": 4,
+                "parent_code": "400.10.1",
+                "full_code": "400.10.1.2",
+                "children": []
+              },
+              {
+                "code": "400.10.1.3",
+                "description": "Agenda kegiatan pimpinan",
+                "level": 4,
+                "parent_code": "400.10.1",
+                "full_code": "400.10.1.3",
+                "children": []
+              },
+              {
+                "code": "400.10.1.4",
+                "description": "Kunjungan dinas dalam dan luar negeri",
+                "level": 4,
+                "parent_code": "400.10.1",
+                "full_code": "400.10.1.4",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "400.10.2",
+            "description": "Daftar nama/alamat kantor /pejabat",
+            "level": 3,
+            "parent_code": "400.10",
+            "full_code": "400.10.2",
+            "children": []
+          },
+          {
+            "code": "400.10.3",
+            "description": "Dokumentasi/ liputan kegiatan dinas pimpinan, acara kedinasan dan peristiwa-peristiwan bidang masing-masing, dalam berbagai media : kertas,foto/ video/ rekaman suara/ multi media",
+            "level": 3,
+            "parent_code": "400.10",
+            "full_code": "400.10.3",
+            "children": []
+          },
+          {
+            "code": "400.10.4",
+            "description": "Pengumpulan,pengolahan dan penyajian informasi kelembagaan",
+            "level": 3,
+            "parent_code": "400.10",
+            "full_code": "400.10.4",
+            "children": []
+          },
+          {
+            "code": "400.10.5",
+            "description": "Hubungan antar lembaga dan Pemerintahan Daerah",
+            "level": 3,
+            "parent_code": "400.10",
+            "full_code": "400.10.5",
+            "children": [
+              {
+                "code": "400.10.5.4",
+                "description": "Hubungan dengan Perguruan Tinggi/ sekolah, termasuk magang, Pendidikan Sistem Ganda (PSG)/ Praktek Kerja Lapang (PKL)",
+                "level": 4,
+                "parent_code": "400.10.5",
+                "full_code": "400.10.5.4",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "400.10.6",
+            "description": "Dengar pendapat/hearing DPRD",
+            "level": 3,
+            "parent_code": "400.10",
+            "full_code": "400.10.6",
+            "children": []
+          },
+          {
+            "code": "400.10.7",
+            "description": "Bahan/materi pidato Menteri Dalam Negeri",
+            "level": 3,
+            "parent_code": "400.10",
+            "full_code": "400.10.7",
+            "children": []
+          },
+          {
+            "code": "400.10.8",
+            "description": "Penerbitan Majalah,buletin,koran dan jurnal",
+            "level": 3,
+            "parent_code": "400.10",
+            "full_code": "400.10.8",
+            "children": []
+          },
+          {
+            "code": "400.10.9",
+            "description": "Publikasi melalui media cetak maupun elektronik",
+            "level": 3,
+            "parent_code": "400.10",
+            "full_code": "400.10.9",
+            "children": []
+          },
+          {
+            "code": "400.10.10",
+            "description": "Pameran /sayemara/lomba/festival,pembuatan spanduk dan iklan",
+            "level": 3,
+            "parent_code": "400.10",
+            "full_code": "400.10.10",
+            "children": []
+          },
+          {
+            "code": "400.10.11",
+            "description": "Penghargaan/tanda kenang-kenangan",
+            "level": 3,
+            "parent_code": "400.10",
+            "full_code": "400.10.11",
+            "children": []
+          },
+          {
+            "code": "400.10.12",
+            "description": "Ucapan Terimakasih, Ucapan Selamat, Bela Sungkawa, Permohonan Maaf",
+            "level": 3,
+            "parent_code": "400.10",
+            "full_code": "400.10.12",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "500",
+    "description": "PEREKONOMIAN",
+    "level": 1,
+    "parent_code": null,
+    "full_code": "500",
+    "children": [
+      {
+        "code": "500.1",
+        "description": "PERTANIAN DAN PANGAN",
+        "level": 2,
+        "parent_code": "500",
+        "full_code": "500.1",
+        "children": [
+          {
+            "code": "500.1.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "500.1",
+            "full_code": "500.1.1",
+            "children": []
+          },
+          {
+            "code": "500.1.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "500.1",
+            "full_code": "500.1.2",
+            "children": []
+          },
+          {
+            "code": "500.1.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.1",
+            "full_code": "500.1.3",
+            "children": []
+          },
+          {
+            "code": "500.1.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.1",
+            "full_code": "500.1.4",
+            "children": []
+          },
+          {
+            "code": "500.1.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "500.1",
+            "full_code": "500.1.5",
+            "children": []
+          },
+          {
+            "code": "500.1.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "500.1",
+            "full_code": "500.1.6",
+            "children": []
+          },
+          {
+            "code": "500.1.7",
+            "description": "Harmonisasi pembangunan daerah di bidang pertanian dan pangan",
+            "level": 3,
+            "parent_code": "500.1",
+            "full_code": "500.1.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "500.2",
+        "description": "PERINDUSTRIAN DAN PERDAGANGAN",
+        "level": 2,
+        "parent_code": "500",
+        "full_code": "500.2",
+        "children": [
+          {
+            "code": "500.2.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "500.2",
+            "full_code": "500.2.1",
+            "children": []
+          },
+          {
+            "code": "500.2.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum,",
+            "level": 3,
+            "parent_code": "500.2",
+            "full_code": "500.2.2",
+            "children": []
+          },
+          {
+            "code": "500.2.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.2",
+            "full_code": "500.2.3",
+            "children": []
+          },
+          {
+            "code": "500.2.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.2",
+            "full_code": "500.2.4",
+            "children": []
+          },
+          {
+            "code": "500.2.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "500.2",
+            "full_code": "500.2.5",
+            "children": []
+          },
+          {
+            "code": "500.2.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi serta harmonisasi pembangunan daerah di bidang perindustrian dan perdagangan",
+            "level": 3,
+            "parent_code": "500.2",
+            "full_code": "500.2.6",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "500.3",
+        "description": "KOPERASI USAHA KECIL DAN MENENGAH DAN PENANAMAN MODAL",
+        "level": 2,
+        "parent_code": "500",
+        "full_code": "500.3",
+        "children": [
+          {
+            "code": "500.3.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "500.3",
+            "full_code": "500.3.1",
+            "children": []
+          },
+          {
+            "code": "500.3.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "500.3",
+            "full_code": "500.3.2",
+            "children": []
+          },
+          {
+            "code": "500.3.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi sinkronisasi serta harmonisasi pembangunan daerah di bidang koperasi, usaha kecil dan menengah , dan penanaman modal",
+            "level": 3,
+            "parent_code": "500.3",
+            "full_code": "500.3.3",
+            "children": []
+          },
+          {
+            "code": "500.3.4",
+            "description": "Penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.3",
+            "full_code": "500.3.4",
+            "children": []
+          },
+          {
+            "code": "500.3.5",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.3",
+            "full_code": "500.3.5",
+            "children": []
+          },
+          {
+            "code": "500.3.6",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "500.3",
+            "full_code": "500.3.6",
+            "children": []
+          },
+          {
+            "code": "500.3.7",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "500.3",
+            "full_code": "500.3.7",
+            "children": []
+          },
+          {
+            "code": "500.3.8",
+            "description": "Harmonisasi pembangunan daerah di bidang koperasi, usaha kecil dan menengah, dan penanaman modal",
+            "level": 3,
+            "parent_code": "500.3",
+            "full_code": "500.3.8",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "500.4",
+        "description": "KEHUTANAN",
+        "level": 2,
+        "parent_code": "500",
+        "full_code": "500.4",
+        "children": [
+          {
+            "code": "500.4.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "500.4",
+            "full_code": "500.4.1",
+            "children": []
+          },
+          {
+            "code": "500.4.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "500.4",
+            "full_code": "500.4.2",
+            "children": []
+          },
+          {
+            "code": "500.4.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.4",
+            "full_code": "500.4.3",
+            "children": []
+          },
+          {
+            "code": "500.4.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.4",
+            "full_code": "500.4.4",
+            "children": []
+          },
+          {
+            "code": "500.4.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "500.4",
+            "full_code": "500.4.5",
+            "children": []
+          },
+          {
+            "code": "500.4.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "500.4",
+            "full_code": "500.4.6",
+            "children": []
+          },
+          {
+            "code": "500.4.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Kehutanan",
+            "level": 3,
+            "parent_code": "500.4",
+            "full_code": "500.4.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "500.5",
+        "description": "KELAUTAN DAN PERIKANAN",
+        "level": 2,
+        "parent_code": "500",
+        "full_code": "500.5",
+        "children": [
+          {
+            "code": "500.5.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "500.5",
+            "full_code": "500.5.1",
+            "children": []
+          },
+          {
+            "code": "500.5.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "500.5",
+            "full_code": "500.5.2",
+            "children": []
+          },
+          {
+            "code": "500.5.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.5",
+            "full_code": "500.5.3",
+            "children": []
+          },
+          {
+            "code": "500.5.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.5",
+            "full_code": "500.5.4",
+            "children": []
+          },
+          {
+            "code": "500.5.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "500.5",
+            "full_code": "500.5.5",
+            "children": []
+          },
+          {
+            "code": "500.5.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "500.5",
+            "full_code": "500.5.6",
+            "children": []
+          },
+          {
+            "code": "500.5.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Kelautan dan Perikanan",
+            "level": 3,
+            "parent_code": "500.5",
+            "full_code": "500.5.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "500.6",
+        "description": "ENERGI DAN SUMBER DAYA MINERAL",
+        "level": 2,
+        "parent_code": "500",
+        "full_code": "500.6",
+        "children": [
+          {
+            "code": "500.6.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "500.6",
+            "full_code": "500.6.1",
+            "children": []
+          },
+          {
+            "code": "500.6.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "500.6",
+            "full_code": "500.6.2",
+            "children": []
+          },
+          {
+            "code": "500.6.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.6",
+            "full_code": "500.6.3",
+            "children": []
+          },
+          {
+            "code": "500.6.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.6",
+            "full_code": "500.6.4",
+            "children": []
+          },
+          {
+            "code": "500.6.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "500.6",
+            "full_code": "500.6.5",
+            "children": []
+          },
+          {
+            "code": "500.6.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "500.6",
+            "full_code": "500.6.6",
+            "children": []
+          },
+          {
+            "code": "500.6.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Energi dan Sumber Daya Mineral",
+            "level": 3,
+            "parent_code": "500.6",
+            "full_code": "500.6.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "500.7",
+        "description": "PERHUBUNGAN",
+        "level": 2,
+        "parent_code": "500",
+        "full_code": "500.7",
+        "children": [
+          {
+            "code": "500.7.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "500.7",
+            "full_code": "500.7.1",
+            "children": []
+          },
+          {
+            "code": "500.7.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "500.7",
+            "full_code": "500.7.2",
+            "children": []
+          },
+          {
+            "code": "500.7.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.7",
+            "full_code": "500.7.3",
+            "children": []
+          },
+          {
+            "code": "500.7.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.7",
+            "full_code": "500.7.4",
+            "children": []
+          },
+          {
+            "code": "500.7.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "500.7",
+            "full_code": "500.7.5",
+            "children": []
+          },
+          {
+            "code": "500.7.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "500.7",
+            "full_code": "500.7.6",
+            "children": []
+          },
+          {
+            "code": "500.7.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Perhubungan",
+            "level": 3,
+            "parent_code": "500.7",
+            "full_code": "500.7.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "500.8",
+        "description": "KOMUNIKASI DAN INFORMATIKA",
+        "level": 2,
+        "parent_code": "500",
+        "full_code": "500.8",
+        "children": [
+          {
+            "code": "500.8.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "500.8",
+            "full_code": "500.8.1",
+            "children": []
+          },
+          {
+            "code": "500.8.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "500.8",
+            "full_code": "500.8.2",
+            "children": []
+          },
+          {
+            "code": "500.8.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.8",
+            "full_code": "500.8.3",
+            "children": []
+          },
+          {
+            "code": "500.8.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.8",
+            "full_code": "500.8.4",
+            "children": []
+          },
+          {
+            "code": "500.8.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "500.8",
+            "full_code": "500.8.5",
+            "children": []
+          },
+          {
+            "code": "500.8.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "500.8",
+            "full_code": "500.8.6",
+            "children": []
+          },
+          {
+            "code": "500.8.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Komunikasi dan Informatika",
+            "level": 3,
+            "parent_code": "500.8",
+            "full_code": "500.8.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "500.9",
+        "description": "PARIWISATA",
+        "level": 2,
+        "parent_code": "500",
+        "full_code": "500.9",
+        "children": [
+          {
+            "code": "500.9.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "500.9",
+            "full_code": "500.9.1",
+            "children": []
+          },
+          {
+            "code": "500.9.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "500.9",
+            "full_code": "500.9.2",
+            "children": []
+          },
+          {
+            "code": "500.9.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.9",
+            "full_code": "500.9.3",
+            "children": []
+          },
+          {
+            "code": "500.9.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.9",
+            "full_code": "500.9.4",
+            "children": []
+          },
+          {
+            "code": "500.9.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "500.9",
+            "full_code": "500.9.5",
+            "children": []
+          },
+          {
+            "code": "500.9.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "500.9",
+            "full_code": "500.9.6",
+            "children": []
+          },
+          {
+            "code": "500.9.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Pariwisata",
+            "level": 3,
+            "parent_code": "500.9",
+            "full_code": "500.9.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "500.10",
+        "description": "STATISTIK DAN PERSANDIAN",
+        "level": 2,
+        "parent_code": "500",
+        "full_code": "500.10",
+        "children": [
+          {
+            "code": "500.10.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "500.10",
+            "full_code": "500.10.1",
+            "children": []
+          },
+          {
+            "code": "500.10.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "500.10",
+            "full_code": "500.10.2",
+            "children": []
+          },
+          {
+            "code": "500.10.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.10",
+            "full_code": "500.10.3",
+            "children": []
+          },
+          {
+            "code": "500.10.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.10",
+            "full_code": "500.10.4",
+            "children": []
+          },
+          {
+            "code": "500.10.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "500.10",
+            "full_code": "500.10.5",
+            "children": []
+          },
+          {
+            "code": "500.10.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "500.10",
+            "full_code": "500.10.6",
+            "children": []
+          },
+          {
+            "code": "500.10.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Statistik dan Persandian",
+            "level": 3,
+            "parent_code": "500.10",
+            "full_code": "500.10.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "500.11",
+        "description": "KETENAGAKERJAAN DAN TRANSMIGRASI",
+        "level": 2,
+        "parent_code": "500",
+        "full_code": "500.11",
+        "children": [
+          {
+            "code": "500.11.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "500.11",
+            "full_code": "500.11.1",
+            "children": []
+          },
+          {
+            "code": "500.11.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "500.11",
+            "full_code": "500.11.2",
+            "children": []
+          },
+          {
+            "code": "500.11.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.11",
+            "full_code": "500.11.3",
+            "children": []
+          },
+          {
+            "code": "500.11.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.11",
+            "full_code": "500.11.4",
+            "children": []
+          },
+          {
+            "code": "500.11.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "500.11",
+            "full_code": "500.11.5",
+            "children": []
+          },
+          {
+            "code": "500.11.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "500.11",
+            "full_code": "500.11.6",
+            "children": []
+          },
+          {
+            "code": "500.11.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Ketenagakerjaan dan Transmigrasi",
+            "level": 3,
+            "parent_code": "500.11",
+            "full_code": "500.11.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "500.12",
+        "description": "PERTANAHAN DAN PENATAAN RUANG",
+        "level": 2,
+        "parent_code": "500",
+        "full_code": "500.12",
+        "children": [
+          {
+            "code": "500.12.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "500.12",
+            "full_code": "500.12.1",
+            "children": []
+          },
+          {
+            "code": "500.12.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "500.12",
+            "full_code": "500.12.2",
+            "children": []
+          },
+          {
+            "code": "500.12.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.12",
+            "full_code": "500.12.3",
+            "children": []
+          },
+          {
+            "code": "500.12.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "500.12",
+            "full_code": "500.12.4",
+            "children": []
+          },
+          {
+            "code": "500.12.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "500.12",
+            "full_code": "500.12.5",
+            "children": []
+          },
+          {
+            "code": "500.12.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "500.12",
+            "full_code": "500.12.6",
+            "children": []
+          },
+          {
+            "code": "500.12.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Pertanahan dan Penataan Ruang",
+            "level": 3,
+            "parent_code": "500.12",
+            "full_code": "500.12.7",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "600",
+    "description": "PEMBANGUNAN DAERAH",
+    "level": 1,
+    "parent_code": null,
+    "full_code": "600",
+    "children": [
+      {
+        "code": "600.1",
+        "description": "PERUMUSAN KEBIJAKAN",
+        "level": 2,
+        "parent_code": "600",
+        "full_code": "600.1",
+        "children": [
+          {
+            "code": "600.1.1",
+            "description": "Perumusan kebijakan di bidang fasilitasi penyelenggaraan urusan pemerintahan daerah",
+            "level": 3,
+            "parent_code": "600.1",
+            "full_code": "600.1.1",
+            "children": []
+          },
+          {
+            "code": "600.1.2",
+            "description": "perencanaan pembangunan daerah",
+            "level": 3,
+            "parent_code": "600.1",
+            "full_code": "600.1.2",
+            "children": []
+          },
+          {
+            "code": "600.1.3",
+            "description": "Sinkronisasi dan harmonisasi pembangunan daerah",
+            "level": 3,
+            "parent_code": "600.1",
+            "full_code": "600.1.3",
+            "children": []
+          },
+          {
+            "code": "600.1.4",
+            "description": "Fasilitasi pengelolaan sistem informasi pembangunan daerah, dan partisipasi masyarakat",
+            "level": 3,
+            "parent_code": "600.1",
+            "full_code": "600.1.4",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "600.2",
+        "description": "PELAKSANAAN KEBIJAKAN",
+        "level": 2,
+        "parent_code": "600",
+        "full_code": "600.2",
+        "children": [
+          {
+            "code": "600.2.1",
+            "description": "Pelaksanaan kebijakan di bidang fasilitasi penyelenggaraan urusan pemerintahan daerah,",
+            "level": 3,
+            "parent_code": "600.2",
+            "full_code": "600.2.1",
+            "children": []
+          },
+          {
+            "code": "600.2.2",
+            "description": "perencanaan pembangunan daerah",
+            "level": 3,
+            "parent_code": "600.2",
+            "full_code": "600.2.2",
+            "children": []
+          },
+          {
+            "code": "600.2.3",
+            "description": "Sinkronisasi dan harmonisasi pembangunan daerah, dan partisipasi masyarakat",
+            "level": 3,
+            "parent_code": "600.2",
+            "full_code": "600.2.3",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "600.3",
+        "description": "PELAKSANAAN PEMBINAAN UMUM DAN KOORDINASI",
+        "level": 2,
+        "parent_code": "600",
+        "full_code": "600.3",
+        "children": [
+          {
+            "code": "600.3.1",
+            "description": "Pelaksanaan Pembinaan umum dan koordinasi Bidang Fasilitasi Penyelenggaraan Urusan Pemerintahan Daerah",
+            "level": 3,
+            "parent_code": "600.3",
+            "full_code": "600.3.1",
+            "children": []
+          },
+          {
+            "code": "600.3.2",
+            "description": "Perencanaan pembangunan daerah,",
+            "level": 3,
+            "parent_code": "600.3",
+            "full_code": "600.3.2",
+            "children": []
+          },
+          {
+            "code": "600.3.3",
+            "description": "Sinkronisasi dan harmonisasi pembangunan daerah",
+            "level": 3,
+            "parent_code": "600.3",
+            "full_code": "600.3.3",
+            "children": []
+          },
+          {
+            "code": "600.3.4",
+            "description": "Fasilitasi pengelolaan sistem informasi pembangunan daerah, dan partisipasi masyarakat",
+            "level": 3,
+            "parent_code": "600.3",
+            "full_code": "600.3.4",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "600.4",
+        "description": "PELAKSANAAN KOORDINASI DAN FASILITASI PENYUSUNAN NORMA, STANDAR, PROSEDUR, DAN KRITERIA SERTA STANDAR PELAYANAN MINIMAL PENYELENGGARAAN URUSAN PEMERINTAHAN",
+        "level": 2,
+        "parent_code": "600",
+        "full_code": "600.4",
+        "children": []
+      },
+      {
+        "code": "600.5",
+        "description": "PELAKSANAAN PEMANTAUAN, EVALUASI, DAN PELAPORAN",
+        "level": 2,
+        "parent_code": "600",
+        "full_code": "600.5",
+        "children": [
+          {
+            "code": "600.5.1",
+            "description": "Pelaksanaan pemantauan, evaluasi, dan pelaporan di bidang fasilitasi penyelenggaraan urusan pemerintahan daerah",
+            "level": 3,
+            "parent_code": "600.5",
+            "full_code": "600.5.1",
+            "children": []
+          },
+          {
+            "code": "600.5.2",
+            "description": "Perencanaan pembangunan daerah",
+            "level": 3,
+            "parent_code": "600.5",
+            "full_code": "600.5.2",
+            "children": []
+          },
+          {
+            "code": "600.5.3",
+            "description": "Sinkronisasi dan harmonisasi pembangunan daerah",
+            "level": 3,
+            "parent_code": "600.5",
+            "full_code": "600.5.3",
+            "children": []
+          },
+          {
+            "code": "600.5.4",
+            "description": "Pengelolaan sistem informasi pembangunan daerah dan partisipasi masyarakat",
+            "level": 3,
+            "parent_code": "600.5",
+            "full_code": "600.5.4",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "600.6",
+        "description": "PEMBERIAN BIMBINGAN TEKNIS DAN SUPERVISI",
+        "level": 2,
+        "parent_code": "600",
+        "full_code": "600.6",
+        "children": [
+          {
+            "code": "600.6.1",
+            "description": "Pemberian bimbingan teknis dan supervisi di bidang fasilitasi penyelenggaraan urusan pemerintahan daerah",
+            "level": 3,
+            "parent_code": "600.6",
+            "full_code": "600.6.1",
+            "children": []
+          },
+          {
+            "code": "600.6.2",
+            "description": "Perencanaan pembangunan daerah,",
+            "level": 3,
+            "parent_code": "600.6",
+            "full_code": "600.6.2",
+            "children": []
+          },
+          {
+            "code": "600.6.3",
+            "description": "Sinkronisasi dan harmonisasi pembangunan daerah,",
+            "level": 3,
+            "parent_code": "600.6",
+            "full_code": "600.6.3",
+            "children": []
+          },
+          {
+            "code": "600.6.4",
+            "description": "Pengelolaan sistem informasi pembangunan daerah, dan partisipasi masyarakat;",
+            "level": 3,
+            "parent_code": "600.6",
+            "full_code": "600.6.4",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "600.7",
+        "description": "PELAKSANAAN ADMINISTRASI DIREKTORAT JENDERAL",
+        "level": 2,
+        "parent_code": "600",
+        "full_code": "600.7",
+        "children": []
+      },
+      {
+        "code": "600.8",
+        "description": "PELAKSANAAN FUNGSI LAIN YANG DIBERIKAN OLEH MENTERI",
+        "level": 2,
+        "parent_code": "600",
+        "full_code": "600.8",
+        "children": []
+      },
+      {
+        "code": "600.9",
+        "description": "PEKERJAAN UMUM",
+        "level": 2,
+        "parent_code": "600",
+        "full_code": "600.9",
+        "children": [
+          {
+            "code": "600.9.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "600.9",
+            "full_code": "600.9.1",
+            "children": []
+          },
+          {
+            "code": "600.9.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "600.9",
+            "full_code": "600.9.2",
+            "children": []
+          },
+          {
+            "code": "600.9.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "600.9",
+            "full_code": "600.9.3",
+            "children": []
+          },
+          {
+            "code": "600.9.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "600.9",
+            "full_code": "600.9.4",
+            "children": []
+          },
+          {
+            "code": "600.9.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "600.9",
+            "full_code": "600.9.5",
+            "children": []
+          },
+          {
+            "code": "600.9.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "600.9",
+            "full_code": "600.9.6",
+            "children": []
+          },
+          {
+            "code": "600.9.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Pekerjaan Umum",
+            "level": 3,
+            "parent_code": "600.9",
+            "full_code": "600.9.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "600.10",
+        "description": "PERUMAHAN DAN KAWASAN PEMUKIMAN",
+        "level": 2,
+        "parent_code": "600",
+        "full_code": "600.10",
+        "children": [
+          {
+            "code": "600.10.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "600.10",
+            "full_code": "600.10.1",
+            "children": []
+          },
+          {
+            "code": "600.10.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "600.10",
+            "full_code": "600.10.2",
+            "children": []
+          },
+          {
+            "code": "600.10.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "600.10",
+            "full_code": "600.10.3",
+            "children": []
+          },
+          {
+            "code": "600.10.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "600.10",
+            "full_code": "600.10.4",
+            "children": []
+          },
+          {
+            "code": "600.10.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "600.10",
+            "full_code": "600.10.5",
+            "children": []
+          },
+          {
+            "code": "600.10.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "600.10",
+            "full_code": "600.10.6",
+            "children": []
+          },
+          {
+            "code": "600.10.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Perumahan dan Kawasan Pemukiman",
+            "level": 3,
+            "parent_code": "600.10",
+            "full_code": "600.10.7",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "600.11",
+        "description": "LINGKUNGAN HIDUP",
+        "level": 2,
+        "parent_code": "600",
+        "full_code": "600.11",
+        "children": [
+          {
+            "code": "600.11.1",
+            "description": "Penyiapan perumusan kebijakan",
+            "level": 3,
+            "parent_code": "600.11",
+            "full_code": "600.11.1",
+            "children": []
+          },
+          {
+            "code": "600.11.2",
+            "description": "Pelaksanaan kebijakan, pelaksanaan pembinaan umum",
+            "level": 3,
+            "parent_code": "600.11",
+            "full_code": "600.11.2",
+            "children": []
+          },
+          {
+            "code": "600.11.3",
+            "description": "Pelaksanaan koordinasi dan fasilitasi penyusunan pemetaan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "600.11",
+            "full_code": "600.11.3",
+            "children": []
+          },
+          {
+            "code": "600.11.4",
+            "description": "Penyusunan norma, standar, prosedur, dan kriteria penyelenggaraan urusan pemerintahan",
+            "level": 3,
+            "parent_code": "600.11",
+            "full_code": "600.11.4",
+            "children": []
+          },
+          {
+            "code": "600.11.5",
+            "description": "Pelaksanaan pemantauan, evaluasi dan pelaporan",
+            "level": 3,
+            "parent_code": "600.11",
+            "full_code": "600.11.5",
+            "children": []
+          },
+          {
+            "code": "600.11.6",
+            "description": "Pemberian bimbingan teknis dan supervisi sinkronisasi",
+            "level": 3,
+            "parent_code": "600.11",
+            "full_code": "600.11.6",
+            "children": []
+          },
+          {
+            "code": "600.11.7",
+            "description": "Harmonisasi pembangunan daerah di bidang Lingkungan Hidup",
+            "level": 3,
+            "parent_code": "600.11",
+            "full_code": "600.11.7",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "700",
+    "description": "PENGAWASAN",
+    "level": 1,
+    "parent_code": null,
+    "full_code": "700",
+    "children": [
+      {
+        "code": "700.1",
+        "description": "PENGAWASAN INTERNAL",
+        "level": 2,
+        "parent_code": "700",
+        "full_code": "700.1",
+        "children": [
+          {
+            "code": "700.1.1",
+            "description": "Rencana Pengawasan",
+            "level": 3,
+            "parent_code": "700.1",
+            "full_code": "700.1.1",
+            "children": [
+              {
+                "code": "700.1.1.1",
+                "description": "Rencana Strategis Pengawasan",
+                "level": 4,
+                "parent_code": "700.1.1",
+                "full_code": "700.1.1.1",
+                "children": []
+              },
+              {
+                "code": "700.1.1.2",
+                "description": "Rencana Kerja Pengawas Tahunan",
+                "level": 4,
+                "parent_code": "700.1.1",
+                "full_code": "700.1.1.2",
+                "children": []
+              },
+              {
+                "code": "700.1.1.3",
+                "description": "Rencana Kinerja Tahunan",
+                "level": 4,
+                "parent_code": "700.1.1",
+                "full_code": "700.1.1.3",
+                "children": []
+              },
+              {
+                "code": "700.1.1.4",
+                "description": "Rencana dan Penetapan Kinerja Tahunan",
+                "level": 4,
+                "parent_code": "700.1.1",
+                "full_code": "700.1.1.4",
+                "children": []
+              },
+              {
+                "code": "700.1.1.5",
+                "description": "Rakor Pengawasan Tingkat Daerah",
+                "level": 4,
+                "parent_code": "700.1.1",
+                "full_code": "700.1.1.5",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "700.1.2",
+            "description": "Pelaksanaan Pengawasan",
+            "level": 3,
+            "parent_code": "700.1",
+            "full_code": "700.1.2",
+            "children": [
+              {
+                "code": "700.1.2.1",
+                "description": "Laporan Hasil Audit (LHA), Laporan Hasil Pemeriksaan (LHP), Laporan Hasil Pemeriksaan Operasional (LHPO), Laporan Hasil Evaluasi (LHE), Laporan Akuntan (LA), Laporan Auditor Independen (LAI) yang memerlukan tindak lanjut (TL)",
+                "level": 4,
+                "parent_code": "700.1.2",
+                "full_code": "700.1.2.1",
+                "children": []
+              },
+              {
+                "code": "700.1.2.2",
+                "description": "Laporan Hasil Audit Investigasi (LHAI) yang mengandung unsur Tindak Pidana Korupsi (TPK) dan memerlukan tindak lanjut",
+                "level": 4,
+                "parent_code": "700.1.2",
+                "full_code": "700.1.2.2",
+                "children": []
+              },
+              {
+                "code": "700.1.2.3",
+                "description": "Laporan Hasil Audit Investigasi (LHAI) yang mengandung unsur Tindak Pidana Korupsi (TPK) dan tidak memerlukan tindak lanjut",
+                "level": 4,
+                "parent_code": "700.1.2",
+                "full_code": "700.1.2.3",
+                "children": []
+              },
+              {
+                "code": "700.1.2.4",
+                "description": "Laporan Perkembangan Penanganan Surat Pengaduan Masyarakat",
+                "level": 4,
+                "parent_code": "700.1.2",
+                "full_code": "700.1.2.4",
+                "children": []
+              },
+              {
+                "code": "700.1.2.5",
+                "description": "Laporan Pemutakhiran Data Tindak Lanjut Temuan",
+                "level": 4,
+                "parent_code": "700.1.2",
+                "full_code": "700.1.2.5",
+                "children": []
+              },
+              {
+                "code": "700.1.2.6",
+                "description": "Laporan Perkembangan Barang Milik Negara",
+                "level": 4,
+                "parent_code": "700.1.2",
+                "full_code": "700.1.2.6",
+                "children": []
+              },
+              {
+                "code": "700.1.2.7",
+                "description": "Laporan Hasil Monitoring dan Evaluasi",
+                "level": 4,
+                "parent_code": "700.1.2",
+                "full_code": "700.1.2.7",
+                "children": []
+              },
+              {
+                "code": "700.1.2.8",
+                "description": "Laporan Kegiatan Pendampingan Penyusunan Laporan Keuangan dan Review",
+                "level": 4,
+                "parent_code": "700.1.2",
+                "full_code": "700.1.2.8",
+                "children": []
+              },
+              {
+                "code": "700.1.2.9",
+                "description": "Good Corporate Governance (GCG)",
+                "level": 4,
+                "parent_code": "700.1.2",
+                "full_code": "700.1.2.9",
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "800",
+    "description": "KEPEGAWAIAN",
+    "level": 1,
+    "parent_code": null,
+    "full_code": "800",
+    "children": [
+      {
+        "code": "800.1",
+        "description": "SUMBER DAYA MANUSIA",
+        "level": 2,
+        "parent_code": "800",
+        "full_code": "800.1",
+        "children": [
+          {
+            "code": "800.1.1",
+            "description": "Penyusunan dan Penetapan Kebutuhan Aparatur Sipil Negara",
+            "level": 3,
+            "parent_code": "800.1",
+            "full_code": "800.1.1",
+            "children": []
+          },
+          {
+            "code": "800.1.2",
+            "description": "Formasi dan Pengadaan Pegawai",
+            "level": 3,
+            "parent_code": "800.1",
+            "full_code": "800.1.2",
+            "children": []
+          },
+          {
+            "code": "800.1.3",
+            "description": "Mutasi Pegawai",
+            "level": 3,
+            "parent_code": "800.1",
+            "full_code": "800.1.3",
+            "children": [
+              {
+                "code": "800.1.3.1",
+                "description": "Usulan Alih Status, Pindah Instansi, Pindah Wilayah Kerja, Diperbantukan, Dipekerjakan, Penugasan Sementara, Mutasi antar Perwakilan, Mutasi ke dan dari Perwakilan, Pemindahan Sementara, Persetujuan/Pertimbangan Kepala BKN",
+                "level": 4,
+                "parent_code": "800.1.3",
+                "full_code": "800.1.3.1",
+                "children": []
+              },
+              {
+                "code": "800.1.3.2",
+                "description": "Kenaikan Pangkat/Golongan/Jabatan",
+                "level": 4,
+                "parent_code": "800.1.3",
+                "full_code": "800.1.3.2",
+                "children": []
+              },
+              {
+                "code": "800.1.3.3",
+                "description": "Pengangkatan dan Pemberhentian Jabatan Struktural/Fungsional",
+                "level": 4,
+                "parent_code": "800.1.3",
+                "full_code": "800.1.3.3",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "800.1.4",
+            "description": "Pengembangan Karir",
+            "level": 3,
+            "parent_code": "800.1",
+            "full_code": "800.1.4",
+            "children": [
+              {
+                "code": "800.1.4.1",
+                "description": "Usulan Tugas Belajar/ Ijin Belajar/ Diklat/ Kursus/ Magang/ Ujian Dinas/ Praktek Kerja di Instansi lain/ Pertukaran antar ASN dengan pegawai swasta",
+                "level": 4,
+                "parent_code": "800.1.4",
+                "full_code": "800.1.4.1",
+                "children": []
+              },
+              {
+                "code": "800.1.4.2",
+                "description": "Penyesuaian ijazah",
+                "level": 4,
+                "parent_code": "800.1.4",
+                "full_code": "800.1.4.2",
+                "children": []
+              },
+              {
+                "code": "800.1.4.3",
+                "description": "Penyusunan Sistem Karier",
+                "level": 4,
+                "parent_code": "800.1.4",
+                "full_code": "800.1.4.3",
+                "children": []
+              },
+              {
+                "code": "800.1.4.4",
+                "description": "Standar Kinerja Pegawai (SKP) dan Penilaian Prestasi Kerja",
+                "level": 4,
+                "parent_code": "800.1.4",
+                "full_code": "800.1.4.4",
+                "children": []
+              },
+              {
+                "code": "800.1.4.5",
+                "description": "Angka Kredit Antara lain : Pengajuan Daftar Usul Pengajuan Angka Kredit, Penilaian Daftar Usul Pengajuan Angka Kredit",
+                "level": 4,
+                "parent_code": "800.1.4",
+                "full_code": "800.1.4.5",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "800.1.5",
+            "description": "Kinerja Aparatur Sipil Negara",
+            "level": 3,
+            "parent_code": "800.1",
+            "full_code": "800.1.5",
+            "children": [
+              {
+                "code": "800.1.5.1",
+                "description": "Hasil Penilaian Kinerja dan Standar Kerja",
+                "level": 4,
+                "parent_code": "800.1.5",
+                "full_code": "800.1.5.1",
+                "children": []
+              },
+              {
+                "code": "800.1.5.2",
+                "description": "Pengelolaan Database dan Analisis Sistem Informasi Kinerja",
+                "level": 4,
+                "parent_code": "800.1.5",
+                "full_code": "800.1.5.2",
+                "children": []
+              },
+              {
+                "code": "800.1.5.3",
+                "description": "Evaluasi dan Pemantauan Penilaian Kinerja dan Standar Kinerja",
+                "level": 4,
+                "parent_code": "800.1.5",
+                "full_code": "800.1.5.3",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "800.1.6",
+            "description": "Kode Etik, Disiplin, Pemberhentian dan Pensiun ASN",
+            "level": 3,
+            "parent_code": "800.1",
+            "full_code": "800.1.6",
+            "children": [
+              {
+                "code": "800.1.6.6",
+                "description": "Pensiun ASN Antara lain : Administrasi Pensiun ASN, Penetapan Pensiun ASN, Penetapan Pertimbangan Teknis Pensiun ASN, Pensiun Pejabat Negara dan Janda/ Dudanya",
+                "level": 4,
+                "parent_code": "800.1.6",
+                "full_code": "800.1.6.6",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "800.1.7",
+            "description": "Bantuan Hukum",
+            "level": 3,
+            "parent_code": "800.1",
+            "full_code": "800.1.7",
+            "children": []
+          },
+          {
+            "code": "800.1.8",
+            "description": "Status dan Kedudukan Pegawai",
+            "level": 3,
+            "parent_code": "800.1",
+            "full_code": "800.1.8",
+            "children": []
+          },
+          {
+            "code": "800.1.9",
+            "description": "Sistem Informasi Kepegawaian",
+            "level": 3,
+            "parent_code": "800.1",
+            "full_code": "800.1.9",
+            "children": []
+          },
+          {
+            "code": "800.1.10",
+            "description": "Pengawasan dan pengendalian",
+            "level": 3,
+            "parent_code": "800.1",
+            "full_code": "800.1.10",
+            "children": []
+          },
+          {
+            "code": "800.1.11",
+            "description": "Administrasi Pegawai",
+            "level": 3,
+            "parent_code": "800.1",
+            "full_code": "800.1.11",
+            "children": [
+              {
+                "code": "800.1.11.1",
+                "description": "Surat Perintah Dinas/Surat Tugas",
+                "level": 4,
+                "parent_code": "800.1.11",
+                "full_code": "800.1.11.1",
+                "children": []
+              },
+              {
+                "code": "800.1.11.2",
+                "description": "Cuti Sakit",
+                "level": 4,
+                "parent_code": "800.1.11",
+                "full_code": "800.1.11.2",
+                "children": []
+              },
+              {
+                "code": "800.1.11.3",
+                "description": "Cuti Bersalin",
+                "level": 4,
+                "parent_code": "800.1.11",
+                "full_code": "800.1.11.3",
+                "children": []
+              },
+              {
+                "code": "800.1.11.4",
+                "description": "Cuti Tahunan",
+                "level": 4,
+                "parent_code": "800.1.11",
+                "full_code": "800.1.11.4",
+                "children": []
+              },
+              {
+                "code": "800.1.11.5",
+                "description": "Cuti Alasan Penting",
+                "level": 4,
+                "parent_code": "800.1.11",
+                "full_code": "800.1.11.5",
+                "children": []
+              },
+              {
+                "code": "800.1.11.6",
+                "description": "Cuti Besar",
+                "level": 4,
+                "parent_code": "800.1.11",
+                "full_code": "800.1.11.6",
+                "children": []
+              },
+              {
+                "code": "800.1.11.7",
+                "description": "Cuti Di luar Tanggungan Negara",
+                "level": 4,
+                "parent_code": "800.1.11",
+                "full_code": "800.1.11.7",
+                "children": []
+              },
+              {
+                "code": "800.1.11.8",
+                "description": "Karpeg/KPE/Karis/Karsu",
+                "level": 4,
+                "parent_code": "800.1.11",
+                "full_code": "800.1.11.8",
+                "children": []
+              },
+              {
+                "code": "800.1.11.9",
+                "description": "Keanggotaan Organisasi Profesi/ Kedinasan",
+                "level": 4,
+                "parent_code": "800.1.11",
+                "full_code": "800.1.11.9",
+                "children": []
+              },
+              {
+                "code": "800.1.11.13",
+                "description": "Pengurusan Kenaikan Gaji Berkala, Mutasi Gaji/ tunjangan",
+                "level": 4,
+                "parent_code": "800.1.11",
+                "full_code": "800.1.11.13",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "800.1.12",
+            "description": "Kesejahteraan Pegawai",
+            "level": 3,
+            "parent_code": "800.1",
+            "full_code": "800.1.12",
+            "children": []
+          },
+          {
+            "code": "800.1.13",
+            "description": "Administrasi Perseorangan",
+            "level": 3,
+            "parent_code": "800.1",
+            "full_code": "800.1.13",
+            "children": [
+              {
+                "code": "800.1.13.1",
+                "description": "Pegawai Negeri Sipil (PNS)",
+                "level": 4,
+                "parent_code": "800.1.13",
+                "full_code": "800.1.13.1",
+                "children": []
+              },
+              {
+                "code": "800.1.13.2",
+                "description": "Pegawai Pemerintah dengan Perjanjian Kerja (PPPK)",
+                "level": 4,
+                "parent_code": "800.1.13",
+                "full_code": "800.1.13.2",
+                "children": []
+              }
+            ]
+          },
+          {
+            "code": "800.1.14",
+            "description": "Penilaian Kompetensi",
+            "level": 3,
+            "parent_code": "800.1",
+            "full_code": "800.1.14",
+            "children": []
+          }
+        ]
+      },
+      {
+        "code": "800.2",
+        "description": "PENDIDIKAN DAN PELATIHAN",
+        "level": 2,
+        "parent_code": "800",
+        "full_code": "800.2",
+        "children": [
+          {
+            "code": "800.2.1",
+            "description": "Kebijakan di bidang Pendidikan dan Pelatihan yang dilakukan oleh Kementerian Dalam Negeri",
+            "level": 3,
+            "parent_code": "800.2",
+            "full_code": "800.2.1",
+            "children": []
+          },
+          {
+            "code": "800.2.2",
+            "description": "Pendidikan dan Pelatihan",
+            "level": 3,
+            "parent_code": "800.2",
+            "full_code": "800.2.2",
+            "children": []
+          },
+          {
+            "code": "800.2.3",
+            "description": "Widyaiswara",
+            "level": 3,
+            "parent_code": "800.2",
+            "full_code": "800.2.3",
+            "children": []
+          },
+          {
+            "code": "800.2.4",
+            "description": "Penyelenggaraan Diklat",
+            "level": 3,
+            "parent_code": "800.2",
+            "full_code": "800.2.4",
+            "children": []
+          },
+          {
+            "code": "800.2.5",
+            "description": "Alumni Diklat",
+            "level": 3,
+            "parent_code": "800.2",
+            "full_code": "800.2.5",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "code": "900",
+    "description": "KEUANGAN",
+    "level": 1,
+    "parent_code": null,
+    "full_code": "900",
+    "children": [
+      {
+        "code": "900.1",
+        "description": "KEUANGAN DAERAH",
+        "level": 2,
+        "parent_code": "900",
+        "full_code": "900.1",
+        "children": [
+          {
+            "code": "900.1.1",
+            "description": "Rencana Anggaran Pendapatan dan Belanja Daerah (RAPBD) dan Anggaran Pendapatan dan Belanja Daerah Perubahan(APBD-P)",
+            "level": 3,
+            "parent_code": "900.1",
+            "full_code": "900.1.1",
+            "children": []
+          },
+          {
+            "code": "900.1.2",
+            "description": "Penyusunan Anggaran",
+            "level": 3,
+            "parent_code": "900.1",
+            "full_code": "900.1.2",
+            "children": []
+          },
+          {
+            "code": "900.1.3",
+            "description": "Pelaksanaan Anggaran",
+            "level": 3,
+            "parent_code": "900.1",
+            "full_code": "900.1.3",
+            "children": []
+          },
+          {
+            "code": "900.1.4",
+            "description": "Pinjaman/Hibah Luar Negeri",
+            "level": 3,
+            "parent_code": "900.1",
+            "full_code": "900.1.4",
+            "children": []
+          },
+          {
+            "code": "900.1.5",
+            "description": "Pengelolaan APBD/Dana Pinjaman/Hibah Luar Negeri (PHLN)",
+            "level": 3,
+            "parent_code": "900.1",
+            "full_code": "900.1.5",
+            "children": []
+          },
+          {
+            "code": "900.1.6",
+            "description": "Sistem Akuntansi Keuangan Daerah (SAKD)",
+            "level": 3,
+            "parent_code": "900.1",
+            "full_code": "900.1.6",
+            "children": []
+          },
+          {
+            "code": "900.1.7",
+            "description": "Penyaluran Anggaran Tugas Pembantuan",
+            "level": 3,
+            "parent_code": "900.1",
+            "full_code": "900.1.7",
+            "children": []
+          },
+          {
+            "code": "900.1.8",
+            "description": "Penerimaan Anggaran Tugas Pembantuan",
+            "level": 3,
+            "parent_code": "900.1",
+            "full_code": "900.1.8",
+            "children": []
+          },
+          {
+            "code": "900.1.9",
+            "description": "Pengelolaan Anggaran Pemilu",
+            "level": 3,
+            "parent_code": "900.1",
+            "full_code": "900.1.9",
+            "children": []
+          },
+          {
+            "code": "900.1.10",
+            "description": "Pelaksanaan Anggaran PILKADA dan Anggaran Biaya Bantuan Pemilu",
+            "level": 3,
+            "parent_code": "900.1",
+            "full_code": "900.1.10",
+            "children": []
+          },
+          {
+            "code": "900.1.11",
+            "description": "Pemeriksaan/Pengawasan Keuangan Daerah",
+            "level": 3,
+            "parent_code": "900.1",
+            "full_code": "900.1.11",
+            "children": []
+          },
+          {
+            "code": "900.1.12",
+            "description": "Anggaran Daerah",
+            "level": 3,
+            "parent_code": "900.1",
+            "full_code": "900.1.12",
+            "children": []
+          },
+          {
+            "code": "900.1.13",
+            "description": "Pendapatan dan Investasi Daerah",
+            "level": 3,
+            "parent_code": "900.1",
+            "full_code": "900.1.13",
+            "children": []
+          },
+          {
+            "code": "900.1.14",
+            "description": "Fasilitasi Dana Perimbangan",
+            "level": 3,
+            "parent_code": "900.1",
+            "full_code": "900.1.14",
+            "children": []
+          },
+          {
+            "code": "900.1.15",
+            "description": "Pelaksanaan Dan Pertanggungjawaban Keuangan Daerah",
+            "level": 3,
+            "parent_code": "900.1",
+            "full_code": "900.1.15",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]
