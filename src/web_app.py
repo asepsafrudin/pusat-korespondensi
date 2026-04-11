@@ -281,6 +281,20 @@ async def download_disposisi(unique_id: str, background_tasks: BackgroundTasks):
     except Exception as e:
         raise HTTPException(status_code=404, detail=str(e))
 
+@app.get("/struktur", response_class=HTMLResponse)
+async def struktur_page(request: Request):
+    """Organizational structure diagram page."""
+    import json
+    json_path = os.path.join(os.path.dirname(__file__), "master_struktur_bangda_2025.json")
+    with open(json_path, "r", encoding="utf-8") as f:
+        struktur_data = json.load(f)
+    return templates.TemplateResponse("struktur.html", {
+        "request": request,
+        "title": "Struktur Organisasi",
+        "active_page": "struktur",
+        "struktur_data": struktur_data
+    })
+
 # --- Shared Layout Dummy Route for development ---
 @app.exception_handler(404)
 async def custom_404_handler(request: Request, __):
