@@ -50,8 +50,18 @@
                             <span class="icon">⚙️</span> Sync Center
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" id="living-archive-link" target="_blank" class="nav-link">
+                            <span class="icon">🏛️</span> Living Archive
+                        </a>
+                    </li>
                 </nav>
             </div>
+            
+            <script>
+                // Dynamically set Living Archive link to use the same host as the current page
+                document.getElementById('living-archive-link').href = 'http://' + window.location.hostname + ':8501';
+            </script>
             
             <div class="user-info" style="padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
                 <div style="display:flex; align-items:center; gap:12px;">

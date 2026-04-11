@@ -10,6 +10,11 @@ import os
 from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
+import psycopg
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Konfigurasi Halaman
 st.set_page_config(
@@ -32,8 +37,9 @@ def load_data():
     # Load hasil parsing terbaru (gabungan semua sumber)
     parsed_files = [
         'docs/hasil_parsing_dengan_mapping.json',
-        'docs/hasil_parsing_supd_iii.json',
-        'docs/hasil_parsing_sekretariat.json'
+        'docs/hasil_parsing_data_lain.json',
+        'docs/hasil_parsing_nomor_nd.json',
+        'docs/hasil_parsing_uji_baru.json'
     ]
     
     all_records = []
@@ -42,17 +48,81 @@ def load_data():
             try:
                 with open(pf, 'r') as f:
                     data = json.load(f)
+                    records = []
                     if isinstance(data, list):
-                        all_records.extend(data)
+                        records = data
                     elif isinstance(data, dict) and 'records' in data:
-                        all_records.extend(data['records'])
-            except:
-                pass
+                        records = data['records']
+                    
+                    for r in records:
+                        # Buat record yang sudah di-flatten
+                        flat = {
+                            'nomor_nd': r.get('input_asli') or r.get('input') or 'N/A',
+                            'perihal': r.get('perihal', 'N/A'),
+                        }
+                        
+                        # Ambil kode klasifikasi
+                        flat['kode_normalized'] = (
+                            r.get('kode_klasifikasi') or 
+                            (r.get('parsed_components', {}) if isinstance(r.get('parsed_components'), dict) else {}).get('kode_normalized') or
+                            'N/A'
+                        )
+                        
+                        # Ambil unit kerja
+                        flat['unit_kerja'] = (
+                            (r.get('deteksi_unit', {}) if isinstance(r.get('deteksi_unit'), dict) else {}).get('unit_kerja') or
+                            (r.get('parsed_components', {}) if isinstance(r.get('parsed_components'), dict) else {}).get('unit') or
+                            'N/A'
+                        )
+                        
+                        # Ambil status validasi & deskripsi
+                        validasi = r.get('validasi_referensi') or r.get('validasi') or {}
+                        flat['validation_status'] = validasi.get('status', 'PENDING')
+                        flat['deskripsi'] = validasi.get('deskripsi', 'N/A')
+                        flat['is_valid'] = flat['validation_status'] == 'EXACT_MATCH'
+                        flat['validation_notes'] = (
+                            (r.get('analisis_konsistensi', {}) if isinstance(r.get('analisis_konsistensi'), dict) else {}).get('catatan', [''])[0]
+                        )
+                        
+                        all_records.append(flat)
+            except Exception as e:
+                print(f"Error loading {pf}: {e}")
     
     df = pd.DataFrame(all_records)
+    
+    # Enrichment: Ambil 'hal' dari database jika tersedia
+    try:
+        conn_str = f"host={os.getenv('PG_HOST')} port={os.getenv('PG_PORT')} dbname={os.getenv('PG_DATABASE')} user={os.getenv('PG_USER')} password={os.getenv('PG_PASSWORD')}"
+        with psycopg.connect(conn_str, connect_timeout=3) as conn:
+            with conn.cursor() as cur:
+                cur.execute("SELECT nomor_nd, hal FROM korespondensi_raw_pool")
+                rows = cur.fetchall()
+                hal_map = {r[0]: r[1] for r in rows if r[0]}
+                
+                if not df.empty and 'nomor_nd' in df.columns:
+                    # Update 'perihal' berdasarkan mapping nomor_nd
+                    df['perihal'] = df['nomor_nd'].map(hal_map).fillna(df['perihal'])
+    except Exception as e:
+        print(f"Database enrichment failed: {e}")
+
     return referensi, df
 
 referensi, df_parsed = load_data()
+
+# Database Connection Audit
+def check_db_connection():
+    try:
+        conn_str = f"host={os.getenv('PG_HOST')} port={os.getenv('PG_PORT')} dbname={os.getenv('PG_DATABASE')} user={os.getenv('PG_USER')} password={os.getenv('PG_PASSWORD')}"
+        with psycopg.connect(conn_str, connect_timeout=3) as conn:
+            with conn.cursor() as cur:
+                cur.execute("SELECT COUNT(*) FROM korespondensi_raw_pool")
+                row = cur.fetchone()
+                count = row[0] if row else 0
+                return True, f"Connected to PostgreSQL ({count} raw records)"
+    except Exception as e:
+        return False, f"Database Disconnected: {str(e)}"
+
+db_ok, db_msg = check_db_connection()
 
 # Custom CSS untuk tampilan yang memukau
 st.markdown("""
@@ -112,6 +182,13 @@ st.divider()
 
 # Sidebar Filter
 st.sidebar.header("🔍 Filter Data")
+
+# Audit Status in Sidebar
+if db_ok:
+    st.sidebar.success(f"🌐 {db_msg}")
+else:
+    st.sidebar.error(f"❌ {db_msg}")
+
 unit_options = sorted(df_parsed['unit_kerja'].dropna().unique()) if not df_parsed.empty else []
 selected_unit = st.sidebar.multiselect("Pilih Unit Kerja", unit_options, default=unit_options[:5])
 
@@ -228,14 +305,14 @@ with tab3:
     ai_magic_df = df_filtered[df_filtered['validation_status'].isin(['CONTEXT_CORRECTED', 'MAPPED_LOCAL_CODE', 'FALLBACK_PARENT'])].copy()
     
     if not ai_magic_df.empty:
-        for idx, row in ai_magic_df.head(10).iterrows():
+        for idx, (_, row) in enumerate(ai_magic_df.head(10).iterrows()):
             original_code = row.get('nomor_nd', '').split('/')[0] if pd.notna(row.get('nomor_nd')) else 'N/A'
             corrected_code = row.get('kode_normalized', 'N/A')
             reason = row.get('validation_notes', '')
             
             st.markdown(f"""
             <div class="ai-magic-box">
-                <strong>🪄 Transformasi #{idx+1}</strong><br>
+                <strong>🪄 Transformasi #{int(idx)+1}</strong><br>
                 <b>Input Manual:</b> <code>{original_code}</code><br>
                 <b>Output AI:</b> <code style="background:white; color:#2a5298; padding:2px 5px; border-radius:3px;">{corrected_code}</code><br>
                 <b>Alasan:</b> {reason}<br>
@@ -274,7 +351,7 @@ with tab4:
         df_search = df_filtered
     
     # Display table
-    display_cols = ['nomor_nd', 'kode_normalized', 'deskripsi', 'unit_kerja', 'validation_status', 'is_valid']
+    display_cols = ['nomor_nd', 'perihal', 'kode_normalized', 'deskripsi', 'unit_kerja', 'validation_status']
     st.dataframe(df_search[display_cols], use_container_width=True, height=400)
     
     # Detail view
