@@ -1,0 +1,434 @@
+{% extends "base.html" %}
+
+{% block page_title %}Struktur Organisasi{% endblock %}
+{% block page_subtitle %}DITJEN BINA PEMBANGUNAN DAERAH{% endblock %}
+
+{% block head %}
+<style>
+    .org-chart-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        overflow-x: auto;
+    }
+    
+    .org-node {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 12px;
+        padding: 1rem 1.5rem;
+        margin: 0.5rem;
+        color: white;
+        min-width: 200px;
+        max-width: 300px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+    }
+    
+    .org-node:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+    }
+    
+    .org-node.leader {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+    }
+    
+    .org-node.unit {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+    }
+    
+    .org-node.subunit {
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        box-shadow: 0 4px 15px rgba(67, 233, 123, 0.4);
+    }
+    
+    .org-node.team {
+        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        box-shadow: 0 4px 15px rgba(250, 112, 154, 0.4);
+    }
+    
+    .node-title {
+        font-size: 0.875rem;
+        font-weight: 600;
+        opacity: 0.9;
+        margin-bottom: 0.25rem;
+    }
+    
+    .node-name {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+    }
+    
+    .node-nip {
+        font-size: 0.75rem;
+        opacity: 0.8;
+    }
+    
+    .org-level {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin: 1rem 0;
+        position: relative;
+    }
+    
+    .org-level::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        width: 2px;
+        height: 20px;
+        background: #cbd5e1;
+    }
+    
+    .connector {
+        width: 2px;
+        height: 30px;
+        background: #cbd5e1;
+        margin: 0 auto;
+    }
+    
+    .horizontal-line {
+        height: 2px;
+        background: #cbd5e1;
+        margin: 0 1rem;
+        flex-grow: 1;
+        max-width: 80%;
+    }
+    
+    .unit-container {
+        background: #f8fafc;
+        border-radius: 16px;
+        padding: 2rem;
+        margin: 1rem;
+        border: 1px solid #e2e8f0;
+        max-width: 1400px;
+    }
+    
+    .unit-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .unit-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 0.5rem;
+    }
+    
+    .collapse-btn {
+        background: #667eea;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.875rem;
+        margin-top: 0.5rem;
+        transition: background 0.3s;
+    }
+    
+    .collapse-btn:hover {
+        background: #5a67d8;
+    }
+    
+    .subunits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .subunit-card {
+        background: white;
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        border-left: 4px solid #43e97b;
+    }
+    
+    .subunit-name {
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 0.75rem;
+        font-size: 0.95rem;
+    }
+    
+    .team-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .team-item {
+        background: #f1f5f9;
+        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        margin-bottom: 0.5rem;
+        font-size: 0.875rem;
+    }
+    
+    .team-name {
+        font-weight: 600;
+        color: #475569;
+    }
+    
+    .team-lead {
+        font-size: 0.75rem;
+        color: #64748b;
+        margin-top: 0.25rem;
+    }
+    
+    .instansi-header {
+        text-align: center;
+        padding: 2rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 16px;
+        margin-bottom: 2rem;
+    }
+    
+    .instansi-name {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+    }
+    
+    .zoom-controls {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        z-index: 100;
+    }
+    
+    .zoom-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: white;
+        border: 2px solid #e2e8f0;
+        cursor: pointer;
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+    }
+    
+    .zoom-btn:hover {
+        background: #667eea;
+        color: white;
+        border-color: #667eea;
+    }
+    
+    .chart-wrapper {
+        overflow: auto;
+        max-height: calc(100vh - 250px);
+        padding: 1rem;
+    }
+    
+    @media (max-width: 768px) {
+        .org-node {
+            min-width: 150px;
+            padding: 0.75rem;
+        }
+        
+        .node-name {
+            font-size: 0.875rem;
+        }
+        
+        .subunits-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="instansi-header">
+    <div class="instansi-name">{{ struktur_data.struktur_organisasi_lengkap.instansi }}</div>
+    <div style="opacity: 0.9;">Struktur Organisasi Tahun 2025</div>
+</div>
+
+<div class="zoom-controls">
+    <button class="zoom-btn" onclick="zoomIn()">+</button>
+    <button class="zoom-btn" onclick="zoomOut()">−</button>
+    <button class="zoom-btn" onclick="resetZoom()">⟲</button>
+</div>
+
+<div class="chart-wrapper" id="chartWrapper">
+    <div class="org-chart-container" id="orgChart" style="transform-origin: top center;">
+        {% for unit in struktur_data.struktur_organisasi_lengkap.unit_kerja %}
+        <div class="unit-container" id="unit-{{ loop.index }}">
+            <div class="unit-header">
+                <div class="unit-title">{{ unit.nama_unit }}</div>
+                <div style="color: #64748b; font-size: 0.875rem; margin-bottom: 1rem;">
+                    {{ unit.pimpinan.jabatan }}: <strong>{{ unit.pimpinan.nama }}</strong>
+                    {% if unit.pimpinan.nip %}
+                    <span style="opacity: 0.7;">({{ unit.pimpinan.nip }})</span>
+                    {% endif %}
+                </div>
+                <button class="collapse-btn" onclick="toggleUnit({{ loop.index }})">
+                    <span id="btn-text-{{ loop.index }}">▼ Sembunyikan Detail</span>
+                </button>
+            </div>
+            
+            <div class="connector"></div>
+            
+            <div class="org-level" id="unit-content-{{ loop.index }}">
+                <!-- Pimpinan Node -->
+                <div class="org-node leader">
+                    <div class="node-title">{{ unit.pimpinan.jabatan }}</div>
+                    <div class="node-name">{{ unit.pimpinan.nama }}</div>
+                    <div class="node-nip">{{ unit.pimpinan.pangkat }}</div>
+                    {% if unit.pimpinan.nip %}
+                    <div class="node-nip">NIP: {{ unit.pimpinan.nip }}</div>
+                    {% endif %}
+                </div>
+                
+                {% if unit.tata_usaha %}
+                <div class="org-node unit">
+                    <div class="node-title">Kepala Tata Usaha</div>
+                    <div class="node-name">{{ unit.tata_usaha.kepala.nama }}</div>
+                    <div class="node-nip">{{ unit.tata_usaha.kepala.nip }}</div>
+                </div>
+                {% endif %}
+            </div>
+            
+            <!-- Sub Units Grid -->
+            {% if unit.sub_unit %}
+            <div class="subunits-grid" id="subunits-{{ loop.index }}">
+                {% for sub in unit.sub_unit %}
+                <div class="subunit-card">
+                    <div class="subunit-name">
+                        {% if sub.nama_bagian %}
+                            {{ sub.nama_bagian }}
+                            {% if sub.kepala_bagian %}
+                            <div style="font-size: 0.75rem; font-weight: normal; color: #64748b; margin-top: 0.25rem;">
+                                Ka. Bagian: {{ sub.kepala_bagian.nama }}
+                            </div>
+                            {% endif %}
+                        {% elif sub.nama_subdit %}
+                            {{ sub.nama_subdit }}
+                            {% if sub.penanggung_jawab %}
+                            <div style="font-size: 0.75rem; font-weight: normal; color: #64748b; margin-top: 0.25rem;">
+                                PJ: {{ sub.penanggung_jawab.nama }}
+                            </div>
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                    
+                    {% if sub.tim_kerja %}
+                    <ul class="team-list">
+                        {% for tim in sub.tim_kerja %}
+                        <li class="team-item">
+                            <div class="team-name">
+                                {% if tim.nama_tim %}
+                                    {{ tim.nama_tim }}
+                                {% elif tim.wilayah %}
+                                    Wilayah {{ tim.wilayah }}
+                                {% endif %}
+                            </div>
+                            {% if tim.ketua %}
+                            <div class="team-lead">
+                                Ketua: {{ tim.ketua.nama }}
+                                {% if tim.ketua.jabatan %}
+                                <br><span style="font-size: 0.7rem;">{{ tim.ketua.jabatan }}</span>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    
+                    {% if sub.sub_bagian %}
+                    <ul class="team-list">
+                        {% for subbag in sub.sub_bagian %}
+                        <li class="team-item">
+                            <div class="team-name">{{ subbag.nama_sub }}</div>
+                            {% if subbag.kepala %}
+                            <div class="team-lead">
+                                Kepala: {{ subbag.kepala.nama }}
+                            </div>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    let currentZoom = 1;
+    
+    function zoomIn() {
+        currentZoom = Math.min(currentZoom + 0.1, 2);
+        applyZoom();
+    }
+    
+    function zoomOut() {
+        currentZoom = Math.max(currentZoom - 0.1, 0.5);
+        applyZoom();
+    }
+    
+    function resetZoom() {
+        currentZoom = 1;
+        applyZoom();
+    }
+    
+    function applyZoom() {
+        const chart = document.getElementById('orgChart');
+        chart.style.transform = `scale(${currentZoom})`;
+    }
+    
+    function toggleUnit(index) {
+        const content = document.getElementById(`unit-content-${index}`);
+        const subunits = document.getElementById(`subunits-${index}`);
+        const btnText = document.getElementById(`btn-text-${index}`);
+        
+        if (content && subunits) {
+            const isHidden = content.style.display === 'none';
+            
+            if (isHidden) {
+                content.style.display = 'flex';
+                subunits.style.display = 'grid';
+                btnText.textContent = '▼ Sembunyikan Detail';
+            } else {
+                content.style.display = 'none';
+                subunits.style.display = 'none';
+                btnText.textContent = '▶ Tampilkan Detail';
+            }
+        }
+    }
+    
+    // Add click handlers for nodes to show more details
+    document.querySelectorAll('.org-node').forEach(node => {
+        node.addEventListener('click', function() {
+            // Could expand to show modal with full details
+            console.log('Node clicked:', this.querySelector('.node-name')?.textContent);
+        });
+    });
+</script>
+{% endblock %}
