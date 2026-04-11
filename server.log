@@ -1,0 +1,120 @@
+Checking environment...
+Launching PUU Hub in MODE: web
+/home/aseps/MCP/korespondensi-server/src/services/sync_service.py:21: SyntaxWarning: invalid escape sequence '\d'
+  cur.execute("""
+INFO:     Started server process [6845]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8081 (Press CTRL+C to quit)
+🚀 Starting PUU Universal Web Hub on http://0.0.0.0:8081
+INFO:     127.0.0.1:47486 - "GET /api/internal/0003_a_900.1.3_0003_set_bangda/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51203 - "GET /sync HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "GET /internal HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58456 - "GET /api/internal/INT-10241-0367/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60665 - "GET /api/internal/0065_600.3.3_0401_sd.ii_peipd/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65210 - "GET /api/internal/0367_000.3.3.2_942_bu_set/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54667 - "GET /api/internal/0367_000.3.3.2_942_bu_set/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54667 - "GET /api/internal/INT-10241-0367/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55962 - "GET /api/internal/INT-10241-0367/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50942 - "GET /api/internal/0057_400.2_573_sd_v-supd_iv/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50942 - "GET /api/internal/INT-1481-0057/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50865 - "GET /api/internal/INT-1156-0054/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50865 - "GET /api/internal/0327_000.4.2_834_bu_set/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50865 - "GET /api/internal/0327_000.4.2_834_bu_set/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50865 - "GET /api/internal/0054_000.8.2.6_0333_sd_ii_peipd/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50865 - "GET /api/internal/INT-1156-0054/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48026 - "GET /internal?q=0333 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49799 - "GET /internal HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57582 - "GET /api/internal/0054_000.8.2.6_0333_sd_ii_peipd/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62788 - "GET /api/internal/0065_600.3.3_0401_sd.ii_peipd/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62788 - "GET /api/internal/0073_500.1_1070_sd_iii_supd_i/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62788 - "GET /api/internal/0367_000.3.3.2_942_bu_set/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62788 - "GET /api/internal/0367_000.3.3.2_942_bu_set/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53770 - "GET /api/internal/0060_400.2_590_sd_v-supd_iv/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53770 - "GET /api/internal/0057_400.2_573_sd_v-supd_iv/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53770 - "GET /api/internal/0327_000.4.2_834_bu_set/timeline HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /api/internal/0089_500.7_046-08_sd.iv_2026/timeline HTTP/1.1" 200 OK
+INFO:     172.25.12.215:50759 - "GET /internal HTTP/1.1" 200 OK
+INFO:     172.25.12.215:50759 - "GET /static/style.css HTTP/1.1" 304 Not Modified
+INFO:     172.25.12.215:50758 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:50780 - "GET /internal?q=000.4.2%2F834%2Fbu HTTP/1.1" 200 OK
+INFO:     172.25.12.215:50780 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:50779 - "GET /api/disposisi/download/0327_000.4.2_834_bu_set HTTP/1.1" 200 OK
+2026-04-08 08:25:14,319 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-04-08 08:25:14,503 - sync_service - ERROR - [Google Drive Auto-Sync] Gagal mengunggah /tmp/Disposisi_0251_Set_BU_2026.docx: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+INFO:     172.25.12.215:50781 - "GET /api/disposisi/download/0327_000.4.2_834_bu_set HTTP/1.1" 200 OK
+2026-04-08 08:25:25,555 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-04-08 08:25:25,762 - sync_service - ERROR - [Google Drive Auto-Sync] Gagal mengunggah /tmp/Disposisi_0251_Set_BU_2026.docx: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+INFO:     172.25.12.215:50830 - "GET / HTTP/1.1" 200 OK
+INFO:     172.25.12.215:50830 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:50847 - "GET /internal HTTP/1.1" 200 OK
+INFO:     172.25.12.215:50847 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:50860 - "GET /api/disposisi/download/0327_000.4.2_834_bu_set HTTP/1.1" 200 OK
+2026-04-08 08:26:43,395 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-04-08 08:26:43,552 - sync_service - ERROR - [Google Drive Auto-Sync] Gagal mengunggah /tmp/Disposisi_0251_Set_BU_2026.docx: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+INFO:     172.25.12.215:50860 - "GET /api/disposisi/download/0327_000.4.2_834_bu_set HTTP/1.1" 200 OK
+2026-04-08 08:26:48,782 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-04-08 08:26:48,982 - sync_service - ERROR - [Google Drive Auto-Sync] Gagal mengunggah /tmp/Disposisi_0251_Set_BU_2026.docx: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+INFO:     172.25.12.215:50868 - "GET /api/disposisi/download/0327_000.4.2_834_bu_set HTTP/1.1" 200 OK
+2026-04-08 08:27:16,468 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-04-08 08:27:16,631 - sync_service - ERROR - [Google Drive Auto-Sync] Gagal mengunggah /tmp/Disposisi_0251_Set_BU_2026.docx: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+INFO:     172.25.12.215:51020 - "GET /api/internal/0327_000.4.2_834_bu_set/timeline HTTP/1.1" 200 OK
+INFO:     172.25.12.215:51029 - "GET /api/disposisi/download/0327_000.4.2_834_bu_set HTTP/1.1" 200 OK
+2026-04-08 08:31:47,275 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-04-08 08:31:47,525 - sync_service - ERROR - [Google Drive Auto-Sync] Gagal mengunggah /tmp/Disposisi_0251_Set_BU_2026.docx: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+INFO:     172.25.12.215:51683 - "GET /internal HTTP/1.1" 200 OK
+INFO:     172.25.12.215:51683 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:51684 - "GET /api/disposisi/download/0327_000.4.2_834_bu_set HTTP/1.1" 200 OK
+2026-04-08 08:50:19,739 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-04-08 08:50:19,922 - sync_service - ERROR - [Google Drive Auto-Sync] Gagal mengunggah /tmp/Disposisi_0251_Set_BU_2026.docx: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+INFO:     172.25.12.215:58928 - "GET /internal HTTP/1.1" 200 OK
+INFO:     172.25.12.215:58929 - "GET /internal HTTP/1.1" 200 OK
+INFO:     172.25.12.215:58929 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:58938 - "GET /api/disposisi/download/0327_000.4.2_834_bu_set HTTP/1.1" 200 OK
+2026-04-08 09:17:05,348 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-04-08 09:17:05,649 - sync_service - ERROR - [Google Drive Auto-Sync] Gagal mengunggah /tmp/Disposisi_0251_Set_BU_2026.docx: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+INFO:     172.25.12.215:58939 - "GET /api/disposisi/download/0323_100.4.3_0323_set_bangda HTTP/1.1" 200 OK
+2026-04-08 09:17:40,785 - googleapiclient.discovery_cache - INFO - file_cache is only supported with oauth2client<4.0.0
+2026-04-08 09:17:41,041 - sync_service - ERROR - [Google Drive Auto-Sync] Gagal mengunggah /tmp/Disposisi_0243_Set_Puu_2026.docx: ('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})
+INFO:     172.25.12.215:58967 - "GET / HTTP/1.1" 200 OK
+INFO:     172.25.12.215:58967 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:58977 - "GET /internal HTTP/1.1" 200 OK
+INFO:     172.25.12.215:58977 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:58977 - "GET /internal HTTP/1.1" 200 OK
+INFO:     172.25.12.215:58977 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:58977 - "GET /internal HTTP/1.1" 200 OK
+INFO:     172.25.12.215:58977 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:58977 - "GET /internal HTTP/1.1" 200 OK
+INFO:     172.25.12.215:58977 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:59108 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:59109 - "GET /api/internal/0327_000.4.2_834_bu_set/timeline HTTP/1.1" 200 OK
+Error reading PPPK JSON: 'NoneType' object has no attribute 'upper'
+INFO:     172.25.12.215:59134 - "GET /api/personnel/search?q=faisal%20baharudin HTTP/1.1" 200 OK
+Error reading PPPK JSON: 'NoneType' object has no attribute 'upper'
+INFO:     172.25.12.215:59140 - "GET /api/personnel/search?q=Fais HTTP/1.1" 200 OK
+Error reading PPPK JSON: 'NoneType' object has no attribute 'upper'
+INFO:     172.25.12.215:59140 - "GET /api/personnel/search?q=Faisa HTTP/1.1" 200 OK
+INFO:     172.25.12.215:59140 - "POST /api/internal/0327_000.4.2_834_bu_set/pic HTTP/1.1" 200 OK
+INFO:     172.25.12.215:59140 - "GET /internal HTTP/1.1" 200 OK
+INFO:     172.25.12.215:59140 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:65135 - "GET /internal HTTP/1.1" 200 OK
+INFO:     172.25.12.215:65135 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:65134 - "GET / HTTP/1.1" 200 OK
+INFO:     172.25.12.215:65134 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:65141 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:51432 - "GET /internal HTTP/1.1" 200 OK
+INFO:     172.25.12.215:51432 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:51474 - "GET /internal HTTP/1.1" 200 OK
+INFO:     172.25.12.215:51474 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     172.25.12.215:51475 - "GET /api/internal/0065_600.3.3_0401_sd.ii_peipd/timeline HTTP/1.1" 200 OK
+INFO:     100.79.132.114:49669 - "GET / HTTP/1.1" 200 OK
+INFO:     100.79.132.114:49669 - "GET /static/style.css HTTP/1.1" 200 OK
+INFO:     100.79.132.114:49669 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     100.79.132.114:55660 - "GET /internal HTTP/1.1" 200 OK
+INFO:     100.79.132.114:55660 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     100.79.132.114:64042 - "GET /api/internal/0060_400.2_590_sd_v-supd_iv/timeline HTTP/1.1" 200 OK
+INFO:     100.79.132.114:50654 - "GET /api/internal/0065_600.3.3_0401_sd.ii_peipd/timeline HTTP/1.1" 200 OK
+INFO:     100.79.132.114:52626 - "GET / HTTP/1.1" 200 OK
+INFO:     100.79.132.114:52626 - "GET /favicon.ico HTTP/1.1" 200 OK
+INFO:     100.79.132.114:60227 - "GET /internal HTTP/1.1" 200 OK
+INFO:     100.79.132.114:60227 - "GET /favicon.ico HTTP/1.1" 200 OK

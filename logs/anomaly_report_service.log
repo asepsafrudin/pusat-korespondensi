@@ -1,0 +1,2 @@
+2026-04-09 18:15:43,661 - anomaly_report_service - WARNING - Shared WhatsApp client failed, falling back to direct HTTP: Client error '401 Unauthorized' for url 'http://localhost:3000/api/sendText'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
