@@ -2,33 +2,33 @@
   """
 /home/aseps/MCP/scripts/etl_korespondensi_db_centric.py:487: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
   started_at = datetime.utcnow()
-2026-04-10 23:34:42,120 INFO [SEKRETARIAT] skip_sheets aktif: ['surat keluar PUU']
-2026-04-10 23:34:42,120 INFO Fetching SEKRETARIAT / SEKRETARIAT
-2026-04-10 23:34:45,790 INFO [SEKRETARIAT] total=396 inserted_raw=7 surat_puu=7 skipped=13
-2026-04-10 23:34:45,791 INFO Fetching PEIPD / PEIPD
-2026-04-10 23:34:46,926 INFO [PEIPD] total=69 inserted_raw=0 surat_puu=3 skipped=1
-2026-04-10 23:34:46,927 INFO Fetching SUPD I / SUPD I
-2026-04-10 23:34:47,871 INFO [SUPD I] total=87 inserted_raw=4 surat_puu=1 skipped=1
-2026-04-10 23:34:47,872 INFO Fetching SUPD II / SUPD II
-2026-04-10 23:34:48,949 INFO [SUPD II] total=139 inserted_raw=1 surat_puu=10 skipped=1
-2026-04-10 23:34:48,949 INFO Fetching SUPD III / SUPD III
-2026-04-10 23:34:49,995 INFO [SUPD III] total=78 inserted_raw=1 surat_puu=2 skipped=3
-2026-04-10 23:34:49,996 INFO Fetching SUPD IV / SUPD IV
-2026-04-10 23:34:50,933 INFO [SUPD IV] total=70 inserted_raw=1 surat_puu=4 skipped=1
-2026-04-10 23:34:50,934 INFO Fetching MASTER_BANGDA_2026 / Surat Masuk
-2026-04-10 23:34:52,269 INFO [MASTER_BANGDA_2026] total=568 inserted_raw=7 surat_puu=0 skipped=19
-2026-04-10 23:34:52,275 INFO lembar_disposisi auto-populated: 27 rows
-2026-04-10 23:34:52,462 INFO POSISI audit workflow completed: /home/aseps/MCP/korespondensi-server/storage/admin_data/korespondensi/puu_posisi_mapping_audit.json
+2026-04-13 09:21:52,002 INFO [SEKRETARIAT] skip_sheets aktif: ['surat keluar PUU']
+2026-04-13 09:21:52,002 INFO Fetching SEKRETARIAT / SEKRETARIAT
+2026-04-13 09:21:55,391 INFO [SEKRETARIAT] total=398 inserted_raw=2 surat_puu=7 skipped=13
+2026-04-13 09:21:55,393 INFO Fetching PEIPD / PEIPD
+2026-04-13 09:21:56,228 INFO [PEIPD] total=69 inserted_raw=0 surat_puu=3 skipped=1
+2026-04-13 09:21:56,229 INFO Fetching SUPD I / SUPD I
+2026-04-13 09:21:56,919 INFO [SUPD I] total=87 inserted_raw=0 surat_puu=1 skipped=1
+2026-04-13 09:21:56,919 INFO Fetching SUPD II / SUPD II
+2026-04-13 09:21:58,012 INFO [SUPD II] total=139 inserted_raw=0 surat_puu=10 skipped=1
+2026-04-13 09:21:58,013 INFO Fetching SUPD III / SUPD III
+2026-04-13 09:21:58,681 INFO [SUPD III] total=78 inserted_raw=0 surat_puu=2 skipped=3
+2026-04-13 09:21:58,681 INFO Fetching SUPD IV / SUPD IV
+2026-04-13 09:21:59,252 INFO [SUPD IV] total=70 inserted_raw=0 surat_puu=4 skipped=1
+2026-04-13 09:21:59,253 INFO Fetching MASTER_BANGDA_2026 / Surat Masuk
+2026-04-13 09:22:00,522 INFO [MASTER_BANGDA_2026] total=570 inserted_raw=2 surat_puu=0 skipped=19
+2026-04-13 09:22:00,545 INFO lembar_disposisi auto-populated: 27 rows
+2026-04-13 09:22:00,893 INFO POSISI audit workflow completed: /home/aseps/MCP/korespondensi-server/storage/admin_data/korespondensi/puu_posisi_mapping_audit.json
 /home/aseps/MCP/scripts/etl_korespondensi_db_centric.py:593: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
   "finished_at": datetime.utcnow().isoformat()
 {
   "ok": true,
   "stats": {
-    "total": 1407,
-    "inserted_raw": 21,
-    "updated_raw": 1347,
+    "total": 1411,
+    "inserted_raw": 4,
+    "updated_raw": 1368,
     "surat_puu": 27,
     "skipped": 39
   },
-  "finished_at": "2026-04-10T16:34:52.463026"
+  "finished_at": "2026-04-13T02:22:00.893816"
 }
