@@ -4,25 +4,14 @@ import logging
 from ..database import get_db_connection, execute_query
 from ..logging_config import setup_logging
 from .posisi_mapping import build_posisi_timeline_view
+from .personnel import get_unit_mapping
 
 import re
 from datetime import datetime, date
 
-_DARI_RAW = {
+_DARI_FALLBACK = {
     "BU": "Bagian Umum", "UM": "Bagian Umum", "TU": "Tata Usaha",
-    "TU SUPD II": "Tata Usaha SUPD II", "PRC": "Bagian Perencanaan",
-    "PUU": "Substansi Perundang-Undangan", "KEU": "Bagian Keuangan",
-    "SD I": "Subdit Wilayah I", "SD.I": "Subdit Wilayah I", "SD 1": "Subdit Wilayah I",
-    "SD II": "Subdit Wilayah II", "SD.II": "Subdit Wilayah II",
-    "SD III": "Subdit Wilayah III", "SD.III": "Subdit Wilayah III",
-    "SD IV": "Subdit Wilayah IV", "SD.IV": "Subdit Wilayah IV",
-    "SD V": "Subdit Wilayah V", "SD.V": "Subdit Wilayah V",
-    "SD VI": "Subdit Wilayah VI", "SD.VI": "Subdit Wilayah VI",
-    "SD PMIPD": "Subdit PMIPD", "SD.PMIPD": "Subdit PMIPD", "SD PIMPD": "Subdit PMIPD",
-    "PEIPD": "Direktorat PEIPD", "PMIPD": "Subdit PMIPD",
-    "SUPD I": "Direktorat SUPD I", "SUPD II": "Direktorat SUPD II",
-    "SUPD III": "Direktorat SUPD III", "SUPD IV": "Direktorat SUPD IV",
-    "PPK": "Pejabat Pembuat Komitmen", "BANGDA": "Ditjen Bina Pembangunan Daerah",
+    "KEU": "Bagian Keuangan", "PRC": "Bagian Perencanaan",
 }
 
 def map_dari_full(dari_code: str) -> str:
@@ -34,7 +23,9 @@ def map_dari_full(dari_code: str) -> str:
     core_code = parts[0].strip()
     source_sheet = parts[1].strip() if len(parts) > 1 else ""
     
-    full_name = _DARI_RAW.get(core_code, core_code)
+    full_name = get_unit_mapping().get(core_code)
+    if not full_name:
+        full_name = _DARI_FALLBACK.get(core_code, core_code)
     return f"{full_name} - {source_sheet}" if source_sheet else full_name
 
 logger = setup_logging("sync_service")
@@ -134,16 +125,22 @@ def trigger_etl_korespondensi() -> bool:
 def get_stats():
     """Get dashboard summary statistics."""
     try:
-        pool_count = execute_query("SELECT COUNT(*) as c FROM korespondensi_raw_pool")[0]['c']
-        internal_count = execute_query("SELECT COUNT(*) as c FROM surat_masuk_puu_internal")[0]['c']
-        substansi_count = execute_query("SELECT COUNT(*) as c FROM surat_untuk_substansi_puu")[0]['c']
+        pool_res = execute_query("SELECT COUNT(*) as c FROM korespondensi_raw_pool")
+        pool_count = pool_res[0]['c'] if pool_res else 0
+        
+        internal_res = execute_query("SELECT COUNT(*) as c FROM surat_masuk_puu_internal")
+        internal_count = internal_res[0]['c'] if internal_res else 0
+        
+        substansi_res = execute_query("SELECT COUNT(*) as c FROM surat_untuk_substansi_puu")
+        substansi_count = substansi_res[0]['c'] if substansi_res else 0
         
         return {
             "pool": pool_count,
             "internal": internal_count,
             "substansi": substansi_count
         }
-    except:
+    except Exception as e:
+        logger.error(f"Failed to get stats: {e}")
         return {"pool": 0, "internal": 0, "substansi": 0}
 
 def upload_to_gdrive(file_path: str, unique_id: str):
@@ -226,7 +223,8 @@ def get_personnel_stats():
             ORDER BY count DESC 
             LIMIT 5
         """
-        return execute_query(sql)
+        res = execute_query(sql)
+        return res if res else []
     except Exception as e:
         logger.error(f"Failed to get personnel stats: {e}")
         return []

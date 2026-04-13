@@ -27,8 +27,8 @@ except Exception:  # pragma: no cover
 
 LOG_DIR = Path(os.getenv("KORESPONDESI_LOG_DIR", "/home/aseps/MCP/korespondensi-server/logs"))
 LOG_FILE = Path(os.getenv("ANOMALY_REPORT_LOG_FILE", str(LOG_DIR / "anomaly_reports.jsonl")))
-WAHA_API_URL = os.getenv("WHATSAPP_API_URL", "http://localhost:3001")
-WAHA_API_KEY = os.getenv("WHATSAPP_API_KEY")
+WAHA_API_URL = os.getenv("WHATSAPP_API_URL", "http://localhost:3000")
+WAHA_API_KEY = os.getenv("WHATSAPP_API_KEY", "8fbe845ff4a1496aaf8eb572e5d8c01c")
 WAHA_API_AUTH_MODE = os.getenv("WHATSAPP_API_AUTH_MODE", "auto").strip().lower()
 WAHA_SESSION = os.getenv("WHATSAPP_SESSION", "default")
 WAHA_RECIPIENT = os.getenv("WHATSAPP_RECIPIENT", "")

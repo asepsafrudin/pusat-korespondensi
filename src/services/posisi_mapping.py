@@ -3,6 +3,7 @@ import json
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+from .personnel import get_unit_acronyms
 
 BULAN_ID = {
     1: "Januari",
@@ -93,7 +94,7 @@ def parse_posisi_timeline(posisi_str: str, sender: Optional[str] = None) -> List
     if not posisi_str or str(posisi_str).upper() == "NULL":
         return []
 
-    units = ["SES", "TU", "BU", "KEU", "PRC", "PUU", "PEIPD", "SUPD", "SD", "DIRJEN", "DITJEN", "BANGDA", "UMUM"]
+    units = get_unit_acronyms()
     actions = ["KOREKSI", "REVISI", "TTD", "PARAFA", "PARAF", "ST", "SISTEM", "BAGI", "DITERIMA", "DONE", "SELESAI", "PROSES", "DJ"]
     systems = ["SRIKANDI", "SIMND", "POOLING"]
 

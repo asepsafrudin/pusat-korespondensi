@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from typing import List, Dict
 
 # Path constants derived from ground truth audit
@@ -127,3 +128,61 @@ def get_hukum_pics() -> List[Dict]:
         pics = [{"nama": "Asep", "jabatan": "Admin PUU"}, {"nama": "Dennis", "jabatan": "Officer"}]
         
     return pics
+
+def get_unit_mapping() -> Dict[str, str]:
+    """Get mapping of Unit ID -> Full Name with Leader."""
+    mapping = {}
+    try:
+        if not os.path.exists(MASTER_STRUKTUR_PATH):
+            return {}
+            
+        with open(MASTER_STRUKTUR_PATH, 'r') as f:
+            data = json.load(f)
+            units = data.get("struktur_organisasi_lengkap", {}).get("unit_kerja", [])
+            for u in units:
+                uid = u.get("id")
+                name = u.get("nama_unit")
+                pimpinan = u.get("pimpinan", {}).get("nama")
+                if uid and name:
+                    mapping[uid] = f"{name} ({pimpinan})" if pimpinan else name
+                
+                # Also index sub_units if they have IDs or names that act as codes
+                for sub in u.get("sub_unit", []):
+                    # We check for sub names that often appear in 'DARI' field
+                    name_sub = sub.get("nama_bagian") or sub.get("nama_subdit")
+                    if name_sub:
+                        # Simple keys for mapping
+                        if "HUKUM" in name_sub.upper():
+                            mapping["PUU"] = f"{name_sub} ({sub.get('penanggung_jawab', {}).get('nama', '')})"
+                        
+                        # Extra patterns for SD (Subdit)
+                        if "SUBDIT" in name_sub.upper():
+                            # e.g. "Perencanaan dan Evaluasi Wilayah I" -> SD I
+                            match = re.search(r'WILAYAH\s+([IVX]+)', name_sub.upper())
+                            if match:
+                                mapping[f"SD {match.group(1)}"] = name_sub
+    except Exception as e:
+        print(f"Error building unit mapping: {e}")
+    return mapping
+
+def get_unit_acronyms() -> List[str]:
+    """Get list of all acronyms/IDs mentioned in the structure."""
+    units = ["SES", "TU", "BU", "KEU", "PRC", "PUU", "PEIPD", "SUPD", "SD", "DIRJEN", "DITJEN", "BANGDA", "UMUM"]
+    try:
+        if not os.path.exists(MASTER_STRUKTUR_PATH):
+            return units
+            
+        with open(MASTER_STRUKTUR_PATH, 'r') as f:
+            data = json.load(f)
+            units_json = data.get("struktur_organisasi_lengkap", {}).get("unit_kerja", [])
+            for u in units_json:
+                uid = u.get("id")
+                if uid and uid not in units:
+                    units.append(uid)
+                # Handle SUPD names etc
+                if "SUPD" in uid:
+                    norm = uid.replace("_", " ")
+                    if norm not in units: units.append(norm)
+    except:
+        pass
+    return list(set(units))

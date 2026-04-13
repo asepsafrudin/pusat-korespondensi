@@ -285,7 +285,14 @@ async def download_disposisi(unique_id: str, background_tasks: BackgroundTasks):
 async def struktur_page(request: Request):
     """Organizational structure diagram page."""
     import json
-    json_path = os.path.join(os.path.dirname(__file__), "master_struktur_bangda_2025.json")
+    from .services.personnel import MASTER_STRUKTUR_PATH
+    
+    if not os.path.exists(MASTER_STRUKTUR_PATH):
+        # Fallback to local if absolute not found (for dev/CI)
+        json_path = os.path.join(os.path.dirname(__file__), "master_struktur_bangda_2025.json")
+    else:
+        json_path = MASTER_STRUKTUR_PATH
+        
     with open(json_path, "r", encoding="utf-8") as f:
         struktur_data = json.load(f)
     return templates.TemplateResponse("struktur.html", {
