@@ -29,6 +29,14 @@
             <p style="font-size: 0.7rem; color: var(--text-muted);">Proses Penyusunan</p>
         </div>
     </div>
+    <div class="stat-card">
+        <div class="icon-box" style="background:#eff6ff; color:#2563eb;">👥</div>
+        <div class="stat-info">
+            <h3>Total Staf</h3>
+            <div class="value">{{ stats.staff }}</div>
+            <p style="font-size: 0.7rem; color: var(--text-muted);">Master 2026</p>
+        </div>
+    </div>
 </div>
 
 <div class="grid-content" style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
@@ -78,6 +86,9 @@
                 <button onclick="openAnomalyModal()" class="btn btn-primary" style="width: 100%; justify-content: center; background: #0f172a; color: white; border: 1px solid rgba(255,255,255,0.12);">
                     📨 Buat Laporan Anomali
                 </button>
+                <button onclick="location.href='/puu-vault'" class="btn btn-primary" style="width: 100%; justify-content: center; background: linear-gradient(135deg, #1e293b, #334155); color: white; border: 1px solid rgba(255,255,255,0.1);">
+                    🏛️ Buka PUU Vault
+                </button>
                 <button onclick="location.href='/sync'" class="btn btn-ghost" style="width: 100%; justify-content: center; color: #94a3b8; border: 1px solid #475569;">
                     ⚙️ Konfigurasi Sistem
                 </button>
@@ -97,7 +108,8 @@
                         <span class="badge badge-info">{{ ps.count }} Surat</span>
                     </div>
                     <div style="width: 100%; height: 6px; background: #f1f5f9; border-radius: 3px; overflow: hidden;">
-                        <div style="width: {{ (ps.count / stats.internal * 100)|round|int if stats.internal > 0 else 0 }}%; height: 100%; background: var(--primary);"></div>
+                        {% set pct = (ps.count / stats.internal * 100)|round|int if stats.internal > 0 else 0 %}
+                        <div style="width: {{ pct }}%; height: 100%; background: var(--primary);"></div>
                     </div>
                 </div>
                 {% endfor %}
@@ -216,7 +228,7 @@
             </label>
             <label style="display:flex; flex-direction:column; gap:6px;">
                 <span style="font-size:0.78rem; font-weight:700; color:#334155;">Nomor WhatsApp</span>
-                <input name="recipient_phone" required value="087871393744" class="search-input" style="width:100%;" />
+                <input name="recipient_phone" required value="6287871393744" class="search-input" style="width:100%;" />
             </label>
             <label style="display:flex; flex-direction:column; gap:6px; grid-column: 1 / -1;">
                 <span style="font-size:0.78rem; font-weight:700; color:#334155;">Judul Temuan</span>

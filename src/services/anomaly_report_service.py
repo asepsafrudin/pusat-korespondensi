@@ -9,33 +9,25 @@ from datetime import datetime, timezone, date
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-import httpx
+# Bootstrap mcp-unified path
+MCP_UNIFIED_ROOT = Path(os.getenv("MCP_UNIFIED_ROOT", "/home/aseps/MCP/mcp-unified"))
+if str(MCP_UNIFIED_ROOT) not in sys.path:
+    sys.path.insert(0, str(MCP_UNIFIED_ROOT))
 
+from core.reporting.service import UniversalReport, get_reporting_service
 from ..database import execute_query
 from ..logging_config import setup_logging
 
 logger = setup_logging("anomaly_report_service")
 
-MCP_UNIFIED_ROOT = Path(os.getenv("MCP_UNIFIED_ROOT", "/home/aseps/MCP/mcp-unified"))
-if str(MCP_UNIFIED_ROOT) not in sys.path:
-    sys.path.insert(0, str(MCP_UNIFIED_ROOT))
-
-try:
-    from integrations.whatsapp.client import get_whatsapp_client
-except Exception:  # pragma: no cover
-    get_whatsapp_client = None
-
+# Note: We keep the local logging directory for backward compatibility with existing dashboard views
 LOG_DIR = Path(os.getenv("KORESPONDESI_LOG_DIR", "/home/aseps/MCP/korespondensi-server/logs"))
 LOG_FILE = Path(os.getenv("ANOMALY_REPORT_LOG_FILE", str(LOG_DIR / "anomaly_reports.jsonl")))
-WAHA_API_URL = os.getenv("WHATSAPP_API_URL", "http://localhost:3000")
-WAHA_API_KEY = os.getenv("WHATSAPP_API_KEY", "8fbe845ff4a1496aaf8eb572e5d8c01c")
-WAHA_API_AUTH_MODE = os.getenv("WHATSAPP_API_AUTH_MODE", "auto").strip().lower()
-WAHA_SESSION = os.getenv("WHATSAPP_SESSION", "default")
-WAHA_RECIPIENT = os.getenv("WHATSAPP_RECIPIENT", "")
-
+WAHA_RECIPIENT = os.getenv("WHATSAPP_RECIPIENT", "6287871393744")
 
 @dataclass
 class AnomalyReport:
+    """Legacy compatibility dataclass for Korespondensi Anomalies."""
     recipient_name: str
     recipient_phone: str
     finding_title: str
@@ -46,233 +38,37 @@ class AnomalyReport:
     impact: str = ""
     recommendation: str = ""
     reporter_name: str = "MCP Unified"
-    reporter_role: str = "agent"
     report_id: str = field(default_factory=lambda: str(uuid.uuid4()))
     created_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
-    def to_message(self) -> str:
-        parts = [
-            f"Assalamu’alaikum {self.recipient_name},",
-            "",
-            f"Saya dari {self.reporter_name} ingin melaporkan temuan anomali data yang perlu dicek lebih lanjut.",
-            "",
-            "Temuan:",
-            self.finding_title,
-            "",
-            "Ringkasan:",
-            self.finding_summary.strip(),
-        ]
-
-        if self.record_key:
-            parts.extend(["", f"Kunci Data: {self.record_key}"])
-        if self.source_label:
-            parts.extend(["", f"Sumber: {self.source_label}"])
-        if self.source_ref:
-            parts.extend(["", f"Referensi: {self.source_ref}"])
-        if self.impact:
-            parts.extend(["", f"Dampak: {self.impact}"])
-        if self.recommendation:
-            parts.extend(["", f"Rekomendasi: {self.recommendation}"])
-
-        parts.extend(
-            [
-                "",
-                "Jika berkenan, mohon arahan apakah data ini perlu dikoreksi di sumber atau cukup difilter di tampilan.",
-                "",
-                "Terima kasih.",
-                "Wassalamu’alaikum.",
-            ]
+    def to_universal(self) -> UniversalReport:
+        """Map legacy report to the new Universal format."""
+        return UniversalReport(
+            recipient_name=self.recipient_name,
+            recipient_phone=self.recipient_phone,
+            title=self.finding_title,
+            summary=self.finding_summary,
+            details={
+                "kunci_data": self.record_key,
+                "sumber": self.source_label,
+                "referensi": self.source_ref
+            },
+            impact=self.impact,
+            recommendation=self.recommendation,
+            report_type="anomaly",
+            reporter_name=self.reporter_name,
+            report_id=self.report_id,
+            created_at=self.created_at
         )
-        return "\n".join(parts)
 
-
-def ensure_log_dir() -> None:
+def _append_local_history(record: Dict[str, Any]):
+    """Keep local JSONL updated so the dashboard UI doesn't break."""
     LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
-
-
-def append_history(record: Dict[str, Any]) -> Path:
-    ensure_log_dir()
     with LOG_FILE.open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(record, ensure_ascii=False) + "\n")
-    return LOG_FILE
-
-
-def build_report(**kwargs: Any) -> AnomalyReport:
-    return AnomalyReport(**kwargs)
-
-
-def _report_fields(payload: Dict[str, Any]) -> Dict[str, Any]:
-    allowed = {
-        "recipient_name",
-        "recipient_phone",
-        "finding_title",
-        "finding_summary",
-        "record_key",
-        "source_label",
-        "source_ref",
-        "impact",
-        "recommendation",
-        "reporter_name",
-        "reporter_role",
-    }
-    return {k: v for k, v in payload.items() if k in allowed and v is not None}
-
-
-def normalize_chat_id(phone: str) -> str:
-    chat_id = phone.strip()
-    if not chat_id.endswith("@c.us") and not chat_id.endswith("@g.us"):
-        chat_id = f"{chat_id}@c.us"
-    return chat_id
-
-
-async def send_to_whatsapp(message: str, recipient_phone: Optional[str] = None, metadata: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-    recipient_phone = recipient_phone or WAHA_RECIPIENT
-    if not recipient_phone:
-        return {"success": False, "error": "recipient_missing"}
-
-    chat_id = normalize_chat_id(recipient_phone)
-    url = f"{WAHA_API_URL}/api/sendText"
-    payload = {
-        "session": WAHA_SESSION,
-        "chatId": chat_id,
-        "text": message,
-    }
-
-    try:
-        if get_whatsapp_client is not None:
-            client = get_whatsapp_client()
-            try:
-                response = await client.send_message(
-                    chat_id=chat_id,
-                    text=message,
-                    session_name=WAHA_SESSION,
-                )
-                ok = True
-                result = {
-                    "success": True,
-                    "status_code": 200,
-                    "response_text": json.dumps(response, ensure_ascii=False),
-                    "chat_id": chat_id,
-                    "used_api_key": bool(WAHA_API_KEY),
-                    "auth_mode": "mcp_unified_client",
-                }
-                append_history(
-                    {
-                        "timestamp": datetime.now(timezone.utc).isoformat(),
-                        "channel": "whatsapp",
-                        "session": WAHA_SESSION,
-                        "recipient_phone": recipient_phone,
-                        "chat_id": chat_id,
-                        "message": message,
-                        "metadata": metadata or {},
-                        "status": "sent",
-                        "http_status": 200,
-                        "used_api_key": bool(WAHA_API_KEY),
-                        "auth_mode": "mcp_unified_client",
-                    }
-                )
-                return result
-            except Exception as shared_exc:
-                logger.warning(f"Shared WhatsApp client failed, falling back to direct HTTP: {shared_exc}")
-
-        async with httpx.AsyncClient(timeout=30.0) as client:
-            attempts = []
-            if WAHA_API_AUTH_MODE in {"auto", "key"} and WAHA_API_KEY:
-                attempts.append({"headers": {"X-Api-Key": WAHA_API_KEY}})
-            if WAHA_API_AUTH_MODE in {"auto", "none"}:
-                attempts.append({"headers": {}})
-            if not attempts:
-                attempts.append({"headers": {}})
-            last_response = None
-            last_error = None
-
-            for attempt in attempts:
-                try:
-                    response = await client.post(url, json=payload, headers=attempt["headers"])
-                    last_response = response
-                    if response.status_code in (200, 201):
-                        ok = True
-                        break
-                    if response.status_code != 401 or attempt["headers"] == {}:
-                        ok = False
-                        break
-                except Exception as exc:
-                    last_error = exc
-                    if attempt["headers"] == {}:
-                        raise
-            else:
-                ok = False
-
-            if last_response is None and last_error is not None:
-                raise last_error
-
-            result = {
-                "success": ok,
-                "status_code": last_response.status_code if last_response else None,
-                "response_text": last_response.text if last_response else "",
-                "chat_id": chat_id,
-                "used_api_key": bool(WAHA_API_KEY),
-                "auth_mode": WAHA_API_AUTH_MODE,
-            }
-            append_history(
-                {
-                    "timestamp": datetime.now(timezone.utc).isoformat(),
-                    "channel": "whatsapp",
-                    "session": WAHA_SESSION,
-                    "recipient_phone": recipient_phone,
-                    "chat_id": chat_id,
-                    "message": message,
-                    "metadata": metadata or {},
-                    "status": "sent" if ok else "failed",
-                    "http_status": last_response.status_code if last_response else None,
-                    "used_api_key": bool(WAHA_API_KEY),
-                    "auth_mode": WAHA_API_AUTH_MODE,
-                }
-            )
-            return result
-    except Exception as exc:
-        append_history(
-            {
-                "timestamp": datetime.now(timezone.utc).isoformat(),
-                "channel": "whatsapp",
-                "session": WAHA_SESSION,
-                "recipient_phone": recipient_phone,
-                "chat_id": chat_id,
-                "message": message,
-                "metadata": metadata or {},
-                "status": "exception",
-                "error": str(exc),
-            }
-        )
-        logger.error(f"WhatsApp send failed: {exc}")
-        return {"success": False, "error": str(exc), "chat_id": chat_id}
-
-
-def load_history(limit: int = 50) -> List[Dict[str, Any]]:
-    if not LOG_FILE.exists():
-        return []
-    records: List[Dict[str, Any]] = []
-    with LOG_FILE.open("r", encoding="utf-8") as handle:
-        for line in handle:
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                records.append(json.loads(line))
-            except Exception:
-                continue
-    return records[-limit:]
-
-
-def list_reports(limit: int = 50, status: Optional[str] = None) -> List[Dict[str, Any]]:
-    records = load_history(limit=10000)
-    records = [r for r in records if r.get("channel") == "whatsapp"]
-    if status:
-        records = [r for r in records if r.get("status") == status]
-    return records[-limit:]
-
 
 def list_internal_anomalies(limit: int = 20) -> List[Dict[str, Any]]:
+    """Business logic for detecting anomalies in korespondensi database."""
     sql = """
         SELECT unique_id, tanggal_surat, nomor_nd, dari, hal, no_agenda_dispo, posisi, pic_name, status_pengiriman
         FROM surat_masuk_puu_internal
@@ -281,60 +77,32 @@ def list_internal_anomalies(limit: int = 20) -> List[Dict[str, Any]]:
         LIMIT %s
     """
     rows = execute_query(sql, [limit])
-    results: List[Dict[str, Any]] = []
+    results = []
     for row in rows:
-        safe_row = {}
-        for key, value in row.items():
-            if isinstance(value, (datetime, date)):
-                safe_row[key] = value.isoformat()
-            else:
-                safe_row[key] = value
+        safe_row = {k: (v.isoformat() if isinstance(v, (datetime, date)) else v) for k, v in row.items()}
         nomor_nd = row.get("nomor_nd") or "-"
-        # Dynamic reason analysis
+        
         reasons = []
-        no_agenda = row.get("no_agenda_dispo")
+        if row.get("no_agenda_dispo") is None or str(row.get("no_agenda_dispo")).strip() == "":
+            reasons.append("Kolom no_agenda_dispo kosong")
         
-        if no_agenda is None:
-            reasons.append("Kolom no_agenda_dispo = NULL")
-        elif str(no_agenda).strip() == "":
-            reasons.append("Kolom no_agenda_dispo kosong (TRIM='')")
-            
-        posisi = row.get("posisi") or ""
-        if "KOREKSI" in posisi.upper():
-            reasons.append("Posisi mengandung 'KOREKSI' - butuh review manual")
-            
-        tanggal = row.get("tanggal_surat")
-        if tanggal is None:
-            reasons.append("tanggal_surat = NULL")
-        elif str(tanggal) == "" or str(tanggal).lower() in ["none", "nan"]:
-            reasons.append("tanggal_surat invalid/empty")
-            
-        # Check duplikat nomor_nd (handle empty nomor_nd)
         if nomor_nd and nomor_nd != "-":
-            dupe_result = execute_query("SELECT COUNT(*) as cnt FROM surat_masuk_puu_internal WHERE nomor_nd = %s", [nomor_nd])
-            if dupe_result and len(dupe_result) > 0:
-                dupe_count = dupe_result[0]["cnt"]
-                if dupe_count > 1:
-                    reasons.append(f"Duplikat nomor_nd (total: {dupe_count})")
-        else:
-            reasons.append("nomor_nd kosong/tidak valid")
-            
-        reason_explanation = "; ".join(reasons) if reasons else "Anomali tidak teridentifikasi (cek manual)"
+            dupe = execute_query("SELECT COUNT(*) as cnt FROM surat_masuk_puu_internal WHERE nomor_nd = %s", [nomor_nd])
+            if dupe and dupe[0]["cnt"] > 1:
+                reasons.append(f"Duplikat nomor_nd (total: {dupe[0]['cnt']})")
         
-        orig_summary = "Satu record internal tidak membawa No. Agenda Dispo, sehingga perlu difilter sebagai anomali."
-        enhanced_summary = f"{orig_summary} Alasan: {reason_explanation}"
-        
+        reason_explanation = "; ".join(reasons)
         hasil = {
             "source_type": "internal_anomaly",
             "report_id": row.get("unique_id") or str(uuid.uuid4()),
             "recipient_name": os.getenv("ANOMALY_REPORT_RECIPIENT_NAME", "Pak Ahmad Haidir"),
-            "recipient_phone": os.getenv("ANOMALY_REPORT_RECIPIENT_PHONE", WAHA_RECIPIENT),
+            "recipient_phone": WAHA_RECIPIENT,
             "finding_title": f"No. Agenda Dispo kosong pada surat {nomor_nd}",
-            "finding_summary": enhanced_summary,
-            "reason_explanation": reason_explanation,  # ← NEW: Untuk UI
+            "finding_summary": f"Satu record internal tidak membawa No. Agenda Dispo. Alasan: {reason_explanation}",
+            "reason_explanation": reason_explanation,
             "record_key": nomor_nd,
             "source_label": row.get("dari") or "",
-            "source_ref": f"unique_id={row.get('unique_id')} / nomor_nd={nomor_nd}",
+            "source_ref": f"unique_id={row.get('unique_id')}",
             "impact": "Record tidak lolos validasi surat masuk PUU",
             "recommendation": "Koreksi data sumber atau bersihkan duplikat",
             "row": safe_row,
@@ -342,63 +110,72 @@ def list_internal_anomalies(limit: int = 20) -> List[Dict[str, Any]]:
         results.append(hasil)
     return results
 
-
 def create_draft_report(payload: Dict[str, Any]) -> Dict[str, Any]:
-    report = build_report(**_report_fields(payload))
-    message = report.to_message()
+    """Create a draft using the universal service mapping."""
+    # Filter payload
+    allowed = {"recipient_name", "recipient_phone", "finding_title", "finding_summary", "record_key", "source_label", "source_ref", "impact", "recommendation"}
+    filtered_payload = {k: v for k, v in payload.items() if k in allowed}
+    
+    report = AnomalyReport(**filtered_payload)
     record = {
         "timestamp": report.created_at,
         "report_id": report.report_id,
         "channel": "whatsapp",
         "recipient_name": report.recipient_name,
         "recipient_phone": report.recipient_phone,
-        "message": message,
+        "message": report.to_universal().to_whatsapp_message(),
         "status": "draft",
         "report": asdict(report),
     }
-    append_history(record)
+    _append_local_history(record)
     return record
 
-
 async def send_report_by_id(report_id: str) -> Dict[str, Any]:
-    records = load_history(limit=10000)
-    target = None
-    for rec in reversed(records):
-        if rec.get("report_id") == report_id and rec.get("status") == "draft":
-            target = rec
-            break
+    """Send report via Universal Reporting Service."""
+    # Find draft in local history
+    records = []
+    if LOG_FILE.exists():
+        with LOG_FILE.open("r") as f:
+            for line in f:
+                try: records.append(json.loads(line))
+                except: continue
+    
+    target = next((r for r in reversed(records) if r.get("report_id") == report_id and r.get("status") == "draft"), None)
     if not target:
         return {"success": False, "error": "draft_not_found"}
 
     report_data = target.get("report") or {}
-    report = build_report(**report_data)
-    message = report.to_message()
-    result = await send_to_whatsapp(
-        message,
-        recipient_phone=report.recipient_phone,
-        metadata={"report": asdict(report), "report_id": report_id},
-    )
-    append_history(
-        {
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "report_id": report_id,
-            "channel": "whatsapp",
-            "recipient_name": report.recipient_name,
-            "recipient_phone": report.recipient_phone,
-            "message": message,
-            "status": "sent" if result.get("success") else "failed",
-            "result": result,
-            "report": asdict(report),
-        }
-    )
-    return {
-        "success": result.get("success", False),
-        "report": asdict(report),
-        "message": message,
+    legacy_report = AnomalyReport(**report_data)
+    universal_report = legacy_report.to_universal()
+    
+    service = get_reporting_service()
+    result = await service.send_report(universal_report, channel="whatsapp")
+    
+    # Update local history
+    _append_local_history({
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "report_id": report_id,
+        "channel": "whatsapp",
+        "status": "sent" if result.get("success") else "failed",
         "result": result,
-    }
-
+        "report": report_data,
+    })
+    
+    return result
 
 async def create_and_send_report(payload: Dict[str, Any]) -> Dict[str, Any]:
-    draft = create_draft_report(_report_fields(payload))
+    draft = create_draft_report(payload)
     return await send_report_by_id(draft["report_id"])
+
+def load_history(limit: int = 50) -> List[Dict[str, Any]]:
+    if not LOG_FILE.exists(): return []
+    records = []
+    with LOG_FILE.open("r") as f:
+        for line in f:
+            try: records.append(json.loads(line))
+            except: continue
+    return records[-limit:]
+
+def list_reports(limit: int = 50, status: Optional[str] = None) -> List[Dict[str, Any]]:
+    records = [r for r in load_history(limit=1000) if r.get("status") == status or status is None]
+    return records[-limit:]

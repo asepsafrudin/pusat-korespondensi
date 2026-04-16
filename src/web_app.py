@@ -3,11 +3,13 @@ from fastapi.responses import HTMLResponse, JSONResponse, FileResponse, Redirect
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import os
+import typing
 from .database import execute_query
 from .logging_config import setup_logging
 
 logger = setup_logging("web_app")
 from .services.personnel import search_staff_pppk, get_hukum_pics
+from .parser_nomor_nd import NomorNDParser
 from .services.sync_service import (
     sync_internal_from_pool, 
     trigger_etl_korespondensi, 
@@ -21,6 +23,7 @@ from .services.anomaly_report_service import create_draft_report, create_and_sen
 from .services.mailmerge import generate_disposisi_docx
 
 app = FastAPI(title="PUU Universal Web Hub")
+parser_nd = NomorNDParser()
 
 # Setup templates and static files
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -63,7 +66,7 @@ async def internal_page(request: Request, q: str = "", valid_only: bool = False)
     
     rows = execute_query(sql, params)
     anomaly_count = sum(
-        1 for row in rows
+        1 for row in (rows or [])
         if not row.get("no_agenda_dispo") or not str(row.get("no_agenda_dispo")).strip()
     )
     return templates.TemplateResponse("internal.html", {
@@ -74,6 +77,68 @@ async def internal_page(request: Request, q: str = "", valid_only: bool = False)
         "query": q,
         "valid_only": valid_only,
         "anomaly_count": anomaly_count
+    })
+
+@app.get("/filtering", response_class=HTMLResponse)
+async def filtering_page(request: Request, q: str = "PUU"):
+    sql = "SELECT * FROM surat_masuk_puu_internal WHERE 1=1"
+    params = []
+    if q:
+        robust_q = q.replace(".", "%").replace(" ", "%")
+        sql += " AND (nomor_nd ILIKE %s OR hal ILIKE %s OR pic_name ILIKE %s)"
+        params = [f"%{robust_q}%", f"%{robust_q}%", f"%{robust_q}%"]
+    sql += " ORDER BY tanggal_surat DESC LIMIT 100"
+    
+    rows = execute_query(sql, params)
+    
+    parsed_rows = []
+    for r in (rows or []):
+        # Gunakan parser untuk membedah nomor ND
+        p = parser_nd.parse(r.get('nomor_nd', ''), r.get('hal', ''))
+        r_dict = dict(r) # Ensure it's a dict if row object is not
+        r_dict['kode'] = p.get('kode_klasifikasi', '-')
+        r_dict['nomor_urut_nd'] = p.get('nomor_urut', '-')
+        r_dict['unit_nd'] = p.get('unit_pengolah', '-')
+        parsed_rows.append(r_dict)
+        
+    return templates.TemplateResponse("filtering_results.html", {
+        "request": request,
+        "title": f"Filter: {q}",
+        "active_page": "internal",
+        "rows": parsed_rows,
+        "query": q
+    })
+
+@app.get("/puu-vault", response_class=HTMLResponse)
+async def puu_vault_page(request: Request, q: typing.Optional[str] = None):
+    # Filter khusus Nomor ND yang mengandung PUU (Surat Keluar / Produk Hukum)
+    sql = "SELECT * FROM surat_keluar_puu WHERE nomor_nd ILIKE '%%PUU%%'"
+    params = []
+    if q:
+        sql += " AND (hal ILIKE %s OR nomor_nd ILIKE %s OR tujuan ILIKE %s)"
+        params = [f"%{q}%", f"%{q}%", f"%{q}%"]
+    sql += " ORDER BY tanggal_surat DESC LIMIT 100"
+    
+    rows = execute_query(sql, params)
+    
+    parsed_rows = []
+    for r in (rows or []):
+        p = parser_nd.parse(r.get('nomor_nd', ''), r.get('hal', ''))
+        r_dict = dict(r)
+        r_dict['kode'] = p.get('kode_klasifikasi', '-')
+        r_dict['nomor_urut_nd'] = p.get('nomor_urut', '-')
+        r_dict['unit_nd'] = p.get('unit_pengolah', '-')
+        # Identitas pengirim formal untuk surat keluar Substansi
+        r_dict['pic_name'] = 'Substansi Perundang-undangan'
+        r_dict['status_pengiriman'] = 'Arsip Final'
+        parsed_rows.append(r_dict)
+        
+    return templates.TemplateResponse("puu_vault.html", {
+        "request": request,
+        "title": "Vault Korespondensi Substansi Perundang-undangan",
+        "active_page": "puu_vault",
+        "rows": parsed_rows,
+        "query": q
     })
 
 @app.get("/sync", response_class=HTMLResponse)
@@ -193,7 +258,7 @@ async def api_internal_search(q: str = ""):
     rows = execute_query(sql, params)
     return {
         "status": "success",
-        "count": len(rows),
+        "count": len(rows) if rows else 0,
         "data": rows,
         "query": q
     }
@@ -213,7 +278,7 @@ async def api_get_anomaly_reports(limit: int = 50):
     data = load_history(limit=safe_limit)
     return {
         "status": "success",
-        "count": len(data),
+        "count": len(data) if data else 0,
         "data": data
     }
 
@@ -256,7 +321,11 @@ async def api_generate_and_link(unique_id: str):
         
         if not drive_url:
             # Fallback if upload fails but file exists
-            return {"status": "partial", "message": "File generated but failed to upload.", "local_path": file_path}
+            return {
+                "status": "partial", 
+                "message": "File generated but failed to upload to Google Drive. You can download it directly.", 
+                "download_url": f"/api/disposisi/download/{unique_id}"
+            }
             
         return {
             "status": "success", 
@@ -289,7 +358,7 @@ async def struktur_page(request: Request):
     
     if not os.path.exists(MASTER_STRUKTUR_PATH):
         # Fallback to local if absolute not found (for dev/CI)
-        json_path = os.path.join(os.path.dirname(__file__), "master_struktur_bangda_2025.json")
+        json_path = os.path.join(os.path.dirname(__file__), "master_struktur_bangda2026.json")
     else:
         json_path = MASTER_STRUKTUR_PATH
         

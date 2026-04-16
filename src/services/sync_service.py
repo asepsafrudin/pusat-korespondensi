@@ -134,10 +134,14 @@ def get_stats():
         substansi_res = execute_query("SELECT COUNT(*) as c FROM surat_untuk_substansi_puu")
         substansi_count = substansi_res[0]['c'] if substansi_res else 0
         
+        staff_res = execute_query("SELECT COUNT(*) as c FROM staff_details")
+        staff_count = staff_res[0]['c'] if staff_res else 0
+        
         return {
             "pool": pool_count,
             "internal": internal_count,
-            "substansi": substansi_count
+            "substansi": substansi_count,
+            "staff": staff_count
         }
     except Exception as e:
         logger.error(f"Failed to get stats: {e}")
@@ -241,7 +245,7 @@ def get_letter_timeline(unique_id: str):
         """
         rows = execute_query(sql, [unique_id])
         events = []
-        for row in rows:
+        for row in (rows or []):
             posisi = row.get("posisi") or ""
             timeline_view = build_posisi_timeline_view(posisi)
             if timeline_view:

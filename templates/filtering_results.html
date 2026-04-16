@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block page_title %}Hasil Filtering Korespondensi{% endblock %}
+{% block page_subtitle %}Menampilkan data dengan bedah struktur <b>Kode/Nomor/Unit</b>.{% endblock %}
+
+{% block head %}
+<style>
+    .filter-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        margin-bottom: 2rem;
+    }
+    .parsed-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+    }
+    .badge-kode { background: #fee2e2; color: #991b1b; }
+    .badge-nomor { background: #fef9c3; color: #854d0e; }
+    .badge-unit { background: #dcfce7; color: #166534; }
+    
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+    }
+    
+    .search-meta {
+        background: #f8fafc;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid #e2e8f0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="filter-card">
+    <div class="search-meta">
+        <div style="font-size: 0.9rem; color: #64748b;">
+            Ditemukan <b>{{ rows|length }}</b> surat untuk pencarian: <span class="badge badge-info">"{{ query }}"</span>
+        </div>
+        <div style="display: flex; gap: 8px;">
+            <a href="/internal" class="btn btn-ghost" style="font-size: 0.8rem;"> Kembali ke Daftar ➔</a>
+        </div>
+    </div>
+    
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 120px;">Tanggal</th>
+                    <th style="width: 280px;">Bedah Nomor ND</th>
+                    <th>Substansi / Perihal</th>
+                    <th style="width: 180px;">PIC / Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in rows %}
+                <tr>
+                    <td style="font-size: 0.8rem; color: #64748b;">{{ r.tanggal_surat }}</td>
+                    <td>
+                        <div style="font-weight: 800; color: var(--accent); font-size: 0.9rem; margin-bottom: 10px;">{{ r.nomor_nd }}</div>
+                        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                            <span class="parsed-badge badge-kode" title="Kode Klasifikasi">{{ r.kode }}</span>
+                            <span style="color: #cbd5e1;">/</span>
+                            <span class="parsed-badge badge-nomor" title="Nomor Urut">{{ r.nomor_urut_nd }}</span>
+                            <span style="color: #cbd5e1;">/</span>
+                            <span class="parsed-badge badge-unit" title="Unit Pengolah">{{ r.unit_nd }}</span>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="font-weight: 600; font-size: 0.875rem; line-height: 1.5;">{{ r.hal }}</div>
+                        <div style="font-size: 0.72rem; color: #94a3b8; margin-top: 6px;">
+                            {{ r.dari_full or r.dari }}
+                        </div>
+                    </td>
+                    <td>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div style="display: flex; align-items: center; gap: 6px;">
+                                <div style="width: 20px; height: 20px; background: #e2e8f0; border-radius: 50%; font-size: 0.6rem; display: flex; align-items: center; justify-content: center;">👤</div>
+                                <span style="font-size: 0.75rem; font-weight: 600;">{{ r.pic_name or 'Auto-Queue' }}</span>
+                            </div>
+                            <span class="badge badge-warning" style="font-size: 0.65rem; width: fit-content;">{{ r.status_pengiriman }}</span>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% if not rows %}
+                <tr>
+                    <td colspan="4" style="text-align: center; padding: 4rem; color: #94a3b8;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+                        Tidak ditemukan surat dengan kriteria tersebut.
+                    </td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

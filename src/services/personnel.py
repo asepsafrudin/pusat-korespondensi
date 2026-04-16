@@ -5,7 +5,7 @@ from typing import List, Dict
 
 # Path constants derived from ground truth audit
 USER_P3K_PATH = "/home/aseps/MCP/mcp-data/document_management/storage/admin_data/struktur_organisasi/user_p3k.json"
-MASTER_STRUKTUR_PATH = "/home/aseps/MCP/mcp-data/document_management/storage/admin_data/struktur_organisasi/master_struktur_bangda_2025.json"
+MASTER_STRUKTUR_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "master_struktur_bangda2026.json")
 
 def get_all_personnel_from_master() -> List[Dict]:
     """Helper to extract and flatten all unique personnel from master structure."""
@@ -71,7 +71,7 @@ def search_staff_pppk(query: str) -> List[Dict]:
             for sheet_name in ["BANGDA", "SETJEN", "ADWIL"]:
                 rows = sheets_data.get(sheet_name, {}).get("data", [])
                 for row in rows:
-                    name = row.get("Nama_Pegawai", "")
+                    name = row.get("Nama_Pegawai", "") or ""
                     if query_up in name.upper():
                         res.append({
                             "nama": name,
@@ -84,7 +84,8 @@ def search_staff_pppk(query: str) -> List[Dict]:
     # 2. Search in Master Structure (Structural Personnel)
     master_staffs = get_all_personnel_from_master()
     for s in master_staffs:
-        if query_up in s["nama"].upper():
+        nama = s.get("nama") or ""
+        if query_up in nama.upper():
             # Avoid duplicates if they appear in both
             if not any(r["nama"] == s["nama"] for r in res):
                 res.append({

@@ -443,6 +443,11 @@
                 
                 // Opsional: Buka otomatis di tab baru
                 window.open(data.drive_url, '_blank');
+            } else if (data.status === 'partial' && data.download_url) {
+                showToast("Mencetak manual: Gagal ke GDrive, beralih ke unduhan langsung.", "info");
+                window.location.href = data.download_url;
+                btn.innerHTML = originalHtml;
+                btn.disabled = false;
             } else {
                 throw new Error(data.message || "Gagal mengunggah.");
             }

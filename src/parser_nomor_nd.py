@@ -38,7 +38,7 @@ class NomorNDParser:
         "600": ["pekerjaan umum", "jalan", "jembatan", "irigasi", "tataruang", "drainase", "bangunan", "perumahan", "permukiman", "air bersih"]
     }
 
-    def __init__(self, referensi_path='docs/kodefikasi_arsip_referensi.json', struktur_path='src/master_struktur_bangda_2025.json'):
+    def __init__(self, referensi_path='docs/kodefikasi_arsip_referensi.json', struktur_path='src/master_struktur_bangda2026.json'):
         raw_ref = self._load_json(referensi_path)
         # Flatten referensi (list) menjadi dict datar untuk pencarian cepat O(1)
         self.referensi_map = self._flatten_referensi(raw_ref)
