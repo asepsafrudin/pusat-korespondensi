@@ -1,0 +1,24 @@
+[Unit]
+Description=Living Archive Streamlit — Smart Archive Intelligence
+After=network.target korespondensi-server.service
+Wants=korespondensi-server.service
+
+[Service]
+Type=simple
+User=aseps
+WorkingDirectory=/home/aseps/MCP/korespondensi-server
+Environment="PYTHONPATH=/home/aseps/MCP/korespondensi-server"
+EnvironmentFile=/home/aseps/MCP/.env
+
+# Menjalankan Streamlit pada port 8501
+ExecStart=/home/aseps/MCP/.venv/bin/python3 -m streamlit run app.py --server.port 8501 --server.address 0.0.0.0 --server.headless true
+
+Restart=always
+RestartSec=10
+
+StandardOutput=append:/home/aseps/MCP/korespondensi-server/logs/living_archive.log
+StandardError=append:/home/aseps/MCP/korespondensi-server/logs/living_archive.log
+SyslogIdentifier=living-archive
+
+[Install]
+WantedBy=multi-user.target

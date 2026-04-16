@@ -81,6 +81,9 @@
                 <button onclick="location.href='/sync'" class="btn btn-ghost" style="width: 100%; justify-content: center; color: #94a3b8; border: 1px solid #475569;">
                     ⚙️ Konfigurasi Sistem
                 </button>
+                <a href="#" target="_blank" class="btn btn-primary living-archive-link" style="width: 100%; justify-content: center; background: linear-gradient(135deg, #4f46e5, #9333ea); color: white; border: none; margin-top: 8px; text-decoration: none;">
+                    🏛️ Living Archive (AI)
+                </a>
             </div>
         </div>
         
@@ -142,12 +145,17 @@
                     <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 0.35rem;">
                         {{ rep.row.nomor_nd }} • {{ rep.row.dari or 'Sumber tidak tercatat' }}
                     </div>
+                    {% if rep.reason_explanation %}
+                    <div class="reason-tag" style="font-size: 0.7rem; padding: 0.3rem 0.6rem; background: #fef3c7; border: 1px solid #f59e0b; border-radius: 6px; color: #92400e; margin-bottom: 0.35rem;">
+                        {{ rep.reason_explanation }}
+                    </div>
+                    {% endif %}
                     <div style="font-size: 0.72rem; color: #475569; line-height: 1.45;">
                         {{ rep.finding_summary }}
                     </div>
                     <div style="display:flex; justify-content:flex-end; gap:0.5rem; margin-top:0.7rem;">
-                        <button class="btn btn-ghost" style="font-size:0.75rem; padding:0.55rem 0.8rem; border:1px solid #cbd5e1;" onclick='openAnomalyDetail({{ rep | tojson }})'>Detail</button>
-                        <button class="btn btn-primary" style="font-size:0.75rem; padding:0.55rem 0.8rem;" onclick='saveAndSend({{ rep | tojson }})'>Send</button>
+                        <button class="btn btn-ghost" style="font-size:0.75rem; padding:0.55rem 0.8rem; border:1px solid #cbd5e1;" data-anomaly-detail='{{ rep | tojson }}' onclick="openAnomalyDetail(JSON.parse(this.dataset.anomalyDetail))">Detail</button>
+                        <button class="btn btn-primary" style="font-size:0.75rem; padding:0.55rem 0.8rem;" data-anomaly-send='{{ rep | tojson }}' onclick="saveAndSend(JSON.parse(this.dataset.anomalySend))">Send</button>
                     </div>
                 </div>
                 {% endfor %}
@@ -275,8 +283,13 @@
             ${detailCell('Posisi', anomaly.row?.posisi || '-')}
             ${detailCell('PIC', anomaly.row?.pic_name || '-')}
             ${detailCell('Status', anomaly.row?.status_pengiriman || '-')}
+            ${anomaly.reason_explanation ? `
+            <div style="grid-column: 1 / -1; display:flex; flex-direction:column; gap:6px;">
+                <div style="font-size:0.78rem; font-weight:700; color:#92400e;">Alasan Anomali</div>
+                <div style="padding:0.85rem 1rem; background:#fef3c7; border:1px solid #f59e0b; border-radius:12px; color:#92400e; line-height:1.5; font-family:monospace;font-size:0.75rem;">${anomaly.reason_explanation}</div>
+            </div>` : ''}
             ${detailCell('Kunci Data', anomaly.record_key || '-')}
-            ${detailCell('Sumber', anomaly.source_label || '-')}
+            ${detailCell('Sumber', anomaly.source_label || '-')} 
             <div style="grid-column: 1 / -1; display:flex; flex-direction:column; gap:6px;">
                 <div style="font-size:0.78rem; font-weight:700; color:#334155;">Ringkasan</div>
                 <div style="padding:0.85rem 1rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; color:#475569; line-height:1.5;">${anomaly.finding_summary || '-'}</div>

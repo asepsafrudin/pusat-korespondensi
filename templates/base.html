@@ -51,7 +51,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" id="living-archive-link" target="_blank" class="nav-link">
+                        <a href="#" target="_blank" class="nav-link living-archive-link">
                             <span class="icon">🏛️</span> Living Archive
                         </a>
                     </li>
@@ -59,8 +59,14 @@
             </div>
             
             <script>
-                // Dynamically set Living Archive link to use the same host as the current page
-                document.getElementById('living-archive-link').href = 'http://' + window.location.hostname + ':8501';
+                // Dynamically set all Living Archive links back to the current host on port 8501
+                document.addEventListener('DOMContentLoaded', function() {
+                    const hostname = window.location.hostname;
+                    const links = document.querySelectorAll('.living-archive-link');
+                    links.forEach(l => {
+                        l.href = `http://${hostname}:8501`;
+                    });
+                });
             </script>
             
             <div class="user-info" style="padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">

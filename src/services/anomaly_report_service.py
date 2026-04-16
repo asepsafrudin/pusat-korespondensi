@@ -290,13 +290,48 @@ def list_internal_anomalies(limit: int = 20) -> List[Dict[str, Any]]:
             else:
                 safe_row[key] = value
         nomor_nd = row.get("nomor_nd") or "-"
+        # Dynamic reason analysis
+        reasons = []
+        no_agenda = row.get("no_agenda_dispo")
+        
+        if no_agenda is None:
+            reasons.append("Kolom no_agenda_dispo = NULL")
+        elif str(no_agenda).strip() == "":
+            reasons.append("Kolom no_agenda_dispo kosong (TRIM='')")
+            
+        posisi = row.get("posisi") or ""
+        if "KOREKSI" in posisi.upper():
+            reasons.append("Posisi mengandung 'KOREKSI' - butuh review manual")
+            
+        tanggal = row.get("tanggal_surat")
+        if tanggal is None:
+            reasons.append("tanggal_surat = NULL")
+        elif str(tanggal) == "" or str(tanggal).lower() in ["none", "nan"]:
+            reasons.append("tanggal_surat invalid/empty")
+            
+        # Check duplikat nomor_nd (handle empty nomor_nd)
+        if nomor_nd and nomor_nd != "-":
+            dupe_result = execute_query("SELECT COUNT(*) as cnt FROM surat_masuk_puu_internal WHERE nomor_nd = %s", [nomor_nd])
+            if dupe_result and len(dupe_result) > 0:
+                dupe_count = dupe_result[0]["cnt"]
+                if dupe_count > 1:
+                    reasons.append(f"Duplikat nomor_nd (total: {dupe_count})")
+        else:
+            reasons.append("nomor_nd kosong/tidak valid")
+            
+        reason_explanation = "; ".join(reasons) if reasons else "Anomali tidak teridentifikasi (cek manual)"
+        
+        orig_summary = "Satu record internal tidak membawa No. Agenda Dispo, sehingga perlu difilter sebagai anomali."
+        enhanced_summary = f"{orig_summary} Alasan: {reason_explanation}"
+        
         hasil = {
             "source_type": "internal_anomaly",
             "report_id": row.get("unique_id") or str(uuid.uuid4()),
             "recipient_name": os.getenv("ANOMALY_REPORT_RECIPIENT_NAME", "Pak Ahmad Haidir"),
             "recipient_phone": os.getenv("ANOMALY_REPORT_RECIPIENT_PHONE", WAHA_RECIPIENT),
             "finding_title": f"No. Agenda Dispo kosong pada surat {nomor_nd}",
-            "finding_summary": "Satu record internal tidak membawa No. Agenda Dispo, sehingga perlu difilter sebagai anomali.",
+            "finding_summary": enhanced_summary,
+            "reason_explanation": reason_explanation,  # ← NEW: Untuk UI
             "record_key": nomor_nd,
             "source_label": row.get("dari") or "",
             "source_ref": f"unique_id={row.get('unique_id')} / nomor_nd={nomor_nd}",
