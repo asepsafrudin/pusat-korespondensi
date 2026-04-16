@@ -1,0 +1,195 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "updated_at": "2026-04-16T00:00:00Z",
+    "source_csv": "Peta Tim Kerja April 2026fix.pdf",
+    "sync_status": "SUCCESS",
+    "changelog": [
+      "UPDATE: Direktur SUPD_I (Ir. Edison Siagian -> Irvan Amirullah, ST.,M.Eng)",
+      "UPDATE: Direktur SUPD_III (Dr. TB. Chaerul Dwi Sapta -> Fauzan Hasan, S.STP.,M.Si)",
+      "UPDATE: Direktur SUPD_IV (Dr. Zanariah -> Dr. Paudah, M.Si)",
+      "NORMALIZE: Direktur PEIPD (Iwan Kurniawan -> Iwan Kuniawan, ST.,MM)",
+      "ADD: Metadata versioning & audit trail"
+    ]
+  },
+  "struktur_organisasi_lengkap": {
+    "instansi": "DITJEN BINA PEMBANGUNAN DAERAH",
+    "unit_kerja": [
+      {
+        "id": "SEKRETARIAT",
+        "nama_unit": "SEKRETARIAT DITJEN",
+        "pimpinan": {
+          "jabatan": "Sekretaris Ditjen",
+          "nama": "Drs. Maddaremmeng, M.Si",
+          "pangkat": "Pembina Utama Madya (IV/d)",
+          "nip": "197009201991031001",
+          "tmt": "23-05-2025"
+        },
+        "kelompok_jabatan_fungsional": {
+          "nama": "Tim Arsiparis",
+          "anggota": [
+            {"nama": "ERNA YANI, SE", "pangkat": "Pembina (IV/a) / MADYA"},
+            {"nama": "TRI WIBOWO, S.Pd., M.Si", "pangkat": "Pembina (IV/a) / MADYA"},
+            {"nama": "APRIADI SAPTONO, S.Sos., M.Si", "pangkat": "Pembina (IV/a) / MUDA"},
+            {"nama": "RATNA CHAIDAR SAID, SE, M.Si", "pangkat": "Penata Tk. I (III/d) / MUDA"},
+            {"nama": "AGUS YATMAN, ST., M.Si", "pangkat": "Penata Tk. I (III/d) / MUDA"}
+          ]
+        },
+        "sub_unit": [
+          {
+            "nama_bagian": "Bagian Perencanaan",
+            "kepala_bagian": {"nama": "Gunawan Eko Movianto, SE, MM", "pangkat": "Pembina Tk. I (IV/b)", "nip": "198301302008011007"},
+            "tim_kerja": [
+              {"nama_tim": "Penyusunan Program dan Anggaran", "ketua": {"nama": "Ahmad Washil, S.Si., M.Si", "jabatan": "Perencana Ahli Muda", "nip": "198610062009121001"}},
+              {"nama_tim": "Pengelolaan SPM", "ketua": {"nama": "Benjamin Sibarani, ST., MM", "jabatan": "Perencana Ahli Muda", "nip": "197909032008011006"}},
+              {"nama_tim": "Monitoring, Evaluasi dan Kinerja", "ketua": {"nama": "Teuku Iqbal Miza, SE., MP", "jabatan": "Penelaah Teknis Kebijakan", "nip": "197908022010011003"}},
+              {"nama_tim": "Sistem dan Kerja Sama", "ketua": {"nama": "Faishal Rasyid, S.STP", "jabatan": "Penata Kelola Pemerintahan", "nip": "199302152016091001"}}
+            ]
+          },
+          {
+            "nama_bagian": "Bagian Keuangan",
+            "kepala_bagian": {"nama": "Herlina Marpaung, SE., MM", "pangkat": "Pembina Tk. I (IV/b)", "nip": "197004281996032001"},
+            "sub_bagian": [
+              {"nama_sub": "Pelaksanaan Anggaran", "kepala": {"nama": "Suprapti, S.Sos", "nip": "196805021987032001"}},
+              {"nama_sub": "Perbendaharaan", "kepala": {"nama": "Shanti Refda, SE", "nip": "197301211998032001"}},
+              {"nama_sub": "Verifikasi & Akuntansi", "kepala": {"nama": "Yeni Nur'aeni, SE., M.Ak", "nip": "197808022006042001"}}
+            ]
+          },
+          {
+            "nama_bagian": "Bagian Umum",
+            "kepala_bagian": {"nama": "Drs. Jose De Fatima", "pangkat": "Pembina Tk. I (IV/b)", "nip": "196907181989031001"},
+            "sub_bagian": [
+              {"nama_sub": "Tata Usaha Pimpinan", "kepala": {"nama": "Hasan Basri, S.STP, M.Tr.IP", "nip": "198802152012061001"}},
+              {"nama_sub": "Organisasi dan Kepegawaian", "kepala": {"nama": "Bekti Amalia Arifiyani, S.Kom", "nip": "198403132008122001"}},
+              {"nama_sub": "Rumah Tangga dan BMN", "kepala": {"nama": "Indah Wati, SE", "nip": "197002161994032002"}}
+            ]
+          },
+          {
+            "nama_bagian": "Kelompok Substansi Hukum",
+            "penanggung_jawab": {"jabatan": "Penanggung Jawab Perundang-Undangan", "nama": "Lady Diana Handayani, MH", "jabatan_fungsional": "Analis Hukum Ahli Madya", "nip": "198303062008122001"},
+            "tim_kerja": [
+              {"nama_tim": "Penyusunan Perundang-Undangan", "ketua": {"nama": "Faisal Baharuddin, SH", "jabatan": "Analis Hukum Ahli Muda", "nip": "198109192006041025"}, "pic_korespondensi": {"nama": "Amir Salim, SE", "nip": "198106072025211025", "jabatan": "Penata Layanan Operasional", "kontak_wa": "081288130530", "tugas_utama": "Pengiriman dokumen/surat ke tujuan akhir", "jalur_pelaporan": "Lapor ke Lady Diana (Bagian Hukum) via Grup WhatsApp 'Bagian PUU'"}},
+              {"nama_tim": "Advokasi", "ketua": {"nama": "Lucia Hapsari Asrining Rini, S.H., M.H", "jabatan": "Analis Hukum Ahli Muda", "nip": "198310012010122001"}},
+              {"nama_tim": "Dokumentasi dan Informasi", "ketua": {"nama": "Sukma Adi Nugroho, SH", "jabatan": "Analis Hukum Ahli Muda", "nip": "197909172008121001"}}
+            ]
+          }
+        ]
+      },
+      {
+        "id": "PEIPD",
+        "nama_unit": "DIREKTORAT PERENCANAAN, EVALUASI DAN INFORMASI PEMBANGUNAN DAERAH",
+        "pimpinan": {
+          "jabatan": "Direktur",
+          "nama": "Iwan Kuniawan, ST.,MM",
+          "pangkat": "Pembina Utama Madya (IV/d)",
+          "nip": "197205241998031001",
+          "tmt": "20-09-2022"
+        },
+        "tata_usaha": {
+          "kepala": {"nama": "Julius Martuyo Pasaribu, S.STP", "nip": "199107102012061002"},
+          "staf": ["Abdullah Hisyam, S.Sos", "Desy Wulandari, S.IP", "Arya Ramadhanu Attawana", "I Gusti Agung N.W.P", "Saut Parningotan Malau, SE", "Maharani Anisah, SE", "Edi Purwanto", "Rachmat Christianityo Giovedi", "Supriadi, S.E."]
+        },
+        "sub_unit": [
+          {"nama_subdit": "Perencanaan dan Evaluasi Wilayah I", "penanggung_jawab": {"nama": "Bagus Agung Herbowo, ST", "nip": "197011301996031001"}, "tim_kerja": [{"wilayah": "IA", "ketua": {"nama": "Efin Mei Aniffiyan, ST", "nip": "198405212010121001"}}, {"wilayah": "IB", "ketua": {"nama": "M. Ilyas, S.Sos", "nip": "196802011993031001"}}]},
+          {"nama_subdit": "Perencanaan dan Evaluasi Wilayah II", "penanggung_jawab": {"nama": "Drs. Bob Ronald F. Sagala, M.Si", "nip": "197305161993031001"}, "tim_kerja": [{"wilayah": "IIA", "ketua": {"nama": "Yoppy Herlyan Juniaga, ST., MT", "nip": "197606032006041009"}}, {"wilayah": "IIB", "ketua": {"nama": "Eggy Wira Patria, S.IP., M.Si", "nip": "199302222016091002"}}]},
+          {"nama_subdit": "Perencanaan dan Evaluasi Wilayah III", "penanggung_jawab": {"nama": "Wisnu Hidayat, SE., M.Si", "nip": "196609151995031001"}, "tim_kerja": [{"wilayah": "IIIA", "ketua": {"nama": "Triono Hadi Priyanto, ST", "nip": "198004032009121002"}}, {"wilayah": "IIIB", "ketua": {"nama": "Moh. Samsulrizal Muttaqien, SE., M.Si", "nip": "198504272009121002"}}]},
+          {"nama_subdit": "Perencanaan dan Evaluasi Wilayah IV", "penanggung_jawab": {"nama": "Sondang L. Gaol, S.Sos, M.Eng", "nip": "196804221990032001"}, "tim_kerja": [{"wilayah": "IVA", "ketua": {"nama": "Hanz Budi Dandels, SE., M.Si", "nip": "197612282010011006"}}, {"wilayah": "IVB", "ketua": {"nama": "Mirzal, SKM., MACD", "nip": "197303191998031001"}}]},
+          {"nama_subdit": "Partisipasi Masyarakat dan Informasi Pembangunan", "penanggung_jawab": {"nama": "Rendy Jaya Laksamana, ST, MM", "nip": "197609052001121001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Harry Irawan, S.Kom", "nip": "198112062008121001"}}, {"wilayah": "II", "ketua": {"nama": "Dwi Mei Kusumo Wardani, S.I.A", "nip": "199005162014022004"}}]},
+          {"nama_subdit": "Pengendalian dan Evaluasi", "penanggung_jawab": {"nama": "Drs. Sofyan, M.Si", "nip": "197303271993011002"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Ronald Mangatur, SE., M.Si", "nip": "198012032008121001"}}, {"wilayah": "II", "ketua": {"nama": "Jafar Sidiq, SP", "nip": "198106112009121001"}}]}
+        ]
+      },
+      {
+        "id": "SUPD_I",
+        "nama_unit": "DIREKTORAT SINKRONISASI URUSAN PEMERINTAHAN DAERAH I",
+        "pimpinan": {
+          "jabatan": "Direktur",
+          "nama": "Irvan Amirullah, ST.,M.Eng",
+          "pangkat": "Pembina Tingkat I (IV/b)",
+          "nip": "198405092011011010",
+          "tmt": "12-02-2026"
+        },
+        "tata_usaha": {
+          "kepala": {"nama": "Dedy Guntama, S.STP., M.AP", "nip": "199506012017081002"},
+          "staf": ["Amanda Saraswati", "Agung Budi Santoso", "Toyib Sidik", "Wira Abdillah", "Dwi Avinia Sundoro", "Yeni Krisnu Prasetyani", "Effa Nurly Maulita", "Rusyani"]
+        },
+        "sub_unit": [
+          {"nama_subdit": "Pertanahan dan Penataan Ruang", "penanggung_jawab": {"nama": "Benny Kamil, S.Kom., M.Si", "nip": "197010161995031001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Achmad Gestiadi Pasaribu, S.Pi., M.Si", "nip": "197208222000031003"}}, {"wilayah": "II", "ketua": {"nama": "Friska Fatturahman, S.T", "nip": "199007032014022002"}}]},
+          {"nama_subdit": "Energi dan Sumber Daya Mineral", "penanggung_jawab": {"nama": "Eva Novianty, SP, MT., M.Sc", "nip": "198011182008122001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Corry Nurmala, S.Si., M.Si", "nip": "198603102014022004"}}, {"wilayah": "II", "ketua": {"nama": "Arif Rahman, SE., MM", "nip": "197704062003121001"}}]},
+          {"nama_subdit": "Pertanian dan Pangan", "penanggung_jawab": {"nama": "Heri Supriyanto, SE., M.Si", "nip": "197011161998031001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Adinda Lally M, S.TP., M.Sc", "nip": "198509232014022001"}}, {"wilayah": "II", "ketua": {"nama": "Lutfi Firmansyah, ST., MT., M.Sc", "nip": "198106082008011001"}}]},
+          {"nama_subdit": "Kehutanan", "penanggung_jawab": {"nama": "Dyah Sih Irawati, S.Si., MA", "nip": "196905141996032001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Arief Fibriyanto, S.Sos., M.Si", "nip": "197902161998031001"}}, {"wilayah": "II", "ketua": {"nama": "Meidiarsih Eka Savitri, S.Pi., M.Si", "nip": "198805162014022006"}}]},
+          {"nama_subdit": "Lingkungan Hidup", "penanggung_jawab": {"nama": "Kunto Bimaji, M.Si", "nip": "198105022008011012"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Herdian Prasetyo, ST", "nip": "198105182014021002"}}, {"wilayah": "II", "ketua": {"nama": "Rima Yuliantari Suharin, S.STP., M.Tr.IP", "nip": "198510262006022001"}}]},
+          {"nama_subdit": "Pengendalian Penataan Ruang dan Fasilitasi KLHS", "penanggung_jawab": {"nama": "Nita Sosiawati, ST., MT", "nip": "197404222005042001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Nurul Istiqomah, S.Hut., MPA", "nip": "198406202008012001"}}, {"wilayah": "II", "ketua": {"nama": "Anjas Bandarso, ST", "nip": "198907222014021003"}}]}
+        ]
+      },
+      {
+        "id": "SUPD_II",
+        "nama_unit": "DIREKTORAT SINKRONISASI URUSAN PEMERINTAHAN DAERAH II",
+        "pimpinan": {
+          "jabatan": "Direktur",
+          "nama": "Ir. Suprayitno, MA",
+          "pangkat": "Pembina Utama Madya (IV/d)",
+          "nip": "196708051993031001",
+          "tmt": "20-09-2022"
+        },
+        "tata_usaha": {
+          "kepala": {"nama": "Taufiqqurrahman, S.IP., MAP", "nip": "199208262015071002"},
+          "staf": ["Misno", "Muhammad Febria Azmi", "Thajar Andina", "Jennifer Elisabeth Kamisopa", "Amos P. Zepanya Sihite", "Dewi Purwaningsih", "Evy Dewi Utami", "Yulianto", "Juli Ervina", "Imam Ramadhan", "Devana Nabila Sabita"]
+        },
+        "sub_unit": [
+          {"nama_subdit": "Pekerjaan Umum", "penanggung_jawab": {"nama": "Marzidi Bur, S.Sos., M.Adm.KP", "nip": "198405042010011032"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Eka Srikandi Putri, S.STP., M.Si", "nip": "198502202003122003"}}, {"wilayah": "II", "ketua": {"nama": "Agreta Indah G S.Si, MP.MA.ME", "nip": "198508032008042003"}}]},
+          {"nama_subdit": "Perumahan dan Kawasan Permukiman", "penanggung_jawab": {"nama": "Vony Febriana Pratiwi, ST., M.Si", "nip": "198802132009122001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "R. Suryo Putro Nugrohanto, SE., MM", "nip": "198104102009031002"}}, {"wilayah": "II", "ketua": {"nama": "Dimas Anjarkusuma, S.STP", "nip": "199310112016091002"}}]},
+          {"nama_subdit": "Kelautan dan Perikanan", "penanggung_jawab": {"nama": "Dr. Tantri Lisdiawati, S.Sos., M.Si", "nip": "197406301994032001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Anggi Misaful Bewani, ST., M.Sc", "nip": "198905182014022004"}}, {"wilayah": "II", "ketua": {"nama": "Munawaroh, ST", "nip": "197407302001122001"}}]},
+          {"nama_subdit": "Perhubungan", "penanggung_jawab": {"nama": "M. Ali Irmanda, SE., M.Tr.AP", "nip": "197503291996031001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Ushwah Muchtar, ST., M.Sc", "nip": "197203252001122001"}}, {"wilayah": "II", "ketua": {"nama": "Nancy F. M. Simanjuntak, S.Sos, M.Tr.IP", "nip": "197505182006042002"}}]},
+          {"nama_subdit": "Komunikasi dan Informatika", "penanggung_jawab": {"nama": "Abdul Aziz, S.ST., M.Tr.IP", "nip": "198405242009121002"}, "tim_kerja": [{"wilayah": "Komunikasi", "ketua": {"nama": "Danil J. Sitompul, S.STP., M.Kesos", "nip": "199507212017081001"}}, {"wilayah": "Informatika", "ketua": {"nama": "Pittiasti Pennsylvania Siregar, S.Ars., M.Sc", "nip": "198511262008122001"}}]},
+          {"nama_subdit": "Statistik dan Persandian", "penanggung_jawab": {"nama": "Ir. ST. Zuchriaty, MA", "nip": "196904281996032002"}, "tim_kerja": [{"wilayah": "Statistik", "ketua": {"nama": "Dias Murti Aryanto, SE", "nip": "198706032009121002"}}, {"wilayah": "Persandian", "ketua": {"nama": "Aris Munandar, ST., MM", "nip": "197801212000031006"}}]}
+        ]
+      },
+      {
+        "id": "SUPD_III",
+        "nama_unit": "DIREKTORAT SINKRONISASI URUSAN PEMERINTAHAN DAERAH III",
+        "pimpinan": {
+          "jabatan": "Direktur",
+          "nama": "Fauzan Hasan, S.STP.,M.Si",
+          "pangkat": "Pembina Utama Muda (IV/c)",
+          "nip": "197609151994121001",
+          "tmt": "12-02-2026"
+        },
+        "tata_usaha": {
+          "plt_kepala": {"nama": "Tiur Sitorus, S.Sos", "nip": "198110232010122001"},
+          "staf": ["Theresia Wulantika Manurung", "Aldi Gumuruh Wicaksono", "Dacep Lukmanul Hakim", "Hadrian Marta", "Muhammad Bayu Ismoyo", "Fajar Nugroho", "Rosmawati"]
+        },
+        "sub_unit": [
+          {"nama_subdit": "Kesehatan", "penanggung_jawab": {"nama": "Arifin Efendi Hutagalung, SE, MM", "nip": "196602191994031001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Inez Ayu Dhamiera, S.Sos., M.Si", "nip": "198412262008122001"}}, {"wilayah": "II", "ketua": {"nama": "Iin Afriani, SKM., MAP", "nip": "198408272014082002"}}]},
+          {"nama_subdit": "Sosial dan Budaya", "penanggung_jawab": {"nama": "Wahyu Suharto, SE, MPA", "nip": "196901041994031001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Jodi Frency, ST., MM", "nip": "198508182008121003"}}, {"wilayah": "II", "ketua": {"nama": "Zahratul Jannah Eka Putri, S.IP., M.AP", "nip": "199211212014062001"}}]},
+          {"nama_subdit": "Koperasi, Usaha Kecil dan Menengah, dan Penanaman Modal", "penanggung_jawab": {"nama": "Subhany, SE., M.Sc", "nip": "197507142006042001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Triadi Maharso, S.IP., M.Dipl &Trade", "nip": "198105152009121001"}}, {"wilayah": "II", "ketua": {"nama": "Dini Widyanti, SE, M.Si", "nip": "197712112010122001"}}]},
+          {"nama_subdit": "Perindustrian dan Perdagangan", "penanggung_jawab": {"nama": "Wirahman Dwi Bahri, SE., MM", "nip": "198308292010121002"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Ika Purnomo Hutagalung, S.STP", "nip": "199304272015072002"}}, {"wilayah": "II", "ketua": {"nama": "Mochamad Ridwan, S.Sos", "nip": "197901062001121001"}}]},
+          {"nama_subdit": "Trantibumlinmas", "penanggung_jawab": {"nama": "Adriana Lelong, S.IP., M.Si", "nip": "197612102007012015"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Dra. Ida Supriyanti Malau", "nip": "196712241992032001"}}, {"wilayah": "II", "ketua": {"nama": "Santi L. Simanjuntak, S.Sos., M.Si", "nip": "197311291997032004"}}]},
+          {"nama_subdit": "Pariwisata", "penanggung_jawab": {"nama": "Dyah Sulistyaningsih, S.IP., MA", "nip": "198103022008012001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Pradita Putri Utami, S.Sos., M.Si", "nip": "198301132008122001"}}, {"wilayah": "II", "ketua": {"nama": "Irwan Kurniawan, S.S., M.Si", "nip": "198110062008121001"}}]}
+        ]
+      },
+      {
+        "id": "SUPD_IV",
+        "nama_unit": "DIREKTORAT SINKRONISASI URUSAN PEMERINTAHAN DAERAH IV",
+        "pimpinan": {
+          "jabatan": "Direktur",
+          "nama": "Dr. Paudah, M.Si",
+          "pangkat": "Pembina Utama Madya (IV/d)",
+          "nip": "197309102002122001",
+          "tmt": "01-10-2025"
+        },
+        "tata_usaha": {
+          "kepala": {"nama": "Ir. Erni Friska Simanjuntak", "nip": "196812181995032002"},
+          "staf": ["Riska Rinanda", "Titin Suwartini", "Sutadiyanto", "Yudha Adi Pradana", "Rendy Arief Rakhman", "Firdaus", "Imam Choiri"]
+        },
+        "sub_unit": [
+          {"nama_subdit": "Pendidikan", "penanggung_jawab": {"nama": "Suharyanto, SP, MT", "nip": "196603251996031001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Baroto Seto Sidharto, ST., M.Si", "nip": "197701252008121001"}}, {"wilayah": "II", "ketua": {"nama": "Riyan Ternado, S.STP., M.Si", "nip": "199309122015071001"}}]},
+          {"nama_subdit": "Ketenagakerjaan dan Transmigrasi", "penanggung_jawab": {"nama": "Amaryadi, S.IP., M.AP", "nip": "197711122006141001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Roza Syofiadelwi, SE, MM", "nip": "198107302008012001"}}, {"wilayah": "II", "ketua": {"nama": "Wisnu Hartawan, ST., M.Si", "nip": "198511222014021001"}}]},
+          {"nama_subdit": "Pemberdayaan Perempuan dan Perlindungan Anak", "penanggung_jawab": {"nama": "Sri Utami, SH., MH", "nip": "196612131993032002"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Krishna Wardhani, S.T., M.Si", "nip": "197308112010012002"}}, {"wilayah": "II", "ketua": {"nama": "Yusrica Mawwadah, S.STP", "nip": "199308132016092001"}}]},
+          {"nama_subdit": "Pengendalian Penduduk dan Keluarga Berencana", "penanggung_jawab": {"nama": "Rezha Prastama, MM., M.Sc", "nip": "197608112006041001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Rosalina Elysabeth, SS", "nip": "198504162015052002"}}, {"wilayah": "II", "ketua": {"nama": "Puti Andam P, ST., MM.Par", "nip": "197712101996121001"}}]},
+          {"nama_subdit": "Kepemudaan dan Olah Raga", "penanggung_jawab": {"nama": "Destriana Faried, SE., MMPd", "nip": "197712101996121001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Murita, SE., M.Si", "nip": "197102192006042001"}}, {"wilayah": "II", "ketua": {"nama": "Teuku Maimun Riza, S.IP., M.Si", "nip": "197405212006041001"}}]},
+          {"nama_subdit": "Perpustakaan dan Kearsipan", "penanggung_jawab": {"nama": "Warsito, S.Sos., MML", "nip": "196905091994021001"}, "tim_kerja": [{"wilayah": "I", "ketua": {"nama": "Isdiyanti, SE", "nip": "197901291998032001"}}, {"wilayah": "II", "ketua": {"nama": "Endang Triastuti, SE., M.Si", "nip": "198201162008122002"}}]}
+        ]
+      }
+    ]
+  }
+}

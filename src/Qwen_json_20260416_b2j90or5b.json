@@ -1,0 +1,131 @@
+{
+  "metadata": {
+    "file_type": "org_structure_detail_enrichment",
+    "version": "1.0",
+    "related_master_file": "master_struktur_bangda_2025_v2.json",
+    "generated_at": "2026-04-16T00:00:00Z",
+    "sync_status": "READY_FOR_IMPORT",
+    "data_quality_notes": "NIP normalized, OCR artifacts deduped, PPPK grades mapped, functional roles standardized"
+  },
+  "detail_enrichment": [
+    {
+      "unit_id": "SEKRETARIAT",
+      "nama_unit": "SEKRETARIAT DITJEN",
+      "staf_operasional": [
+        {"nama": "Erna Yani, SE", "nip": "", "pangkat": "Pembina (IV/a)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Arsiparis Ahli Madya", "penugasan_tim": "Tim Arsiparis"},
+        {"nama": "Tri Wibowo, S.Pd., M.Si", "nip": "", "pangkat": "Pembina (IV/a)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Arsiparis Ahli Madya", "penugasan_tim": "Tim Arsiparis"},
+        {"nama": "Apriadi Saptono, S.Sos., M.Si", "nip": "", "pangkat": "Pembina (IV/a)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Arsiparis Ahli Muda", "penugasan_tim": "Tim Arsiparis"},
+        {"nama": "Ratna Chaidar Said, SE, M.Si", "nip": "", "pangkat": "Penata Tk. I (III/d)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Arsiparis Ahli Muda", "penugasan_tim": "Tim Arsiparis"},
+        {"nama": "Agus Yatman, ST., M.Si", "nip": "", "pangkat": "Penata Tk. I (III/d)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Arsiparis Ahli Muda", "penugasan_tim": "Tim Arsiparis"},
+        {"nama": "Amir Salim, SE", "nip": "198106072025211025", "pangkat": "Penata Layanan Operasional", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Tim Perundang-Undangan", "grade_pppk": "IX"},
+        {"nama": "Fannia, A.Md", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Pengelola Layanan Operasional", "penugasan_tim": "Tim Perundang-Undangan", "grade_pppk": "VII"},
+        {"nama": "Ahmad Subarjo", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Pengadministrasi Perkantoran", "penugasan_tim": "Tim Perundang-Undangan", "grade_pppk": "V"},
+        {"nama": "Maulana Rahmatul Akbar, S.Kom", "nip": "", "pangkat": "Penata Muda Tk. I (III/b)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Pranata Komputer Ahli Pertama", "penugasan_tim": "Layanan Administrasi", "grade_pppk": null},
+        {"nama": "Awal Rizqi Rahmawan, S.T", "nip": "", "pangkat": "Penata Muda Tk. I (III/b)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Pranata Komputer Ahli Pertama", "penugasan_tim": "Layanan Administrasi", "grade_pppk": null},
+        {"nama": "Sean Alexander, S.Kom", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Layanan Administrasi", "grade_pppk": "IX"},
+        {"nama": "Teuku Iqbal Miza, SE., MP", "nip": "197908022010011003", "pangkat": "Pembina (IV/a)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Penelaah Teknis Kebijakan", "penugasan_tim": "Monitoring, Evaluasi dan Kinerja", "grade_pppk": null}
+      ],
+      "unit_khusus": {
+        "poliklinik_pratama": [
+          {"nama": "dr. Indah Nur Ani Marwan", "nip": "198206192008012011", "pangkat": "Pembina Utama Muda (IV/c)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Dokter Ahli Madya"},
+          {"nama": "drg. Syarifah Hanny", "nip": "196606061992032001", "pangkat": "Pembina Utama Muda (IV/c)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Dokter Gigi Ahli Madya"},
+          {"nama": "Sunarti, SKM", "nip": "197602041997032002", "pangkat": "Penata Tk. I (III/d)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Adm. Kesehatan Ahli Pertama"},
+          {"nama": "Rahimah Laila Ikhsani, A.Md.Kes.", "nip": "", "status_kepegawaian": "PPPK", "grade_pppk": "VII", "jabatan_fungsional": "Terapis Gigi dan Mulut Terampil"}
+        ]
+      },
+      "pic_operasional": {
+        "nama": "Amir Salim, SE",
+        "nip": "198106072025211025",
+        "kontak_wa": "081288130530",
+        "jalur_pelaporan": "Lapor ke Lady Diana (Bagian Hukum) via Grup WhatsApp 'Bagian PUU'",
+        "tugas_utama": "Pengiriman dokumen/surat ke tujuan akhir"
+      }
+    },
+    {
+      "unit_id": "PEIPD",
+      "nama_unit": "DIREKTORAT PERENCANAAN, EVALUASI DAN INFORMASI PEMBANGUNAN DAERAH",
+      "staf_operasional": [
+        {"nama": "Abdullah Hisyam, S.Sos", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Desy Wulandari, S.IP", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Arya Ramadhanu Attawana, S.Tr.IP", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "I Gusti Agung N.W.P, S.Tr.IP", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "status_khusus": "TB", "grade_pppk": null},
+        {"nama": "Saut Parningotan Malau, SE", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Maharani Anisah, SE", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Edi Purwanto", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Pengadministrasi Perkantoran", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Rachmat Christianityo Giovedi", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Supriadi, S.E.", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Shabilla Fieldza Paramitha, S.Pd", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Kelvin, S.AP., M.AP", "nip": "199510102020121014", "pangkat": "Penata Muda Tk. I (III/b)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Analis Kebijakan Ahli Pertama", "penugasan_tim": "Wilayah IIA"},
+        {"nama": "Efin Mei Aniffiyan, ST", "nip": "198405212010121001", "pangkat": "Penata Tk. I (III/d)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Analis Kebijakan Ahli Muda", "penugasan_tim": "Wilayah IA"}
+      ]
+    },
+    {
+      "unit_id": "SUPD_I",
+      "nama_unit": "DIREKTORAT SINKRONISASI URUSAN PEMERINTAHAN DAERAH I",
+      "staf_operasional": [
+        {"nama": "Amanda Saraswati, S.STP., M.Tr.I.P.", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Agung Budi Santoso, A.Md", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Toyib Sidik", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Wira Abdillah, S.Tr.IP", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Dwi Avinia Sundoro, ST", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "status_khusus": "TB", "grade_pppk": null},
+        {"nama": "Yeni Krisnu Prasetyani, S.I.Kom", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Effa Nurly Maulita, S.Psi", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Rusyani, SAB", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Achmad Gestiadi Pasaribu, S.Pi., M.Si", "nip": "197208222000031003", "pangkat": "Pembina (IV/a)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Analis Kebijakan Ahli Muda", "penugasan_tim": "Substansi Pertanahan"},
+        {"nama": "Friska Fatturahman, S.T", "nip": "199007032014022002", "pangkat": "Penata Tk. I (III/d)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Surveyor Pemetaan Ahli Muda", "penugasan_tim": "Substansi Perencanaan"},
+        {"nama": "Corry Nurmala, S.Si., M.Si", "nip": "198603102014022004", "pangkat": "Penata Tk. I (III/d)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Surveyor Pemetaan Ahli Muda", "penugasan_tim": "Substansi Pemanfaatan dan Pengendalian"},
+        {"nama": "Arif Rahman, SE., MM", "nip": "197704062003121001", "pangkat": "Pembina (IV/a)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Analis Kebijakan Ahli Muda", "penugasan_tim": "Substansi Sumberdaya Mineral"}
+      ]
+    },
+    {
+      "unit_id": "SUPD_II",
+      "nama_unit": "DIREKTORAT SINKRONISASI URUSAN PEMERINTAHAN DAERAH II",
+      "staf_operasional": [
+        {"nama": "Misno", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Muhammad Febria Azmi, S.STP", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Jennifer Elisabeth Kamisopa, S.Tr.IP", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "status_khusus": "TB", "grade_pppk": null},
+        {"nama": "Evy Dewi Utami, SH", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Juli Ervina, ST", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Dewi Purwaningsih, S.Kom", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Yulianto", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Devana Nabila Sabita, S.I.Kom", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Imam Ramadhan", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Danil J. Sitompul, S.STP., M.Kesos", "nip": "199507212017081001", "pangkat": "Penata (III/c)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Penata Kelola Pemerintahan", "penugasan_tim": "Substansi Komunikasi"},
+        {"nama": "Aris Munandar, ST., MM", "nip": "197801212000031006", "pangkat": "Pembina (IV/a)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Analis Kebijakan Ahli Madya", "penugasan_tim": "Substansi Persandian"}
+      ]
+    },
+    {
+      "unit_id": "SUPD_III",
+      "nama_unit": "DIREKTORAT SINKRONISASI URUSAN PEMERINTAHAN DAERAH III",
+      "staf_operasional": [
+        {"nama": "Raiden Avelton N.F, S.Tr.IP", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": "IX", "status_khusus": "IPDN XXXII"},
+        {"nama": "Aldi Gumuruh Wicaksono, S.Tr.IP", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "status_khusus": "TB", "grade_pppk": null},
+        {"nama": "Dacep Lukmanul Hakim, S.Tr.IP", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "status_khusus": "TB", "grade_pppk": null},
+        {"nama": "Hadrian Marta, S.STP., M.Si", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "status_khusus": "TB", "grade_pppk": null},
+        {"nama": "Fajar Nugroho, SE", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Rosmawati, SM", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Inez Ayu Dhamiera, S.Sos., M.Si", "nip": "198412262008122001", "pangkat": "Penata Tk. I (III/d)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Analis Kebijakan Ahli Muda", "penugasan_tim": "Wilayah I Kesehatan"},
+        {"nama": "Iin Afriani, SKM., MAP", "nip": "198408272014082002", "pangkat": "Penata Tk. I (III/d)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Perencana Ahli Pertama", "penugasan_tim": "Wilayah II Kesehatan"}
+      ]
+    },
+    {
+      "unit_id": "SUPD_IV",
+      "nama_unit": "DIREKTORAT SINKRONISASI URUSAN PEMERINTAHAN DAERAH IV",
+      "staf_operasional": [
+        {"nama": "Riska Rinanda, S.STP", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Titin Suwartini", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Sutadiyanto, S.Sos", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Yudha Adi Pradana, S.Kom", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "status_khusus": "TB", "grade_pppk": null},
+        {"nama": "Rendy Arief Rakhman, S.Sos", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Firdaus, A.Md.Kom", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Imam Choiri", "nip": "", "pangkat": "", "status_kepegawaian": "PPPK", "jabatan_fungsional": "Penata Layanan Operasional", "penugasan_tim": "Anggota TU", "grade_pppk": null},
+        {"nama": "Baroto Seto Sidharto, ST., M.Si", "nip": "197701252008121001", "pangkat": "Pembina (IV/a)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Analis Kebijakan Ahli Madya", "penugasan_tim": "Substansi Pendidikan Wilayah I"},
+        {"nama": "Roza Syofiadelwi, SE, MM", "nip": "198107302008012001", "pangkat": "Pembina (IV/a)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Analis Kebijakan Ahli Madya", "penugasan_tim": "Substansi Ketenagakerjaan Wilayah I"},
+        {"nama": "Sri Utami, SH., MH", "nip": "196612131993032002", "pangkat": "Pembina Utama Muda (IV/c)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Analis Kebijakan Ahli Madya", "penugasan_tim": "Substansi PPPA Wilayah I"},
+        {"nama": "Rezha Pranatama, MM., M.Sc", "nip": "197608112006041001", "pangkat": "Pembina Tingkat I (IV/b)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Kasubdit", "penugasan_tim": "Pengendalian Penduduk dan KB"},
+        {"nama": "Destriana Faried, SE., MMPd", "nip": "197712101996121001", "pangkat": "Pembina (IV/a)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Analis Kebijakan Ahli Madya", "penugasan_tim": "Substansi Kepemudaan dan Olahraga"},
+        {"nama": "Warsito, S.Sos., MML", "nip": "196905091994021001", "pangkat": "Pembina Tk. I (IV/b)", "status_kepegawaian": "PNS", "jabatan_fungsional": "Analis SDM Aparatur Ahli Madya", "penugasan_tim": "Substansi Perpustakaan dan Kearsipan"}
+      ]
+    }
+  ]
+}
