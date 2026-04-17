@@ -41,6 +41,29 @@ def get_all_personnel_from_master() -> List[Dict]:
                             if key in t:
                                 personnel.append({"nama": t[key]["nama"], "jabatan": t[key].get("jabatan") or t.get("nama_tim"), "unit": unit_name})
 
+                # Staf Operasional (NEW in 2026)
+                for s in u.get("staf_operasional", []):
+                    personnel.append({
+                        "nama": s["nama"], 
+                        "jabatan": s.get("jabatan_fungsional") or "Staf Operasional", 
+                        "unit": unit_name,
+                        "nip": s.get("nip"),
+                        "pangkat": s.get("pangkat")
+                    })
+
+                # Unit Khusus (NEW in 2026, e.g. Poliklinik)
+                uk = u.get("unit_khusus", {})
+                for uk_name, members in uk.items():
+                    uk_label = uk_name.replace("_", " ").upper()
+                    for m in members:
+                        personnel.append({
+                            "nama": m["nama"],
+                            "jabatan": f"{uk_label} - {m.get('jabatan_fungsional', 'Staf')}",
+                            "unit": unit_name,
+                            "nip": m.get("nip"),
+                            "pangkat": m.get("pangkat")
+                        })
+
                 # Tata Usaha
                 tu = u.get("tata_usaha")
                 if tu:

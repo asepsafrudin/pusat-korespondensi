@@ -192,6 +192,43 @@ def format_posisi_event(event: Dict[str, Any]) -> str:
     return f"{label} - {readable_action}"
 
 
+def determine_refined_status(posisi_str: str) -> str:
+    """
+    Menentukan status manusiawi (refined status) berdasarkan kolom POSISI.
+    Menggunakan dictionary untuk memetakan token teknis ke bahasa yang lebih halus.
+    
+    Contoh:
+    - POSISI mengandung 'TTD' -> 'Selesai / Siap Dikirim'
+    - POSISI mengandung 'DONE' atau 'SELESAI' -> 'Arsip Final'
+    - Default -> 'Dalam Proses'
+    """
+    if not posisi_str or str(posisi_str).upper() == "NULL":
+        return "Belum Diproses"
+    
+    pos_upper = posisi_str.upper()
+    dictionary = _load_posisi_dictionary()
+    
+    # 1. Cek token prioritas tinggi untuk status akhir
+    if any(token in pos_upper for token in ["DONE", "SELESAI"]):
+        return "Arsip Final"
+    
+    if "TTD" in pos_upper:
+        return "Selesai / Siap Dikirim"
+    
+    if any(token in pos_upper for token in ["PARAFA", "PARAF", "KOREKSI", "REVISI"]):
+        return "Proses Koreksi / Paraf"
+    
+    if "PUU" in pos_upper:
+        return "Proses di Substansi PUU"
+    
+    # 2. Fallback ke dictionary meaning jika ada token tunggal yang cocok
+    for token, info in dictionary.items():
+        if token in pos_upper and info.get("category") == "status":
+            return info.get("meaning", "Dalam Proses")
+            
+    return "Dalam Proses"
+
+
 def build_posisi_timeline_view(posisi_str: str, sender: Optional[str] = None) -> List[Dict[str, Any]]:
     timeline = parse_posisi_timeline(posisi_str, sender=sender)
     view = []

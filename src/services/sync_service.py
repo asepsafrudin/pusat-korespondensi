@@ -3,7 +3,7 @@ import subprocess
 import logging
 from ..database import get_db_connection, execute_query
 from ..logging_config import setup_logging
-from .posisi_mapping import build_posisi_timeline_view
+from .posisi_mapping import build_posisi_timeline_view, determine_refined_status
 from .personnel import get_unit_mapping
 
 import re
@@ -86,14 +86,19 @@ def sync_internal_from_pool() -> int:
                 """)
                 rows_inserted = cur.rowcount
                 
-                # Post-sync: Update dari_full and normalize dari combination
+                # Post-sync: Update dari_full and normalize dari combination + Refined Status
                 if rows_inserted > 0:
-                    cur.execute("SELECT id, dari FROM surat_masuk_puu_internal WHERE dari_full IS NULL OR dari_full = ''")
+                    cur.execute("SELECT id, dari, posisi FROM surat_masuk_puu_internal WHERE dari_full IS NULL OR dari_full = '' OR status_pengiriman = 'Belum Diproses'")
                     new_rows = cur.fetchall()
                     for r in new_rows:
+                        # 1. Update DARI Full
                         full_name = map_dari_full(r[1])
                         if full_name != r[1]:
                             cur.execute("UPDATE surat_masuk_puu_internal SET dari_full = %s WHERE id = %s", [full_name, r[0]])
+                        
+                        # 2. Update Refined Status from POSISI
+                        refined_status = determine_refined_status(r[2])
+                        cur.execute("UPDATE surat_masuk_puu_internal SET status_pengiriman = %s WHERE id = %s", [refined_status, r[0]])
                 
                 conn.commit()
                 return rows_inserted
@@ -257,6 +262,7 @@ def get_letter_timeline(unique_id: str):
                         "event_at": row.get("event_at"),
                         "created_at": row.get("created_at"),
                         "timeline_unit": item.get("unit"),
+                        "unit_info": item.get("unit_info"),
                         "timeline_date": item.get("date"),
                         "timeline_action": item.get("action"),
                         "timeline_notes": item.get("notes"),
@@ -279,3 +285,52 @@ def get_letter_timeline(unique_id: str):
     except Exception as e:
         logger.error(f"Failed to get timeline for {unique_id}: {e}")
         return []
+
+def get_vault_timeline(unique_id: str):
+    """Mengambil riwayat perjalanan (timeline) posisi surat dari Vault."""
+    try:
+        sql = """
+            SELECT ve.event_value as posisi, ve.event_at, ve.created_at 
+            FROM vault_events ve
+            JOIN surat_keluar_puu s ON s.id = ve.letter_id
+            WHERE s.unique_id = %s
+            ORDER BY ve.event_at ASC
+        """
+        rows = execute_query(sql, [unique_id])
+        events = []
+        for row in (rows or []):
+            posisi = row.get("posisi") or ""
+            timeline_view = build_posisi_timeline_view(posisi)
+            if timeline_view:
+                for idx, item in enumerate(timeline_view):
+                    events.append({
+                        "posisi": item.get("label") or posisi,
+                        "posisi_raw": posisi,
+                        "label": item.get("label") or posisi,
+                        "event_at": row.get("event_at"),
+                        "created_at": row.get("created_at"),
+                        "timeline_unit": item.get("unit"),
+                        "unit_info": item.get("unit_info"),
+                        "timeline_date": item.get("date"),
+                        "timeline_action": item.get("action"),
+                        "timeline_notes": item.get("notes"),
+                        "timeline_index": idx,
+                    })
+            else:
+                events.append({
+                    "posisi": posisi,
+                    "posisi_raw": posisi,
+                    "label": posisi,
+                    "event_at": row.get("event_at"),
+                    "created_at": row.get("created_at"),
+                    "timeline_unit": None,
+                    "timeline_date": None,
+                    "timeline_action": None,
+                    "timeline_notes": None,
+                    "timeline_index": 0,
+                })
+        return events
+    except Exception as e:
+        logger.error(f"Failed to get vault timeline for {unique_id}: {e}")
+        return []
+

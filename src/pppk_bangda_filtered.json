@@ -1,0 +1,2336 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "updated_at": "2026-04-17T07:54:10.965616",
+    "source_file": "user_p3k.json",
+    "description": "Filtered PPPK data for Ditjen Bina Pembangunan Daerah"
+  },
+  "struktur_organisasi_lengkap": {
+    "instansi": "DITJEN BINA PEMBANGUNAN DAERAH",
+    "unit_kerja": [
+      {
+        "id": "SEKRETARIAT",
+        "nama_unit": "SEKRETARIAT DITJEN",
+        "staf_operasional": [
+          {
+            "nama": "RAHIMAH LAILA IKHSANI, A.Md.Kes.",
+            "nip": "19760728 202521 2 005",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1976-07-28",
+            "gelar_akademik": [
+              "A.Md.Kes."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "TERAPIS GIGI DAN MULUT TERAMPIL",
+            "penugasan_tim": "Poliklinik Pratama",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "drg. AISYAH HARAHAP",
+            "nip": "19860522 202521 2 036",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1986-05-22",
+            "gelar_akademik": [
+              "drg"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "DOKTER GIGI AHLI PERTAMA",
+            "penugasan_tim": "Poliklinik Pratama",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "AHMAD SUBARJO",
+            "nip": "19740216 202521 1 014",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1974-02-16",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Sekretariat Ditjen (Umum)",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "ASEP SAFRUDIN, S.Kom",
+            "nip": "19780911 202521 1 014",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1978-09-11",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Tim Dokumentasi Dan Informasi Hukum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "AHMAD FARID, S.S.",
+            "nip": "19951123 202521 1 046",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1995-11-23",
+            "gelar_akademik": [
+              "S.S."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Sekretariat Ditjen (Umum)",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "DARMA PUTRA",
+            "nip": "19780716 202521 1 028",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1978-07-16",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Bagian Perencanaan",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "SRIYATUN",
+            "nip": "19700816 202521 2 006",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1970-08-16",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Bagian Perencanaan",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "SEAN ALEXANDER, S.Kom",
+            "nip": "19811205 202521 1 010",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1981-12-05",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Perencanaan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "LUCKY NUGROHO, A.md",
+            "nip": "19820630 202521 1 024",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1982-06-30",
+            "gelar_akademik": [
+              "A.md"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Perencanaan",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "FANNY FERDINAND, S.T.",
+            "nip": "19830708 202521 1 021",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1983-07-08",
+            "gelar_akademik": [
+              "S.T."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Perencanaan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "Fransiscus Xaverius Hangga Tri Prasetyo, A.Md",
+            "nip": "19840208 202521 1 044",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1984-02-08",
+            "gelar_akademik": [
+              "A.Md"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Perencanaan",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "ANDHIKA DEWANGGA, SE",
+            "nip": "19850902 202521 1 015",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1985-09-02",
+            "gelar_akademik": [
+              "SE"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Perencanaan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "TARWANTO, S.E.",
+            "nip": "19860127 202521 1 015",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1986-01-27",
+            "gelar_akademik": [
+              "S.E."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Perencanaan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "WANDA PUTRI IRIANTI, A.Md",
+            "nip": "19870108 202521 2 025",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1987-01-08",
+            "gelar_akademik": [
+              "A.Md"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Perencanaan",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "ALBION GINTING, S.Kom.",
+            "nip": "19870224 202521 1 015",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1987-02-24",
+            "gelar_akademik": [
+              "S.Kom."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Perencanaan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "AGNI PRAMESWARA, S.Kom",
+            "nip": "19870526 202521 1 012",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1987-05-26",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Perencanaan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "NINI BANOWATI, S.Psi.",
+            "nip": "19870803 202521 2 017",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1987-08-03",
+            "gelar_akademik": [
+              "S.Psi."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Perencanaan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "MAMAD",
+            "nip": "19740210 202521 1 011",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1974-02-10",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Bagian Pelaksanaan Anggaran *Old* Pmdn 9 Th 25 Bagian Keuangan",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "SOLEHUDIN, S.E",
+            "nip": "19830714 202521 1 028",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1983-07-14",
+            "gelar_akademik": [
+              "S.E"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Pelaksanaan Anggaran *Old* Pmdn 9 Th 25 Bagian Keuangan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "BOBBY AGUSWANTO, ST",
+            "nip": "19900828 202521 1 047",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1990-08-28",
+            "gelar_akademik": [
+              "ST"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Pelaksanaan Anggaran *Old* Pmdn 9 Th 25 Bagian Keuangan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "PEBRI RAMADHAN PAUZI, A.Md.",
+            "nip": "19960209 202521 1 048",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1996-02-09",
+            "gelar_akademik": [
+              "A.Md."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Pelaksanaan Anggaran *Old* Pmdn 9 Th 25 Bagian Keuangan",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "PARNO",
+            "nip": "19731006 202521 1 014",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1973-10-06",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Bagian Perbendaharaan Bagian Keuangan",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "AMIR SALIM, S E",
+            "nip": "19810607 202521 1 025",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1981-06-07",
+            "gelar_akademik": [
+              "S E"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Perbendaharaan Bagian Keuangan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "RITA ROLASTA SILABAN, S.Kom.",
+            "nip": "19910114 202521 2 049",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1991-01-14",
+            "gelar_akademik": [
+              "S.Kom."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Perbendaharaan Bagian Keuangan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "DYAH AYU NURHIDAYATI",
+            "nip": "19780609 202521 2 005",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1978-06-09",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Bagian Akuntansi Dan Pelaporan Bagian Keuangan",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "JUANIC FALENCY, S.S",
+            "nip": "19810529 202521 1 038",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1981-05-29",
+            "gelar_akademik": [
+              "S.S"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Akuntansi Dan Pelaporan Bagian Keuangan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "FANNIA, A.md",
+            "nip": "19850329 202521 2 020",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1985-03-29",
+            "gelar_akademik": [
+              "A.md"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Akuntansi Dan Pelaporan Bagian Keuangan",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "NURSANI, SE",
+            "nip": "19890521 202521 2 051",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1989-05-21",
+            "gelar_akademik": [
+              "SE"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Akuntansi Dan Pelaporan Bagian Keuangan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SUJUD VIDHIANTORO",
+            "nip": "19730316 202521 1 007",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1973-03-16",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Bagian Tata Usaha Dan Umum Bagian Umum",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "UYUNG FARIDA",
+            "nip": "19770604 202521 2 008",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1977-06-04",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Bagian Tata Usaha Dan Umum Bagian Umum",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "DWI SETIAWAN, S.T",
+            "nip": "19910628 202521 1 015",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1991-06-28",
+            "gelar_akademik": [
+              "S.T"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Tata Usaha Dan Umum Bagian Umum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "AHMAD HAIDIR AL-FADLIL, S.E.Sy",
+            "nip": "19920422 202521 1 014",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1992-04-22",
+            "gelar_akademik": [
+              "S.E.Sy"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Tata Usaha Dan Umum Bagian Umum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "RAHMANIAR HUSNA, A.Md",
+            "nip": "19931014 202521 2 015",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1993-10-14",
+            "gelar_akademik": [
+              "A.Md"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Tata Usaha Dan Umum Bagian Umum",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "ARUM SARASWATI, S.KM",
+            "nip": "19940604 202521 2 038",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1994-06-04",
+            "gelar_akademik": [
+              "S.KM"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Tata Usaha Dan Umum Bagian Umum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "BAGUS AULIA FARIZ RADHITE",
+            "nip": "19820505 202521 1 044",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1982-05-05",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Bagian Organisasi Dan Sumber Daya Manusia Bagian Umum",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "FERIANTY SUWARDEWIANY, S.Si",
+            "nip": "19871027 202521 2 018",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1987-10-27",
+            "gelar_akademik": [
+              "S.Si"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Organisasi Dan Sumber Daya Manusia Bagian Umum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "ACHMAD RYANDI, S.E.",
+            "nip": "19880228 202521 1 015",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1988-02-28",
+            "gelar_akademik": [
+              "S.E."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Organisasi Dan Sumber Daya Manusia Bagian Umum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "BERTO AMIARNO, S.Kom",
+            "nip": "19931029 202521 1 015",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1993-10-29",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Organisasi Dan Sumber Daya Manusia Bagian Umum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SYAIFUL ROHMAN, A.Md",
+            "nip": "19770307 202521 1 012",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1977-03-07",
+            "gelar_akademik": [
+              "A.Md"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Rumah Tangga Dan Barang Milik Negara *Old* Pmdn 9 Th 25 Bagian Umum",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "LENNI HUTAGALUNG",
+            "nip": "19780404 202521 2 006",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1978-04-04",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Bagian Rumah Tangga Dan Barang Milik Negara *Old* Pmdn 9 Th 25 Bagian Umum",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "NURYANTI",
+            "nip": "19790105 202521 2 010",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1979-01-05",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Bagian Rumah Tangga Dan Barang Milik Negara *Old* Pmdn 9 Th 25 Bagian Umum",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "ENDANG JUHENDA",
+            "nip": "19820924 202521 1 025",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1982-09-24",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Bagian Rumah Tangga Dan Barang Milik Negara *Old* Pmdn 9 Th 25 Bagian Umum",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "HASANUDIN, S.Kom",
+            "nip": "19840708 202521 1 011",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1984-07-08",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Rumah Tangga Dan Barang Milik Negara *Old* Pmdn 9 Th 25 Bagian Umum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SUGENG MARYANTO, S.Kom.",
+            "nip": "19850310 202521 1 013",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1985-03-10",
+            "gelar_akademik": [
+              "S.Kom."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Rumah Tangga Dan Barang Milik Negara *Old* Pmdn 9 Th 25 Bagian Umum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "AMARULLAH KUSHARTOMO, A.Md.Kom",
+            "nip": "19860602 202521 1 076",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1986-06-02",
+            "gelar_akademik": [
+              "A.Md.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Rumah Tangga Dan Barang Milik Negara *Old* Pmdn 9 Th 25 Bagian Umum",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "JOKO PUSPITO, A.md",
+            "nip": "19870907 202521 1 012",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1987-09-07",
+            "gelar_akademik": [
+              "A.md"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Rumah Tangga Dan Barang Milik Negara *Old* Pmdn 9 Th 25 Bagian Umum",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "SITI MARIYANA, S.T.",
+            "nip": "19880808 202521 2 033",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1988-08-08",
+            "gelar_akademik": [
+              "S.T."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Rumah Tangga Dan Barang Milik Negara *Old* Pmdn 9 Th 25 Bagian Umum",
+            "grade_pppk": "IX"
+          }
+        ]
+      },
+      {
+        "id": "PEIPD",
+        "nama_unit": "DIREKTORAT PERENCANAAN, EVALUASI DAN INFORMASI PEMBANGUNAN DAERAH",
+        "staf_operasional": [
+          {
+            "nama": "FERRY SENOVEL, A.Md",
+            "nip": "19790225 202521 1 009",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1979-02-25",
+            "gelar_akademik": [
+              "A.Md"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat PEIPD",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "HERDIYANA, SH",
+            "nip": "19830301 202521 2 013",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1983-03-01",
+            "gelar_akademik": [
+              "SH"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat PEIPD",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "R NUGROHO SIDDI PRASENO, S.H",
+            "nip": "19840324 202521 1 042",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1984-03-24",
+            "gelar_akademik": [
+              "S.H"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat PEIPD",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "MEYZAR HIZBA ARASY",
+            "nip": "19840508 202521 1 035",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1984-05-08",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Layanan Direktorat PEIPD",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "SAHIRIN",
+            "nip": "19840915 202521 1 030",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1984-09-15",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Layanan Direktorat PEIPD",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "SILVESTER WATU, S.Pd",
+            "nip": "19860215 202521 1 041",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1986-02-15",
+            "gelar_akademik": [
+              "S.Pd"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat PEIPD",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "HERI KISWANTO, S.Kom",
+            "nip": "19860728 202521 1 015",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1986-07-28",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat PEIPD",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "KARUNIA LARASATI",
+            "nip": "19861025 202521 2 022",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1986-10-25",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Layanan Direktorat PEIPD",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "ERWIN BACHTIAR, S.Pd",
+            "nip": "19870420 202521 1 015",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1987-04-20",
+            "gelar_akademik": [
+              "S.Pd"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat PEIPD",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "DONIMAN GAVENORELI DAELI, S.IP.",
+            "nip": "19950404 202521 1 058",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1995-04-04",
+            "gelar_akademik": [
+              "S.IP."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat PEIPD",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "NUR AZIZAH SALAMAH, S.Pd.",
+            "nip": "19990509 202521 2 032",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1999-05-09",
+            "gelar_akademik": [
+              "S.Pd."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat PEIPD",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SHABILLA FIELDZA PARAMITHA, S.Pd.",
+            "nip": "19990921 202521 2 036",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1999-09-21",
+            "gelar_akademik": [
+              "S.Pd."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat PEIPD",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SYIFA NURGANIA MAULANI, S.Pd.",
+            "nip": "20000809 202521 2 017",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "2000-08-09",
+            "gelar_akademik": [
+              "S.Pd."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat PEIPD",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "MAWARDI",
+            "nip": "19830403 202521 1 049",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1983-04-03",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Sub",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "DODDY AFIANTO",
+            "nip": "19881002 202521 1 060",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1988-10-02",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Sub",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "WAHYU DWI JAYANTO, S.I.Kom",
+            "nip": "19881211 202521 1 018",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1988-12-11",
+            "gelar_akademik": [
+              "S.I.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Sub",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "AJISAKTI ERLANGGA, S.M.B.",
+            "nip": "19900930 202521 1 043",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1990-09-30",
+            "gelar_akademik": [
+              "S.M.B."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Sub",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SAFIRAH ABAS, SST",
+            "nip": "19950125 202521 2 017",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1995-01-25",
+            "gelar_akademik": [
+              "SST"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Sub",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SYABHAN RAMDANA, S.IKom",
+            "nip": "19960125 202521 1 032",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1996-01-25",
+            "gelar_akademik": [
+              "S.IKom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Sub",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "RAMLAN DAMANIK, A.md",
+            "nip": "19730527 202521 1 007",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1973-05-27",
+            "gelar_akademik": [
+              "A.md"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Sub",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "ALICIA PUTRI RAMADHANY POHAN, S.H.",
+            "nip": "19970128 202521 2 044",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1997-01-28",
+            "gelar_akademik": [
+              "S.H."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Sub",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SAUT PARNINGOTAN MALAU, S.E",
+            "nip": "19720208 202521 1 003",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1972-02-08",
+            "gelar_akademik": [
+              "S.E"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Tata Usaha",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "EDI PURWANTO",
+            "nip": "19850505 202521 1 017",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1985-05-05",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Bagian Tata Usaha",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "RACHMAT CHRISTIANTYO GIOVEDI",
+            "nip": "19861225 202521 1 018",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1986-12-25",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Bagian Tata Usaha",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "SUPRIADI, S.E.",
+            "nip": "19910406 202521 1 067",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1991-04-06",
+            "gelar_akademik": [
+              "S.E."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Tata Usaha",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "MAHARANI ANISAH, S.E",
+            "nip": "19950822 202521 2 018",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1995-08-22",
+            "gelar_akademik": [
+              "S.E"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Tata Usaha",
+            "grade_pppk": "IX"
+          }
+        ]
+      },
+      {
+        "id": "SUPD_I",
+        "nama_unit": "DIREKTORAT SINKRONISASI URUSAN PEMERINTAHAN DAERAH I",
+        "staf_operasional": [
+          {
+            "nama": "DIKA RACHMAT DIAN, S.H.",
+            "nip": "19860407 202521 1 050",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1986-04-07",
+            "gelar_akademik": [
+              "S.H."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "REINATA AYU PRATIWI, S.Sos",
+            "nip": "19960413 202521 2 017",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1996-04-13",
+            "gelar_akademik": [
+              "S.Sos"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SITI NURAFIATUNISA",
+            "nip": "19810720 202521 2 015",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1981-07-20",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Subdirektorat Pertanahan Dan Penataan Ruang",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "ALIF MUHAMAD, S.Tr.Akun",
+            "nip": "19940223 202521 1 011",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1994-02-23",
+            "gelar_akademik": [
+              "S.Tr.Akun"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pertanahan Dan Penataan Ruang",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "PENI WIDOKARTI, S.E.",
+            "nip": "19760413 202521 2 005",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1976-04-13",
+            "gelar_akademik": [
+              "S.E."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pertanian Dan Pangan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "JAKA PRANA USAHA, STP",
+            "nip": "19790417 202521 1 015",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1979-04-17",
+            "gelar_akademik": [
+              "STP"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pertanian Dan Pangan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "NOORDAUYAT",
+            "nip": "19800530 202521 1 010",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1980-05-30",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Subdirektorat Pertanian Dan Pangan",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "DEDE HENDRAYANA, SE",
+            "nip": "19851116 202521 1 010",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1985-11-16",
+            "gelar_akademik": [
+              "SE"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pertanian Dan Pangan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "ANDRI ROSYADI, SE",
+            "nip": "19890905 202521 1 023",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1989-09-05",
+            "gelar_akademik": [
+              "SE"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pertanian Dan Pangan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "PANJI ZULKAISAR, SE",
+            "nip": "19890918 202521 1 062",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1989-09-18",
+            "gelar_akademik": [
+              "SE"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pertanian Dan Pangan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "NAOVAL YUSUP FAUZI, S.E.",
+            "nip": "19971104 202521 1 029",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1997-11-04",
+            "gelar_akademik": [
+              "S.E."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pertanian Dan Pangan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "DWI NURCAHYO SAPUTRO, S.AP",
+            "nip": "19890715 202521 1 079",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1989-07-15",
+            "gelar_akademik": [
+              "S.AP"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Kehutanan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "AGUNG KURNIAWAN",
+            "nip": "19790309 202521 1 011",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1979-03-09",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Subdirektorat Lingkungan Hidup",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "RR DWI SOELISTIYOWATI, S.T.",
+            "nip": "19830101 202521 2 020",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1983-01-01",
+            "gelar_akademik": [
+              "S.T."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Lingkungan Hidup",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "AS SHOFIYAH TIMOR SYARQIYAH, S.IP",
+            "nip": "19860627 202521 2 034",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1986-06-27",
+            "gelar_akademik": [
+              "S.IP"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Lingkungan Hidup",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "RUSYANI, SAB",
+            "nip": "19790112 202521 2 009",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1979-01-12",
+            "gelar_akademik": [
+              "SAB"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Tata Usaha",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "EFFA NURLY MAULITA, S.Psi",
+            "nip": "19800129 202521 2 007",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1980-01-29",
+            "gelar_akademik": [
+              "S.Psi"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Tata Usaha",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "YENI KRISNU PRASETYANI, S.I.Kom",
+            "nip": "19890427 202521 2 019",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1989-04-27",
+            "gelar_akademik": [
+              "S.I.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Tata Usaha",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "RIAN BASTIAN, S.Ds",
+            "nip": "19831106 202521 1 009",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1983-11-06",
+            "gelar_akademik": [
+              "S.Ds"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "Syifah Fauziah Mansyur, A.Md",
+            "nip": "19840711 202521 2 032",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1984-07-11",
+            "gelar_akademik": [
+              "A.Md"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "HENDRAWAN MAULANA, S.Kom",
+            "nip": "19910921 202521 1 043",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1991-09-21",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "DEWI PURWANINGSIH, S.Kom",
+            "nip": "19911118 202521 2 021",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1991-11-18",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "ALAMSYAH, S.E.",
+            "nip": "19681126 202521 1 004",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1968-11-26",
+            "gelar_akademik": [
+              "S.E."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pekerjaan Umum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "EVY DEWI UTAMI, S.H.",
+            "nip": "19690707 202521 2 008",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1969-07-07",
+            "gelar_akademik": [
+              "S.H."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pekerjaan Umum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SYAHRUL, S.E.",
+            "nip": "19700712 202521 1 013",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1970-07-12",
+            "gelar_akademik": [
+              "S.E."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pekerjaan Umum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "ABDAN BAYHAQI, A.Md",
+            "nip": "19720328 202521 1 003",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1972-03-28",
+            "gelar_akademik": [
+              "A.Md"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pekerjaan Umum",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "WAWAN IHWAN",
+            "nip": "19750314 202521 1 009",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1975-03-14",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Subdirektorat Pekerjaan Umum",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "AYU WAHYUNINGRUM",
+            "nip": "19790222 202521 2 013",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1979-02-22",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Subdirektorat Pekerjaan Umum",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "JULI ERVINA, S.T",
+            "nip": "19790714 202521 2 006",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1979-07-14",
+            "gelar_akademik": [
+              "S.T"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pekerjaan Umum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "LUCKY OCKTAVIANA, SH",
+            "nip": "19801029 202521 1 029",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1980-10-29",
+            "gelar_akademik": [
+              "SH"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pekerjaan Umum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SUKO ROMAS ANDY, S.H",
+            "nip": "19840620 202521 1 015",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1984-06-20",
+            "gelar_akademik": [
+              "S.H"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pekerjaan Umum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "PANCA WIDIA UTARI, A.Md.",
+            "nip": "19841212 202521 2 024",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1984-12-12",
+            "gelar_akademik": [
+              "A.Md."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pekerjaan Umum",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "DEWA MADE KERTA AGUNG, S.Kom",
+            "nip": "19850313 202521 1 017",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1985-03-13",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pekerjaan Umum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SISKA, S.E",
+            "nip": "19870805 202521 2 022",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1987-08-05",
+            "gelar_akademik": [
+              "S.E"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pekerjaan Umum",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "MAURINA MOLEK NAJAMUDDIN, S.E",
+            "nip": "19760411 202521 2 005",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1976-04-11",
+            "gelar_akademik": [
+              "S.E"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Perumahan Dan Kawasan Permukiman",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SRI HARDHINI WIDYASTUTI, S.T.",
+            "nip": "19800213 202521 2 006",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1980-02-13",
+            "gelar_akademik": [
+              "S.T."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Perumahan Dan Kawasan Permukiman",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "AGUNG SEDAYU PRAMONO, S.E",
+            "nip": "19821116 202521 1 008",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1982-11-16",
+            "gelar_akademik": [
+              "S.E"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Perumahan Dan Kawasan Permukiman",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "RIKI KURNIAWAN, S.Kom",
+            "nip": "19850504 202521 1 017",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1985-05-04",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Perumahan Dan Kawasan Permukiman",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "AKHSANUL NI`AM LAKSONO, S.T.",
+            "nip": "19910813 202521 1 018",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1991-08-13",
+            "gelar_akademik": [
+              "S.T."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Perumahan Dan Kawasan Permukiman",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "WILEVI FAUZIA BAKAR, S.Psi",
+            "nip": "19950613 202521 2 015",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1995-06-13",
+            "gelar_akademik": [
+              "S.Psi"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Perumahan Dan Kawasan Permukiman",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "DANI AKBAR, S.M",
+            "nip": "19970612 202521 1 003",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1997-06-12",
+            "gelar_akademik": [
+              "S.M"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Perumahan Dan Kawasan Permukiman",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "ABDUL MULUK, S.Kom",
+            "nip": "19810606 202521 1 022",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1981-06-06",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Kelautan Dan Perikanan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "IMAM RAMADHAN",
+            "nip": "19860515 202521 1 068",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1986-05-15",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Subdirektorat Kelautan Dan Perikanan",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "RIZKI ADI PRATAMA, S.E",
+            "nip": "19941218 202521 1 012",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1994-12-18",
+            "gelar_akademik": [
+              "S.E"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Kelautan Dan Perikanan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "DEVANA NABILA SABITA, S.I.Kom.",
+            "nip": "19950806 202521 2 057",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1995-08-06",
+            "gelar_akademik": [
+              "S.I.Kom."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Kelautan Dan Perikanan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "AHMAD IDRIS ABDURROHMAN, S.Pi.",
+            "nip": "19950826 202521 1 049",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1995-08-26",
+            "gelar_akademik": [
+              "S.Pi."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Kelautan Dan Perikanan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "BAYU PRASETYO, S.H.",
+            "nip": "19961128 202521 1 018",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1996-11-28",
+            "gelar_akademik": [
+              "S.H."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Kelautan Dan Perikanan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SUSWANTO, S.Mn",
+            "nip": "19740517 202521 1 032",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1974-05-17",
+            "gelar_akademik": [
+              "S.Mn"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Perhubungan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "RIZA MAHARDIKA",
+            "nip": "19871016 202521 1 051",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1987-10-16",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Subdirektorat Perhubungan",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "DAVID SUKMA OKI, S.Kom",
+            "nip": "19890203 202521 1 018",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1989-02-03",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Perhubungan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "DONI AGUS PRASETIO, S.Kom",
+            "nip": "19920817 202521 1 030",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1992-08-17",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Perhubungan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "KURNIADI PRASTYA, S.E.",
+            "nip": "19930712 202521 1 069",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1993-07-12",
+            "gelar_akademik": [
+              "S.E."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Perhubungan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "FERY FERNANDO, S.Kom",
+            "nip": "20000712 202521 1 012",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "2000-07-12",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Perhubungan",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "YULIANTO",
+            "nip": "19900720 202521 1 024",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1990-07-20",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Bagian Tata Usaha",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "SURAHMAD, S.P.",
+            "nip": "19710410 202521 1 014",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1971-04-10",
+            "gelar_akademik": [
+              "S.P."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "UMAR",
+            "nip": "19740727 202521 1 015",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1974-07-27",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "DYAH AYU WIDYAYANTI, ST",
+            "nip": "19760429 202521 2 005",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1976-04-29",
+            "gelar_akademik": [
+              "ST"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "HERI WIDARNAKO, SE",
+            "nip": "19771026 202521 1 014",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1977-10-26",
+            "gelar_akademik": [
+              "SE"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SITI PATIMAH, SE",
+            "nip": "19810111 202521 2 005",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1981-01-11",
+            "gelar_akademik": [
+              "SE"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "ANDRI MERDIANSYAH, S.Kom",
+            "nip": "19830301 202521 1 021",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1983-03-01",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "INA YUDITH, S.E.",
+            "nip": "19831210 202521 2 014",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1983-12-10",
+            "gelar_akademik": [
+              "S.E."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SABDA PRIMA SIMANIHURUK, SE",
+            "nip": "19840218 202521 2 009",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1984-02-18",
+            "gelar_akademik": [
+              "SE"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "MARDOMU AGNES, S.H",
+            "nip": "19860812 202521 1 026",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1986-08-12",
+            "gelar_akademik": [
+              "S.H"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "GURUH RIZALDI, SE",
+            "nip": "19870211 202521 1 017",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1987-02-11",
+            "gelar_akademik": [
+              "SE"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "PETER FRANSISCO, S.H",
+            "nip": "19870306 202521 1 017",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1987-03-06",
+            "gelar_akademik": [
+              "S.H"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "DONI MASHURI, S.AP, M.Si",
+            "nip": "19890126 202521 1 025",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1989-01-26",
+            "gelar_akademik": [
+              "S.AP",
+              "M.Si"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "DWI FEBRIYANTI, S.I.Kom, MM",
+            "nip": "19890220 202521 2 013",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1989-02-20",
+            "gelar_akademik": [
+              "S.I.Kom",
+              "MM"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "ARIF NALDI, M.Si",
+            "nip": "19900401 202521 1 037",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1990-04-01",
+            "gelar_akademik": [
+              "M.Si"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "SINGGIH ADI NUGROHO",
+            "nip": "19900816 202521 1 016",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1990-08-16",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "APRILIAWATI, Amd.Keb",
+            "nip": "19930412 202521 2 025",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1993-04-12",
+            "gelar_akademik": [
+              "Amd.Keb"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "DEVIANA ANISA DEWI, A.Md.Keb",
+            "nip": "19940312 202521 2 016",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1994-03-12",
+            "gelar_akademik": [
+              "A.Md.Keb"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "HARDIANTO HN, S.Pd.",
+            "nip": "19951116 202521 1 023",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1995-11-16",
+            "gelar_akademik": [
+              "S.Pd."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "INTAN KUSUMO DHARU, S.M",
+            "nip": "19981019 202521 1 013",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1998-10-19",
+            "gelar_akademik": [
+              "S.M"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "TUT WIJAYANTI, S.TP",
+            "nip": "19740630 202521 2 005",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1974-06-30",
+            "gelar_akademik": [
+              "S.TP"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Sosial Dan Budaya",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "MUCHTAR ZAKARIA, S.AP",
+            "nip": "19850623 202521 1 048",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1985-06-23",
+            "gelar_akademik": [
+              "S.AP"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Sosial Dan Budaya",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "MULYATI K LAMANA, S.AN.",
+            "nip": "19920423 202521 2 021",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1992-04-23",
+            "gelar_akademik": [
+              "S.AN."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Sosial Dan Budaya",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "ESRA OKTAVIA, S.Sos",
+            "nip": "19951008 202521 2 017",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1995-10-08",
+            "gelar_akademik": [
+              "S.Sos"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Sosial Dan Budaya",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "FAJAR NUGROHO, SE.",
+            "nip": "19760722 202521 1 007",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1976-07-22",
+            "gelar_akademik": [
+              "SE."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Tata Usaha",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "ROSMAWATI, S.M",
+            "nip": "19921011 202521 2 023",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1992-10-11",
+            "gelar_akademik": [
+              "S.M"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Tata Usaha",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "RENDY ARIEF RAKHMAN, S.Sos.",
+            "nip": "19801005 202521 1 022",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1980-10-05",
+            "gelar_akademik": [
+              "S.Sos."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "MOHAMAD SOLEH, S.Kom",
+            "nip": "19720906 202521 1 009",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1972-09-06",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "ANDI, S.E",
+            "nip": "19801207 202521 1 019",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1980-12-07",
+            "gelar_akademik": [
+              "S.E"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "WIDIYANDRI AZKA MUTTAQIN, S.Kom",
+            "nip": "19850621 202521 1 018",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1985-06-21",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "MARSIANUS RIANGHEPAT, S.Sos",
+            "nip": "19860112 202521 1 042",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1986-01-12",
+            "gelar_akademik": [
+              "S.Sos"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "TANTRI PRAMESHWARI, S.E.",
+            "nip": "19880328 202521 2 016",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1988-03-28",
+            "gelar_akademik": [
+              "S.E."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "BAYU PICANDRA, S.Kom",
+            "nip": "19891021 202521 1 014",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1989-10-21",
+            "gelar_akademik": [
+              "S.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "ABDUL MUFID IRSYADA, S.T.",
+            "nip": "19950122 202521 1 035",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1995-01-22",
+            "gelar_akademik": [
+              "S.T."
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Layanan Direktorat SUPD I",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "NELMIDA SIMARMATA, S.Sos",
+            "nip": "19700503 202521 2 006",
+            "jenis_kelamin": "Perempuan",
+            "tanggal_lahir": "1970-05-03",
+            "gelar_akademik": [
+              "S.Sos"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Ketenagakerjaan Dan Transmigrasi",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "RIVAN BARESSI KELSABA, S.SOS",
+            "nip": "19910618 202521 1 045",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1991-06-18",
+            "gelar_akademik": [
+              "S.SOS"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Ketenagakerjaan Dan Transmigrasi",
+            "grade_pppk": "IX"
+          },
+          {
+            "nama": "RIZKI SUHKRON AIMAN",
+            "nip": "20010912 202521 1 008",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "2001-09-12",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Subdirektorat Ketenagakerjaan Dan Transmigrasi",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "M. IQBAL ABDURRAUF SAIMIMA, A.Md",
+            "nip": "19850920 202521 1 041",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1985-09-20",
+            "gelar_akademik": [
+              "A.Md"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Subdirektorat Pengendalian Penduduk Dan Keluarga Berencana",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "IMAM CHOIRI",
+            "nip": "19810805 202521 1 018",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1981-08-05",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Bagian Tata Usaha",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "EKO ASHARI HADIYANTO",
+            "nip": "19810908 202521 1 017",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1981-09-08",
+            "gelar_akademik": [],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGADMINISTRASI PERKANTORAN",
+            "penugasan_tim": "Bagian Tata Usaha",
+            "grade_pppk": "V"
+          },
+          {
+            "nama": "FIRDAUS, A.Md.Kom",
+            "nip": "19850606 202521 1 024",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1985-06-06",
+            "gelar_akademik": [
+              "A.Md.Kom"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENGELOLA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Tata Usaha",
+            "grade_pppk": "VII"
+          },
+          {
+            "nama": "MOHAMAD RIZAL, S.E",
+            "nip": "19930603 202521 1 024",
+            "jenis_kelamin": "Laki-laki",
+            "tanggal_lahir": "1993-06-03",
+            "gelar_akademik": [
+              "S.E"
+            ],
+            "pangkat": "",
+            "status_kepegawaian": "PPPK",
+            "jabatan_fungsional": "PENATA LAYANAN OPERASIONAL",
+            "penugasan_tim": "Bagian Tata Usaha",
+            "grade_pppk": "IX"
+          }
+        ]
+      },
+      {
+        "id": "SUPD_II",
+        "nama_unit": "DIREKTORAT SINKRONISASI URUSAN PEMERINTAHAN DAERAH II",
+        "staf_operasional": []
+      },
+      {
+        "id": "SUPD_III",
+        "nama_unit": "DIREKTORAT SINKRONISASI URUSAN PEMERINTAHAN DAERAH III",
+        "staf_operasional": []
+      },
+      {
+        "id": "SUPD_IV",
+        "nama_unit": "DIREKTORAT SINKRONISASI URUSAN PEMERINTAHAN DAERAH IV",
+        "staf_operasional": []
+      }
+    ]
+  }
+}

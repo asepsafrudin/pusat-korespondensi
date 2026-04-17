@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "2.1-ENRICHED",
-    "updated_at": "2026-04-17T08:07:07.660478",
+    "version": "2.0",
+    "updated_at": "2026-04-17T07:59:03.005903",
     "source_csv": "Peta Tim Kerja April 2026fix.pdf",
     "sync_status": "SUCCESS",
     "changelog": [
@@ -10,8 +10,7 @@
       "UPDATE: Direktur SUPD_IV (Dr. Zanariah -> Dr. Paudah, M.Si)",
       "NORMALIZE: Direktur PEIPD (Iwan Kurniawan -> Iwan Kuniawan, ST.,MM)",
       "ADD: Metadata versioning & audit trail",
-      "ENRICH: Added 167 PPPK staff from pppk_bangda_filtered.json",
-      "FINAL ENRICH: Recursive analysis of all personnel (PNS & PPPK)"
+      "ENRICH: Added 167 PPPK staff from pppk_bangda_filtered.json"
     ],
     "enrichment_stats": {
       "total_pppk_added": 167,
@@ -35,71 +34,32 @@
           "nama": "Drs. Maddaremmeng, M.Si",
           "pangkat": "Pembina Utama Madya (IV/d)",
           "nip": "197009201991031001",
-          "tmt": "23-05-2025",
-          "gelar_akademik": [
-            "M.Si",
-            "Drs"
-          ],
-          "jenis_kelamin": "Laki-laki",
-          "tanggal_lahir": "1970-09-20",
-          "golongan": "IV/d",
-          "jenjang_fungsional": "Ahli Utama",
-          "status_kepegawaian": "PNS"
+          "tmt": "23-05-2025"
         },
         "kelompok_jabatan_fungsional": {
           "nama": "Tim Arsiparis",
           "anggota": [
             {
               "nama": "ERNA YANI, SE",
-              "pangkat": "Pembina (IV/a) / MADYA",
-              "gelar_akademik": [
-                "SE"
-              ],
-              "golongan": "IV/a",
-              "jenjang_fungsional": "Ahli Madya"
+              "pangkat": "Pembina (IV/a) / MADYA"
             },
             {
               "nama": "TRI WIBOWO, S.Pd., M.Si",
-              "pangkat": "Pembina (IV/a) / MADYA",
-              "gelar_akademik": [
-                "S.Pd.",
-                "M.Si"
-              ],
-              "golongan": "IV/a",
-              "jenjang_fungsional": "Ahli Madya"
+              "pangkat": "Pembina (IV/a) / MADYA"
             },
             {
               "nama": "APRIADI SAPTONO, S.Sos., M.Si",
-              "pangkat": "Pembina (IV/a) / MUDA",
-              "gelar_akademik": [
-                "S.Sos.",
-                "M.Si"
-              ],
-              "golongan": "IV/a",
-              "jenjang_fungsional": "Ahli Muda"
+              "pangkat": "Pembina (IV/a) / MUDA"
             },
             {
               "nama": "RATNA CHAIDAR SAID, SE, M.Si",
-              "pangkat": "Penata Tk. I (III/d) / MUDA",
-              "gelar_akademik": [
-                "M.Si",
-                "SE"
-              ],
-              "golongan": "III/d",
-              "jenjang_fungsional": "Ahli Muda"
+              "pangkat": "Penata Tk. I (III/d) / MUDA"
             },
             {
               "nama": "AGUS YATMAN, ST., M.Si",
-              "pangkat": "Penata Tk. I (III/d) / MUDA",
-              "gelar_akademik": [
-                "ST.",
-                "M.Si"
-              ],
-              "golongan": "III/d",
-              "jenjang_fungsional": "Ahli Muda"
+              "pangkat": "Penata Tk. I (III/d) / MUDA"
             }
-          ],
-          "gelar_akademik": []
+          ]
         },
         "sub_unit": [
           {
@@ -107,15 +67,7 @@
             "kepala_bagian": {
               "nama": "Gunawan Eko Movianto, SE, MM",
               "pangkat": "Pembina Tk. I (IV/b)",
-              "nip": "198301302008011007",
-              "gelar_akademik": [
-                "MM",
-                "SE"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1983-01-30",
-              "golongan": "IV/b",
-              "status_kepegawaian": "PNS"
+              "nip": "198301302008011007"
             },
             "tim_kerja": [
               {
@@ -123,15 +75,7 @@
                 "ketua": {
                   "nama": "Ahmad Washil, S.Si., M.Si",
                   "jabatan": "Perencana Ahli Muda",
-                  "nip": "198610062009121001",
-                  "gelar_akademik": [
-                    "S.Si.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1986-10-06",
-                  "jenjang_fungsional": "Ahli Muda",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198610062009121001"
                 }
               },
               {
@@ -139,15 +83,7 @@
                 "ketua": {
                   "nama": "Benjamin Sibarani, ST., MM",
                   "jabatan": "Perencana Ahli Muda",
-                  "nip": "197909032008011006",
-                  "gelar_akademik": [
-                    "ST.",
-                    "MM"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1979-09-03",
-                  "jenjang_fungsional": "Ahli Muda",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197909032008011006"
                 }
               },
               {
@@ -155,14 +91,7 @@
                 "ketua": {
                   "nama": "Teuku Iqbal Miza, SE., MP",
                   "jabatan": "Penelaah Teknis Kebijakan",
-                  "nip": "197908022010011003",
-                  "gelar_akademik": [
-                    "SE.",
-                    "MP"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1979-08-02",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197908022010011003"
                 }
               },
               {
@@ -170,13 +99,7 @@
                 "ketua": {
                   "nama": "Faishal Rasyid, S.STP",
                   "jabatan": "Penata Kelola Pemerintahan",
-                  "nip": "199302152016091001",
-                  "gelar_akademik": [
-                    "S.STP"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1993-02-15",
-                  "status_kepegawaian": "PNS"
+                  "nip": "199302152016091001"
                 }
               }
             ],
@@ -352,55 +275,28 @@
             "kepala_bagian": {
               "nama": "Herlina Marpaung, SE., MM",
               "pangkat": "Pembina Tk. I (IV/b)",
-              "nip": "197004281996032001",
-              "gelar_akademik": [
-                "SE.",
-                "MM"
-              ],
-              "jenis_kelamin": "Perempuan",
-              "tanggal_lahir": "1970-04-28",
-              "golongan": "IV/b",
-              "status_kepegawaian": "PNS"
+              "nip": "197004281996032001"
             },
             "sub_bagian": [
               {
                 "nama_sub": "Pelaksanaan Anggaran",
                 "kepala": {
                   "nama": "Suprapti, S.Sos",
-                  "nip": "196805021987032001",
-                  "gelar_akademik": [
-                    "S.Sos"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1968-05-02",
-                  "status_kepegawaian": "PNS"
+                  "nip": "196805021987032001"
                 }
               },
               {
                 "nama_sub": "Perbendaharaan",
                 "kepala": {
                   "nama": "Shanti Refda, SE",
-                  "nip": "197301211998032001",
-                  "gelar_akademik": [
-                    "SE"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1973-01-21",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197301211998032001"
                 }
               },
               {
                 "nama_sub": "Verifikasi & Akuntansi",
                 "kepala": {
                   "nama": "Yeni Nur'aeni, SE., M.Ak",
-                  "nip": "197808022006042001",
-                  "gelar_akademik": [
-                    "SE.",
-                    "M.Ak"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1978-08-02",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197808022006042001"
                 }
               }
             ]
@@ -410,54 +306,28 @@
             "kepala_bagian": {
               "nama": "Drs. Jose De Fatima",
               "pangkat": "Pembina Tk. I (IV/b)",
-              "nip": "196907181989031001",
-              "gelar_akademik": [
-                "Drs"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1969-07-18",
-              "golongan": "IV/b",
-              "status_kepegawaian": "PNS"
+              "nip": "196907181989031001"
             },
             "sub_bagian": [
               {
                 "nama_sub": "Tata Usaha Pimpinan",
                 "kepala": {
                   "nama": "Hasan Basri, S.STP, M.Tr.IP",
-                  "nip": "198802152012061001",
-                  "gelar_akademik": [
-                    "M.Tr.IP",
-                    "S.STP"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1988-02-15",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198802152012061001"
                 }
               },
               {
                 "nama_sub": "Organisasi dan Kepegawaian",
                 "kepala": {
                   "nama": "Bekti Amalia Arifiyani, S.Kom",
-                  "nip": "198403132008122001",
-                  "gelar_akademik": [
-                    "S.Kom"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1984-03-13",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198403132008122001"
                 }
               },
               {
                 "nama_sub": "Rumah Tangga dan BMN",
                 "kepala": {
                   "nama": "Indah Wati, SE",
-                  "nip": "197002161994032002",
-                  "gelar_akademik": [
-                    "SE"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1970-02-16",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197002161994032002"
                 }
               }
             ]
@@ -468,13 +338,7 @@
               "jabatan": "Penanggung Jawab Perundang-Undangan",
               "nama": "Lady Diana Handayani, MH",
               "jabatan_fungsional": "Analis Hukum Ahli Madya",
-              "nip": "198303062008122001",
-              "gelar_akademik": [
-                "MH"
-              ],
-              "jenis_kelamin": "Perempuan",
-              "tanggal_lahir": "1983-03-06",
-              "status_kepegawaian": "PNS"
+              "nip": "198303062008122001"
             },
             "tim_kerja": [
               {
@@ -482,14 +346,7 @@
                 "ketua": {
                   "nama": "Faisal Baharuddin, SH",
                   "jabatan": "Analis Hukum Ahli Muda",
-                  "nip": "198109192006041025",
-                  "gelar_akademik": [
-                    "SH"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1981-09-19",
-                  "jenjang_fungsional": "Ahli Muda",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198109192006041025"
                 },
                 "pic_korespondensi": {
                   "nama": "Amir Salim, SE",
@@ -497,26 +354,14 @@
                   "jabatan": "Penata Layanan Operasional",
                   "kontak_wa": "081288130530",
                   "tugas_utama": "Pengiriman dokumen/surat ke tujuan akhir",
-                  "jalur_pelaporan": "Lapor ke Lady Diana (Bagian Hukum) via Grup WhatsApp 'Bagian PUU'",
-                  "gelar_akademik": [
-                    "SE"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1981-06-07",
-                  "status_kepegawaian": "PNS"
+                  "jalur_pelaporan": "Lapor ke Lady Diana (Bagian Hukum) via Grup WhatsApp 'Bagian PUU'"
                 },
                 "pic_operasional_detail": {
                   "nama": "Amir Salim, SE",
                   "nip": "198106072025211025",
                   "kontak_wa": "081288130530",
                   "jalur_pelaporan": "Lapor ke Lady Diana (Bagian Hukum) via Grup WhatsApp 'Bagian PUU'",
-                  "tugas_utama": "Pengiriman dokumen/surat ke tujuan akhir",
-                  "gelar_akademik": [
-                    "SE"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1981-06-07",
-                  "status_kepegawaian": "PNS"
+                  "tugas_utama": "Pengiriman dokumen/surat ke tujuan akhir"
                 }
               },
               {
@@ -524,15 +369,7 @@
                 "ketua": {
                   "nama": "Lucia Hapsari Asrining Rini, S.H., M.H",
                   "jabatan": "Analis Hukum Ahli Muda",
-                  "nip": "198310012010122001",
-                  "gelar_akademik": [
-                    "M.H",
-                    "S.H."
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1983-10-01",
-                  "jenjang_fungsional": "Ahli Muda",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198310012010122001"
                 }
               },
               {
@@ -540,14 +377,7 @@
                 "ketua": {
                   "nama": "Sukma Adi Nugroho, SH",
                   "jabatan": "Analis Hukum Ahli Muda",
-                  "nip": "197909172008121001",
-                  "gelar_akademik": [
-                    "SH"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1979-09-17",
-                  "jenjang_fungsional": "Ahli Muda",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197909172008121001"
                 }
               }
             ]
@@ -560,12 +390,7 @@
             "pangkat": "Pembina (IV/a)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Arsiparis Ahli Madya",
-            "penugasan_tim": "Tim Arsiparis",
-            "gelar_akademik": [
-              "SE"
-            ],
-            "golongan": "IV/a",
-            "jenjang_fungsional": "Ahli Madya"
+            "penugasan_tim": "Tim Arsiparis"
           },
           {
             "nama": "Tri Wibowo, S.Pd., M.Si",
@@ -573,13 +398,7 @@
             "pangkat": "Pembina (IV/a)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Arsiparis Ahli Madya",
-            "penugasan_tim": "Tim Arsiparis",
-            "gelar_akademik": [
-              "S.Pd.",
-              "M.Si"
-            ],
-            "golongan": "IV/a",
-            "jenjang_fungsional": "Ahli Madya"
+            "penugasan_tim": "Tim Arsiparis"
           },
           {
             "nama": "Apriadi Saptono, S.Sos., M.Si",
@@ -587,13 +406,7 @@
             "pangkat": "Pembina (IV/a)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Arsiparis Ahli Muda",
-            "penugasan_tim": "Tim Arsiparis",
-            "gelar_akademik": [
-              "S.Sos.",
-              "M.Si"
-            ],
-            "golongan": "IV/a",
-            "jenjang_fungsional": "Ahli Muda"
+            "penugasan_tim": "Tim Arsiparis"
           },
           {
             "nama": "Ratna Chaidar Said, SE, M.Si",
@@ -601,13 +414,7 @@
             "pangkat": "Penata Tk. I (III/d)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Arsiparis Ahli Muda",
-            "penugasan_tim": "Tim Arsiparis",
-            "gelar_akademik": [
-              "M.Si",
-              "SE"
-            ],
-            "golongan": "III/d",
-            "jenjang_fungsional": "Ahli Muda"
+            "penugasan_tim": "Tim Arsiparis"
           },
           {
             "nama": "Agus Yatman, ST., M.Si",
@@ -615,13 +422,7 @@
             "pangkat": "Penata Tk. I (III/d)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Arsiparis Ahli Muda",
-            "penugasan_tim": "Tim Arsiparis",
-            "gelar_akademik": [
-              "ST.",
-              "M.Si"
-            ],
-            "golongan": "III/d",
-            "jenjang_fungsional": "Ahli Muda"
+            "penugasan_tim": "Tim Arsiparis"
           },
           {
             "nama": "Amir Salim, SE",
@@ -630,12 +431,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Tim Perundang-Undangan",
-            "grade_pppk": "IX",
-            "gelar_akademik": [
-              "SE"
-            ],
-            "jenis_kelamin": "Laki-laki",
-            "tanggal_lahir": "1981-06-07"
+            "grade_pppk": "IX"
           },
           {
             "nama": "Fannia, A.Md",
@@ -644,10 +440,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Pengelola Layanan Operasional",
             "penugasan_tim": "Tim Perundang-Undangan",
-            "grade_pppk": "VII",
-            "gelar_akademik": [
-              "A.Md"
-            ]
+            "grade_pppk": "VII"
           },
           {
             "nama": "Ahmad Subarjo",
@@ -656,8 +449,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Pengadministrasi Perkantoran",
             "penugasan_tim": "Tim Perundang-Undangan",
-            "grade_pppk": "V",
-            "gelar_akademik": []
+            "grade_pppk": "V"
           },
           {
             "nama": "Maulana Rahmatul Akbar, S.Kom",
@@ -666,12 +458,7 @@
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Pranata Komputer Ahli Pertama",
             "penugasan_tim": "Layanan Administrasi",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.Kom"
-            ],
-            "golongan": "III/b",
-            "jenjang_fungsional": "Ahli Muda"
+            "grade_pppk": null
           },
           {
             "nama": "Awal Rizqi Rahmawan, S.T",
@@ -680,12 +467,7 @@
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Pranata Komputer Ahli Pertama",
             "penugasan_tim": "Layanan Administrasi",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.T"
-            ],
-            "golongan": "III/b",
-            "jenjang_fungsional": "Ahli Muda"
+            "grade_pppk": null
           },
           {
             "nama": "Sean Alexander, S.Kom",
@@ -694,10 +476,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Layanan Administrasi",
-            "grade_pppk": "IX",
-            "gelar_akademik": [
-              "S.Kom"
-            ]
+            "grade_pppk": "IX"
           },
           {
             "nama": "Teuku Iqbal Miza, SE., MP",
@@ -706,14 +485,7 @@
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Penelaah Teknis Kebijakan",
             "penugasan_tim": "Monitoring, Evaluasi dan Kinerja",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "SE.",
-              "MP"
-            ],
-            "jenis_kelamin": "Laki-laki",
-            "tanggal_lahir": "1979-08-02",
-            "golongan": "IV/a"
+            "grade_pppk": null
           },
           {
             "nama": "AHMAD SUBARJO",
@@ -1315,53 +1087,28 @@
               "nip": "198206192008012011",
               "pangkat": "Pembina Utama Muda (IV/c)",
               "status_kepegawaian": "PNS",
-              "jabatan_fungsional": "Dokter Ahli Madya",
-              "gelar_akademik": [
-                "dr"
-              ],
-              "jenis_kelamin": "Perempuan",
-              "tanggal_lahir": "1982-06-19",
-              "golongan": "IV/c",
-              "jenjang_fungsional": "Ahli Utama"
+              "jabatan_fungsional": "Dokter Ahli Madya"
             },
             {
               "nama": "drg. Syarifah Hanny",
               "nip": "196606061992032001",
               "pangkat": "Pembina Utama Muda (IV/c)",
               "status_kepegawaian": "PNS",
-              "jabatan_fungsional": "Dokter Gigi Ahli Madya",
-              "gelar_akademik": [
-                "drg"
-              ],
-              "jenis_kelamin": "Perempuan",
-              "tanggal_lahir": "1966-06-06",
-              "golongan": "IV/c",
-              "jenjang_fungsional": "Ahli Utama"
+              "jabatan_fungsional": "Dokter Gigi Ahli Madya"
             },
             {
               "nama": "Sunarti, SKM",
               "nip": "197602041997032002",
               "pangkat": "Penata Tk. I (III/d)",
               "status_kepegawaian": "PNS",
-              "jabatan_fungsional": "Adm. Kesehatan Ahli Pertama",
-              "gelar_akademik": [
-                "SKM"
-              ],
-              "jenis_kelamin": "Perempuan",
-              "tanggal_lahir": "1976-02-04",
-              "golongan": "III/d",
-              "jenjang_fungsional": "Ahli Pertama"
+              "jabatan_fungsional": "Adm. Kesehatan Ahli Pertama"
             },
             {
               "nama": "Rahimah Laila Ikhsani, A.Md.Kes.",
               "nip": "",
               "status_kepegawaian": "PPPK",
               "grade_pppk": "VII",
-              "jabatan_fungsional": "Terapis Gigi dan Mulut Terampil",
-              "gelar_akademik": [
-                "A.Md.Kes."
-              ],
-              "jenjang_fungsional": "Terampil"
+              "jabatan_fungsional": "Terapis Gigi dan Mulut Terampil"
             },
             {
               "nama": "RAHIMAH LAILA IKHSANI, A.Md.Kes.",
@@ -1375,8 +1122,7 @@
               "status_kepegawaian": "PPPK",
               "jabatan_fungsional": "TERAPIS GIGI DAN MULUT TERAMPIL",
               "penugasan_tim": "Poliklinik Pratama",
-              "grade_pppk": "VII",
-              "jenjang_fungsional": "Terampil"
+              "grade_pppk": "VII"
             },
             {
               "nama": "drg. AISYAH HARAHAP",
@@ -1390,8 +1136,7 @@
               "status_kepegawaian": "PPPK",
               "jabatan_fungsional": "DOKTER GIGI AHLI PERTAMA",
               "penugasan_tim": "Poliklinik Pratama",
-              "grade_pppk": "IX",
-              "jenjang_fungsional": "Ahli Pertama"
+              "grade_pppk": "IX"
             }
           ]
         }
@@ -1404,27 +1149,12 @@
           "nama": "Iwan Kuniawan, ST.,MM",
           "pangkat": "Pembina Utama Madya (IV/d)",
           "nip": "197205241998031001",
-          "tmt": "20-09-2022",
-          "gelar_akademik": [
-            "ST.",
-            "MM"
-          ],
-          "jenis_kelamin": "Laki-laki",
-          "tanggal_lahir": "1972-05-24",
-          "golongan": "IV/d",
-          "jenjang_fungsional": "Ahli Utama",
-          "status_kepegawaian": "PNS"
+          "tmt": "20-09-2022"
         },
         "tata_usaha": {
           "kepala": {
             "nama": "Julius Martuyo Pasaribu, S.STP",
-            "nip": "199107102012061002",
-            "gelar_akademik": [
-              "S.STP"
-            ],
-            "jenis_kelamin": "Laki-laki",
-            "tanggal_lahir": "1991-07-10",
-            "status_kepegawaian": "PNS"
+            "nip": "199107102012061002"
           },
           "staf": [
             "Abdullah Hisyam, S.Sos",
@@ -1443,39 +1173,21 @@
             "nama_subdit": "Perencanaan dan Evaluasi Wilayah I",
             "penanggung_jawab": {
               "nama": "Bagus Agung Herbowo, ST",
-              "nip": "197011301996031001",
-              "gelar_akademik": [
-                "ST"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1970-11-30",
-              "status_kepegawaian": "PNS"
+              "nip": "197011301996031001"
             },
             "tim_kerja": [
               {
                 "wilayah": "IA",
                 "ketua": {
                   "nama": "Efin Mei Aniffiyan, ST",
-                  "nip": "198405212010121001",
-                  "gelar_akademik": [
-                    "ST"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1984-05-21",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198405212010121001"
                 }
               },
               {
                 "wilayah": "IB",
                 "ketua": {
                   "nama": "M. Ilyas, S.Sos",
-                  "nip": "196802011993031001",
-                  "gelar_akademik": [
-                    "S.Sos"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1968-02-01",
-                  "status_kepegawaian": "PNS"
+                  "nip": "196802011993031001"
                 }
               }
             ]
@@ -1484,42 +1196,21 @@
             "nama_subdit": "Perencanaan dan Evaluasi Wilayah II",
             "penanggung_jawab": {
               "nama": "Drs. Bob Ronald F. Sagala, M.Si",
-              "nip": "197305161993031001",
-              "gelar_akademik": [
-                "M.Si",
-                "Drs"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1973-05-16",
-              "status_kepegawaian": "PNS"
+              "nip": "197305161993031001"
             },
             "tim_kerja": [
               {
                 "wilayah": "IIA",
                 "ketua": {
                   "nama": "Yoppy Herlyan Juniaga, ST., MT",
-                  "nip": "197606032006041009",
-                  "gelar_akademik": [
-                    "ST.",
-                    "MT"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1976-06-03",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197606032006041009"
                 }
               },
               {
                 "wilayah": "IIB",
                 "ketua": {
                   "nama": "Eggy Wira Patria, S.IP., M.Si",
-                  "nip": "199302222016091002",
-                  "gelar_akademik": [
-                    "S.IP.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1993-02-22",
-                  "status_kepegawaian": "PNS"
+                  "nip": "199302222016091002"
                 }
               }
             ]
@@ -1528,41 +1219,21 @@
             "nama_subdit": "Perencanaan dan Evaluasi Wilayah III",
             "penanggung_jawab": {
               "nama": "Wisnu Hidayat, SE., M.Si",
-              "nip": "196609151995031001",
-              "gelar_akademik": [
-                "SE.",
-                "M.Si"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1966-09-15",
-              "status_kepegawaian": "PNS"
+              "nip": "196609151995031001"
             },
             "tim_kerja": [
               {
                 "wilayah": "IIIA",
                 "ketua": {
                   "nama": "Triono Hadi Priyanto, ST",
-                  "nip": "198004032009121002",
-                  "gelar_akademik": [
-                    "ST"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1980-04-03",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198004032009121002"
                 }
               },
               {
                 "wilayah": "IIIB",
                 "ketua": {
                   "nama": "Moh. Samsulrizal Muttaqien, SE., M.Si",
-                  "nip": "198504272009121002",
-                  "gelar_akademik": [
-                    "SE.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1985-04-27",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198504272009121002"
                 }
               }
             ]
@@ -1571,42 +1242,21 @@
             "nama_subdit": "Perencanaan dan Evaluasi Wilayah IV",
             "penanggung_jawab": {
               "nama": "Sondang L. Gaol, S.Sos, M.Eng",
-              "nip": "196804221990032001",
-              "gelar_akademik": [
-                "M.Eng",
-                "S.Sos"
-              ],
-              "jenis_kelamin": "Perempuan",
-              "tanggal_lahir": "1968-04-22",
-              "status_kepegawaian": "PNS"
+              "nip": "196804221990032001"
             },
             "tim_kerja": [
               {
                 "wilayah": "IVA",
                 "ketua": {
                   "nama": "Hanz Budi Dandels, SE., M.Si",
-                  "nip": "197612282010011006",
-                  "gelar_akademik": [
-                    "SE.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1976-12-28",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197612282010011006"
                 }
               },
               {
                 "wilayah": "IVB",
                 "ketua": {
                   "nama": "Mirzal, SKM., MACD",
-                  "nip": "197303191998031001",
-                  "gelar_akademik": [
-                    "SKM.",
-                    "MACD"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1973-03-19",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197303191998031001"
                 }
               }
             ]
@@ -1615,40 +1265,21 @@
             "nama_subdit": "Partisipasi Masyarakat dan Informasi Pembangunan",
             "penanggung_jawab": {
               "nama": "Rendy Jaya Laksamana, ST, MM",
-              "nip": "197609052001121001",
-              "gelar_akademik": [
-                "ST",
-                "MM"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1976-09-05",
-              "status_kepegawaian": "PNS"
+              "nip": "197609052001121001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Harry Irawan, S.Kom",
-                  "nip": "198112062008121001",
-                  "gelar_akademik": [
-                    "S.Kom"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1981-12-06",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198112062008121001"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Dwi Mei Kusumo Wardani, S.I.A",
-                  "nip": "199005162014022004",
-                  "gelar_akademik": [
-                    "S.I.A"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1990-05-16",
-                  "status_kepegawaian": "PNS"
+                  "nip": "199005162014022004"
                 }
               }
             ]
@@ -1657,41 +1288,21 @@
             "nama_subdit": "Pengendalian dan Evaluasi",
             "penanggung_jawab": {
               "nama": "Drs. Sofyan, M.Si",
-              "nip": "197303271993011002",
-              "gelar_akademik": [
-                "M.Si",
-                "Drs"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1973-03-27",
-              "status_kepegawaian": "PNS"
+              "nip": "197303271993011002"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Ronald Mangatur, SE., M.Si",
-                  "nip": "198012032008121001",
-                  "gelar_akademik": [
-                    "SE.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1980-12-03",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198012032008121001"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Jafar Sidiq, SP",
-                  "nip": "198106112009121001",
-                  "gelar_akademik": [
-                    "SP"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1981-06-11",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198106112009121001"
                 }
               }
             ]
@@ -1705,10 +1316,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.Sos"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Desy Wulandari, S.IP",
@@ -1717,10 +1325,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.IP"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Arya Ramadhanu Attawana, S.Tr.IP",
@@ -1729,10 +1334,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.Tr.IP"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "I Gusti Agung N.W.P, S.Tr.IP",
@@ -1742,10 +1344,7 @@
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
             "status_khusus": "TB",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.Tr.IP"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Saut Parningotan Malau, SE",
@@ -1754,10 +1353,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "SE"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Maharani Anisah, SE",
@@ -1766,10 +1362,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "SE"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Edi Purwanto",
@@ -1778,8 +1371,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Pengadministrasi Perkantoran",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": []
+            "grade_pppk": null
           },
           {
             "nama": "Rachmat Christianityo Giovedi",
@@ -1788,8 +1380,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": []
+            "grade_pppk": null
           },
           {
             "nama": "Supriadi, S.E.",
@@ -1798,10 +1389,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.E."
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Shabilla Fieldza Paramitha, S.Pd",
@@ -1810,10 +1398,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.Pd"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Kelvin, S.AP., M.AP",
@@ -1821,15 +1406,7 @@
             "pangkat": "Penata Muda Tk. I (III/b)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Analis Kebijakan Ahli Pertama",
-            "penugasan_tim": "Wilayah IIA",
-            "gelar_akademik": [
-              "M.AP",
-              "S.AP."
-            ],
-            "jenis_kelamin": "Laki-laki",
-            "tanggal_lahir": "1995-10-10",
-            "golongan": "III/b",
-            "jenjang_fungsional": "Ahli Muda"
+            "penugasan_tim": "Wilayah IIA"
           },
           {
             "nama": "Efin Mei Aniffiyan, ST",
@@ -1837,14 +1414,7 @@
             "pangkat": "Penata Tk. I (III/d)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Analis Kebijakan Ahli Muda",
-            "penugasan_tim": "Wilayah IA",
-            "gelar_akademik": [
-              "ST"
-            ],
-            "jenis_kelamin": "Laki-laki",
-            "tanggal_lahir": "1984-05-21",
-            "golongan": "III/d",
-            "jenjang_fungsional": "Ahli Muda"
+            "penugasan_tim": "Wilayah IA"
           },
           {
             "nama": "FERRY SENOVEL, A.Md",
@@ -2206,27 +1776,12 @@
           "nama": "Irvan Amirullah, ST.,M.Eng",
           "pangkat": "Pembina Tingkat I (IV/b)",
           "nip": "198405092011011010",
-          "tmt": "12-02-2026",
-          "gelar_akademik": [
-            "ST.",
-            "M.Eng"
-          ],
-          "jenis_kelamin": "Laki-laki",
-          "tanggal_lahir": "1984-05-09",
-          "golongan": "IV/b",
-          "status_kepegawaian": "PNS"
+          "tmt": "12-02-2026"
         },
         "tata_usaha": {
           "kepala": {
             "nama": "Dedy Guntama, S.STP., M.AP",
-            "nip": "199506012017081002",
-            "gelar_akademik": [
-              "M.AP",
-              "S.STP."
-            ],
-            "jenis_kelamin": "Laki-laki",
-            "tanggal_lahir": "1995-06-01",
-            "status_kepegawaian": "PNS"
+            "nip": "199506012017081002"
           },
           "staf": [
             "Amanda Saraswati",
@@ -2244,41 +1799,21 @@
             "nama_subdit": "Pertanahan dan Penataan Ruang",
             "penanggung_jawab": {
               "nama": "Benny Kamil, S.Kom., M.Si",
-              "nip": "197010161995031001",
-              "gelar_akademik": [
-                "M.Si",
-                "S.Kom."
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1970-10-16",
-              "status_kepegawaian": "PNS"
+              "nip": "197010161995031001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Achmad Gestiadi Pasaribu, S.Pi., M.Si",
-                  "nip": "197208222000031003",
-                  "gelar_akademik": [
-                    "S.Pi.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1972-08-22",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197208222000031003"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Friska Fatturahman, S.T",
-                  "nip": "199007032014022002",
-                  "gelar_akademik": [
-                    "S.T"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1990-07-03",
-                  "status_kepegawaian": "PNS"
+                  "nip": "199007032014022002"
                 }
               }
             ]
@@ -2287,43 +1822,21 @@
             "nama_subdit": "Energi dan Sumber Daya Mineral",
             "penanggung_jawab": {
               "nama": "Eva Novianty, SP, MT., M.Sc",
-              "nip": "198011182008122001",
-              "gelar_akademik": [
-                "M.Sc",
-                "MT.",
-                "SP"
-              ],
-              "jenis_kelamin": "Perempuan",
-              "tanggal_lahir": "1980-11-18",
-              "status_kepegawaian": "PNS"
+              "nip": "198011182008122001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Corry Nurmala, S.Si., M.Si",
-                  "nip": "198603102014022004",
-                  "gelar_akademik": [
-                    "S.Si.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1986-03-10",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198603102014022004"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Arif Rahman, SE., MM",
-                  "nip": "197704062003121001",
-                  "gelar_akademik": [
-                    "SE.",
-                    "MM"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1977-04-06",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197704062003121001"
                 }
               }
             ]
@@ -2332,43 +1845,21 @@
             "nama_subdit": "Pertanian dan Pangan",
             "penanggung_jawab": {
               "nama": "Heri Supriyanto, SE., M.Si",
-              "nip": "197011161998031001",
-              "gelar_akademik": [
-                "SE.",
-                "M.Si"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1970-11-16",
-              "status_kepegawaian": "PNS"
+              "nip": "197011161998031001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Adinda Lally M, S.TP., M.Sc",
-                  "nip": "198509232014022001",
-                  "gelar_akademik": [
-                    "M.Sc",
-                    "S.TP."
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1985-09-23",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198509232014022001"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Lutfi Firmansyah, ST., MT., M.Sc",
-                  "nip": "198106082008011001",
-                  "gelar_akademik": [
-                    "ST.",
-                    "MT.",
-                    "M.Sc"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1981-06-08",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198106082008011001"
                 }
               }
             ]
@@ -2377,42 +1868,21 @@
             "nama_subdit": "Kehutanan",
             "penanggung_jawab": {
               "nama": "Dyah Sih Irawati, S.Si., MA",
-              "nip": "196905141996032001",
-              "gelar_akademik": [
-                "S.Si.",
-                "MA"
-              ],
-              "jenis_kelamin": "Perempuan",
-              "tanggal_lahir": "1969-05-14",
-              "status_kepegawaian": "PNS"
+              "nip": "196905141996032001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Arief Fibriyanto, S.Sos., M.Si",
-                  "nip": "197902161998031001",
-                  "gelar_akademik": [
-                    "S.Sos.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1979-02-16",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197902161998031001"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Meidiarsih Eka Savitri, S.Pi., M.Si",
-                  "nip": "198805162014022006",
-                  "gelar_akademik": [
-                    "S.Pi.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1988-05-16",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198805162014022006"
                 }
               }
             ]
@@ -2421,40 +1891,21 @@
             "nama_subdit": "Lingkungan Hidup",
             "penanggung_jawab": {
               "nama": "Kunto Bimaji, M.Si",
-              "nip": "198105022008011012",
-              "gelar_akademik": [
-                "M.Si"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1981-05-02",
-              "status_kepegawaian": "PNS"
+              "nip": "198105022008011012"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Herdian Prasetyo, ST",
-                  "nip": "198105182014021002",
-                  "gelar_akademik": [
-                    "ST"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1981-05-18",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198105182014021002"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Rima Yuliantari Suharin, S.STP., M.Tr.IP",
-                  "nip": "198510262006022001",
-                  "gelar_akademik": [
-                    "S.STP.",
-                    "M.Tr.IP"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1985-10-26",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198510262006022001"
                 }
               }
             ]
@@ -2463,41 +1914,21 @@
             "nama_subdit": "Pengendalian Penataan Ruang dan Fasilitasi KLHS",
             "penanggung_jawab": {
               "nama": "Nita Sosiawati, ST., MT",
-              "nip": "197404222005042001",
-              "gelar_akademik": [
-                "ST.",
-                "MT"
-              ],
-              "jenis_kelamin": "Perempuan",
-              "tanggal_lahir": "1974-04-22",
-              "status_kepegawaian": "PNS"
+              "nip": "197404222005042001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Nurul Istiqomah, S.Hut., MPA",
-                  "nip": "198406202008012001",
-                  "gelar_akademik": [
-                    "MPA",
-                    "S.Hut."
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1984-06-20",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198406202008012001"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Anjas Bandarso, ST",
-                  "nip": "198907222014021003",
-                  "gelar_akademik": [
-                    "ST"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1989-07-22",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198907222014021003"
                 }
               }
             ]
@@ -2511,11 +1942,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "M.Tr.I.P.",
-              "S.STP."
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Agung Budi Santoso, A.Md",
@@ -2524,10 +1951,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "A.Md"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Toyib Sidik",
@@ -2536,8 +1960,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": []
+            "grade_pppk": null
           },
           {
             "nama": "Wira Abdillah, S.Tr.IP",
@@ -2546,10 +1969,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.Tr.IP"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Dwi Avinia Sundoro, ST",
@@ -2559,10 +1979,7 @@
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
             "status_khusus": "TB",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "ST"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Yeni Krisnu Prasetyani, S.I.Kom",
@@ -2571,10 +1988,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.I.Kom"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Effa Nurly Maulita, S.Psi",
@@ -2583,10 +1997,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.Psi"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Rusyani, SAB",
@@ -2595,10 +2006,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "SAB"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Achmad Gestiadi Pasaribu, S.Pi., M.Si",
@@ -2606,15 +2014,7 @@
             "pangkat": "Pembina (IV/a)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Analis Kebijakan Ahli Muda",
-            "penugasan_tim": "Substansi Pertanahan",
-            "gelar_akademik": [
-              "S.Pi.",
-              "M.Si"
-            ],
-            "jenis_kelamin": "Laki-laki",
-            "tanggal_lahir": "1972-08-22",
-            "golongan": "IV/a",
-            "jenjang_fungsional": "Ahli Muda"
+            "penugasan_tim": "Substansi Pertanahan"
           },
           {
             "nama": "Friska Fatturahman, S.T",
@@ -2622,14 +2022,7 @@
             "pangkat": "Penata Tk. I (III/d)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Surveyor Pemetaan Ahli Muda",
-            "penugasan_tim": "Substansi Perencanaan",
-            "gelar_akademik": [
-              "S.T"
-            ],
-            "jenis_kelamin": "Perempuan",
-            "tanggal_lahir": "1990-07-03",
-            "golongan": "III/d",
-            "jenjang_fungsional": "Ahli Muda"
+            "penugasan_tim": "Substansi Perencanaan"
           },
           {
             "nama": "Corry Nurmala, S.Si., M.Si",
@@ -2637,15 +2030,7 @@
             "pangkat": "Penata Tk. I (III/d)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Surveyor Pemetaan Ahli Muda",
-            "penugasan_tim": "Substansi Pemanfaatan dan Pengendalian",
-            "gelar_akademik": [
-              "S.Si.",
-              "M.Si"
-            ],
-            "jenis_kelamin": "Perempuan",
-            "tanggal_lahir": "1986-03-10",
-            "golongan": "III/d",
-            "jenjang_fungsional": "Ahli Muda"
+            "penugasan_tim": "Substansi Pemanfaatan dan Pengendalian"
           },
           {
             "nama": "Arif Rahman, SE., MM",
@@ -2653,15 +2038,7 @@
             "pangkat": "Pembina (IV/a)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Analis Kebijakan Ahli Muda",
-            "penugasan_tim": "Substansi Sumberdaya Mineral",
-            "gelar_akademik": [
-              "SE.",
-              "MM"
-            ],
-            "jenis_kelamin": "Laki-laki",
-            "tanggal_lahir": "1977-04-06",
-            "golongan": "IV/a",
-            "jenjang_fungsional": "Ahli Muda"
+            "penugasan_tim": "Substansi Sumberdaya Mineral"
           },
           {
             "nama": "DIKA RACHMAT DIAN, S.H.",
@@ -3979,28 +3356,12 @@
           "nama": "Ir. Suprayitno, MA",
           "pangkat": "Pembina Utama Madya (IV/d)",
           "nip": "196708051993031001",
-          "tmt": "20-09-2022",
-          "gelar_akademik": [
-            "Ir",
-            "MA"
-          ],
-          "jenis_kelamin": "Laki-laki",
-          "tanggal_lahir": "1967-08-05",
-          "golongan": "IV/d",
-          "jenjang_fungsional": "Ahli Utama",
-          "status_kepegawaian": "PNS"
+          "tmt": "20-09-2022"
         },
         "tata_usaha": {
           "kepala": {
             "nama": "Taufiqqurrahman, S.IP., MAP",
-            "nip": "199208262015071002",
-            "gelar_akademik": [
-              "S.IP.",
-              "MAP"
-            ],
-            "jenis_kelamin": "Laki-laki",
-            "tanggal_lahir": "1992-08-26",
-            "status_kepegawaian": "PNS"
+            "nip": "199208262015071002"
           },
           "staf": [
             "Misno",
@@ -4021,41 +3382,21 @@
             "nama_subdit": "Pekerjaan Umum",
             "penanggung_jawab": {
               "nama": "Marzidi Bur, S.Sos., M.Adm.KP",
-              "nip": "198405042010011032",
-              "gelar_akademik": [
-                "S.Sos.",
-                "M.Adm.KP"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1984-05-04",
-              "status_kepegawaian": "PNS"
+              "nip": "198405042010011032"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Eka Srikandi Putri, S.STP., M.Si",
-                  "nip": "198502202003122003",
-                  "gelar_akademik": [
-                    "S.STP.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1985-02-20",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198502202003122003"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Agreta Indah G S.Si, MP.MA.ME",
-                  "nip": "198508032008042003",
-                  "gelar_akademik": [
-                    "MP.MA.ME"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1985-08-03",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198508032008042003"
                 }
               }
             ]
@@ -4064,41 +3405,21 @@
             "nama_subdit": "Perumahan dan Kawasan Permukiman",
             "penanggung_jawab": {
               "nama": "Vony Febriana Pratiwi, ST., M.Si",
-              "nip": "198802132009122001",
-              "gelar_akademik": [
-                "ST.",
-                "M.Si"
-              ],
-              "jenis_kelamin": "Perempuan",
-              "tanggal_lahir": "1988-02-13",
-              "status_kepegawaian": "PNS"
+              "nip": "198802132009122001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "R. Suryo Putro Nugrohanto, SE., MM",
-                  "nip": "198104102009031002",
-                  "gelar_akademik": [
-                    "SE.",
-                    "MM"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1981-04-10",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198104102009031002"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Dimas Anjarkusuma, S.STP",
-                  "nip": "199310112016091002",
-                  "gelar_akademik": [
-                    "S.STP"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1993-10-11",
-                  "status_kepegawaian": "PNS"
+                  "nip": "199310112016091002"
                 }
               }
             ]
@@ -4107,42 +3428,21 @@
             "nama_subdit": "Kelautan dan Perikanan",
             "penanggung_jawab": {
               "nama": "Dr. Tantri Lisdiawati, S.Sos., M.Si",
-              "nip": "197406301994032001",
-              "gelar_akademik": [
-                "Dr",
-                "S.Sos.",
-                "M.Si"
-              ],
-              "jenis_kelamin": "Perempuan",
-              "tanggal_lahir": "1974-06-30",
-              "status_kepegawaian": "PNS"
+              "nip": "197406301994032001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Anggi Misaful Bewani, ST., M.Sc",
-                  "nip": "198905182014022004",
-                  "gelar_akademik": [
-                    "ST.",
-                    "M.Sc"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1989-05-18",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198905182014022004"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Munawaroh, ST",
-                  "nip": "197407302001122001",
-                  "gelar_akademik": [
-                    "ST"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1974-07-30",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197407302001122001"
                 }
               }
             ]
@@ -4151,42 +3451,21 @@
             "nama_subdit": "Perhubungan",
             "penanggung_jawab": {
               "nama": "M. Ali Irmanda, SE., M.Tr.AP",
-              "nip": "197503291996031001",
-              "gelar_akademik": [
-                "SE.",
-                "M.Tr.AP"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1975-03-29",
-              "status_kepegawaian": "PNS"
+              "nip": "197503291996031001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Ushwah Muchtar, ST., M.Sc",
-                  "nip": "197203252001122001",
-                  "gelar_akademik": [
-                    "ST.",
-                    "M.Sc"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1972-03-25",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197203252001122001"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Nancy F. M. Simanjuntak, S.Sos, M.Tr.IP",
-                  "nip": "197505182006042002",
-                  "gelar_akademik": [
-                    "M.Tr.IP",
-                    "S.Sos"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1975-05-18",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197505182006042002"
                 }
               }
             ]
@@ -4195,42 +3474,21 @@
             "nama_subdit": "Komunikasi dan Informatika",
             "penanggung_jawab": {
               "nama": "Abdul Aziz, S.ST., M.Tr.IP",
-              "nip": "198405242009121002",
-              "gelar_akademik": [
-                "S.ST.",
-                "M.Tr.IP"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1984-05-24",
-              "status_kepegawaian": "PNS"
+              "nip": "198405242009121002"
             },
             "tim_kerja": [
               {
                 "wilayah": "Komunikasi",
                 "ketua": {
                   "nama": "Danil J. Sitompul, S.STP., M.Kesos",
-                  "nip": "199507212017081001",
-                  "gelar_akademik": [
-                    "S.STP.",
-                    "M.Kesos"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1995-07-21",
-                  "status_kepegawaian": "PNS"
+                  "nip": "199507212017081001"
                 }
               },
               {
                 "wilayah": "Informatika",
                 "ketua": {
                   "nama": "Pittiasti Pennsylvania Siregar, S.Ars., M.Sc",
-                  "nip": "198511262008122001",
-                  "gelar_akademik": [
-                    "M.Sc",
-                    "S.Ars."
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1985-11-26",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198511262008122001"
                 }
               }
             ]
@@ -4239,41 +3497,21 @@
             "nama_subdit": "Statistik dan Persandian",
             "penanggung_jawab": {
               "nama": "Ir. ST. Zuchriaty, MA",
-              "nip": "196904281996032002",
-              "gelar_akademik": [
-                "Ir",
-                "MA"
-              ],
-              "jenis_kelamin": "Perempuan",
-              "tanggal_lahir": "1969-04-28",
-              "status_kepegawaian": "PNS"
+              "nip": "196904281996032002"
             },
             "tim_kerja": [
               {
                 "wilayah": "Statistik",
                 "ketua": {
                   "nama": "Dias Murti Aryanto, SE",
-                  "nip": "198706032009121002",
-                  "gelar_akademik": [
-                    "SE"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1987-06-03",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198706032009121002"
                 }
               },
               {
                 "wilayah": "Persandian",
                 "ketua": {
                   "nama": "Aris Munandar, ST., MM",
-                  "nip": "197801212000031006",
-                  "gelar_akademik": [
-                    "ST.",
-                    "MM"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1978-01-21",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197801212000031006"
                 }
               }
             ]
@@ -4287,8 +3525,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": []
+            "grade_pppk": null
           },
           {
             "nama": "Muhammad Febria Azmi, S.STP",
@@ -4297,10 +3534,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.STP"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Jennifer Elisabeth Kamisopa, S.Tr.IP",
@@ -4310,10 +3544,7 @@
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
             "status_khusus": "TB",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.Tr.IP"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Evy Dewi Utami, SH",
@@ -4322,10 +3553,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "SH"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Juli Ervina, ST",
@@ -4334,10 +3562,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "ST"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Dewi Purwaningsih, S.Kom",
@@ -4346,10 +3571,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.Kom"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Yulianto",
@@ -4358,8 +3580,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": []
+            "grade_pppk": null
           },
           {
             "nama": "Devana Nabila Sabita, S.I.Kom",
@@ -4368,10 +3589,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.I.Kom"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Imam Ramadhan",
@@ -4380,8 +3598,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": []
+            "grade_pppk": null
           },
           {
             "nama": "Danil J. Sitompul, S.STP., M.Kesos",
@@ -4389,14 +3606,7 @@
             "pangkat": "Penata (III/c)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Penata Kelola Pemerintahan",
-            "penugasan_tim": "Substansi Komunikasi",
-            "gelar_akademik": [
-              "S.STP.",
-              "M.Kesos"
-            ],
-            "jenis_kelamin": "Laki-laki",
-            "tanggal_lahir": "1995-07-21",
-            "golongan": "III/c"
+            "penugasan_tim": "Substansi Komunikasi"
           },
           {
             "nama": "Aris Munandar, ST., MM",
@@ -4404,15 +3614,7 @@
             "pangkat": "Pembina (IV/a)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Analis Kebijakan Ahli Madya",
-            "penugasan_tim": "Substansi Persandian",
-            "gelar_akademik": [
-              "ST.",
-              "MM"
-            ],
-            "jenis_kelamin": "Laki-laki",
-            "tanggal_lahir": "1978-01-21",
-            "golongan": "IV/a",
-            "jenjang_fungsional": "Ahli Madya"
+            "penugasan_tim": "Substansi Persandian"
           }
         ]
       },
@@ -4424,27 +3626,12 @@
           "nama": "Fauzan Hasan, S.STP.,M.Si",
           "pangkat": "Pembina Utama Muda (IV/c)",
           "nip": "197609151994121001",
-          "tmt": "12-02-2026",
-          "gelar_akademik": [
-            "S.STP.",
-            "M.Si"
-          ],
-          "jenis_kelamin": "Laki-laki",
-          "tanggal_lahir": "1976-09-15",
-          "golongan": "IV/c",
-          "jenjang_fungsional": "Ahli Utama",
-          "status_kepegawaian": "PNS"
+          "tmt": "12-02-2026"
         },
         "tata_usaha": {
           "plt_kepala": {
             "nama": "Tiur Sitorus, S.Sos",
-            "nip": "198110232010122001",
-            "gelar_akademik": [
-              "S.Sos"
-            ],
-            "jenis_kelamin": "Perempuan",
-            "tanggal_lahir": "1981-10-23",
-            "status_kepegawaian": "PNS"
+            "nip": "198110232010122001"
           },
           "staf": [
             "Theresia Wulantika Manurung",
@@ -4461,42 +3648,21 @@
             "nama_subdit": "Kesehatan",
             "penanggung_jawab": {
               "nama": "Arifin Efendi Hutagalung, SE, MM",
-              "nip": "196602191994031001",
-              "gelar_akademik": [
-                "MM",
-                "SE"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1966-02-19",
-              "status_kepegawaian": "PNS"
+              "nip": "196602191994031001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Inez Ayu Dhamiera, S.Sos., M.Si",
-                  "nip": "198412262008122001",
-                  "gelar_akademik": [
-                    "S.Sos.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1984-12-26",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198412262008122001"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Iin Afriani, SKM., MAP",
-                  "nip": "198408272014082002",
-                  "gelar_akademik": [
-                    "SKM.",
-                    "MAP"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1984-08-27",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198408272014082002"
                 }
               }
             ]
@@ -4505,42 +3671,21 @@
             "nama_subdit": "Sosial dan Budaya",
             "penanggung_jawab": {
               "nama": "Wahyu Suharto, SE, MPA",
-              "nip": "196901041994031001",
-              "gelar_akademik": [
-                "MPA",
-                "SE"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1969-01-04",
-              "status_kepegawaian": "PNS"
+              "nip": "196901041994031001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Jodi Frency, ST., MM",
-                  "nip": "198508182008121003",
-                  "gelar_akademik": [
-                    "ST.",
-                    "MM"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1985-08-18",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198508182008121003"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Zahratul Jannah Eka Putri, S.IP., M.AP",
-                  "nip": "199211212014062001",
-                  "gelar_akademik": [
-                    "M.AP",
-                    "S.IP."
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1992-11-21",
-                  "status_kepegawaian": "PNS"
+                  "nip": "199211212014062001"
                 }
               }
             ]
@@ -4549,42 +3694,21 @@
             "nama_subdit": "Koperasi, Usaha Kecil dan Menengah, dan Penanaman Modal",
             "penanggung_jawab": {
               "nama": "Subhany, SE., M.Sc",
-              "nip": "197507142006042001",
-              "gelar_akademik": [
-                "SE.",
-                "M.Sc"
-              ],
-              "jenis_kelamin": "Perempuan",
-              "tanggal_lahir": "1975-07-14",
-              "status_kepegawaian": "PNS"
+              "nip": "197507142006042001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Triadi Maharso, S.IP., M.Dipl &Trade",
-                  "nip": "198105152009121001",
-                  "gelar_akademik": [
-                    "M.Dipl &Trade",
-                    "S.IP."
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1981-05-15",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198105152009121001"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Dini Widyanti, SE, M.Si",
-                  "nip": "197712112010122001",
-                  "gelar_akademik": [
-                    "M.Si",
-                    "SE"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1977-12-11",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197712112010122001"
                 }
               }
             ]
@@ -4593,40 +3717,21 @@
             "nama_subdit": "Perindustrian dan Perdagangan",
             "penanggung_jawab": {
               "nama": "Wirahman Dwi Bahri, SE., MM",
-              "nip": "198308292010121002",
-              "gelar_akademik": [
-                "SE.",
-                "MM"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1983-08-29",
-              "status_kepegawaian": "PNS"
+              "nip": "198308292010121002"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Ika Purnomo Hutagalung, S.STP",
-                  "nip": "199304272015072002",
-                  "gelar_akademik": [
-                    "S.STP"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1993-04-27",
-                  "status_kepegawaian": "PNS"
+                  "nip": "199304272015072002"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Mochamad Ridwan, S.Sos",
-                  "nip": "197901062001121001",
-                  "gelar_akademik": [
-                    "S.Sos"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1979-01-06",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197901062001121001"
                 }
               }
             ]
@@ -4635,41 +3740,21 @@
             "nama_subdit": "Trantibumlinmas",
             "penanggung_jawab": {
               "nama": "Adriana Lelong, S.IP., M.Si",
-              "nip": "197612102007012015",
-              "gelar_akademik": [
-                "S.IP.",
-                "M.Si"
-              ],
-              "jenis_kelamin": "Perempuan",
-              "tanggal_lahir": "1976-12-10",
-              "status_kepegawaian": "PNS"
+              "nip": "197612102007012015"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Dra. Ida Supriyanti Malau",
-                  "nip": "196712241992032001",
-                  "gelar_akademik": [
-                    "Dra"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1967-12-24",
-                  "status_kepegawaian": "PNS"
+                  "nip": "196712241992032001"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Santi L. Simanjuntak, S.Sos., M.Si",
-                  "nip": "197311291997032004",
-                  "gelar_akademik": [
-                    "S.Sos.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1973-11-29",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197311291997032004"
                 }
               }
             ]
@@ -4678,42 +3763,21 @@
             "nama_subdit": "Pariwisata",
             "penanggung_jawab": {
               "nama": "Dyah Sulistyaningsih, S.IP., MA",
-              "nip": "198103022008012001",
-              "gelar_akademik": [
-                "MA",
-                "S.IP."
-              ],
-              "jenis_kelamin": "Perempuan",
-              "tanggal_lahir": "1981-03-02",
-              "status_kepegawaian": "PNS"
+              "nip": "198103022008012001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Pradita Putri Utami, S.Sos., M.Si",
-                  "nip": "198301132008122001",
-                  "gelar_akademik": [
-                    "S.Sos.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1983-01-13",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198301132008122001"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Irwan Kurniawan, S.S., M.Si",
-                  "nip": "198110062008121001",
-                  "gelar_akademik": [
-                    "M.Si",
-                    "S.S."
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1981-10-06",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198110062008121001"
                 }
               }
             ]
@@ -4728,10 +3792,7 @@
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
             "grade_pppk": "IX",
-            "status_khusus": "IPDN XXXII",
-            "gelar_akademik": [
-              "S.Tr.IP"
-            ]
+            "status_khusus": "IPDN XXXII"
           },
           {
             "nama": "Aldi Gumuruh Wicaksono, S.Tr.IP",
@@ -4741,10 +3802,7 @@
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
             "status_khusus": "TB",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.Tr.IP"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Dacep Lukmanul Hakim, S.Tr.IP",
@@ -4754,10 +3812,7 @@
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
             "status_khusus": "TB",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.Tr.IP"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Hadrian Marta, S.STP., M.Si",
@@ -4767,11 +3822,7 @@
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
             "status_khusus": "TB",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.STP.",
-              "M.Si"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Fajar Nugroho, SE",
@@ -4780,10 +3831,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "SE"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Rosmawati, SM",
@@ -4792,10 +3840,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "SM"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Inez Ayu Dhamiera, S.Sos., M.Si",
@@ -4803,15 +3848,7 @@
             "pangkat": "Penata Tk. I (III/d)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Analis Kebijakan Ahli Muda",
-            "penugasan_tim": "Wilayah I Kesehatan",
-            "gelar_akademik": [
-              "S.Sos.",
-              "M.Si"
-            ],
-            "jenis_kelamin": "Perempuan",
-            "tanggal_lahir": "1984-12-26",
-            "golongan": "III/d",
-            "jenjang_fungsional": "Ahli Muda"
+            "penugasan_tim": "Wilayah I Kesehatan"
           },
           {
             "nama": "Iin Afriani, SKM., MAP",
@@ -4819,15 +3856,7 @@
             "pangkat": "Penata Tk. I (III/d)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Perencana Ahli Pertama",
-            "penugasan_tim": "Wilayah II Kesehatan",
-            "gelar_akademik": [
-              "SKM.",
-              "MAP"
-            ],
-            "jenis_kelamin": "Perempuan",
-            "tanggal_lahir": "1984-08-27",
-            "golongan": "III/d",
-            "jenjang_fungsional": "Ahli Pertama"
+            "penugasan_tim": "Wilayah II Kesehatan"
           }
         ]
       },
@@ -4839,27 +3868,12 @@
           "nama": "Dr. Paudah, M.Si",
           "pangkat": "Pembina Utama Madya (IV/d)",
           "nip": "197309102002122001",
-          "tmt": "01-10-2025",
-          "gelar_akademik": [
-            "Dr",
-            "M.Si"
-          ],
-          "jenis_kelamin": "Perempuan",
-          "tanggal_lahir": "1973-09-10",
-          "golongan": "IV/d",
-          "jenjang_fungsional": "Ahli Utama",
-          "status_kepegawaian": "PNS"
+          "tmt": "01-10-2025"
         },
         "tata_usaha": {
           "kepala": {
             "nama": "Ir. Erni Friska Simanjuntak",
-            "nip": "196812181995032002",
-            "gelar_akademik": [
-              "Ir"
-            ],
-            "jenis_kelamin": "Perempuan",
-            "tanggal_lahir": "1968-12-18",
-            "status_kepegawaian": "PNS"
+            "nip": "196812181995032002"
           },
           "staf": [
             "Riska Rinanda",
@@ -4876,42 +3890,21 @@
             "nama_subdit": "Pendidikan",
             "penanggung_jawab": {
               "nama": "Suharyanto, SP, MT",
-              "nip": "196603251996031001",
-              "gelar_akademik": [
-                "MT",
-                "SP"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1966-03-25",
-              "status_kepegawaian": "PNS"
+              "nip": "196603251996031001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Baroto Seto Sidharto, ST., M.Si",
-                  "nip": "197701252008121001",
-                  "gelar_akademik": [
-                    "ST.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1977-01-25",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197701252008121001"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Riyan Ternado, S.STP., M.Si",
-                  "nip": "199309122015071001",
-                  "gelar_akademik": [
-                    "S.STP.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1993-09-12",
-                  "status_kepegawaian": "PNS"
+                  "nip": "199309122015071001"
                 }
               }
             ]
@@ -4920,42 +3913,21 @@
             "nama_subdit": "Ketenagakerjaan dan Transmigrasi",
             "penanggung_jawab": {
               "nama": "Amaryadi, S.IP., M.AP",
-              "nip": "197711122006141001",
-              "gelar_akademik": [
-                "M.AP",
-                "S.IP."
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1977-11-12",
-              "status_kepegawaian": "PNS"
+              "nip": "197711122006141001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Roza Syofiadelwi, SE, MM",
-                  "nip": "198107302008012001",
-                  "gelar_akademik": [
-                    "MM",
-                    "SE"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1981-07-30",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198107302008012001"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Wisnu Hartawan, ST., M.Si",
-                  "nip": "198511222014021001",
-                  "gelar_akademik": [
-                    "ST.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1985-11-22",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198511222014021001"
                 }
               }
             ]
@@ -4964,41 +3936,21 @@
             "nama_subdit": "Pemberdayaan Perempuan dan Perlindungan Anak",
             "penanggung_jawab": {
               "nama": "Sri Utami, SH., MH",
-              "nip": "196612131993032002",
-              "gelar_akademik": [
-                "SH.",
-                "MH"
-              ],
-              "jenis_kelamin": "Perempuan",
-              "tanggal_lahir": "1966-12-13",
-              "status_kepegawaian": "PNS"
+              "nip": "196612131993032002"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Krishna Wardhani, S.T., M.Si",
-                  "nip": "197308112010012002",
-                  "gelar_akademik": [
-                    "S.T.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1973-08-11",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197308112010012002"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Yusrica Mawwadah, S.STP",
-                  "nip": "199308132016092001",
-                  "gelar_akademik": [
-                    "S.STP"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1993-08-13",
-                  "status_kepegawaian": "PNS"
+                  "nip": "199308132016092001"
                 }
               }
             ]
@@ -5007,41 +3959,21 @@
             "nama_subdit": "Pengendalian Penduduk dan Keluarga Berencana",
             "penanggung_jawab": {
               "nama": "Rezha Prastama, MM., M.Sc",
-              "nip": "197608112006041001",
-              "gelar_akademik": [
-                "M.Sc",
-                "MM."
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1976-08-11",
-              "status_kepegawaian": "PNS"
+              "nip": "197608112006041001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Rosalina Elysabeth, SS",
-                  "nip": "198504162015052002",
-                  "gelar_akademik": [
-                    "SS"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1985-04-16",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198504162015052002"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Puti Andam P, ST., MM.Par",
-                  "nip": "197712101996121001",
-                  "gelar_akademik": [
-                    "ST.",
-                    "MM.Par"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1977-12-10",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197712101996121001"
                 }
               }
             ]
@@ -5050,42 +3982,21 @@
             "nama_subdit": "Kepemudaan dan Olah Raga",
             "penanggung_jawab": {
               "nama": "Destriana Faried, SE., MMPd",
-              "nip": "197712101996121001",
-              "gelar_akademik": [
-                "SE.",
-                "MMPd"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1977-12-10",
-              "status_kepegawaian": "PNS"
+              "nip": "197712101996121001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Murita, SE., M.Si",
-                  "nip": "197102192006042001",
-                  "gelar_akademik": [
-                    "SE.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1971-02-19",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197102192006042001"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Teuku Maimun Riza, S.IP., M.Si",
-                  "nip": "197405212006041001",
-                  "gelar_akademik": [
-                    "S.IP.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Laki-laki",
-                  "tanggal_lahir": "1974-05-21",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197405212006041001"
                 }
               }
             ]
@@ -5094,41 +4005,21 @@
             "nama_subdit": "Perpustakaan dan Kearsipan",
             "penanggung_jawab": {
               "nama": "Warsito, S.Sos., MML",
-              "nip": "196905091994021001",
-              "gelar_akademik": [
-                "S.Sos.",
-                "MML"
-              ],
-              "jenis_kelamin": "Laki-laki",
-              "tanggal_lahir": "1969-05-09",
-              "status_kepegawaian": "PNS"
+              "nip": "196905091994021001"
             },
             "tim_kerja": [
               {
                 "wilayah": "I",
                 "ketua": {
                   "nama": "Isdiyanti, SE",
-                  "nip": "197901291998032001",
-                  "gelar_akademik": [
-                    "SE"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1979-01-29",
-                  "status_kepegawaian": "PNS"
+                  "nip": "197901291998032001"
                 }
               },
               {
                 "wilayah": "II",
                 "ketua": {
                   "nama": "Endang Triastuti, SE., M.Si",
-                  "nip": "198201162008122002",
-                  "gelar_akademik": [
-                    "SE.",
-                    "M.Si"
-                  ],
-                  "jenis_kelamin": "Perempuan",
-                  "tanggal_lahir": "1982-01-16",
-                  "status_kepegawaian": "PNS"
+                  "nip": "198201162008122002"
                 }
               }
             ]
@@ -5142,10 +4033,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.STP"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Titin Suwartini",
@@ -5154,8 +4042,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": []
+            "grade_pppk": null
           },
           {
             "nama": "Sutadiyanto, S.Sos",
@@ -5164,10 +4051,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.Sos"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Yudha Adi Pradana, S.Kom",
@@ -5177,10 +4061,7 @@
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
             "status_khusus": "TB",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.Kom"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Rendy Arief Rakhman, S.Sos",
@@ -5189,10 +4070,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "S.Sos"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Firdaus, A.Md.Kom",
@@ -5201,10 +4079,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": [
-              "A.Md.Kom"
-            ]
+            "grade_pppk": null
           },
           {
             "nama": "Imam Choiri",
@@ -5213,8 +4088,7 @@
             "status_kepegawaian": "PPPK",
             "jabatan_fungsional": "Penata Layanan Operasional",
             "penugasan_tim": "Anggota TU",
-            "grade_pppk": null,
-            "gelar_akademik": []
+            "grade_pppk": null
           },
           {
             "nama": "Baroto Seto Sidharto, ST., M.Si",
@@ -5222,15 +4096,7 @@
             "pangkat": "Pembina (IV/a)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Analis Kebijakan Ahli Madya",
-            "penugasan_tim": "Substansi Pendidikan Wilayah I",
-            "gelar_akademik": [
-              "ST.",
-              "M.Si"
-            ],
-            "jenis_kelamin": "Laki-laki",
-            "tanggal_lahir": "1977-01-25",
-            "golongan": "IV/a",
-            "jenjang_fungsional": "Ahli Madya"
+            "penugasan_tim": "Substansi Pendidikan Wilayah I"
           },
           {
             "nama": "Roza Syofiadelwi, SE, MM",
@@ -5238,15 +4104,7 @@
             "pangkat": "Pembina (IV/a)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Analis Kebijakan Ahli Madya",
-            "penugasan_tim": "Substansi Ketenagakerjaan Wilayah I",
-            "gelar_akademik": [
-              "MM",
-              "SE"
-            ],
-            "jenis_kelamin": "Perempuan",
-            "tanggal_lahir": "1981-07-30",
-            "golongan": "IV/a",
-            "jenjang_fungsional": "Ahli Madya"
+            "penugasan_tim": "Substansi Ketenagakerjaan Wilayah I"
           },
           {
             "nama": "Sri Utami, SH., MH",
@@ -5254,15 +4112,7 @@
             "pangkat": "Pembina Utama Muda (IV/c)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Analis Kebijakan Ahli Madya",
-            "penugasan_tim": "Substansi PPPA Wilayah I",
-            "gelar_akademik": [
-              "SH.",
-              "MH"
-            ],
-            "jenis_kelamin": "Perempuan",
-            "tanggal_lahir": "1966-12-13",
-            "golongan": "IV/c",
-            "jenjang_fungsional": "Ahli Utama"
+            "penugasan_tim": "Substansi PPPA Wilayah I"
           },
           {
             "nama": "Rezha Pranatama, MM., M.Sc",
@@ -5270,14 +4120,7 @@
             "pangkat": "Pembina Tingkat I (IV/b)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Kasubdit",
-            "penugasan_tim": "Pengendalian Penduduk dan KB",
-            "gelar_akademik": [
-              "M.Sc",
-              "MM."
-            ],
-            "jenis_kelamin": "Laki-laki",
-            "tanggal_lahir": "1976-08-11",
-            "golongan": "IV/b"
+            "penugasan_tim": "Pengendalian Penduduk dan KB"
           },
           {
             "nama": "Destriana Faried, SE., MMPd",
@@ -5285,15 +4128,7 @@
             "pangkat": "Pembina (IV/a)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Analis Kebijakan Ahli Madya",
-            "penugasan_tim": "Substansi Kepemudaan dan Olahraga",
-            "gelar_akademik": [
-              "SE.",
-              "MMPd"
-            ],
-            "jenis_kelamin": "Laki-laki",
-            "tanggal_lahir": "1977-12-10",
-            "golongan": "IV/a",
-            "jenjang_fungsional": "Ahli Madya"
+            "penugasan_tim": "Substansi Kepemudaan dan Olahraga"
           },
           {
             "nama": "Warsito, S.Sos., MML",
@@ -5301,15 +4136,7 @@
             "pangkat": "Pembina Tk. I (IV/b)",
             "status_kepegawaian": "PNS",
             "jabatan_fungsional": "Analis SDM Aparatur Ahli Madya",
-            "penugasan_tim": "Substansi Perpustakaan dan Kearsipan",
-            "gelar_akademik": [
-              "S.Sos.",
-              "MML"
-            ],
-            "jenis_kelamin": "Laki-laki",
-            "tanggal_lahir": "1969-05-09",
-            "golongan": "IV/b",
-            "jenjang_fungsional": "Ahli Madya"
+            "penugasan_tim": "Substansi Perpustakaan dan Kearsipan"
           }
         ]
       }

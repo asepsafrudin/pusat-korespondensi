@@ -16,7 +16,8 @@ from .services.sync_service import (
     get_stats, 
     upload_to_gdrive,
     get_personnel_stats,
-    get_letter_timeline
+    get_letter_timeline,
+    get_vault_timeline
 )
 from .services.posisi_bridge import get_unique_posisi_mappings, get_unique_posisi_by_sheet, get_unique_posisi_terms
 from .services.anomaly_report_service import create_draft_report, create_and_send_report, list_reports, load_history, list_internal_anomalies, send_report_by_id
@@ -130,12 +131,30 @@ async def puu_vault_page(request: Request, q: typing.Optional[str] = None):
         r_dict['unit_nd'] = p.get('unit_pengolah', '-')
         # Identitas pengirim formal untuk surat keluar Substansi
         r_dict['pic_name'] = 'Substansi Perundang-undangan'
-        r_dict['status_pengiriman'] = 'Arsip Final'
+        # status_pengiriman sekarang dibaca langsung dari database hasil pemrosesan POSISI
+        
+        # Hitung durasi proses (SLA) hanya jika belum selesai
+        status = r.get('status_pengiriman')
+        is_selesai = status in ['Selesai / Siap Dikirim', 'Arsip Final']
+        
+        from datetime import datetime
+        tgl = r.get('tanggal_surat')
+        if tgl and not is_selesai:
+            delta = datetime.now().date() - tgl
+            r_dict['durasi_hari'] = delta.days
+            r_dict['is_selesai'] = False
+        elif is_selesai:
+            r_dict['durasi_hari'] = None # Stop counter
+            r_dict['is_selesai'] = True
+        else:
+            r_dict['durasi_hari'] = 0
+            r_dict['is_selesai'] = False
+            
         parsed_rows.append(r_dict)
         
     return templates.TemplateResponse("puu_vault.html", {
         "request": request,
-        "title": "Vault Korespondensi Substansi Perundang-undangan",
+        "title": "Proses Korespondensi Substansi Perundang-undangan",
         "active_page": "puu_vault",
         "rows": parsed_rows,
         "query": q
@@ -171,9 +190,37 @@ async def api_sync_internal():
     count = sync_internal_from_pool()
     return {"count": count}
 
+# --- Tagging & Notes Endpoints ---
+@app.post("/api/internal/{unique_id}/notes")
+async def api_update_internal_notes(unique_id: str, request: Request):
+    data = await request.json()
+    catatan = data.get("catatan")
+    execute_query("UPDATE surat_masuk_puu_internal SET catatan = %s WHERE unique_id = %s", [catatan, unique_id], fetch=False)
+    return {"status": "success"}
+
+@app.post("/api/vault/{unique_id}/notes")
+async def api_update_vault_notes(unique_id: str, request: Request):
+    data = await request.json()
+    catatan = data.get("catatan")
+    execute_query("UPDATE surat_keluar_puu SET catatan = %s WHERE unique_id = %s", [catatan, unique_id], fetch=False)
+    return {"status": "success"}
+
+@app.post("/api/vault/{unique_id}/tags")
+async def api_update_vault_tags(unique_id: str, request: Request):
+    import json
+    data = await request.json()
+    tags = data.get("tags", [])
+    execute_query("UPDATE surat_keluar_puu SET tags = %s WHERE unique_id = %s", [json.dumps(tags), unique_id], fetch=False)
+    return {"status": "success"}
+
 @app.get("/api/internal/{unique_id}/timeline")
 async def api_get_timeline(unique_id: str):
     events = get_letter_timeline(unique_id)
+    return events
+
+@app.get("/api/vault/{unique_id}/timeline")
+async def api_get_vault_timeline(unique_id: str):
+    events = get_vault_timeline(unique_id)
     return events
 
 @app.get("/api/knowledge/posisi/unique")

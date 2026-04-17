@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
-{% block page_title %}🏛️ Vault Korespondensi Substansi Perundang-undangan{% endblock %}
-{% block page_subtitle %}Monitoring korespondensi keluar dan instrumen hukum resmi dari Substansi Perundang-undangan.{% endblock %}
+{% block page_title %}⚖️ Proses Korespondensi PUU{% endblock %}
+{% block page_subtitle %}Monitoring proses korespondensi keluar dan instrumen hukum resmi dari Substansi Perundang-undangan.{% endblock %}
 
 {% block head %}
 <style>
@@ -104,7 +104,7 @@
     <div class="vault-card">
         <div class="vault-header">
             <div>
-                <h2 style="font-size: 1.1rem; font-weight: 700;">Arsip Korespondensi Keluar</h2>
+                <h2 style="font-size: 1.1rem; font-weight: 700;">Arsip Proses Korespondensi Keluar</h2>
                 <p style="font-size: 0.7rem; color: #94a3b8; margin-top: 2px;">Ditemukan <b>{{ rows|length }}</b> Dokumen untuk: "{{ query or 'Semua' }}"</p>
             </div>
             <div style="display: flex; gap: 12px; align-items: center;">
@@ -128,6 +128,8 @@
                         <th style="width: 280px;">Struktur Nomor ND</th>
                         <th>Substansi / Perihal</th>
                         <th style="width: 160px;">Tujuan / Status</th>
+                        <th style="width: 100px;">Durasi</th>
+                        <th style="width: 100px;">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -147,10 +149,32 @@
                         <td>
                             <div style="font-weight: 700; font-size: 0.875rem; color: var(--text-main); line-height: 1.4;">{{ r.hal }}</div>
                             <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 4px;">{{ r.dari_full or r.dari }}</div>
+                            {% if r.catatan %}
+                            <div style="margin-top: 8px; padding: 6px 10px; background: #fffbeb; border-left: 3px solid #fbbf24; border-radius: 4px; font-size: 0.75rem; color: #92400e; font-style: italic;">
+                                📌 {{ r.catatan }}
+                            </div>
+                            {% endif %}
                         </td>
                         <td>
                             <div style="font-weight: 600; font-size: 0.8rem; color: var(--accent);">{{ r.tujuan or 'Internal' }}</div>
                             <span class="badge badge-success" style="font-size: 0.6rem; margin-top: 4px;">{{ r.status_pengiriman }}</span>
+                        </td>
+                        <td>
+                            {% if r.is_selesai %}
+                                <span class="badge" style="background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0;">✅ Selesai</span>
+                            {% elif r.durasi_hari <= 3 %}
+                                <span class="badge" style="background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0;">{{ r.durasi_hari }} Hari</span>
+                            {% elif r.durasi_hari <= 7 %}
+                                <span class="badge" style="background: #fffbeb; color: #d97706; border: 1px solid #fef3c7;">{{ r.durasi_hari }} Hari</span>
+                            {% else %}
+                                <span class="badge" style="background: #fef2f2; color: #dc2626; border: 1px solid #fecaca;">{{ r.durasi_hari }} Hari</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <div style="display: flex; gap: 4px;">
+                                <button onclick="openTimelineModal('{{ r.unique_id }}', '{{ r.nomor_nd }}')" class="badge badge-info" style="border:none; cursor:pointer; padding:4px 8px; font-size:0.65rem;" title="Lacak Posisi">📍</button>
+                                <button onclick="openNotesModal('{{ r.unique_id }}', `{{ (r.catatan or '') | replace('`', '\\`') }}`)" class="badge" style="background: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; cursor:pointer; padding:4px 8px; font-size:0.65rem;" title="Beri Komentar">💬</button>
+                            </div>
                         </td>
                     </tr>
                     {% endfor %}
@@ -198,4 +222,123 @@
         </div>
     </div>
 </div>
+
+<!-- Modal Timeline Posisi -->
+<div id="timeline-modal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:white; padding:25px; border-radius:12px; width:500px; max-width:90%; position:relative;">
+        <h3 id="timeline-title" style="margin-bottom: 5px; color: var(--accent); font-family: 'Inter', sans-serif; font-weight: 800;">Timeline Posisi Surat</h3>
+        <p id="timeline-subtitle" style="font-size: 0.75rem; color: #666; margin-bottom: 20px;"></p>
+        
+        <div id="timeline-content" style="max-height: 400px; overflow-y: auto; padding: 10px 0;">
+            <!-- Timeline items will be injected here -->
+        </div>
+        
+        <div style="margin-top: 15px; text-align: right;">
+            <button onclick="document.getElementById('timeline-modal').style.display='none'" class="badge badge-ghost" style="background:#eee; color:#333; padding: 8px 16px; border:none; cursor:pointer;">Tutup</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Komentar/Catatan -->
+<div id="notes-modal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); z-index:1000; align-items:center; justify-content:center;">
+    <div style="background:white; padding:25px; border-radius:12px; width:450px; max-width:90%; position:relative; box-shadow: var(--shadow-lg);">
+        <h3 style="margin-bottom: 15px; color: var(--accent); font-family: 'Inter', sans-serif; font-weight: 800;">Komentar / Catatan Internal</h3>
+        <input type="hidden" id="notes-uid">
+        
+        <textarea id="notes-text" style="width: 100%; height: 120px; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0; font-family: 'Inter', sans-serif; font-size: 0.85rem; margin-bottom: 15px; resize: none;" placeholder="Tulis catatan atau tagging di sini..."></textarea>
+        
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+            <button onclick="document.getElementById('notes-modal').style.display='none'" class="badge badge-ghost" style="background:#eee; color:#333; padding: 8px 16px; border:none; cursor:pointer;">Batal</button>
+            <button onclick="saveNotes()" class="btn btn-primary" style="font-size: 0.85rem; padding: 8px 20px;">Simpan Catatan</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openNotesModal(uid, existingNotes) {
+        document.getElementById('notes-uid').value = uid;
+        document.getElementById('notes-text').value = existingNotes;
+        document.getElementById('notes-modal').style.display = 'flex';
+        document.getElementById('notes-text').focus();
+    }
+
+    async function saveNotes() {
+        const uid = document.getElementById('notes-uid').value;
+        const text = document.getElementById('notes-text').value;
+        const btn = document.querySelector('#notes-modal .btn-primary');
+        
+        btn.disabled = true;
+        btn.innerHTML = 'Menyimpan...';
+        
+        try {
+            const res = await fetch(`/api/vault/${uid}/notes`, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({catatan: text})
+            });
+            const data = await res.json();
+            if(data.status === 'success') {
+                location.reload();
+            } else {
+                alert("Gagal menyimpan catatan.");
+                btn.disabled = false;
+                btn.innerHTML = 'Simpan Catatan';
+            }
+        } catch (e) {
+            alert("Error: " + e.message);
+            btn.disabled = false;
+            btn.innerHTML = 'Simpan Catatan';
+        }
+    }
+
+    async function openTimelineModal(uid, letterNum) {
+        const modal = document.getElementById('timeline-modal');
+        const content = document.getElementById('timeline-content');
+        const subtitle = document.getElementById('timeline-subtitle');
+        
+        subtitle.textContent = `Nomor ND: ${letterNum}`;
+        content.innerHTML = '<p style="text-align:center; padding:20px; font-size:0.8rem; color:#64748b;">Memuat data timeline...</p>';
+        modal.style.display = 'flex';
+        
+        try {
+            const res = await fetch(`/api/vault/${uid}/timeline`);
+            const events = await res.json();
+            
+            if (!events || events.length === 0) {
+                content.innerHTML = `
+                    <div style="text-align:center; padding:30px; color:#94a3b8;">
+                        <div style="font-size:2.5rem; margin-bottom:10px;">🏛️</div>
+                        <p style="font-weight:600; font-size:0.9rem;">Belum ada riwayat tercatat di Vault.</p>
+                        <p style="font-size:0.75rem; margin-top:4px;">Riwayat posisi akan otomatis terisi saat data disinkronkan dari pusat.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            content.innerHTML = events.map((ev, index) => {
+                const dateObj = new Date(ev.event_at || ev.created_at);
+                const formatTime = dateObj.toLocaleString('id-ID', {day:'numeric', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit'});
+                const isLast = index === events.length - 1;
+                
+                return `
+                <div style="display:flex; gap:15px; position:relative; padding-bottom: 24px;">
+                    <div style="display:flex; flex-direction:column; align-items:center;">
+                        <div style="width:14px; height:14px; border-radius:50%; background:${isLast ? '#10b981' : '#3b82f6'}; border: 3px solid white; box-shadow: 0 0 0 1px ${isLast ? '#10b981' : '#3b82f6'}; z-index:1;"></div>
+                        ${!isLast ? '<div style="width:2px; flex:1; background:#e2e8f0; margin: 4px 0;"></div>' : ''}
+                    </div>
+                    <div style="flex:1;">
+                        <div style="font-weight:700; color:${isLast ? '#065f46' : '#1e3a8a'}; font-size:0.85rem;">${ev.label || ev.posisi}${ev.unit_info?.meaning ? ` <span style="font-weight:600; color:#64748b;">(${ev.unit_info.meaning})</span>` : ''}</div>
+                        ${ev.posisi_raw && ev.posisi_raw !== ev.label ? `<div style="font-size:0.72rem; color:#6b7280; margin-top:2px;">Asli: ${ev.posisi_raw}</div>` : ''}
+                        <div style="font-size:0.7rem; color:#94a3b8; margin-top:4px; display:flex; align-items:center; gap:4px;">
+                            <span>🕒</span> ${formatTime}
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        } catch (e) {
+            content.innerHTML = '<p style="text-align:center; color:#ef4444; padding:20px; font-size:0.8rem;">Gagal memuat timeline. Silakan coba lagi.</p>';
+        }
+    }
+</script>
 {% endblock %}

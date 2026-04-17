@@ -191,7 +191,16 @@
     .node-leader { background: var(--leader-gradient); }
     .node-unit { background: var(--unit-gradient); }
     .node-subunit { background: var(--subunit-gradient); }
-    .node-team { background: var(--team-gradient); color: #1e293b; }
+    
+    .node-team { 
+        background: white !important; 
+        color: #1e293b !important; 
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+        width: 200px !important;
+    }
+    .node-team .node-title { color: #3b82f6 !important; opacity: 1 !important; }
+    .node-team .node-name { font-size: 0.85rem !important; }
 
     .node.active-node {
         border-color: white;
@@ -328,6 +337,17 @@
         color: var(--text-main);
     }
 
+    .grade-badge {
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-size: 0.65rem;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+    .grade-IX { background: #fee2e2; color: #991b1b; }
+    .grade-VII { background: #fef3c7; color: #92400e; }
+    .grade-V { background: #f1f5f9; color: #475569; }
+
     /* Responsive Adjustments */
     @media (max-width: 1024px) {
         .unit-sidebar { width: 250px; }
@@ -380,6 +400,11 @@
                          data-pangkat="{{ unit.pimpinan.pangkat }}"
                          data-nip="{{ unit.pimpinan.nip }}"
                          data-unit="{{ unit.nama_unit }}"
+                         data-gender="{{ unit.pimpinan.jenis_kelamin|default('') }}"
+                         data-tanggal-lahir="{{ unit.pimpinan.tanggal_lahir|default('') }}"
+                         data-gelar-akademik='{{ unit.pimpinan.gelar_akademik|default([])|tojson|safe }}'
+                         data-golongan="{{ unit.pimpinan.golongan|default('') }}"
+                         data-jenjang-fungsional="{{ unit.pimpinan.jenjang_fungsional|default('') }}"
                          onclick="showPersonDetail(this.dataset, this)">
                         <div class="node-title">{{ unit.pimpinan.jabatan }}</div>
                         <div class="node-name">{{ unit.pimpinan.nama }}</div>
@@ -417,8 +442,8 @@
 
                 </div>
 
-                <!-- Bottom Level: Structural vs Functional Separation -->
-                <div class="org-row" style="align-items: flex-start; gap: 4rem; max-width: 1400px; margin-top: 2rem;">
+                <!-- Bottom Level: Structural vs Functional vs Operational Separation -->
+                <div class="org-row" style="align-items: flex-start; gap: 4rem; max-width: 1800px; margin-top: 2rem;">
                     
                     <!-- Sayap Kiri: Jabatan Struktural (Bagian/Subdit) -->
                     <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem; flex: 1;">
@@ -436,11 +461,13 @@
                                          data-pangkat="-"
                                          data-nip="-"
                                          data-unit="{{ unit.nama_unit }}"
+                                         {% if sub.staf %}data-members='{{ sub.staf|tojson|safe }}'{% endif %}
                                          onclick="showPersonDetail(this.dataset, this)">
                                         <div class="node-title">SUB-UNIT</div>
                                         <div class="node-name">{{ sub.nama_bagian or sub.nama_subdit }}</div>
                                         <div class="node-meta">
                                             <span>{{ sub.penanggung_jawab.nama if sub.penanggung_jawab else sub.kepala_bagian.nama if sub.kepala_bagian else 'Belum Diisi' }}</span>
+                                            {% if sub.staf %}<div style="font-size: 0.6rem; margin-top: 4px; opacity: 0.8;">👥 {{ sub.staf|length }} Staf Operasional</div>{% endif %}
                                         </div>
                                         <div class="badge-icon">🏛️</div>
                                         <div class="connector-line"></div>
@@ -453,14 +480,19 @@
                                             <div class="node node-team" 
                                                  data-nama="{{ tim.ketua.nama if tim.ketua else '-' }}"
                                                  data-jabatan="Ketua {{ tim.nama_tim or 'Wilayah ' ~ tim.wilayah }}"
-                                                 data-pangkat="-"
-                                                 data-nip="-"
+                                                 data-pangkat="{{ tim.ketua.pangkat if tim.ketua else '-' }}"
+                                                 data-nip="{{ tim.ketua.nip if tim.ketua else '-' }}"
                                                  data-unit="{{ sub.nama_bagian or sub.nama_subdit }}"
                                                  onclick="showPersonDetail(this.dataset, this)">
                                                 <div class="node-title">TIM KERJA</div>
                                                 <div class="node-name">{{ tim.nama_tim if tim.nama_tim else 'Wilayah ' ~ tim.wilayah }}</div>
                                                 <div class="node-meta">
-                                                    <span>{{ tim.ketua.nama if tim.ketua else 'Tanpa Ketua' }}</span>
+                                                    <span style="font-weight: 700;">{{ tim.ketua.nama if tim.ketua else 'Tanpa Ketua' }}</span>
+                                                    {% if tim.pic_korespondensi %}
+                                                    <div style="font-size: 0.65rem; border-top: 1px solid rgba(0,0,0,0.1); margin-top: 4px; padding-top: 4px;">
+                                                        <b>PIC:</b> {{ tim.pic_korespondensi.nama }}
+                                                    </div>
+                                                    {% endif %}
                                                 </div>
                                                 <div class="connector-line"></div>
                                             </div>
@@ -493,11 +525,11 @@
                         </div>
                     </div>
 
-                    <!-- Divider Tengah -->
+                    <!-- Divider -->
                     <div style="width: 2px; align-self: stretch; background: repeating-linear-gradient(to bottom, transparent, transparent 10px, var(--line-color) 10px, var(--line-color) 20px); margin: 0 1rem; opacity: 0.4;"></div>
 
-                    <!-- Sayap Kanan: Jabatan Fungsional -->
-                    <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem; flex: 0 0 auto;">
+                    <!-- Sayap Tengah: Jabatan Fungsional -->
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem; flex: 1;">
                         <div style="font-size: 0.75rem; color: #7c3aed; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(124, 58, 237, 0.1); padding: 6px 16px; border-radius: 99px; border: 1px solid rgba(124, 58, 237, 0.2); box-shadow: var(--shadow-sm);">
                             🎓 Jabatan Fungsional
                         </div>
@@ -509,6 +541,7 @@
                                      data-nama="{{ unit.kelompok_jabatan_fungsional.nama }}"
                                      data-jabatan="Kelompok Jabatan Fungsional"
                                      data-unit="{{ unit.nama_unit }}"
+                                     data-members='{{ unit.kelompok_jabatan_fungsional.anggota|tojson|safe }}'
                                      onclick="showPersonDetail(this.dataset, this)"
                                      style="background: linear-gradient(135deg, #8b5cf6 0%, #c084fc 100%);">
                                     <div class="node-title">KELOMPOK FUNGSIONAL</div>
@@ -516,11 +549,11 @@
                                     <div class="node-meta">
                                         <div style="margin-bottom: 5px; font-weight: 700;">{{ unit.kelompok_jabatan_fungsional.anggota|length }} Anggota:</div>
                                         <div style="font-size: 0.65rem; opacity: 0.9; text-align: left; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 5px;">
-                                            {% for m in unit.kelompok_jabatan_fungsional.anggota[:5] %}
+                                            {% for m in unit.kelompok_jabatan_fungsional.anggota[:3] %}
                                             • {{ m.nama }}<br>
                                             {% endfor %}
-                                            {% if unit.kelompok_jabatan_fungsional.anggota|length > 5 %}
-                                            <span style="font-style: italic;">...dan {{ unit.kelompok_jabatan_fungsional.anggota|length - 5 }} lainnya</span>
+                                            {% if unit.kelompok_jabatan_fungsional.anggota|length > 3 %}
+                                            <span style="font-style: italic;">...klik untuk detail</span>
                                             {% endif %}
                                         </div>
                                     </div>
@@ -528,25 +561,44 @@
                                     <div class="connector-line"></div>
                                 </div>
 
-                                <!-- Potential Tim Kerja for Functional -->
+                                <!-- Render Tim Kerja inside Functional Group (e.g. PUU) -->
+                                <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
                                 {% if unit.kelompok_jabatan_fungsional.tim_kerja %}
                                     {% for tim in unit.kelompok_jabatan_fungsional.tim_kerja %}
                                     <div class="node node-team" 
                                          data-nama="{{ tim.ketua.nama if tim.ketua else '-' }}"
-                                         data-pangkat="-"
+                                         data-jabatan="Ketua {{ tim.nama_tim or tim.wilayah }}"
+                                         data-pangkat="{{ tim.ketua.pangkat if tim.ketua else '-' }}"
                                          data-nip="{{ tim.ketua.nip if tim.ketua else '-' }}"
                                          data-unit="{{ unit.kelompok_jabatan_fungsional.nama }}"
+                                         {% if tim.pic_operasional_detail %}
+                                         data-extra-pic='{"nama": "{{ tim.pic_operasional_detail.nama }}", "jabatan": "PIC Operasional: {{ tim.pic_operasional_detail.jabatan }}"}'
+                                         {% endif %}
                                          onclick="showPersonDetail(this.dataset, this)">
                                         <div class="node-title">TIM KERJA</div>
                                         <div class="node-name">{{ tim.nama_tim or tim.wilayah }}</div>
+                                        <div class="node-meta">
+                                            <span style="font-weight: 700;">{{ tim.ketua.nama if tim.ketua else 'Tanpa Ketua' }}</span>
+                                            {% if tim.pic_korespondensi %}
+                                            <div style="font-size: 0.65rem; border-top: 1px solid rgba(0,0,0,0.1); margin-top: 4px; padding-top: 4px;">
+                                                <b>PIC Kores:</b> {{ tim.pic_korespondensi.nama }}
+                                            </div>
+                                            {% endif %}
+                                            {% if tim.pic_operasional_detail %}
+                                            <div style="font-size: 0.65rem; color: #1e40af;">
+                                                <b>PIC Operasional:</b> {{ tim.pic_operasional_detail.nama }}
+                                            </div>
+                                            {% endif %}
+                                        </div>
                                         <div class="connector-line"></div>
                                     </div>
                                     {% endfor %}
                                 {% endif %}
+                                </div>
                             </div>
                             {% endif %}
 
-                            <!-- Sub-Units that are actually Functional Groups (e.g. Kelompok Substansi Hukum) -->
+                            <!-- Sub-Units that are actually Functional Groups -->
                             {% if unit.sub_unit %}
                                 {% for sub in unit.sub_unit %}
                                     {% if 'Kelompok Substansi' in (sub.nama_bagian or '') or 'Fungsional' in (sub.nama_bagian or '') %}
@@ -568,21 +620,39 @@
                                            <div class="connector-line"></div>
                                        </div>
 
-                                       <!-- Tim Kerja inside this functional sub-unit -->
+                                       <!-- Tim Kerja inside Functional Sub-unit (PUU team) -->
                                        <div style="display: flex; flex-direction: column; gap: 1rem;">
-                                           {% if sub.tim_kerja %}
-                                               {% for tim in sub.tim_kerja %}
-                                               <div class="node node-team" 
-                                                    data-nama="{{ tim.ketua.nama if tim.ketua else '-' }}"
-                                                    data-pangkat="-"
-                                                    data-unit="{{ sub.nama_bagian or sub.nama_subdit }}"
-                                                    onclick="showPersonDetail(this.dataset, this)">
-                                                   <div class="node-title">TIM KERJA</div>
-                                                   <div class="node-name">{{ tim.nama_tim or tim.wilayah }}</div>
-                                                   <div class="connector-line"></div>
-                                                </div>
-                                               {% endfor %}
-                                           {% endif %}
+                                       {% if sub.tim_kerja %}
+                                           {% for tim in sub.tim_kerja %}
+                                           <div class="node node-team" 
+                                                data-nama="{{ tim.ketua.nama if tim.ketua else '-' }}"
+                                                data-jabatan="Ketua {{ tim.nama_tim or 'Wilayah ' ~ tim.wilayah }}"
+                                                data-pangkat="{{ tim.ketua.pangkat if tim.ketua else '-' }}"
+                                                data-nip="{{ tim.ketua.nip if tim.ketua else '-' }}"
+                                                data-unit="{{ sub.nama_bagian or sub.nama_subdit }}"
+                                                {% if tim.pic_operasional_detail %}
+                                                data-extra-pic='{"nama": "{{ tim.pic_operasional_detail.nama }}", "jabatan": "PIC Operasional: {{ tim.pic_operasional_detail.jabatan }}"}'
+                                                {% endif %}
+                                                onclick="showPersonDetail(this.dataset, this)">
+                                               <div class="node-title">TIM KERJA</div>
+                                               <div class="node-name">{{ tim.nama_tim if tim.nama_tim else 'Wilayah ' ~ tim.wilayah }}</div>
+                                               <div class="node-meta">
+                                                   <span style="font-weight: 700;">{{ tim.ketua.nama if tim.ketua else 'Tanpa Ketua' }}</span>
+                                                   {% if tim.pic_korespondensi %}
+                                                   <div style="font-size: 0.65rem; border-top: 1px solid rgba(0,0,0,0.1); margin-top: 4px; padding-top: 4px;">
+                                                       <b>PIC Kores:</b> {{ tim.pic_korespondensi.nama }}
+                                                   </div>
+                                                   {% endif %}
+                                                   {% if tim.pic_operasional_detail %}
+                                                   <div style="font-size: 0.65rem; color: #1e40af;">
+                                                       <b>PIC Operasional:</b> {{ tim.pic_operasional_detail.nama }}
+                                                   </div>
+                                                   {% endif %}
+                                               </div>
+                                               <div class="connector-line"></div>
+                                           </div>
+                                           {% endfor %}
+                                       {% endif %}
                                        </div>
                                     </div>
                                     {% endif %}
@@ -591,12 +661,81 @@
                         </div>
                     </div>
 
+                    <!-- Divider -->
+                    <div style="width: 2px; align-self: stretch; background: repeating-linear-gradient(to bottom, transparent, transparent 10px, var(--line-color) 10px, var(--line-color) 20px); margin: 0 1rem; opacity: 0.4;"></div>
+
+                    <!-- Sayap Kanan: Layanan Operasional & Unit Khusus (NEW 2026) -->
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem; flex: 1;">
+                        <div style="font-size: 0.75rem; color: #0ea5e9; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(14, 165, 233, 0.1); padding: 6px 16px; border-radius: 99px; border: 1px solid rgba(14, 165, 233, 0.2); box-shadow: var(--shadow-sm);">
+                            🎧 Layanan & Unit Khusus
+                        </div>
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 2.5rem; width: 100%;">
+                            
+                            <!-- Unit Khusus (e.g. Poliklinik) -->
+                            {% if unit.unit_khusus %}
+                                {% for uk_name, members in unit.unit_khusus.items() %}
+                                <div class="node" 
+                                     data-nama="{{ members[0].nama if members else '-' }}"
+                                     data-jabatan="{{ uk_name|replace('_', ' ')|upper }}"
+                                     data-pangkat="{{ members[0].pangkat if members else '-' }}"
+                                     data-nip="{{ members[0].nip if members else '-' }}"
+                                     data-unit="{{ unit.nama_unit }}"
+                                     data-search="{% for m in members %}{{ m.nama }} {% endfor %}"
+                                     data-members='{{ members|tojson|safe }}'
+                                     onclick="showPersonDetail(this.dataset, this)"
+                                     style="background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);">
+                                    <div class="node-title">UNIT KHUSUS</div>
+                                    <div class="node-name">{{ uk_name|replace('_', ' ')|upper }}</div>
+                                    <div class="node-meta">
+                                        <div style="font-weight: 700;">{{ members|length }} Personel</div>
+                                        <div style="font-size: 0.65rem; opacity: 0.9; text-align: left; margin-top: 5px;">
+                                            • {{ members[0].nama }} (Lead)<br>
+                                            {% if members|length > 1 %}<span>...dan {{ members|length - 1 }} lainnya</span>{% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="badge-icon">🏥</div>
+                                    <div class="connector-line"></div>
+                                </div>
+                                {% endfor %}
+                            {% endif %}
+
+                            <!-- Staf Operasional / PPPK Group -->
+                            {% if unit.staf_operasional %}
+                            <div class="node" 
+                                 data-nama="Tim Operasional"
+                                 data-jabatan="Layanan Operasional"
+                                 data-pangkat="PPPK / Staf Pendukung"
+                                 data-unit="{{ unit.nama_unit }}"
+                                 data-search="{% for s in unit.staf_operasional %}{{ s.nama }} {% endfor %}"
+                                 data-members='{{ unit.staf_operasional|tojson|safe }}'
+                                 onclick="showPersonDetail(this.dataset, this)"
+                                 style="background: linear-gradient(135deg, #475569 0%, #64748b 100%);">
+                                <div class="node-title">OPERASIONAL</div>
+                                <div class="node-name">STAF OPERASIONAL</div>
+                                <div class="node-meta">
+                                    <div style="font-weight: 700;">{{ unit.staf_operasional|length }} Anggota</div>
+                                    <div style="font-size: 0.65rem; opacity: 0.9; text-align: left; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 5px; margin-top: 5px;">
+                                        {% for s in unit.staf_operasional[:3] %}
+                                        • {{ s.nama }}<br>
+                                        {% endfor %}
+                                        {% if unit.staf_operasional|length > 3 %}
+                                        <i>...dan {{ unit.staf_operasional|length - 3 }} lainnya</i>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="badge-icon">🛠️</div>
+                                <div class="connector-line"></div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+
                 </div>
-            </div>
+                </div> <!-- closes org-tree -->
             {% endfor %}
-        </div>
-    </div>
-</div>
+        </div> <!-- closes canvas-content -->
+    </div> <!-- closes canvas-container -->
+</div> <!-- closes struktur-layout -->
 
 <!-- Personnel Detail Modal -->
 <div class="modal-overlay" id="personnelModal">
@@ -623,8 +762,36 @@
             <div class="detail-value" id="modalUnit">-</div>
         </div>
         
+        <!-- ENRICHED DATA ROWS -->
+        <div id="enrichedDetails">
+            <div class="detail-row">
+                <div class="detail-label">Jenis Kelamin</div>
+                <div class="detail-value" id="modalGender">-</div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-label">Tgl Lahir / Gelar</div>
+                <div class="detail-value" id="modalBirthEducation">-</div>
+            </div>
+            <div class="detail-row" id="gradeRow">
+                <div class="detail-label">Grade / Golongan</div>
+                <div class="detail-value"><span id="modalGrade" class="grade-badge"></span> <span id="modalGolongan" style="margin-left:8px; font-weight:700;"></span></div>
+            </div>
+            <div class="detail-row" id="jenjangRow">
+                <div class="detail-label">Jenjang Fungsional</div>
+                <div class="detail-value" id="modalJenjang">-</div>
+            </div>
+        </div>
+        
+        <!-- NEW: Member List for Group Nodes -->
+        <div id="modalMemberList" style="display: none; margin-top: 1rem; border-top: 2px solid var(--border); padding-top: 1rem;">
+            <div class="detail-label" style="margin-bottom: 0.5rem;">Daftar Anggota / Staf</div>
+            <div id="memberContainer" style="max-height: 200px; overflow-y: auto; font-size: 0.8rem; display: flex; flex-direction: column; gap: 8px;">
+                <!-- Members will be injected here -->
+            </div>
+        </div>
+        
         <div style="margin-top: 2rem;">
-            <button class="btn btn-primary" style="width: 100%; justify-content: center;">
+            <button id="modalDocBtn" class="btn btn-primary" style="width: 100%; justify-content: center;">
                  Lihat Dokumen Terkait
             </button>
         </div>
@@ -684,8 +851,9 @@
         nodes.forEach(node => {
             const name = node.querySelector('.node-name').textContent.toLowerCase();
             const title = node.querySelector('.node-title').textContent.toLowerCase();
+            const extraSearch = node.dataset.search ? node.dataset.search.toLowerCase() : '';
             
-            if (q && (name.includes(q) || title.includes(q))) {
+            if (q && (name.includes(q) || title.includes(q) || extraSearch.includes(q))) {
                 node.classList.add('highlight');
                 if (q.length > 3) node.scrollIntoView({ behavior: 'smooth', block: 'center' });
             } else {
@@ -704,6 +872,105 @@
         document.getElementById('modalNip').textContent = data.nip && data.nip !== 'None' ? data.nip : '-';
         document.getElementById('modalPangkat').textContent = data.pangkat || '-';
         document.getElementById('modalUnit').textContent = data.unit || '-';
+        
+        // Enriched Fields
+        const gender = data.gender || data.jenisKelamin || '-';
+        document.getElementById('modalGender').textContent = gender;
+        
+        const birth = data.tanggalLahir || '-';
+        const education = data.gelarAkademik ? (data.gelarAkademik.startsWith('[') ? JSON.parse(data.gelarAkademik).join(', ') : data.gelarAkademik) : '-';
+        document.getElementById('modalBirthEducation').textContent = `${birth} / ${education}`;
+        
+        const grade = data.gradePppk || '';
+        const golongan = data.golongan || '';
+        const jenjang = data.jenjangFungsional || '';
+        
+        const gradeEl = document.getElementById('modalGrade');
+        const golEl = document.getElementById('modalGolongan');
+        const gradeRow = document.getElementById('gradeRow');
+        const jenjangEl = document.getElementById('modalJenjang');
+        const jenjangRow = document.getElementById('jenjangRow');
+        
+        if (grade && grade !== 'null') {
+            gradeEl.textContent = 'Grade ' + grade;
+            gradeEl.className = 'grade-badge grade-' + grade;
+            gradeEl.style.display = 'inline-block';
+            golEl.textContent = '';
+            gradeRow.style.display = 'flex';
+        } else if (golongan && golongan !== 'null') {
+            gradeEl.style.display = 'none';
+            golEl.textContent = 'Golongan ' + golongan;
+            gradeRow.style.display = 'flex';
+        } else {
+            gradeRow.style.display = 'none';
+        }
+
+        if (jenjang && jenjang !== 'null') {
+            jenjangEl.textContent = jenjang;
+            jenjangRow.style.display = 'flex';
+        } else {
+            jenjangRow.style.display = 'none';
+        }
+        
+        // Members List handling
+        const memberList = document.getElementById('modalMemberList');
+        const memberContainer = document.getElementById('memberContainer');
+        memberContainer.innerHTML = '';
+        
+        if (data.members) {
+            try {
+                const members = JSON.parse(data.members);
+                memberList.style.display = 'block';
+                members.forEach(m => {
+                    const div = document.createElement('div');
+                    div.style.padding = '8px';
+                    div.style.background = '#f8fafc';
+                    div.style.borderRadius = '8px';
+                    div.style.borderLeft = m.status_kepegawaian === 'PPPK' ? '4px solid #f59e0b' : '4px solid #6366f1';
+                    div.innerHTML = `
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="font-weight: 800;">${m.jenis_kelamin === 'Perempuan' ? '👩‍💼' : '👨‍💼'} ${m.nama}</div>
+                            ${m.grade_pppk ? `<span class="grade-badge grade-${m.grade_pppk}">Grade ${m.grade_pppk}</span>` : ''}
+                            ${m.golongan ? `<span style="font-size:0.6rem; background:#e0f2fe; color:#0369a1; padding:2px 6px; border-radius:4px; font-weight:800;">${m.golongan}</span>` : ''}
+                        </div>
+                        <div style="font-size: 0.7rem; color: #64748b; margin-top: 4px;">
+                            <span style="color:#1e40af; font-weight:600;">${m.jenjang_fungsional || ''}</span> ${m.jabatan_fungsional || m.pangkat || '-'} ${m.nip ? '• NIP. '+m.nip : ''}
+                        </div>
+                        <div style="font-size: 0.6rem; color: #94a3b8; margin-top: 2px;">
+                            ${m.gelar_akademik ? (Array.isArray(m.gelar_akademik) ? m.gelar_akademik.join(', ') : m.gelar_akademik) : ''} ${m.tanggal_lahir ? '• Lahir: ' + m.tanggal_lahir : ''}
+                        </div>
+                    `;
+                    memberContainer.appendChild(div);
+                });
+            } catch(e) { console.error("Error parsing members", e); }
+        } else {
+            memberList.style.display = 'none';
+        }
+
+        // Extra PIC handling (for Tim Kerja)
+        if (data.extraPic) {
+            try {
+                const extra = JSON.parse(data.extraPic);
+                const div = document.createElement('div');
+                div.style.marginTop = '10px';
+                div.style.padding = '10px';
+                div.style.borderRadius = '10px';
+                div.style.background = 'rgba(59, 130, 246, 0.1)';
+                div.style.border = '1px solid rgba(59, 130, 246, 0.2)';
+                div.innerHTML = `
+                    <div style="font-size: 0.65rem; color: #1e40af; font-weight: 800;">PETUGAS OPERASIONAL</div>
+                    <div style="font-weight: 700; font-size: 0.85rem;">${extra.nama}</div>
+                    <div style="font-size: 0.7rem;">${extra.jabatan}</div>
+                `;
+                memberContainer.appendChild(div);
+                memberList.style.display = 'block';
+            } catch(e) {}
+        }
+
+        // Setup Search Button Action
+        document.getElementById('modalDocBtn').onclick = function() {
+            window.location.href = '/internal?q=' + encodeURIComponent(data.nama);
+        };
         
         // Dynamic Icon
         const iconBox = document.getElementById('modalIcon');
